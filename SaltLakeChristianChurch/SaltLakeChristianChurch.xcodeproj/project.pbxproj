@@ -12,9 +12,23 @@
 		815E23E9201FE47500157B18 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 815E23E8201FE47500157B18 /* Assets.xcassets */; };
 		815E23EC201FE47500157B18 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 815E23EA201FE47500157B18 /* LaunchScreen.storyboard */; };
 		815E23F6201FE55900157B18 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 815E23F5201FE55900157B18 /* GoogleService-Info.plist */; };
+		815E23F8201FE88F00157B18 /* extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 815E23F7201FE88F00157B18 /* extensions.swift */; };
+		815E2404201FE8F800157B18 /* UISliderX.swift in Sources */ = {isa = PBXBuildFile; fileRef = 815E23F9201FE8F600157B18 /* UISliderX.swift */; };
+		815E2405201FE8F800157B18 /* UITextViewX.swift in Sources */ = {isa = PBXBuildFile; fileRef = 815E23FA201FE8F700157B18 /* UITextViewX.swift */; };
+		815E2406201FE8F800157B18 /* UIImageViewX.swift in Sources */ = {isa = PBXBuildFile; fileRef = 815E23FB201FE8F700157B18 /* UIImageViewX.swift */; };
+		815E2407201FE8F800157B18 /* UIViewAnchorPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 815E23FC201FE8F700157B18 /* UIViewAnchorPoint.swift */; };
+		815E2408201FE8F800157B18 /* UIViewX.swift in Sources */ = {isa = PBXBuildFile; fileRef = 815E23FD201FE8F700157B18 /* UIViewX.swift */; };
+		815E2409201FE8F800157B18 /* UIViewControllerX.swift in Sources */ = {isa = PBXBuildFile; fileRef = 815E23FE201FE8F700157B18 /* UIViewControllerX.swift */; };
+		815E240A201FE8F800157B18 /* UIViewXRadialGradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 815E23FF201FE8F700157B18 /* UIViewXRadialGradient.swift */; };
+		815E240B201FE8F800157B18 /* UIVisualEffectViewX.swift in Sources */ = {isa = PBXBuildFile; fileRef = 815E2400201FE8F700157B18 /* UIVisualEffectViewX.swift */; };
+		815E240C201FE8F800157B18 /* UILabelX.swift in Sources */ = {isa = PBXBuildFile; fileRef = 815E2401201FE8F700157B18 /* UILabelX.swift */; };
+		815E240D201FE8F800157B18 /* UIButtonX.swift in Sources */ = {isa = PBXBuildFile; fileRef = 815E2402201FE8F800157B18 /* UIButtonX.swift */; };
+		815E240E201FE8F800157B18 /* UITextFieldX.swift in Sources */ = {isa = PBXBuildFile; fileRef = 815E2403201FE8F800157B18 /* UITextFieldX.swift */; };
+		FBF458CABE07E4278BD949DB /* Pods_SaltLakeChristianChurch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83F1D8FC62F7E113BACAD970 /* Pods_SaltLakeChristianChurch.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0078708EDF6217E47E032469 /* Pods-SaltLakeChristianChurch.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SaltLakeChristianChurch.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SaltLakeChristianChurch/Pods-SaltLakeChristianChurch.debug.xcconfig"; sourceTree = "<group>"; };
 		815E23DE201FE47500157B18 /* SaltLakeChristianChurch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SaltLakeChristianChurch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		815E23E1201FE47500157B18 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		815E23E6201FE47500157B18 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -22,6 +36,20 @@
 		815E23EB201FE47500157B18 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		815E23ED201FE47500157B18 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		815E23F5201FE55900157B18 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		815E23F7201FE88F00157B18 /* extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = extensions.swift; sourceTree = "<group>"; };
+		815E23F9201FE8F600157B18 /* UISliderX.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UISliderX.swift; sourceTree = "<group>"; };
+		815E23FA201FE8F700157B18 /* UITextViewX.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITextViewX.swift; sourceTree = "<group>"; };
+		815E23FB201FE8F700157B18 /* UIImageViewX.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageViewX.swift; sourceTree = "<group>"; };
+		815E23FC201FE8F700157B18 /* UIViewAnchorPoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewAnchorPoint.swift; sourceTree = "<group>"; };
+		815E23FD201FE8F700157B18 /* UIViewX.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewX.swift; sourceTree = "<group>"; };
+		815E23FE201FE8F700157B18 /* UIViewControllerX.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewControllerX.swift; sourceTree = "<group>"; };
+		815E23FF201FE8F700157B18 /* UIViewXRadialGradient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewXRadialGradient.swift; sourceTree = "<group>"; };
+		815E2400201FE8F700157B18 /* UIVisualEffectViewX.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIVisualEffectViewX.swift; sourceTree = "<group>"; };
+		815E2401201FE8F700157B18 /* UILabelX.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UILabelX.swift; sourceTree = "<group>"; };
+		815E2402201FE8F800157B18 /* UIButtonX.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIButtonX.swift; sourceTree = "<group>"; };
+		815E2403201FE8F800157B18 /* UITextFieldX.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITextFieldX.swift; sourceTree = "<group>"; };
+		83F1D8FC62F7E113BACAD970 /* Pods_SaltLakeChristianChurch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SaltLakeChristianChurch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9E424914063860F44B256AA9 /* Pods-SaltLakeChristianChurch.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SaltLakeChristianChurch.release.xcconfig"; path = "Pods/Target Support Files/Pods-SaltLakeChristianChurch/Pods-SaltLakeChristianChurch.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +57,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FBF458CABE07E4278BD949DB /* Pods_SaltLakeChristianChurch.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +69,8 @@
 			children = (
 				815E23E0201FE47500157B18 /* SaltLakeChristianChurch */,
 				815E23DF201FE47500157B18 /* Products */,
+				E71A5DAAEF967F3214EB762A /* Pods */,
+				A2EBD76ADE5D7418EADB3AB4 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -55,6 +86,10 @@
 			isa = PBXGroup;
 			children = (
 				815E23E1201FE47500157B18 /* AppDelegate.swift */,
+				815E2410201FE9A000157B18 /* Models */,
+				815E2411201FE9B800157B18 /* ModelControllers */,
+				815E2412201FEA1300157B18 /* ViewControllers */,
+				815E2413201FEA2400157B18 /* Views */,
 				815E23F3201FE48600157B18 /* Storyboards */,
 				815E23F4201FE4A500157B18 /* Resources */,
 			);
@@ -74,10 +109,75 @@
 			isa = PBXGroup;
 			children = (
 				815E23E8201FE47500157B18 /* Assets.xcassets */,
+				815E23F7201FE88F00157B18 /* extensions.swift */,
+				815E240F201FE90900157B18 /* IBDesignables */,
 				815E23ED201FE47500157B18 /* Info.plist */,
 				815E23F5201FE55900157B18 /* GoogleService-Info.plist */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		815E240F201FE90900157B18 /* IBDesignables */ = {
+			isa = PBXGroup;
+			children = (
+				815E2402201FE8F800157B18 /* UIButtonX.swift */,
+				815E23FB201FE8F700157B18 /* UIImageViewX.swift */,
+				815E2401201FE8F700157B18 /* UILabelX.swift */,
+				815E23F9201FE8F600157B18 /* UISliderX.swift */,
+				815E2403201FE8F800157B18 /* UITextFieldX.swift */,
+				815E23FA201FE8F700157B18 /* UITextViewX.swift */,
+				815E23FC201FE8F700157B18 /* UIViewAnchorPoint.swift */,
+				815E23FE201FE8F700157B18 /* UIViewControllerX.swift */,
+				815E23FD201FE8F700157B18 /* UIViewX.swift */,
+				815E23FF201FE8F700157B18 /* UIViewXRadialGradient.swift */,
+				815E2400201FE8F700157B18 /* UIVisualEffectViewX.swift */,
+			);
+			path = IBDesignables;
+			sourceTree = "<group>";
+		};
+		815E2410201FE9A000157B18 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		815E2411201FE9B800157B18 /* ModelControllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ModelControllers;
+			sourceTree = "<group>";
+		};
+		815E2412201FEA1300157B18 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		815E2413201FEA2400157B18 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		A2EBD76ADE5D7418EADB3AB4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				83F1D8FC62F7E113BACAD970 /* Pods_SaltLakeChristianChurch.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E71A5DAAEF967F3214EB762A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				0078708EDF6217E47E032469 /* Pods-SaltLakeChristianChurch.debug.xcconfig */,
+				9E424914063860F44B256AA9 /* Pods-SaltLakeChristianChurch.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -87,9 +187,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 815E23F0201FE47500157B18 /* Build configuration list for PBXNativeTarget "SaltLakeChristianChurch" */;
 			buildPhases = (
+				2C7B56A4D6FB154F53CA60A4 /* [CP] Check Pods Manifest.lock */,
 				815E23DA201FE47500157B18 /* Sources */,
 				815E23DB201FE47500157B18 /* Frameworks */,
 				815E23DC201FE47500157B18 /* Resources */,
+				E2BEB58FDD0791303390DCAE /* [CP] Embed Pods Frameworks */,
+				C248FF59797D5BE4A6872DE9 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -148,12 +251,84 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		2C7B56A4D6FB154F53CA60A4 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SaltLakeChristianChurch-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C248FF59797D5BE4A6872DE9 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SaltLakeChristianChurch/Pods-SaltLakeChristianChurch-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E2BEB58FDD0791303390DCAE /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-SaltLakeChristianChurch/Pods-SaltLakeChristianChurch-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SaltLakeChristianChurch/Pods-SaltLakeChristianChurch-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		815E23DA201FE47500157B18 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				815E240C201FE8F800157B18 /* UILabelX.swift in Sources */,
+				815E2407201FE8F800157B18 /* UIViewAnchorPoint.swift in Sources */,
+				815E2404201FE8F800157B18 /* UISliderX.swift in Sources */,
+				815E240B201FE8F800157B18 /* UIVisualEffectViewX.swift in Sources */,
+				815E2406201FE8F800157B18 /* UIImageViewX.swift in Sources */,
+				815E240E201FE8F800157B18 /* UITextFieldX.swift in Sources */,
 				815E23E2201FE47500157B18 /* AppDelegate.swift in Sources */,
+				815E2405201FE8F800157B18 /* UITextViewX.swift in Sources */,
+				815E2408201FE8F800157B18 /* UIViewX.swift in Sources */,
+				815E240D201FE8F800157B18 /* UIButtonX.swift in Sources */,
+				815E23F8201FE88F00157B18 /* extensions.swift in Sources */,
+				815E2409201FE8F800157B18 /* UIViewControllerX.swift in Sources */,
+				815E240A201FE8F800157B18 /* UIViewXRadialGradient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -288,6 +463,7 @@
 		};
 		815E23F1201FE47500157B18 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0078708EDF6217E47E032469 /* Pods-SaltLakeChristianChurch.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -303,6 +479,7 @@
 		};
 		815E23F2201FE47500157B18 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9E424914063860F44B256AA9 /* Pods-SaltLakeChristianChurch.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

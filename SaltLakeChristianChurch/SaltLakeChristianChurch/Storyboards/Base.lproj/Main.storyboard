@@ -6,15 +6,16 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Login Or Register View Controller-->
         <scene sceneID="ehZ-Ee-daP">
             <objects>
-                <viewController id="6gm-Np-kqq" sceneMemberID="viewController">
+                <viewController id="6gm-Np-kqq" customClass="LoginOrRegisterViewController" customModule="SaltLakeChristianChurch" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="E6d-dN-Nzd">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -23,118 +24,169 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                             </imageView>
                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jmk-7d-Jq4" customClass="UIViewX" customModule="SaltLakeChristianChurch" customModuleProvider="target">
-                                <rect key="frame" x="20" y="120" width="374" height="536"/>
+                                <rect key="frame" x="20" y="120" width="374" height="496"/>
                                 <subviews>
                                     <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c0K-YA-fMJ">
-                                        <rect key="frame" x="0.0" y="0.0" width="374" height="536"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="496"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="fls-5c-89a">
-                                            <rect key="frame" x="0.0" y="0.0" width="374" height="536"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="374" height="496"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <subviews>
-                                                <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="wD4-AQ-YAN">
-                                                    <rect key="frame" x="8" y="143" width="358" height="29"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <segments>
-                                                        <segment title="Login"/>
-                                                        <segment title="Register"/>
-                                                    </segments>
-                                                    <color key="tintColor" name="Tint"/>
-                                                </segmentedControl>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="JustMountainLogoPNG" translatesAutoresizingMaskIntoConstraints="NO" id="c6C-7Q-JGR">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="JustMountainLogoPNG" translatesAutoresizingMaskIntoConstraints="NO" id="c6C-7Q-JGR">
                                                     <rect key="frame" x="8" y="7" width="358" height="128"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="c6C-7Q-JGR" secondAttribute="height" multiplier="179:64" id="NqP-3v-WPl"/>
+                                                    </constraints>
                                                 </imageView>
-                                                <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EEd-08-XEn" customClass="UITextFieldX" customModule="SaltLakeChristianChurch" customModuleProvider="target">
-                                                    <rect key="frame" x="8" y="178" width="358" height="30"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <nil key="textColor"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits"/>
-                                                    <userDefinedRuntimeAttributes>
-                                                        <userDefinedRuntimeAttribute type="image" keyPath="leftImage" value="email"/>
-                                                        <userDefinedRuntimeAttribute type="number" keyPath="leftPadding">
-                                                            <real key="value" value="5"/>
-                                                        </userDefinedRuntimeAttribute>
-                                                    </userDefinedRuntimeAttributes>
-                                                </textField>
-                                                <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Phonenumber..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Z0J-7I-jxJ" customClass="UITextFieldX" customModule="SaltLakeChristianChurch" customModuleProvider="target">
-                                                    <rect key="frame" x="8" y="330" width="358" height="30"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <nil key="textColor"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits"/>
-                                                    <userDefinedRuntimeAttributes>
-                                                        <userDefinedRuntimeAttribute type="image" keyPath="leftImage" value="phonenum"/>
-                                                        <userDefinedRuntimeAttribute type="number" keyPath="leftPadding">
-                                                            <real key="value" value="5"/>
-                                                        </userDefinedRuntimeAttribute>
-                                                    </userDefinedRuntimeAttributes>
-                                                </textField>
-                                                <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Fullname..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XCV-I8-HTZ" customClass="UITextFieldX" customModule="SaltLakeChristianChurch" customModuleProvider="target">
-                                                    <rect key="frame" x="8" y="292" width="358" height="30"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <nil key="textColor"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits"/>
-                                                    <userDefinedRuntimeAttributes>
-                                                        <userDefinedRuntimeAttribute type="image" keyPath="leftImage" value="username"/>
-                                                        <userDefinedRuntimeAttribute type="number" keyPath="leftPadding">
-                                                            <real key="value" value="5"/>
-                                                        </userDefinedRuntimeAttribute>
-                                                    </userDefinedRuntimeAttributes>
-                                                </textField>
-                                                <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aFz-Wp-v9c" customClass="UITextFieldX" customModule="SaltLakeChristianChurch" customModuleProvider="target">
-                                                    <rect key="frame" x="8" y="216" width="358" height="30"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <nil key="textColor"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
-                                                    <userDefinedRuntimeAttributes>
-                                                        <userDefinedRuntimeAttribute type="image" keyPath="leftImage" value="password"/>
-                                                        <userDefinedRuntimeAttribute type="number" keyPath="leftPadding">
-                                                            <real key="value" value="5"/>
-                                                        </userDefinedRuntimeAttribute>
-                                                    </userDefinedRuntimeAttributes>
-                                                </textField>
-                                                <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Confirm Password..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TNi-du-Wl7" customClass="UITextFieldX" customModule="SaltLakeChristianChurch" customModuleProvider="target">
-                                                    <rect key="frame" x="8" y="254" width="358" height="30"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <nil key="textColor"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
-                                                    <userDefinedRuntimeAttributes>
-                                                        <userDefinedRuntimeAttribute type="image" keyPath="leftImage" value="password"/>
-                                                        <userDefinedRuntimeAttribute type="number" keyPath="leftPadding">
-                                                            <real key="value" value="5"/>
-                                                        </userDefinedRuntimeAttribute>
-                                                    </userDefinedRuntimeAttributes>
-                                                </textField>
-                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KI9-xH-6YE">
-                                                    <rect key="frame" x="123" y="486" width="128" height="30"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <color key="tintColor" name="Tint"/>
-                                                    <state key="normal" title="Continue As Guest"/>
-                                                </button>
-                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xVi-KP-cfE">
-                                                    <rect key="frame" x="168" y="456" width="38" height="30"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <color key="tintColor" name="Tint"/>
-                                                    <state key="normal" title="Login"/>
-                                                </button>
-                                                <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Church Code..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MlF-Qw-bPT" customClass="UITextFieldX" customModule="SaltLakeChristianChurch" customModuleProvider="target">
-                                                    <rect key="frame" x="8" y="368" width="358" height="30"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <nil key="textColor"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits"/>
-                                                    <userDefinedRuntimeAttributes>
-                                                        <userDefinedRuntimeAttribute type="image" keyPath="leftImage" value="church"/>
-                                                        <userDefinedRuntimeAttribute type="number" keyPath="leftPadding">
-                                                            <real key="value" value="5"/>
-                                                        </userDefinedRuntimeAttribute>
-                                                    </userDefinedRuntimeAttributes>
-                                                </textField>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="1vz-IA-Y1N">
+                                                    <rect key="frame" x="5" y="143" width="364" height="348"/>
+                                                    <subviews>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="MQh-Yh-K5E">
+                                                            <rect key="frame" x="0.0" y="0.0" width="364" height="288"/>
+                                                            <subviews>
+                                                                <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="wD4-AQ-YAN">
+                                                                    <rect key="frame" x="5" y="0.0" width="354" height="29"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="28" id="fUp-6B-a8D"/>
+                                                                        <constraint firstAttribute="height" constant="28" id="ihf-FR-WBq"/>
+                                                                    </constraints>
+                                                                    <segments>
+                                                                        <segment title="Login"/>
+                                                                        <segment title="Register"/>
+                                                                    </segments>
+                                                                    <color key="tintColor" name="Tint"/>
+                                                                    <connections>
+                                                                        <action selector="loginOrRegisterToggled:" destination="6gm-Np-kqq" eventType="valueChanged" id="dji-QC-UJt"/>
+                                                                    </connections>
+                                                                </segmentedControl>
+                                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="9" translatesAutoresizingMaskIntoConstraints="NO" id="RET-Qd-2uY">
+                                                                    <rect key="frame" x="5" y="33" width="354" height="255"/>
+                                                                    <subviews>
+                                                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EEd-08-XEn" customClass="UITextFieldX" customModule="SaltLakeChristianChurch" customModuleProvider="target">
+                                                                            <rect key="frame" x="0.0" y="0.0" width="354" height="35"/>
+                                                                            <nil key="textColor"/>
+                                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                            <textInputTraits key="textInputTraits" textContentType="email"/>
+                                                                            <userDefinedRuntimeAttributes>
+                                                                                <userDefinedRuntimeAttribute type="image" keyPath="leftImage" value="email"/>
+                                                                                <userDefinedRuntimeAttribute type="number" keyPath="leftPadding">
+                                                                                    <real key="value" value="5"/>
+                                                                                </userDefinedRuntimeAttribute>
+                                                                            </userDefinedRuntimeAttributes>
+                                                                        </textField>
+                                                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aFz-Wp-v9c" customClass="UITextFieldX" customModule="SaltLakeChristianChurch" customModuleProvider="target">
+                                                                            <rect key="frame" x="0.0" y="44" width="354" height="35"/>
+                                                                            <nil key="textColor"/>
+                                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                            <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
+                                                                            <userDefinedRuntimeAttributes>
+                                                                                <userDefinedRuntimeAttribute type="image" keyPath="leftImage" value="password"/>
+                                                                                <userDefinedRuntimeAttribute type="number" keyPath="leftPadding">
+                                                                                    <real key="value" value="5"/>
+                                                                                </userDefinedRuntimeAttribute>
+                                                                            </userDefinedRuntimeAttributes>
+                                                                        </textField>
+                                                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Confirm Password..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TNi-du-Wl7" customClass="UITextFieldX" customModule="SaltLakeChristianChurch" customModuleProvider="target">
+                                                                            <rect key="frame" x="0.0" y="88" width="354" height="35"/>
+                                                                            <nil key="textColor"/>
+                                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                            <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
+                                                                            <userDefinedRuntimeAttributes>
+                                                                                <userDefinedRuntimeAttribute type="image" keyPath="leftImage" value="password"/>
+                                                                                <userDefinedRuntimeAttribute type="number" keyPath="leftPadding">
+                                                                                    <real key="value" value="5"/>
+                                                                                </userDefinedRuntimeAttribute>
+                                                                            </userDefinedRuntimeAttributes>
+                                                                        </textField>
+                                                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Fullname..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XCV-I8-HTZ" customClass="UITextFieldX" customModule="SaltLakeChristianChurch" customModuleProvider="target">
+                                                                            <rect key="frame" x="0.0" y="132" width="354" height="35"/>
+                                                                            <nil key="textColor"/>
+                                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                            <textInputTraits key="textInputTraits" textContentType="username"/>
+                                                                            <userDefinedRuntimeAttributes>
+                                                                                <userDefinedRuntimeAttribute type="image" keyPath="leftImage" value="username"/>
+                                                                                <userDefinedRuntimeAttribute type="number" keyPath="leftPadding">
+                                                                                    <real key="value" value="5"/>
+                                                                                </userDefinedRuntimeAttribute>
+                                                                            </userDefinedRuntimeAttributes>
+                                                                        </textField>
+                                                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Phonenumber..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Z0J-7I-jxJ" customClass="UITextFieldX" customModule="SaltLakeChristianChurch" customModuleProvider="target">
+                                                                            <rect key="frame" x="0.0" y="176" width="354" height="35"/>
+                                                                            <nil key="textColor"/>
+                                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                            <textInputTraits key="textInputTraits" textContentType="tel"/>
+                                                                            <userDefinedRuntimeAttributes>
+                                                                                <userDefinedRuntimeAttribute type="image" keyPath="leftImage" value="phonenum"/>
+                                                                                <userDefinedRuntimeAttribute type="number" keyPath="leftPadding">
+                                                                                    <real key="value" value="5"/>
+                                                                                </userDefinedRuntimeAttribute>
+                                                                            </userDefinedRuntimeAttributes>
+                                                                        </textField>
+                                                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Church Code..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MlF-Qw-bPT" customClass="UITextFieldX" customModule="SaltLakeChristianChurch" customModuleProvider="target">
+                                                                            <rect key="frame" x="0.0" y="220" width="354" height="35"/>
+                                                                            <nil key="textColor"/>
+                                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                            <textInputTraits key="textInputTraits"/>
+                                                                            <userDefinedRuntimeAttributes>
+                                                                                <userDefinedRuntimeAttribute type="image" keyPath="leftImage" value="church"/>
+                                                                                <userDefinedRuntimeAttribute type="number" keyPath="leftPadding">
+                                                                                    <real key="value" value="5"/>
+                                                                                </userDefinedRuntimeAttribute>
+                                                                            </userDefinedRuntimeAttributes>
+                                                                        </textField>
+                                                                    </subviews>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="height" constant="255" id="Q9g-pz-2jy"/>
+                                                                    </constraints>
+                                                                </stackView>
+                                                            </subviews>
+                                                            <constraints>
+                                                                <constraint firstAttribute="trailing" secondItem="wD4-AQ-YAN" secondAttribute="trailing" constant="5" id="4tN-US-Etu"/>
+                                                                <constraint firstAttribute="trailing" secondItem="RET-Qd-2uY" secondAttribute="trailing" constant="5" id="Hpv-xE-Kq9"/>
+                                                                <constraint firstItem="RET-Qd-2uY" firstAttribute="leading" secondItem="MQh-Yh-K5E" secondAttribute="leading" constant="5" id="SZT-8L-IX9"/>
+                                                                <constraint firstItem="wD4-AQ-YAN" firstAttribute="leading" secondItem="MQh-Yh-K5E" secondAttribute="leading" constant="5" id="i5E-XC-mzl"/>
+                                                            </constraints>
+                                                        </stackView>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="-6" translatesAutoresizingMaskIntoConstraints="NO" id="TPe-cQ-BvY">
+                                                            <rect key="frame" x="0.0" y="288" width="364" height="60"/>
+                                                            <subviews>
+                                                                <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xVi-KP-cfE">
+                                                                    <rect key="frame" x="163" y="0.0" width="38" height="36"/>
+                                                                    <color key="tintColor" name="Tint"/>
+                                                                    <state key="normal" title="Login"/>
+                                                                    <connections>
+                                                                        <action selector="loginButtonTapped:" destination="6gm-Np-kqq" eventType="touchUpInside" id="Kzf-8b-bil"/>
+                                                                    </connections>
+                                                                </button>
+                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KI9-xH-6YE">
+                                                                    <rect key="frame" x="118" y="30" width="128" height="30"/>
+                                                                    <color key="tintColor" name="Tint"/>
+                                                                    <state key="normal" title="Continue As Guest"/>
+                                                                    <connections>
+                                                                        <action selector="continueAsGuestButtonTapped:" destination="6gm-Np-kqq" eventType="touchUpInside" id="Cs5-7c-EwX"/>
+                                                                    </connections>
+                                                                </button>
+                                                            </subviews>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" secondItem="TPe-cQ-BvY" secondAttribute="height" multiplier="91:15" id="jpG-Fq-0m5"/>
+                                                            </constraints>
+                                                        </stackView>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstItem="TPe-cQ-BvY" firstAttribute="top" secondItem="1vz-IA-Y1N" secondAttribute="top" constant="288" id="PUM-o1-W2M"/>
+                                                    </constraints>
+                                                </stackView>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="1vz-IA-Y1N" secondAttribute="trailing" constant="5" id="NBb-YI-Yuq"/>
+                                                <constraint firstAttribute="trailing" secondItem="c6C-7Q-JGR" secondAttribute="trailing" constant="8" id="PjX-gf-mR6"/>
+                                                <constraint firstAttribute="bottom" secondItem="1vz-IA-Y1N" secondAttribute="bottom" constant="5" id="R6V-on-mBk"/>
+                                                <constraint firstAttribute="bottom" secondItem="TPe-cQ-BvY" secondAttribute="bottom" constant="5" id="cLH-y4-k9Y"/>
+                                                <constraint firstItem="c6C-7Q-JGR" firstAttribute="top" secondItem="fls-5c-89a" secondAttribute="top" constant="7" id="ouG-uQ-20e"/>
+                                                <constraint firstItem="1vz-IA-Y1N" firstAttribute="leading" secondItem="fls-5c-89a" secondAttribute="leading" constant="5" id="owl-Lj-gNv"/>
+                                                <constraint firstItem="1vz-IA-Y1N" firstAttribute="top" secondItem="c6C-7Q-JGR" secondAttribute="bottom" constant="8" id="rML-AO-qSR"/>
+                                                <constraint firstItem="c6C-7Q-JGR" firstAttribute="leading" secondItem="fls-5c-89a" secondAttribute="leading" constant="8" id="vBy-Vd-3hf"/>
+                                            </constraints>
                                             <userDefinedRuntimeAttributes>
                                                 <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
                                                     <color key="value" cocoaTouchSystemColor="darkTextColor"/>
@@ -179,15 +231,78 @@
                             <constraint firstItem="jmk-7d-Jq4" firstAttribute="leading" secondItem="NQJ-1E-B22" secondAttribute="leading" constant="20" id="chP-BT-WpY"/>
                             <constraint firstItem="pAG-tN-ifQ" firstAttribute="leading" secondItem="NQJ-1E-B22" secondAttribute="leading" id="fvU-Rf-zI7"/>
                             <constraint firstItem="pAG-tN-ifQ" firstAttribute="trailing" secondItem="NQJ-1E-B22" secondAttribute="trailing" id="oh9-4c-kFM"/>
-                            <constraint firstItem="NQJ-1E-B22" firstAttribute="bottom" secondItem="jmk-7d-Jq4" secondAttribute="bottom" constant="80" id="pGV-TL-1EE"/>
+                            <constraint firstItem="NQJ-1E-B22" firstAttribute="bottom" secondItem="jmk-7d-Jq4" secondAttribute="bottom" constant="120" id="pGV-TL-1EE"/>
                             <constraint firstItem="pAG-tN-ifQ" firstAttribute="bottom" secondItem="NQJ-1E-B22" secondAttribute="bottom" id="y4m-aB-YTv"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="NQJ-1E-B22"/>
                     </view>
+                    <connections>
+                        <outlet property="blurView" destination="fls-5c-89a" id="Ia9-CP-n8h"/>
+                        <outlet property="bottomConstraint" destination="pGV-TL-1EE" id="Q0C-jx-4s2"/>
+                        <outlet property="churchCodeTextField" destination="MlF-Qw-bPT" id="JrI-Qb-WLo"/>
+                        <outlet property="confirmPasswordTextField" destination="TNi-du-Wl7" id="BIL-0H-1cf"/>
+                        <outlet property="emailTextField" destination="EEd-08-XEn" id="ylD-1n-8Iw"/>
+                        <outlet property="fullnameTextField" destination="XCV-I8-HTZ" id="VZ5-it-929"/>
+                        <outlet property="loginButton" destination="xVi-KP-cfE" id="hLs-Cq-HgJ"/>
+                        <outlet property="loginView" destination="jmk-7d-Jq4" id="Wg0-rc-wJE"/>
+                        <outlet property="passwordTextField" destination="aFz-Wp-v9c" id="8UJ-Ee-Uq4"/>
+                        <outlet property="phoneNumberTextField" destination="Z0J-7I-jxJ" id="pev-Wp-h8c"/>
+                        <segue destination="nXp-OC-wVd" kind="show" id="lSx-WS-7rX"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MQT-Bf-mPx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="402.89855072463769" y="260.86956521739131"/>
+            <point key="canvasLocation" x="-370" y="298"/>
+        </scene>
+        <!--Item 2-->
+        <scene sceneID="lx3-3B-qyv">
+            <objects>
+                <viewController id="wDj-n3-CMc" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Z0M-d7-Jdp">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <viewLayoutGuide key="safeArea" id="KCo-Hu-sQt"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item 2" id="IeF-rv-eS5"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="K2r-ZY-c2F" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1462" y="628"/>
+        </scene>
+        <!--Item 1-->
+        <scene sceneID="0bI-9s-drE">
+            <objects>
+                <viewController id="OIW-hU-S5L" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="lsl-Cv-lwW">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <viewLayoutGuide key="safeArea" id="j2w-Pr-LK3"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item 1" id="ssQ-uh-onV"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bYk-JM-A3T" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1462" y="-31"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="gmS-Pc-2lo">
+            <objects>
+                <tabBarController id="nXp-OC-wVd" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="0ep-US-dya">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="OIW-hU-S5L" kind="relationship" relationship="viewControllers" id="hLb-R8-rSe"/>
+                        <segue destination="wDj-n3-CMc" kind="relationship" relationship="viewControllers" id="iDV-lD-HNO"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AD1-40-bpK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="543" y="298"/>
         </scene>
     </scenes>
     <resources>
@@ -200,9 +315,6 @@
         <image name="username" width="128" height="128"/>
         <namedColor name="Tint">
             <color red="0.27700001001358032" green="0.77899998426437378" blue="0.92500001192092896" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-        <namedColor name="Tint">
-            <color red="0.27700001000000002" green="0.77899998429999995" blue="0.92500001190000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

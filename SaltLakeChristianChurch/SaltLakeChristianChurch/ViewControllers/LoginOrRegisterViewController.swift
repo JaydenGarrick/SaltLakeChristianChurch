@@ -69,6 +69,10 @@ class LoginOrRegisterViewController: UIViewController {
             isLogin = true
             UIView.animate(withDuration: 0.3, animations: {
                 self.confirmPasswordTextField.isHidden = true
+                self.confirmPasswordTextField.backgroundColor = .white
+                self.passwordTextField.backgroundColor = .white
+                self.confirmPasswordTextField.text = ""
+                self.passwordTextField.text = ""
                 self.fullnameTextField.isHidden = true
                 self.phoneNumberTextField.isHidden = true
                 self.churchCodeTextField.isHidden = true
@@ -81,6 +85,10 @@ class LoginOrRegisterViewController: UIViewController {
             isLogin = false
             UIView.animate(withDuration: 0.3, animations: {
                 self.confirmPasswordTextField.isHidden = false
+                self.confirmPasswordTextField.backgroundColor = .white
+                self.passwordTextField.backgroundColor = .white
+                self.confirmPasswordTextField.text = ""
+                self.passwordTextField.text = ""
                 self.fullnameTextField.isHidden = false
                 self.phoneNumberTextField.isHidden = false
                 self.churchCodeTextField.isHidden = false
@@ -133,11 +141,13 @@ class LoginOrRegisterViewController: UIViewController {
                 })
                 
             }
+        // Handle logging in user
         } else {
             guard let email = emailTextField.text, email != "", let password = passwordTextField.text, password != "" else { self.presentAlertControllerWithOkayAction(title: "Login Error", message: "Please provide a valid Email and Password.") ; return }
             Auth.auth().signIn(withEmail: email, password: password, completion: { (user, error) in
                 if let error = error {
                     self.presentAlertControllerWithOkayAction(title: "Logging in error", message: error.localizedDescription)
+                    return
                 }
                 print("Successfully logged in!")
                 
@@ -152,18 +162,12 @@ class LoginOrRegisterViewController: UIViewController {
     
     
     @IBAction func continueAsGuestButtonTapped(_ sender: Any) {
+        if let viewController = self.storyboard?.instantiateViewController(withIdentifier: "MainView") {
+            UIApplication.shared.keyWindow?.rootViewController = viewController
+            self.dismiss(animated: true, completion: nil)
+        }
     }
-    
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
 
@@ -175,6 +179,15 @@ extension LoginOrRegisterViewController: UITextFieldDelegate {
         func textFieldDidEndEditing(_ textField: UITextField, reason: UITextFieldDidEndEditingReason) {
         guard let password = passwordTextField.text, let confirmedPassword = confirmPasswordTextField.text else { return }
             if textField == confirmPasswordTextField {
+                if password != confirmedPassword {
+                    passwordTextField.backgroundColor = UIColor(named: "Denied")
+                    confirmPasswordTextField.backgroundColor = UIColor(named: "Denied")
+                } else {
+                    passwordTextField.backgroundColor = UIColor(named: "Confirmed")
+                    confirmPasswordTextField.backgroundColor = UIColor(named: "Confirmed")
+                }
+            }
+            if textField == passwordTextField && confirmPasswordTextField.text != "" {
                 if password != confirmedPassword {
                     passwordTextField.backgroundColor = UIColor(named: "Denied")
                     confirmPasswordTextField.backgroundColor = UIColor(named: "Denied")

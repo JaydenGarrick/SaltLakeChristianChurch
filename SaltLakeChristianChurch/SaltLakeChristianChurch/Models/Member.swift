@@ -17,6 +17,7 @@ class Member {
     let phoneNumber: String
     let imageAsURL: String?
     let isAdmin: Bool = false
+    let isMember: Bool = true
     
     // MARK: - Firebase Keys
     enum MemberKey {

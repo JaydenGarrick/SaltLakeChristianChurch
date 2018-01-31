@@ -16,7 +16,6 @@
 		8109FBAF20216D4B004B1655 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8109FBAE20216D4B004B1655 /* CalendarViewController.swift */; };
 		8109FBB120216D59004B1655 /* AnnouncementsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8109FBB020216D59004B1655 /* AnnouncementsViewController.swift */; };
 		8109FBB320216D6B004B1655 /* GiveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8109FBB220216D6B004B1655 /* GiveViewController.swift */; };
-		8109FBB520216D8D004B1655 /* MoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8109FBB420216D8D004B1655 /* MoreViewController.swift */; };
 		815E23E2201FE47500157B18 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 815E23E1201FE47500157B18 /* AppDelegate.swift */; };
 		815E23E7201FE47500157B18 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 815E23E5201FE47500157B18 /* Login.storyboard */; };
 		815E23E9201FE47500157B18 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 815E23E8201FE47500157B18 /* Assets.xcassets */; };
@@ -37,7 +36,10 @@
 		815E24222020F02100157B18 /* LoginOrRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 815E24212020F02100157B18 /* LoginOrRegisterViewController.swift */; };
 		815E2424202115F400157B18 /* Member.swift in Sources */ = {isa = PBXBuildFile; fileRef = 815E2423202115F400157B18 /* Member.swift */; };
 		815E2426202116F600157B18 /* MemberController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 815E2425202116F600157B18 /* MemberController.swift */; };
+		8199A7BD2022484400E02BC0 /* DirectoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8199A7BC2022484400E02BC0 /* DirectoryTableViewController.swift */; };
 		81DBA59120217DE0001EF8E7 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81DBA59020217DE0001EF8E7 /* WebViewController.swift */; };
+		81DBA593202231D7001EF8E7 /* MoreTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81DBA592202231D7001EF8E7 /* MoreTableViewController.swift */; };
+		81DBA5952022351D001EF8E7 /* ReadScriptureTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81DBA5942022351D001EF8E7 /* ReadScriptureTableViewCell.swift */; };
 		FBF458CABE07E4278BD949DB /* Pods_SaltLakeChristianChurch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83F1D8FC62F7E113BACAD970 /* Pods_SaltLakeChristianChurch.framework */; };
 /* End PBXBuildFile section */
 
@@ -52,7 +54,6 @@
 		8109FBAE20216D4B004B1655 /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 		8109FBB020216D59004B1655 /* AnnouncementsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnouncementsViewController.swift; sourceTree = "<group>"; };
 		8109FBB220216D6B004B1655 /* GiveViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GiveViewController.swift; sourceTree = "<group>"; };
-		8109FBB420216D8D004B1655 /* MoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreViewController.swift; sourceTree = "<group>"; };
 		815E23DE201FE47500157B18 /* SaltLakeChristianChurch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SaltLakeChristianChurch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		815E23E1201FE47500157B18 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		815E23E6201FE47500157B18 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Login.storyboard; sourceTree = "<group>"; };
@@ -75,7 +76,10 @@
 		815E24212020F02100157B18 /* LoginOrRegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginOrRegisterViewController.swift; sourceTree = "<group>"; };
 		815E2423202115F400157B18 /* Member.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Member.swift; sourceTree = "<group>"; };
 		815E2425202116F600157B18 /* MemberController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberController.swift; sourceTree = "<group>"; };
+		8199A7BC2022484400E02BC0 /* DirectoryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectoryTableViewController.swift; sourceTree = "<group>"; };
 		81DBA59020217DE0001EF8E7 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
+		81DBA592202231D7001EF8E7 /* MoreTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreTableViewController.swift; sourceTree = "<group>"; };
+		81DBA5942022351D001EF8E7 /* ReadScriptureTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadScriptureTableViewCell.swift; sourceTree = "<group>"; };
 		83F1D8FC62F7E113BACAD970 /* Pods_SaltLakeChristianChurch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SaltLakeChristianChurch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9E424914063860F44B256AA9 /* Pods-SaltLakeChristianChurch.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SaltLakeChristianChurch.release.xcconfig"; path = "Pods/Target Support Files/Pods-SaltLakeChristianChurch/Pods-SaltLakeChristianChurch.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -192,8 +196,9 @@
 				8109FBAE20216D4B004B1655 /* CalendarViewController.swift */,
 				8109FBB020216D59004B1655 /* AnnouncementsViewController.swift */,
 				8109FBB220216D6B004B1655 /* GiveViewController.swift */,
-				8109FBB420216D8D004B1655 /* MoreViewController.swift */,
+				81DBA592202231D7001EF8E7 /* MoreTableViewController.swift */,
 				81DBA59020217DE0001EF8E7 /* WebViewController.swift */,
+				8199A7BC2022484400E02BC0 /* DirectoryTableViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -201,6 +206,7 @@
 		815E2413201FEA2400157B18 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				81DBA5942022351D001EF8E7 /* ReadScriptureTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -367,7 +373,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8109FBB520216D8D004B1655 /* MoreViewController.swift in Sources */,
 				81DBA59120217DE0001EF8E7 /* WebViewController.swift in Sources */,
 				815E240C201FE8F800157B18 /* UILabelX.swift in Sources */,
 				8109FBAD20216D30004B1655 /* SermonViewController.swift in Sources */,
@@ -380,6 +385,8 @@
 				815E240E201FE8F800157B18 /* UITextFieldX.swift in Sources */,
 				8109FBB320216D6B004B1655 /* GiveViewController.swift in Sources */,
 				815E24222020F02100157B18 /* LoginOrRegisterViewController.swift in Sources */,
+				81DBA593202231D7001EF8E7 /* MoreTableViewController.swift in Sources */,
+				8199A7BD2022484400E02BC0 /* DirectoryTableViewController.swift in Sources */,
 				815E23E2201FE47500157B18 /* AppDelegate.swift in Sources */,
 				815E2405201FE8F800157B18 /* UITextViewX.swift in Sources */,
 				815E2408201FE8F800157B18 /* UIViewX.swift in Sources */,
@@ -388,6 +395,7 @@
 				815E2426202116F600157B18 /* MemberController.swift in Sources */,
 				815E2409201FE8F800157B18 /* UIViewControllerX.swift in Sources */,
 				8109FBB120216D59004B1655 /* AnnouncementsViewController.swift in Sources */,
+				81DBA5952022351D001EF8E7 /* ReadScriptureTableViewCell.swift in Sources */,
 				815E240A201FE8F800157B18 /* UIViewXRadialGradient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

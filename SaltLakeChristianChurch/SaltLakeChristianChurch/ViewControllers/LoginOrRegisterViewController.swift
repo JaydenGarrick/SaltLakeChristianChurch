@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import PhoneNumberKit
 
 class LoginOrRegisterViewController: UIViewController {
 
@@ -16,15 +17,20 @@ class LoginOrRegisterViewController: UIViewController {
     @IBOutlet weak var passwordTextField: UITextFieldX!
     @IBOutlet weak var confirmPasswordTextField: UITextFieldX!
     @IBOutlet weak var fullnameTextField: UITextFieldX!
-    @IBOutlet weak var phoneNumberTextField: UITextFieldX!
+    @IBOutlet weak var phoneNumberTextField: PhoneNumberTextField!
     @IBOutlet weak var churchCodeTextField: UITextFieldX!
     @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
     @IBOutlet weak var loginView: UIViewX!
     @IBOutlet weak var blurView: UIView!
     @IBOutlet weak var loginButton: UIButton!
     
+    // Checks for which index
     var isLogin = true
     
+    // PhoneNumberKit
+    let phoneNumberKit = PhoneNumberKit()
+    
+    // MARK: - ViewDidLoad / ViewWillAppear
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -37,8 +43,11 @@ class LoginOrRegisterViewController: UIViewController {
             self.loginView.layer.transform = CATransform3DIdentity
         }
         
+        
         // Set delegates
+        passwordTextField.delegate = self
         confirmPasswordTextField.delegate = self
+
         
         // Set initial view look
         confirmPasswordTextField.isHidden = true
@@ -49,8 +58,7 @@ class LoginOrRegisterViewController: UIViewController {
         blurView.layoutIfNeeded()
         
         // Hide keyboard when tapped around
-        self.hideKeyboardWhenTappedAround()
-        
+        self.hideKeyboardWhenTappedAroundAndSetNavBar()
 
     }
 
@@ -77,7 +85,7 @@ class LoginOrRegisterViewController: UIViewController {
                 self.phoneNumberTextField.isHidden = false
                 self.churchCodeTextField.isHidden = false
                 self.loginButton.setTitle("Register", for: .normal)
-                self.bottomConstraint.constant = 100.0
+                self.bottomConstraint.constant = 90.0
                 self.blurView.layoutIfNeeded()
             })
             
@@ -86,6 +94,60 @@ class LoginOrRegisterViewController: UIViewController {
     
     
     @IBAction func loginButtonTapped(_ sender: Any) {
+        
+        
+        // Handle Creating User
+        if isLogin == false {
+            // Validate input
+            guard let email = emailTextField.text, email != "", let password = passwordTextField.text, password != "", let fullname = fullnameTextField.text, fullname != "", let phoneNumber = phoneNumberTextField.text, phoneNumber != "" else {
+                self.presentAlertControllerWithOkayAction(title: "Registration Error", message: "Please make sure you provide your name, email address and password to complete the registration.")
+                return
+            }
+            Auth.auth().createUser(withEmail: email, password: password) { (user, error) in
+                
+                if let error = error {
+                    self.presentAlertControllerWithOkayAction(title: "Registration Error", message: error.localizedDescription)
+                    return
+                }
+                
+                guard let user = user else { return }
+                let uuid = user.uid
+                let memberRef = Database.database().reference().child("members").child(uuid)
+                let values = ["email" : email, "fullName" : fullname, "phoneNumber" : phoneNumber, "isAdmin" : false, "isMember" : true] as [String : Any]
+                memberRef.updateChildValues(values, withCompletionBlock: { (error, reference) in
+                    if let error = error {
+                        self.presentAlertControllerWithOkayAction(title: "Registration Error", message: error.localizedDescription)
+                        return
+                    }
+                    
+                    print("Successfully created a user!")
+                    // Dismiss Keyboard
+                    self.view.endEditing(true)
+                    
+                    // Present the main view
+                    if let viewController = self.storyboard?.instantiateViewController(withIdentifier: "MainView") {
+                        UIApplication.shared.keyWindow?.rootViewController = viewController
+                        self.dismiss(animated: true, completion: nil)
+                    }
+                    
+                })
+                
+            }
+        } else {
+            guard let email = emailTextField.text, email != "", let password = passwordTextField.text, password != "" else { self.presentAlertControllerWithOkayAction(title: "Login Error", message: "Please provide a valid Email and Password.") ; return }
+            Auth.auth().signIn(withEmail: email, password: password, completion: { (user, error) in
+                if let error = error {
+                    self.presentAlertControllerWithOkayAction(title: "Logging in error", message: error.localizedDescription)
+                }
+                print("Successfully logged in!")
+                
+                // Present Main View
+                if let viewController = self.storyboard?.instantiateViewController(withIdentifier: "MainView") {
+                    UIApplication.shared.keyWindow?.rootViewController = viewController
+                    self.dismiss(animated: true, completion: nil)
+                }
+            })
+        }
     }
     
     
@@ -112,18 +174,21 @@ extension LoginOrRegisterViewController: UITextFieldDelegate {
     // MARK: - Password check
         func textFieldDidEndEditing(_ textField: UITextField, reason: UITextFieldDidEndEditingReason) {
         guard let password = passwordTextField.text, let confirmedPassword = confirmPasswordTextField.text else { return }
-        if password != confirmedPassword {
-            passwordTextField.backgroundColor = UIColor(named: "Denied")
-            confirmPasswordTextField.backgroundColor = UIColor(named: "Denied")
-
-        } else {
-            passwordTextField.backgroundColor = UIColor(named: "Confirmed")
-            confirmPasswordTextField.backgroundColor = UIColor(named: "Confirmed")
-        }
+            if textField == confirmPasswordTextField {
+                if password != confirmedPassword {
+                    passwordTextField.backgroundColor = UIColor(named: "Denied")
+                    confirmPasswordTextField.backgroundColor = UIColor(named: "Denied")
+                } else {
+                    passwordTextField.backgroundColor = UIColor(named: "Confirmed")
+                    confirmPasswordTextField.backgroundColor = UIColor(named: "Confirmed")
+                }
+            }
     }
 
     
 }
+
+
 
 
 

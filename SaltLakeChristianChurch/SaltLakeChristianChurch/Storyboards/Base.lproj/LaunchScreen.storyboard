@@ -21,7 +21,7 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="H7q-X9-k2B">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="slcc" translatesAutoresizingMaskIntoConstraints="NO" id="Jad-5n-YDp">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SLCCToTheRightLARGE" translatesAutoresizingMaskIntoConstraints="NO" id="Jad-5n-YDp">
                                 <rect key="frame" x="67" y="279.5" width="240" height="128"/>
                             </imageView>
                         </subviews>
@@ -45,7 +45,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="SLCCToTheRightLARGE" width="1500" height="635"/>
         <image name="background" width="621" height="1104"/>
-        <image name="slcc" width="1500" height="635"/>
     </resources>
 </document>

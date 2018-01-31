@@ -15,4 +15,9 @@ pod 'Firebase/Storage'
 #Keyboard Manager
 pod 'IQKeyboardManager'
 
+#Phonenumber Manager
+source 'https://github.com/CocoaPods/Specs.git'
+pod 'PhoneNumberKit', '~> 2.1'
+
+
 end

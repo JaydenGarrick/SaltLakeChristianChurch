@@ -14,6 +14,9 @@ class GiveViewController: UIViewController {
         super.viewDidLoad()
 
         // HandleNavBar and Keyboard
-        self.hideKeyboardWhenTappedAroundAndSetNavBar()    }
+        self.hideKeyboardWhenTappedAroundAndSetNavBar()
+        
+    }
+    
 
 }

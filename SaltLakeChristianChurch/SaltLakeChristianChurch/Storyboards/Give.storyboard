@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="u8P-GC-Hsj">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -15,9 +16,52 @@
             <objects>
                 <viewController id="lmY-uZ-80V" customClass="GiveViewController" customModule="SaltLakeChristianChurch" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="VcO-4c-qde">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You are about to leave the app to go to an external donation service. 🚪🏃🏻" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5OL-jC-GxQ">
+                                <rect key="frame" x="67.333333333333314" y="368" width="240" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="IV7-j7-sga"/>
+                                    <constraint firstAttribute="width" constant="240" id="zTr-LD-4GI"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" red="0.53732824634594878" green="0.53732824634594878" blue="0.53732824634594878" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cmg-1J-M3Z">
+                                <rect key="frame" x="134.33333333333334" y="419" width="106" height="38"/>
+                                <color key="backgroundColor" name="Primary"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="106" id="Dq7-r8-YlH"/>
+                                    <constraint firstAttribute="width" constant="106" id="UrZ-Ri-sPd"/>
+                                    <constraint firstAttribute="height" constant="38" id="ihh-Ry-tme"/>
+                                </constraints>
+                                <color key="tintColor" name="Tint"/>
+                                <state key="normal" title="Continue">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="Eaf-2f-HcY" kind="show" id="kgv-5Q-zhs"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ToTithely" translatesAutoresizingMaskIntoConstraints="NO" id="EXc-Pr-lVm">
+                                <rect key="frame" x="67.333333333333314" y="91" width="240" height="197"/>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="5OL-jC-GxQ" firstAttribute="top" secondItem="EXc-Pr-lVm" secondAttribute="bottom" constant="80" id="0uK-dS-EA8"/>
+                            <constraint firstItem="EXc-Pr-lVm" firstAttribute="top" secondItem="I0U-4f-WwP" secondAttribute="top" constant="27" id="FQs-VU-Sav"/>
+                            <constraint firstItem="I0U-4f-WwP" firstAttribute="trailing" secondItem="EXc-Pr-lVm" secondAttribute="trailing" constant="67.5" id="LLc-J7-H10"/>
+                            <constraint firstItem="EXc-Pr-lVm" firstAttribute="leading" secondItem="I0U-4f-WwP" secondAttribute="leading" constant="67.5" id="RAU-yU-dt9"/>
+                            <constraint firstItem="Cmg-1J-M3Z" firstAttribute="leading" secondItem="I0U-4f-WwP" secondAttribute="leading" constant="134.5" id="Sgq-rb-TMq"/>
+                            <constraint firstItem="5OL-jC-GxQ" firstAttribute="leading" secondItem="I0U-4f-WwP" secondAttribute="leading" constant="67.5" id="Zn1-5c-5Y8"/>
+                            <constraint firstItem="Cmg-1J-M3Z" firstAttribute="top" secondItem="5OL-jC-GxQ" secondAttribute="bottom" constant="1" id="dXC-CH-xsj"/>
+                            <constraint firstItem="I0U-4f-WwP" firstAttribute="trailing" secondItem="5OL-jC-GxQ" secondAttribute="trailing" constant="67.5" id="gdd-oo-6Ky"/>
+                            <constraint firstItem="I0U-4f-WwP" firstAttribute="bottom" secondItem="Cmg-1J-M3Z" secondAttribute="bottom" constant="230" id="qql-VR-oS3"/>
+                            <constraint firstItem="I0U-4f-WwP" firstAttribute="trailing" secondItem="Cmg-1J-M3Z" secondAttribute="trailing" constant="134.5" id="sxJ-5q-RWR"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="I0U-4f-WwP"/>
                     </view>
                     <navigationItem key="navigationItem" title="Give" id="qpR-jg-DSt"/>
@@ -25,6 +69,41 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lOq-Mr-Nnc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="368.80000000000001" y="179.46026986506749"/>
+        </scene>
+        <!--Web View Controller-->
+        <scene sceneID="U4f-8L-zUx">
+            <objects>
+                <viewController id="Eaf-2f-HcY" customClass="WebViewController" customModule="SaltLakeChristianChurch" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="vSP-a5-pWa">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ys4-Fm-X4F">
+                                <rect key="frame" x="0.0" y="44" width="414" height="643"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="tJ2-hw-vx4" firstAttribute="bottom" secondItem="Ys4-Fm-X4F" secondAttribute="bottom" id="CWi-p0-dwb"/>
+                            <constraint firstItem="tJ2-hw-vx4" firstAttribute="trailing" secondItem="Ys4-Fm-X4F" secondAttribute="trailing" id="P8m-4N-ecw"/>
+                            <constraint firstItem="tJ2-hw-vx4" firstAttribute="top" secondItem="Ys4-Fm-X4F" secondAttribute="top" constant="20" id="nOJ-U8-tjw"/>
+                            <constraint firstItem="Ys4-Fm-X4F" firstAttribute="leading" secondItem="tJ2-hw-vx4" secondAttribute="leading" id="vNH-Ka-k4q"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="tJ2-hw-vx4"/>
+                    </view>
+                    <connections>
+                        <outlet property="webView" destination="Ys4-Fm-X4F" id="3V2-6w-7Zz"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VoC-hl-sXI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1153" y="179"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="6Ac-7T-5zU">
@@ -34,8 +113,9 @@
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="6GK-Rt-mZq">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -47,4 +127,13 @@
             <point key="canvasLocation" x="-362" y="179"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="ToTithely" width="2000" height="1200"/>
+        <namedColor name="Primary">
+            <color red="0.42699998617172241" green="0.4309999942779541" blue="0.4440000057220459" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Tint">
+            <color red="0.27700001001358032" green="0.77899998426437378" blue="0.92500001192092896" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
 </document>

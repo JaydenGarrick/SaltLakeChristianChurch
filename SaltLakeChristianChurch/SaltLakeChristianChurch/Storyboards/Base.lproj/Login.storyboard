@@ -126,7 +126,7 @@
                                                                             <rect key="frame" x="0.0" y="220" width="354" height="35"/>
                                                                             <nil key="textColor"/>
                                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                                            <textInputTraits key="textInputTraits"/>
+                                                                            <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                                                             <userDefinedRuntimeAttributes>
                                                                                 <userDefinedRuntimeAttribute type="image" keyPath="leftImage" value="church"/>
                                                                                 <userDefinedRuntimeAttribute type="number" keyPath="leftPadding">

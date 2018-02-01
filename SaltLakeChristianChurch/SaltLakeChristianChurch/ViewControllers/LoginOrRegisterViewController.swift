@@ -27,12 +27,20 @@ class LoginOrRegisterViewController: UIViewController {
     // Checks for which index
     var isLogin = true
     
+    // MemberCode
+    var memberCode: Int? {
+        didSet {
+            print("The membercode is \(String(describing: memberCode))")
+        }
+    }
+    
     // PhoneNumberKit
     let phoneNumberKit = PhoneNumberKit()
     
     // MARK: - ViewDidLoad / ViewWillAppear
     override func viewDidLoad() {
         super.viewDidLoad()
+        fetchMemberCode()
         
         // Animate view in
         let transform = CATransform3DTranslate(CATransform3DIdentity, 0, 200, 0)
@@ -54,7 +62,7 @@ class LoginOrRegisterViewController: UIViewController {
         fullnameTextField.isHidden = true
         phoneNumberTextField.isHidden = true
         churchCodeTextField.isHidden = true
-        bottomConstraint.constant = 280.0
+        bottomConstraint.constant = 200.0
         blurView.layoutIfNeeded()
         
         // Hide keyboard when tapped around
@@ -77,7 +85,7 @@ class LoginOrRegisterViewController: UIViewController {
                 self.phoneNumberTextField.isHidden = true
                 self.churchCodeTextField.isHidden = true
                 self.loginButton.setTitle("Login", for: .normal)
-                self.bottomConstraint.constant = 280.0
+                self.bottomConstraint.constant = 200.0
                 self.blurView.layoutIfNeeded()
             })
             
@@ -93,7 +101,7 @@ class LoginOrRegisterViewController: UIViewController {
                 self.phoneNumberTextField.isHidden = false
                 self.churchCodeTextField.isHidden = false
                 self.loginButton.setTitle("Register", for: .normal)
-                self.bottomConstraint.constant = 90.0
+                self.bottomConstraint.constant = 100
                 self.blurView.layoutIfNeeded()
             })
             
@@ -107,39 +115,47 @@ class LoginOrRegisterViewController: UIViewController {
         // Handle Creating User
         if isLogin == false {
             // Validate input
-            guard let email = emailTextField.text, email != "", let password = passwordTextField.text, password != "", let fullname = fullnameTextField.text, fullname != "", let phoneNumber = phoneNumberTextField.text, phoneNumber != "" else {
+            guard let email = emailTextField.text, email != "", let password = passwordTextField.text, password != "", let fullname = fullnameTextField.text, fullname != "", let phoneNumber = phoneNumberTextField.text, phoneNumber != "", let loggedMemberCode = churchCodeTextField.text, loggedMemberCode != "" else {
                 self.presentAlertControllerWithOkayAction(title: "Registration Error", message: "Please make sure you provide your name, email address and password to complete the registration.")
                 return
             }
-            Auth.auth().createUser(withEmail: email, password: password) { (user, error) in
-                
-                if let error = error {
-                    self.presentAlertControllerWithOkayAction(title: "Registration Error", message: error.localizedDescription)
-                    return
-                }
-                
-                guard let user = user else { return }
-                let uuid = user.uid
-                let memberRef = Database.database().reference().child("members").child(uuid)
-                let values = ["email" : email, "fullName" : fullname, "phoneNumber" : phoneNumber, "isAdmin" : false, "isMember" : true] as [String : Any]
-                memberRef.updateChildValues(values, withCompletionBlock: { (error, reference) in
+            
+        // Fetch Member Code
+            guard let memberCode = memberCode else { self.presentAlertControllerWithOkayAction(title: "Service Error", message: "Unable to create account.") ; return }
+            if loggedMemberCode == "\(memberCode)" {
+                Auth.auth().createUser(withEmail: email, password: password) { (user, error) in
+                    
                     if let error = error {
                         self.presentAlertControllerWithOkayAction(title: "Registration Error", message: error.localizedDescription)
                         return
                     }
                     
-                    print("Successfully created a user!")
-                    // Dismiss Keyboard
-                    self.view.endEditing(true)
-                    
-                    // Present the main view
-                    if let viewController = self.storyboard?.instantiateViewController(withIdentifier: "MainView") {
-                        UIApplication.shared.keyWindow?.rootViewController = viewController
-                        self.dismiss(animated: true, completion: nil)
-                    }
-                    
-                })
+                    guard let user = user else { return }
+                    let uuid = user.uid
+                    let memberRef = Database.database().reference().child("members").childByAutoId()
+                    let values = ["email" : email, "fullName" : fullname, "phoneNumber" : phoneNumber, "isAdmin" : false, "isMember" : true, "address" : "", "memberID" : uuid, "imageAsURL" : ""] as [String : Any]
+                    memberRef.updateChildValues(values, withCompletionBlock: { (error, reference) in
+                        if let error = error {
+                            self.presentAlertControllerWithOkayAction(title: "Registration Error", message: error.localizedDescription)
+                            return
+                        }
+                        
+                        print("Successfully created a user!")
+                        // Dismiss Keyboard
+                        self.view.endEditing(true)
+                        
+                        // Present the main view
+                        if let viewController = self.storyboard?.instantiateViewController(withIdentifier: "MainView") {
+                            UIApplication.shared.keyWindow?.rootViewController = viewController
+                            self.dismiss(animated: true, completion: nil)
+                        }
+                        
+                    })
+                }
                 
+            } else {
+                self.presentAlertControllerWithOkayAction(title: "Registration Error", message: "Invalid member code.")
+                return
             }
         // Handle logging in user
         } else {
@@ -199,6 +215,17 @@ extension LoginOrRegisterViewController: UITextFieldDelegate {
     }
 
     
+}
+
+// MARK: - Fetch Member Code
+extension LoginOrRegisterViewController {
+    func fetchMemberCode() {
+        Database.database().reference().child("memberKey").observeSingleEvent(of: .value) { (snapshot) in
+            guard let memberKey  = snapshot.value as? Int else { return }
+            self.memberCode = memberKey
+            
+        }
+    }
 }
 
 

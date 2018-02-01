@@ -7,6 +7,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -59,7 +60,7 @@
                             </tableViewSection>
                             <tableViewSection headerTitle="Read along with us" id="Krw-17-bNC">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="topCell" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="topCell" rowHeight="300" id="PgX-CU-f6V" userLabel="ReadScriptureCell">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="topCell" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="300" id="PgX-CU-f6V" userLabel="ReadScriptureCell">
                                         <rect key="frame" x="0.0" y="100" width="414" height="300"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="PgX-CU-f6V" id="Ss2-Mc-jGU">
@@ -104,6 +105,9 @@
                             <inset key="landscapeImageInsets" minX="0.0" minY="0.0" maxX="-8" maxY="0.0"/>
                             <inset key="largeContentSizeImageInsets" minX="0.0" minY="0.0" maxX="22" maxY="0.0"/>
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <segue destination="hrZ-wb-mFT" kind="show" id="aWN-rQ-3g7"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                 </tableViewController>
@@ -111,22 +115,62 @@
             </objects>
             <point key="canvasLocation" x="550.72463768115949" y="214.4021739130435"/>
         </scene>
-        <!--Table View Controller-->
-        <scene sceneID="xby-Kr-xHP">
+        <!--Settings-->
+        <scene sceneID="gFf-XC-q3K">
             <objects>
-                <tableViewController id="9EB-E6-8pH" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="2u7-cs-YQT">
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1z4-2H-zHl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tableViewController id="oQx-6M-qIr" customClass="SettingsTableViewController" customModule="SaltLakeChristianChurch" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="yfd-R8-wcS">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="N0C-RM-Cqk">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="DOR-Zb-bjh">
+                                <rect key="frame" x="0.0" y="28" width="414" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="DOR-Zb-bjh" id="moe-OR-Jja">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.666666666666664"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="oQx-6M-qIr" id="krn-M7-WPR"/>
+                            <outlet property="delegate" destination="oQx-6M-qIr" id="mbE-1b-lYV"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Settings" id="68i-fQ-6zi">
+                        <barButtonItem key="rightBarButtonItem" title="Done" id="V4P-39-b9i">
+                            <connections>
+                                <action selector="cancelButtonTapped:" destination="oQx-6M-qIr" id="ko8-Bz-f3f"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+            </objects>
+            <point key="canvasLocation" x="2035" y="654"/>
+        </scene>
+        <!--Directory-->
+        <scene sceneID="xby-Kr-xHP">
+            <objects>
+                <tableViewController id="9EB-E6-8pH" customClass="DirectoryTableViewController" customModule="SaltLakeChristianChurch" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="2u7-cs-YQT">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="sectionIndexColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MemberCell" id="N0C-RM-Cqk">
                                 <rect key="frame" x="0.0" y="28" width="414" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="N0C-RM-Cqk" id="WX1-7H-18e">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="43.666666666666664"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="hvn-ID-aFJ" kind="show" identifier="MemberDetailID" id="nSt-U1-uoE"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -134,10 +178,67 @@
                             <outlet property="delegate" destination="9EB-E6-8pH" id="th1-D6-Ocy"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" title="Directory" id="vhe-KE-mla"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eId-bB-Ha6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1294" y="-57"/>
+            <point key="canvasLocation" x="1328" y="-58"/>
+        </scene>
+        <!--Member Detail View Controller-->
+        <scene sceneID="WuI-X3-tjk">
+            <objects>
+                <viewController id="hvn-ID-aFJ" customClass="MemberDetailViewController" customModule="SaltLakeChristianChurch" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Akg-8I-6k4">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="djx-6G-NCm">
+                                <rect key="frame" x="148" y="253" width="119.33333333333331" height="231.33333333333337"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(fullname)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oMO-pN-GH4">
+                                        <rect key="frame" x="21" y="0.0" width="77.666666666666671" height="20.333333333333332"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(address)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="juD-9e-iAI">
+                                        <rect key="frame" x="23" y="70.333333333333314" width="73.333333333333329" height="20.333333333333329"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(email)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iSL-zZ-zVm">
+                                        <rect key="frame" x="33.333333333333343" y="140.66666666666669" width="52.666666666666657" height="20.333333333333343"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(phonenumber)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FqA-WC-r1k">
+                                        <rect key="frame" x="0.0" y="211" width="119.33333333333333" height="20.333333333333343"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="djx-6G-NCm" firstAttribute="centerX" secondItem="Akg-8I-6k4" secondAttribute="centerX" id="ebr-Ug-9dA"/>
+                            <constraint firstItem="djx-6G-NCm" firstAttribute="centerY" secondItem="Akg-8I-6k4" secondAttribute="centerY" id="ggl-Xx-TLR"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="qSt-T9-NP8"/>
+                    </view>
+                    <connections>
+                        <outlet property="addressLabel" destination="juD-9e-iAI" id="2un-N1-QE6"/>
+                        <outlet property="emailLabel" destination="iSL-zZ-zVm" id="E0F-qZ-weJ"/>
+                        <outlet property="fullnameLabel" destination="oMO-pN-GH4" id="ey3-T1-2C1"/>
+                        <outlet property="phoneNumberLabel" destination="FqA-WC-r1k" id="1fS-G1-Qeh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BbF-uO-O1k" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2092.753623188406" y="-59.510869565217398"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="fwK-an-aEf">
@@ -159,10 +260,29 @@
             </objects>
             <point key="canvasLocation" x="-346" y="215"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="GG6-wb-kik">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="hrZ-wb-mFT" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="mcQ-tL-4Wo">
+                        <rect key="frame" x="0.0" y="20" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="oQx-6M-qIr" kind="relationship" relationship="rootViewController" id="TPE-XZ-G94"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gyt-Yh-qfH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1328" y="654"/>
+        </scene>
     </scenes>
     <resources>
         <image name="ReadScripture" width="722" height="428"/>
         <image name="settings" width="21" height="21"/>
         <image name="users-group" width="256" height="256"/>
     </resources>
+    <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
 </document>

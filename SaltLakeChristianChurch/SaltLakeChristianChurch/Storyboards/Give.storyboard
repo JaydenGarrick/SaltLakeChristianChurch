@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -20,7 +21,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You are about to leave the app to go to an external donation service. 🚪🏃🏻" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5OL-jC-GxQ">
-                                <rect key="frame" x="67.333333333333314" y="368" width="240" height="50"/>
+                                <rect key="frame" x="67.333333333333314" y="429" width="240" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="IV7-j7-sga"/>
                                     <constraint firstAttribute="width" constant="240" id="zTr-LD-4GI"/>
@@ -29,24 +30,38 @@
                                 <color key="textColor" red="0.53732824634594878" green="0.53732824634594878" blue="0.53732824634594878" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cmg-1J-M3Z">
-                                <rect key="frame" x="134.33333333333334" y="419" width="106" height="38"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cmg-1J-M3Z" customClass="UIButtonX" customModule="SaltLakeChristianChurch" customModuleProvider="target">
+                                <rect key="frame" x="134.33333333333334" y="499" width="106" height="38"/>
                                 <color key="backgroundColor" name="Primary"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="106" id="Dq7-r8-YlH"/>
                                     <constraint firstAttribute="width" constant="106" id="UrZ-Ri-sPd"/>
+                                    <constraint firstAttribute="width" secondItem="Cmg-1J-M3Z" secondAttribute="height" multiplier="53:19" id="ewr-74-BBu"/>
                                     <constraint firstAttribute="height" constant="38" id="ihh-Ry-tme"/>
                                 </constraints>
                                 <color key="tintColor" name="Tint"/>
-                                <state key="normal" title="Continue">
+                                <state key="normal" title="Give ">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="animate" value="NO"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="popIn" value="NO"/>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                        <color key="value" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <segue destination="Eaf-2f-HcY" kind="show" id="kgv-5Q-zhs"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ToTithely" translatesAutoresizingMaskIntoConstraints="NO" id="EXc-Pr-lVm">
-                                <rect key="frame" x="67.333333333333314" y="91" width="240" height="197"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ToTithely" translatesAutoresizingMaskIntoConstraints="NO" id="EXc-Pr-lVm">
+                                <rect key="frame" x="67.333333333333314" y="91" width="240" height="258"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -57,9 +72,9 @@
                             <constraint firstItem="EXc-Pr-lVm" firstAttribute="leading" secondItem="I0U-4f-WwP" secondAttribute="leading" constant="67.5" id="RAU-yU-dt9"/>
                             <constraint firstItem="Cmg-1J-M3Z" firstAttribute="leading" secondItem="I0U-4f-WwP" secondAttribute="leading" constant="134.5" id="Sgq-rb-TMq"/>
                             <constraint firstItem="5OL-jC-GxQ" firstAttribute="leading" secondItem="I0U-4f-WwP" secondAttribute="leading" constant="67.5" id="Zn1-5c-5Y8"/>
-                            <constraint firstItem="Cmg-1J-M3Z" firstAttribute="top" secondItem="5OL-jC-GxQ" secondAttribute="bottom" constant="1" id="dXC-CH-xsj"/>
+                            <constraint firstItem="Cmg-1J-M3Z" firstAttribute="top" secondItem="5OL-jC-GxQ" secondAttribute="bottom" constant="20" id="dXC-CH-xsj"/>
                             <constraint firstItem="I0U-4f-WwP" firstAttribute="trailing" secondItem="5OL-jC-GxQ" secondAttribute="trailing" constant="67.5" id="gdd-oo-6Ky"/>
-                            <constraint firstItem="I0U-4f-WwP" firstAttribute="bottom" secondItem="Cmg-1J-M3Z" secondAttribute="bottom" constant="230" id="qql-VR-oS3"/>
+                            <constraint firstItem="I0U-4f-WwP" firstAttribute="bottom" secondItem="Cmg-1J-M3Z" secondAttribute="bottom" constant="150" id="qql-VR-oS3"/>
                             <constraint firstItem="I0U-4f-WwP" firstAttribute="trailing" secondItem="Cmg-1J-M3Z" secondAttribute="trailing" constant="134.5" id="sxJ-5q-RWR"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="I0U-4f-WwP"/>
@@ -103,7 +118,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VoC-hl-sXI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1153" y="179"/>
+            <point key="canvasLocation" x="1213" y="179"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="6Ac-7T-5zU">

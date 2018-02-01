@@ -13,6 +13,10 @@ class MemberController {
     
     // Singleton
     static let shared = MemberController()
+    
+    // Constants
+    var members: [Member] = []
+    
     private init(){}
     
     // MARK: - Firebase Database References
@@ -23,8 +27,23 @@ class MemberController {
     let photoStorageReference = Storage.storage().reference().child("userProfile")
     
     // MARK: - Firebase Upload and Download Methods
-    func createMemeberWith() {
-       
+    func fetchMembersForDirectory(memberID: String?, completion: @escaping((Bool)->Void)) {
+        let memberQuery = memberDatabase.queryOrdered(byChild: "fullName")
+        
+        memberQuery.observeSingleEvent(of: .value) { (snapshot) in
+            var fetchedMembers: [Member] = []
+            for member in snapshot.children.allObjects as! [DataSnapshot] {
+                let memberDictionary = member.value as? [String : Any] ?? [:]
+                if let member = Member(memberID: member.key, memberDictionary: memberDictionary) {
+                    fetchedMembers.append(member)
+                } else {
+                    completion(false)
+                    return
+                }
+            }
+            self.members = fetchedMembers
+            completion(true)
+        }
     }
     
     

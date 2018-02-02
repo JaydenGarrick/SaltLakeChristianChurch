@@ -22,7 +22,7 @@ class DirectoryTableViewController: UITableViewController {
                     self.tableView.reloadData()
                 }
             } else {
-                self.presentAlertControllerWithOkayAction(title: "dangman couldn't get members", message: ":(")
+                self.presentAlertControllerWithOkayAction(title: "Service Error", message: "Coudln't retrieve the members from the database")
             }
         }
     }

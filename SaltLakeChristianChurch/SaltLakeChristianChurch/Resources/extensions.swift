@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 extension UIViewController {
     func hideKeyboardWhenTappedAroundAndSetNavBar() {
@@ -27,6 +28,17 @@ extension UIViewController {
         let okayAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
         alertController.addAction(okayAction)
         self.present(alertController, animated: true, completion: nil)
+    }
+    
+    func presentLogOutActionSheet() {
+        let alertController = UIAlertController(title: "", message: "", preferredStyle: .actionSheet)
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        let logoutAction = UIAlertAction(title: "Logout", style: .destructive) { (_) in
+            print("working")
+        }
+        alertController.addAction(cancelAction)
+        alertController.addAction(logoutAction)
+        present(alertController, animated: true)
     }
 }
 

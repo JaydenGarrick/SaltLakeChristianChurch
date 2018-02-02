@@ -16,6 +16,8 @@ class MemberController {
     
     // Constants
     var members: [Member] = []
+    var isLoggedIn = false
+    var loggedInMember: Member?
     
     private init(){}
     

@@ -19,7 +19,6 @@ class MemberDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -39,7 +38,10 @@ class MemberDetailViewController: UIViewController {
         }
     }
     
-
+    @IBAction func tapped(_ sender: Any) {
+        print("Hey")
+    }
+    
     /*
     // MARK: - Navigation
 

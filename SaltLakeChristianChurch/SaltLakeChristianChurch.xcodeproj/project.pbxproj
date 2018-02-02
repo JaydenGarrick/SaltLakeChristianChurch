@@ -39,9 +39,10 @@
 		8199A7BD2022484400E02BC0 /* DirectoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8199A7BC2022484400E02BC0 /* DirectoryTableViewController.swift */; };
 		8199A7BF20228D2A00E02BC0 /* MemberDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8199A7BE20228D2A00E02BC0 /* MemberDetailViewController.swift */; };
 		8199A7C12022951700E02BC0 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8199A7C02022951700E02BC0 /* SettingsTableViewController.swift */; };
+		8199A7F82023DCAE00E02BC0 /* LaunchScreenCopy.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8199A7F72023DCAE00E02BC0 /* LaunchScreenCopy.storyboard */; };
+		8199A7FA2023DD6600E02BC0 /* LaunchScreenCopyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8199A7F92023DD6600E02BC0 /* LaunchScreenCopyViewController.swift */; };
 		81DBA59120217DE0001EF8E7 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81DBA59020217DE0001EF8E7 /* WebViewController.swift */; };
 		81DBA593202231D7001EF8E7 /* MoreTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81DBA592202231D7001EF8E7 /* MoreTableViewController.swift */; };
-		81DBA5952022351D001EF8E7 /* ReadScriptureTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81DBA5942022351D001EF8E7 /* ReadScriptureTableViewCell.swift */; };
 		FBF458CABE07E4278BD949DB /* Pods_SaltLakeChristianChurch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83F1D8FC62F7E113BACAD970 /* Pods_SaltLakeChristianChurch.framework */; };
 /* End PBXBuildFile section */
 
@@ -81,9 +82,10 @@
 		8199A7BC2022484400E02BC0 /* DirectoryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectoryTableViewController.swift; sourceTree = "<group>"; };
 		8199A7BE20228D2A00E02BC0 /* MemberDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberDetailViewController.swift; sourceTree = "<group>"; };
 		8199A7C02022951700E02BC0 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
+		8199A7F72023DCAE00E02BC0 /* LaunchScreenCopy.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreenCopy.storyboard; sourceTree = "<group>"; };
+		8199A7F92023DD6600E02BC0 /* LaunchScreenCopyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenCopyViewController.swift; sourceTree = "<group>"; };
 		81DBA59020217DE0001EF8E7 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		81DBA592202231D7001EF8E7 /* MoreTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreTableViewController.swift; sourceTree = "<group>"; };
-		81DBA5942022351D001EF8E7 /* ReadScriptureTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadScriptureTableViewCell.swift; sourceTree = "<group>"; };
 		83F1D8FC62F7E113BACAD970 /* Pods_SaltLakeChristianChurch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SaltLakeChristianChurch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9E424914063860F44B256AA9 /* Pods-SaltLakeChristianChurch.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SaltLakeChristianChurch.release.xcconfig"; path = "Pods/Target Support Files/Pods-SaltLakeChristianChurch/Pods-SaltLakeChristianChurch.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -125,7 +127,6 @@
 				815E2410201FE9A000157B18 /* Models */,
 				815E2411201FE9B800157B18 /* ModelControllers */,
 				815E2412201FEA1300157B18 /* ViewControllers */,
-				815E2413201FEA2400157B18 /* Views */,
 				815E23F3201FE48600157B18 /* Storyboards */,
 				815E23F4201FE4A500157B18 /* Resources */,
 			);
@@ -142,6 +143,7 @@
 				8109FBA820216B62004B1655 /* Give.storyboard */,
 				8109FBAA20216B6E004B1655 /* More.storyboard */,
 				815E23EA201FE47500157B18 /* LaunchScreen.storyboard */,
+				8199A7F72023DCAE00E02BC0 /* LaunchScreenCopy.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -195,6 +197,7 @@
 		815E2412201FEA1300157B18 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				8199A7F92023DD6600E02BC0 /* LaunchScreenCopyViewController.swift */,
 				815E24212020F02100157B18 /* LoginOrRegisterViewController.swift */,
 				8109FBAC20216D30004B1655 /* SermonViewController.swift */,
 				8109FBAE20216D4B004B1655 /* CalendarViewController.swift */,
@@ -207,14 +210,6 @@
 				8199A7C02022951700E02BC0 /* SettingsTableViewController.swift */,
 			);
 			path = ViewControllers;
-			sourceTree = "<group>";
-		};
-		815E2413201FEA2400157B18 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				81DBA5942022351D001EF8E7 /* ReadScriptureTableViewCell.swift */,
-			);
-			path = Views;
 			sourceTree = "<group>";
 		};
 		A2EBD76ADE5D7418EADB3AB4 /* Frameworks */ = {
@@ -298,6 +293,7 @@
 			files = (
 				8109FBA520216B1D004B1655 /* Calendar.storyboard in Resources */,
 				8109FBAB20216B6E004B1655 /* More.storyboard in Resources */,
+				8199A7F82023DCAE00E02BC0 /* LaunchScreenCopy.storyboard in Resources */,
 				8109FBA920216B62004B1655 /* Give.storyboard in Resources */,
 				8109FBA720216B41004B1655 /* Announcements.storyboard in Resources */,
 				815E23EC201FE47500157B18 /* LaunchScreen.storyboard in Resources */,
@@ -394,6 +390,7 @@
 				81DBA593202231D7001EF8E7 /* MoreTableViewController.swift in Sources */,
 				8199A7BD2022484400E02BC0 /* DirectoryTableViewController.swift in Sources */,
 				8199A7C12022951700E02BC0 /* SettingsTableViewController.swift in Sources */,
+				8199A7FA2023DD6600E02BC0 /* LaunchScreenCopyViewController.swift in Sources */,
 				815E23E2201FE47500157B18 /* AppDelegate.swift in Sources */,
 				815E2405201FE8F800157B18 /* UITextViewX.swift in Sources */,
 				815E2408201FE8F800157B18 /* UIViewX.swift in Sources */,
@@ -402,7 +399,6 @@
 				815E2426202116F600157B18 /* MemberController.swift in Sources */,
 				815E2409201FE8F800157B18 /* UIViewControllerX.swift in Sources */,
 				8109FBB120216D59004B1655 /* AnnouncementsViewController.swift in Sources */,
-				81DBA5952022351D001EF8E7 /* ReadScriptureTableViewCell.swift in Sources */,
 				8199A7BF20228D2A00E02BC0 /* MemberDetailViewController.swift in Sources */,
 				815E240A201FE8F800157B18 /* UIViewXRadialGradient.swift in Sources */,
 			);

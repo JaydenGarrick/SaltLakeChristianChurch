@@ -132,8 +132,16 @@ class LoginOrRegisterViewController: UIViewController {
                     
                     guard let user = user else { return }
                     let uuid = user.uid
-                    let memberRef = Database.database().reference().child("members").childByAutoId()
-                    let values = ["email" : email, "fullName" : fullname, "phoneNumber" : phoneNumber, "isAdmin" : false, "isMember" : true, "address" : "", "memberID" : uuid, "imageAsURL" : ""] as [String : Any]
+                    let memberID = UUID().uuidString
+                    let memberRef = Database.database().reference().child("members").child(uuid)
+                    let values = ["email" : email,
+                                  "fullName" : fullname,
+                                  "phoneNumber" : phoneNumber,
+                                  "isAdmin" : false,
+                                  "isMember" : true,
+                                  "address" : "",
+                                  "memberID" : memberID,
+                                  "imageAsURL" : ""] as [String : Any]
                     memberRef.updateChildValues(values, withCompletionBlock: { (error, reference) in
                         if let error = error {
                             self.presentAlertControllerWithOkayAction(title: "Registration Error", message: error.localizedDescription)
@@ -145,10 +153,9 @@ class LoginOrRegisterViewController: UIViewController {
                         self.view.endEditing(true)
                         
                         // Present the main view
-                        if let viewController = self.storyboard?.instantiateViewController(withIdentifier: "MainView") {
-                            UIApplication.shared.keyWindow?.rootViewController = viewController
-                            self.dismiss(animated: true, completion: nil)
-                        }
+                        MemberController.shared.isLoggedIn = true
+                        self.dismiss(animated: true, completion: nil)
+//                        }
                         
                     })
                 }
@@ -168,10 +175,8 @@ class LoginOrRegisterViewController: UIViewController {
                 print("Successfully logged in!")
                 
                 // Present Main View
-                if let viewController = self.storyboard?.instantiateViewController(withIdentifier: "MainView") {
-                    UIApplication.shared.keyWindow?.rootViewController = viewController
-                    self.dismiss(animated: true, completion: nil)
-                }
+                MemberController.shared.isLoggedIn = true
+                self.dismiss(animated: true, completion: nil)
             })
         }
     }

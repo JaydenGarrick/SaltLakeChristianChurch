@@ -41,7 +41,9 @@
 		8199A7C12022951700E02BC0 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8199A7C02022951700E02BC0 /* SettingsTableViewController.swift */; };
 		8199A7F82023DCAE00E02BC0 /* LaunchScreenCopy.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8199A7F72023DCAE00E02BC0 /* LaunchScreenCopy.storyboard */; };
 		8199A7FA2023DD6600E02BC0 /* LaunchScreenCopyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8199A7F92023DD6600E02BC0 /* LaunchScreenCopyViewController.swift */; };
-		81DBA59120217DE0001EF8E7 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81DBA59020217DE0001EF8E7 /* WebViewController.swift */; };
+		8199A7FC202506CC00E02BC0 /* ContactUsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8199A7FB202506CC00E02BC0 /* ContactUsViewController.swift */; };
+		8199A7FE20250E1900E02BC0 /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8199A7FD20250E1900E02BC0 /* EditProfileViewController.swift */; };
+		81DBA59120217DE0001EF8E7 /* GiveWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81DBA59020217DE0001EF8E7 /* GiveWebViewController.swift */; };
 		81DBA593202231D7001EF8E7 /* MoreTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81DBA592202231D7001EF8E7 /* MoreTableViewController.swift */; };
 		FBF458CABE07E4278BD949DB /* Pods_SaltLakeChristianChurch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83F1D8FC62F7E113BACAD970 /* Pods_SaltLakeChristianChurch.framework */; };
 /* End PBXBuildFile section */
@@ -84,7 +86,9 @@
 		8199A7C02022951700E02BC0 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 		8199A7F72023DCAE00E02BC0 /* LaunchScreenCopy.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreenCopy.storyboard; sourceTree = "<group>"; };
 		8199A7F92023DD6600E02BC0 /* LaunchScreenCopyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenCopyViewController.swift; sourceTree = "<group>"; };
-		81DBA59020217DE0001EF8E7 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
+		8199A7FB202506CC00E02BC0 /* ContactUsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactUsViewController.swift; sourceTree = "<group>"; };
+		8199A7FD20250E1900E02BC0 /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
+		81DBA59020217DE0001EF8E7 /* GiveWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GiveWebViewController.swift; sourceTree = "<group>"; };
 		81DBA592202231D7001EF8E7 /* MoreTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreTableViewController.swift; sourceTree = "<group>"; };
 		83F1D8FC62F7E113BACAD970 /* Pods_SaltLakeChristianChurch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SaltLakeChristianChurch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9E424914063860F44B256AA9 /* Pods-SaltLakeChristianChurch.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SaltLakeChristianChurch.release.xcconfig"; path = "Pods/Target Support Files/Pods-SaltLakeChristianChurch/Pods-SaltLakeChristianChurch.release.xcconfig"; sourceTree = "<group>"; };
@@ -204,10 +208,12 @@
 				8109FBB020216D59004B1655 /* AnnouncementsViewController.swift */,
 				8109FBB220216D6B004B1655 /* GiveViewController.swift */,
 				81DBA592202231D7001EF8E7 /* MoreTableViewController.swift */,
-				81DBA59020217DE0001EF8E7 /* WebViewController.swift */,
+				81DBA59020217DE0001EF8E7 /* GiveWebViewController.swift */,
+				8199A7FB202506CC00E02BC0 /* ContactUsViewController.swift */,
 				8199A7BC2022484400E02BC0 /* DirectoryTableViewController.swift */,
 				8199A7BE20228D2A00E02BC0 /* MemberDetailViewController.swift */,
 				8199A7C02022951700E02BC0 /* SettingsTableViewController.swift */,
+				8199A7FD20250E1900E02BC0 /* EditProfileViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -375,7 +381,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				81DBA59120217DE0001EF8E7 /* WebViewController.swift in Sources */,
+				81DBA59120217DE0001EF8E7 /* GiveWebViewController.swift in Sources */,
 				815E240C201FE8F800157B18 /* UILabelX.swift in Sources */,
 				8109FBAD20216D30004B1655 /* SermonViewController.swift in Sources */,
 				815E2407201FE8F800157B18 /* UIViewAnchorPoint.swift in Sources */,
@@ -395,12 +401,14 @@
 				815E2405201FE8F800157B18 /* UITextViewX.swift in Sources */,
 				815E2408201FE8F800157B18 /* UIViewX.swift in Sources */,
 				815E240D201FE8F800157B18 /* UIButtonX.swift in Sources */,
+				8199A7FE20250E1900E02BC0 /* EditProfileViewController.swift in Sources */,
 				815E23F8201FE88F00157B18 /* extensions.swift in Sources */,
 				815E2426202116F600157B18 /* MemberController.swift in Sources */,
 				815E2409201FE8F800157B18 /* UIViewControllerX.swift in Sources */,
 				8109FBB120216D59004B1655 /* AnnouncementsViewController.swift in Sources */,
 				8199A7BF20228D2A00E02BC0 /* MemberDetailViewController.swift in Sources */,
 				815E240A201FE8F800157B18 /* UIViewXRadialGradient.swift in Sources */,
+				8199A7FC202506CC00E02BC0 /* ContactUsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

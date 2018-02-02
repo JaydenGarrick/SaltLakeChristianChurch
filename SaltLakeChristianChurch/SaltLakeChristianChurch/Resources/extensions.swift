@@ -23,6 +23,7 @@ extension UIViewController {
         view.endEditing(true)
     }
     
+    
     func presentAlertControllerWithOkayAction(title: String, message: String) {
         let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
         let okayAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
@@ -30,18 +31,8 @@ extension UIViewController {
         self.present(alertController, animated: true, completion: nil)
     }
     
-    func presentLogOutActionSheet() {
-        let alertController = UIAlertController(title: "", message: "", preferredStyle: .actionSheet)
-        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
-        let logoutAction = UIAlertAction(title: "Logout", style: .destructive) { (_) in
-            print("working")
-        }
-        alertController.addAction(cancelAction)
-        alertController.addAction(logoutAction)
-        present(alertController, animated: true)
-    }
+    
 }
-
 
 extension UIImage {
     func scale(newWidth: CGFloat) -> UIImage {

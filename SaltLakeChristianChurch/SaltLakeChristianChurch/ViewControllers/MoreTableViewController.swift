@@ -12,9 +12,11 @@ class MoreTableViewController: UITableViewController {
 
     // MARK: - IBOutlets
     @IBOutlet weak var readScriptureLabel: UILabel!
+    @IBOutlet weak var directoryCell: UITableViewCell!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+     
         
         // Hides Keyboard and sets NavigationBar
         self.hideKeyboardWhenTappedAroundAndSetNavBar()
@@ -46,7 +48,44 @@ class MoreTableViewController: UITableViewController {
             return UITableViewAutomaticDimension
         }
     }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath.row == 0 {
+            if MemberController.shared.isLoggedIn == true {
+                performSegue(withIdentifier: "ToDirectory", sender: self)
+            } else {
+                presentActionSheet()
+            }
+        }
+    }
 
    
 
 }
+
+// MARK: - Create alert for member
+extension MoreTableViewController {
+    
+    func presentActionSheet() {
+        
+        let actionSheet = UIAlertController(title: "Member feature", message: "For privacy reasons, you must be a member of Salt Lake Christian Church to access the directory", preferredStyle: .actionSheet)
+        let okayAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+        let contactUsAction = UIAlertAction(title: "Interested in becoming a member? Contact us!", style: .default) { (_) in
+            self.performSegue(withIdentifier: "ToContactUs", sender: self)
+        }
+        let loginAction = UIAlertAction(title: "Already a member? Login!", style: .default) { (_) in
+            self.performSegue(withIdentifier: "ToLogin", sender: self)
+        }
+        actionSheet.addAction(contactUsAction)
+        actionSheet.addAction(loginAction)
+        actionSheet.addAction(okayAction)
+        present(actionSheet, animated: true)
+    }
+}
+
+
+
+
+
+
+

@@ -13,19 +13,24 @@ class LaunchScreenCopyViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        fetchLoggedInUser()
         UIApplication.shared.isNetworkActivityIndicatorVisible = true
 
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        fetchLoggedInUser()
+    }
+    
     override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
         UIApplication.shared.isNetworkActivityIndicatorVisible = false
     }
     
     func fetchLoggedInUser() {
         
         if Auth.auth().currentUser?.uid != nil {
-            guard let uuid = Auth.auth().currentUser?.uid else { return }
+            guard let uuid = Auth.auth().currentUser?.uid else { self.performSegue(withIdentifier: "LaunchSegue", sender: self) ; return }
             let reference = Database.database().reference().child("members").child(uuid)
             reference.observeSingleEvent(of: .value, with: { (snapshot) in
                 guard let memberDictionary = snapshot.value as? [String : Any] else {
@@ -44,6 +49,8 @@ class LaunchScreenCopyViewController: UIViewController {
         }
         
     }
+    
+  
 
 
 }

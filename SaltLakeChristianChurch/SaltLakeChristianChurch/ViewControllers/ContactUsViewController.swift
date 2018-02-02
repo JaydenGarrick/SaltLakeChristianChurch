@@ -1,28 +1,29 @@
 //
-//  WebViewController.swift
+//  ContactUsViewController.swift
 //  SaltLakeChristianChurch
 //
-//  Created by Jayden Garrick on 1/30/18.
+//  Created by Jayden Garrick on 2/2/18.
 //  Copyright © 2018 Jayden Garrick. All rights reserved.
 //
 
 import UIKit
 import WebKit
 
-class WebViewController: UIViewController {
+class ContactUsViewController: UIViewController {
 
     // MARK: - IBOutlets
     @IBOutlet weak var webView: WKWebView!
-    
+   
+    // MARK: - viewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
         self.hideKeyboardWhenTappedAroundAndSetNavBar()
-        guard let url = URL(string: "https://tithe.ly/give_new/www/#/tithely/give-one-time/69694") else { return }
+        guard let url = URL(string: "https://www.saltlakechristianchurch.com/contact-1/#contact") else { return }
         let request = URLRequest(url: url)
         webView.load(request)
-        
 
     }
 
+ 
 
 }

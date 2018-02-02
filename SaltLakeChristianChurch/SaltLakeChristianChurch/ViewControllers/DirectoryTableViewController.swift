@@ -27,6 +27,12 @@ class DirectoryTableViewController: UITableViewController {
         }
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        self.hideKeyboardWhenTappedAroundAndSetNavBar()
+        self.navigationController?.navigationBar.isTranslucent = false
+        self.navigationController?.view.backgroundColor = UIColor(named: "Primary")
+    }
+    
     // MARK: - TableView Delegate and DataSource Functions
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return members.count

@@ -123,6 +123,9 @@ class LoginOrRegisterViewController: UIViewController {
         // Fetch Member Code
             guard let memberCode = memberCode else { self.presentAlertControllerWithOkayAction(title: "Service Error", message: "Unable to create account.") ; return }
             if loggedMemberCode == "\(memberCode)" {
+                
+                
+                // Handle Creating a new user
                 Auth.auth().createUser(withEmail: email, password: password) { (user, error) in
                     
                     if let error = error {
@@ -148,15 +151,16 @@ class LoginOrRegisterViewController: UIViewController {
                             return
                         }
                         
-                        print("Successfully created a user!")
-                        // Dismiss Keyboard
-                        self.view.endEditing(true)
-                        
-                        // Present the main view
-                        MemberController.shared.isLoggedIn = true
-                        self.dismiss(animated: true, completion: nil)
-//                        }
-                        
+                        guard let uuid = Auth.auth().currentUser?.uid else { self.presentAlertControllerWithOkayAction(title: "Registration Error", message: "Couldn't create user. Please try again.") ; return }
+                        MemberController.shared.fetchUserWithID(uuid: uuid, completion: { (success) in
+                            if success {
+                                // Present the main view
+                                print("Successfully created a user!")
+                                self.dismiss(animated: true, completion: nil)
+                            } else {
+                                return
+                            }
+                        })
                     })
                 }
                 
@@ -164,6 +168,9 @@ class LoginOrRegisterViewController: UIViewController {
                 self.presentAlertControllerWithOkayAction(title: "Registration Error", message: "Invalid member code.")
                 return
             }
+        
+            
+            
         // Handle logging in user
         } else {
             guard let email = emailTextField.text, email != "", let password = passwordTextField.text, password != "" else { self.presentAlertControllerWithOkayAction(title: "Login Error", message: "Please provide a valid Email and Password.") ; return }
@@ -172,21 +179,25 @@ class LoginOrRegisterViewController: UIViewController {
                     self.presentAlertControllerWithOkayAction(title: "Logging in error", message: error.localizedDescription)
                     return
                 }
-                print("Successfully logged in!")
-                
-                // Present Main View
-                MemberController.shared.isLoggedIn = true
-                self.dismiss(animated: true, completion: nil)
+                guard let uid = Auth.auth().currentUser?.uid else { self.presentAlertControllerWithOkayAction(title: "Logging in error", message: "Couldn't log in. Please try again.") ; return }
+                MemberController.shared.fetchUserWithID(uuid: uid, completion: { (success) in
+                    if success {
+                        print("Successfully logged in!")
+                        
+                        // Present Main View
+                        MemberController.shared.isLoggedIn = true
+                        self.dismiss(animated: true, completion: nil)
+                    } else {
+                        return 
+                    }
+                })
             })
         }
     }
     
     
     @IBAction func continueAsGuestButtonTapped(_ sender: Any) {
-        if let viewController = self.storyboard?.instantiateViewController(withIdentifier: "MainView") {
-            UIApplication.shared.keyWindow?.rootViewController = viewController
-            self.dismiss(animated: true, completion: nil)
-        }
+        dismiss(animated: true)
     }
 
 

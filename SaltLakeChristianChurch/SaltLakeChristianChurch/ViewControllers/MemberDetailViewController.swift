@@ -10,25 +10,32 @@ import UIKit
 
 class MemberDetailViewController: UIViewController {
 
+    // MARK: - IBOutlets and constants / variables
     @IBOutlet weak var fullnameLabel: UILabel!
     @IBOutlet weak var addressLabel: UILabel!
     @IBOutlet weak var emailLabel: UILabel!
     @IBOutlet weak var phoneNumberLabel: UILabel!
     
+    // Member for current directory
     var member: Member?
     
+    
+    // MARK: - ViewDidLoad / Appear
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Setup for navigation bar
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        self.navigationController?.navigationBar.isTranslucent = true
+        self.navigationController?.view.backgroundColor = .clear
     }
     
     override func viewWillAppear(_ animated: Bool) {
         updateViews()
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
-    
+    // MARK: - UpdateViews Based on selected member
     func updateViews() {
         if let member = member {
             fullnameLabel.text = member.fullName
@@ -37,19 +44,6 @@ class MemberDetailViewController: UIViewController {
             phoneNumberLabel.text = member.phoneNumber
         }
     }
-    
-    @IBAction func tapped(_ sender: Any) {
-        print("Hey")
-    }
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
+ 
 
 }

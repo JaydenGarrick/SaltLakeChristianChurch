@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class SettingsTableViewController: UITableViewController {
 
@@ -21,8 +22,22 @@ class SettingsTableViewController: UITableViewController {
         }
 
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        if MemberController.shared.isLoggedIn == true {
+            loginSignUpLabel.text = MemberController.shared.loggedInMember?.fullName
+        }
+        
+    }
+    
 
-    // MARK: - IB Actions
+    
+    
+    
+  
+
+    // MARK: - IBActions
     @IBAction func cancelButtonTapped(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
@@ -36,15 +51,35 @@ class SettingsTableViewController: UITableViewController {
     
     // MARK: - TableView Delegate and DataSource
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if indexPath.row == 0 {
+        if indexPath.row == 0 { // Login / Logout Controller
             if MemberController.shared.isLoggedIn == false {
                 performSegue(withIdentifier: "ToLoginScreen", sender: self)
             } else {
-                
+                presentLogOutActionSheet()
             }
         }
     }
     
 }
 
+extension SettingsTableViewController {
+    func presentLogOutActionSheet() {
+        let alertController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        let logoutAction = UIAlertAction(title: "Logout", style: .destructive) { (_) in
+            do {
+                try Auth.auth().signOut()
+                MemberController.shared.isLoggedIn = false
+                MemberController.shared.loggedInMember = nil
+            } catch let error {
+                print("Error logging user out: \(error.localizedDescription)")
+            }
+            self.loginSignUpLabel.text = "Login / Register"
+            self.tableView.reloadData()
+        }
+        alertController.addAction(cancelAction)
+        alertController.addAction(logoutAction)
+        present(alertController, animated: true)
+    }
+}
 

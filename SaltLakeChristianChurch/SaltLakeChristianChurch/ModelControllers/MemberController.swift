@@ -48,6 +48,20 @@ class MemberController {
         }
     }
     
+    func fetchUserWithID(uuid: String, completion: @escaping ((Bool)->Void)) {
+        let reference = Database.database().reference().child("members").child(uuid)
+        reference.observeSingleEvent(of: .value, with: { (snapshot) in
+            guard let memberDictionary = snapshot.value as? [String : Any] else {
+                print("Error retrieving Snapshot")
+                completion(false)
+                return
+            }
+            MemberController.shared.loggedInMember = Member(memberID: snapshot.key, memberDictionary: memberDictionary)
+            MemberController.shared.isLoggedIn = true
+            print("Successfully Fetched logged in user!")
+            completion(true)
+        })
+    }
     
     
 }

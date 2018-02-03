@@ -58,6 +58,14 @@ class SettingsTableViewController: UITableViewController {
                 presentLogOutActionSheet()
             }
         }
+        
+        if indexPath.row == 1 {
+            if MemberController.shared.isLoggedIn == false {
+                self.presentAlertControllerWithOkayAction(title: "Can't edit profile", message: "You must be logged in to edit your profile.")
+            } else {
+                performSegue(withIdentifier: "ToEditAccount", sender: self)
+            }
+        }
     }
     
 }

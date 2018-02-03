@@ -11,17 +11,22 @@ import Foundation
 class Member {
 
     // MARK: - Properties
-    let memberID: String
-    let fullName: String
-    let email: String
-    let phoneNumber: String
-    let imageAsURL: String?
-    let address: String?
-    let isAdmin: Bool = false
-    let isMember: Bool = true
+    var memberID: String
+    var fullName: String
+    var email: String
+    var phoneNumber: String
+    var imageAsURL: String?
+    var address: String?
+    var isAdmin: Bool = false
+    var isMember: Bool = true
     
     // MARK: - Firebase Keys
     enum MemberKey {
+        
+        // Members
+        static let members = "members"
+        
+        // Properties
         static let fullName = "fullName"
         static let email = "email"
         static let phoneNumber = "phoneNumber"

@@ -19,7 +19,7 @@ class LoginOrRegisterViewController: UIViewController {
     @IBOutlet weak var fullnameTextField: UITextFieldX!
     @IBOutlet weak var phoneNumberTextField: PhoneNumberTextField!
     @IBOutlet weak var churchCodeTextField: UITextFieldX!
-    @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
+    @IBOutlet weak var bottomConstraint: NSLayoutConstraint! // Constraint to update view
     @IBOutlet weak var loginView: UIViewX!
     @IBOutlet weak var blurView: UIView!
     @IBOutlet weak var loginButton: UIButton!
@@ -152,7 +152,7 @@ class LoginOrRegisterViewController: UIViewController {
                         }
                         
                         guard let uuid = Auth.auth().currentUser?.uid else { self.presentAlertControllerWithOkayAction(title: "Registration Error", message: "Couldn't create user. Please try again.") ; return }
-                        MemberController.shared.fetchUserWithID(uuid: uuid, completion: { (success) in
+                        MemberController.shared.fetchUserWith(uuid: uuid, completion: { (success) in
                             if success {
                                 // Present the main view
                                 print("Successfully created a user!")
@@ -180,7 +180,7 @@ class LoginOrRegisterViewController: UIViewController {
                     return
                 }
                 guard let uid = Auth.auth().currentUser?.uid else { self.presentAlertControllerWithOkayAction(title: "Logging in error", message: "Couldn't log in. Please try again.") ; return }
-                MemberController.shared.fetchUserWithID(uuid: uid, completion: { (success) in
+                MemberController.shared.fetchUserWith(uuid: uid, completion: { (success) in
                     if success {
                         print("Successfully logged in!")
                         

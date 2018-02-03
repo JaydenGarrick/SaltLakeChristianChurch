@@ -9,16 +9,17 @@
 import UIKit
 
 class MemberDetailViewController: UIViewController {
+    
+    
+    // Member for current directory
+    var member: Member?
 
     // MARK: - IBOutlets and constants / variables
     @IBOutlet weak var fullnameLabel: UILabel!
     @IBOutlet weak var addressLabel: UILabel!
     @IBOutlet weak var emailLabel: UILabel!
     @IBOutlet weak var phoneNumberLabel: UILabel!
-    
-    // Member for current directory
-    var member: Member?
-    
+    @IBOutlet weak var imageView: UIImageViewX!
     
     // MARK: - ViewDidLoad / Appear
     override func viewDidLoad() {
@@ -42,7 +43,17 @@ class MemberDetailViewController: UIViewController {
             addressLabel.text = member.address
             emailLabel.text = member.email
             phoneNumberLabel.text = member.phoneNumber
+            
+            
+            if member.imageAsURL != "" {
+                guard let imageAsURL = member.imageAsURL else { return }
+                MemberController.shared.loadImageFrom(imageURL: imageAsURL, completion: { (image) in
+                    self.imageView.image = image
+                })
+            }
+        
         }
+        
     }
  
 

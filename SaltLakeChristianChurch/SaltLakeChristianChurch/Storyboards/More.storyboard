@@ -618,6 +618,7 @@
                         <outlet property="addressLabel" destination="juD-9e-iAI" id="2un-N1-QE6"/>
                         <outlet property="emailLabel" destination="iSL-zZ-zVm" id="E0F-qZ-weJ"/>
                         <outlet property="fullnameLabel" destination="oMO-pN-GH4" id="ey3-T1-2C1"/>
+                        <outlet property="imageView" destination="U89-Ly-6Te" id="SIt-9g-Lx9"/>
                         <outlet property="phoneNumberLabel" destination="FqA-WC-r1k" id="1fS-G1-Qeh"/>
                     </connections>
                 </viewController>

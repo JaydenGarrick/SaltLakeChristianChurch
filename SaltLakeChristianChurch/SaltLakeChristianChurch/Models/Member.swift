@@ -32,16 +32,18 @@ class Member {
         static let phoneNumber = "phoneNumber"
         static let imageAsURL = "imageAsURL"
         static let address = "address"
+        static let isAdmin = "isAdmin"
     }
     
     // MARK: - Initialization
-    init(memberID: String, fullName: String, email: String, phoneNumber: String, imageAsURL: String?, address: String?) {
+    init(memberID: String, fullName: String, email: String, phoneNumber: String, imageAsURL: String?, address: String?, isAdmin: Bool) {
         self.memberID = memberID
         self.fullName = fullName
         self.email = email
         self.phoneNumber = phoneNumber
         self.imageAsURL = imageAsURL
         self.address = address
+        self.isAdmin = isAdmin
     }
     
     convenience init?(memberID: String, memberDictionary: [String : Any]) {
@@ -49,8 +51,9 @@ class Member {
             let email = memberDictionary[MemberKey.email] as? String,
             let phoneNumber = memberDictionary[MemberKey.phoneNumber] as? String,
             let imageAsURL = memberDictionary[MemberKey.imageAsURL] as? String,
-            let address = memberDictionary[MemberKey.address] as? String else { return nil }
-        self.init(memberID: memberID, fullName: fullName, email: email, phoneNumber: phoneNumber, imageAsURL: imageAsURL, address: address)
+            let address = memberDictionary[MemberKey.address] as? String,
+            let isAdmin = memberDictionary[MemberKey.isAdmin] as? Bool else { return nil }
+        self.init(memberID: memberID, fullName: fullName, email: email, phoneNumber: phoneNumber, imageAsURL: imageAsURL, address: address, isAdmin: isAdmin)
     }
 }
 

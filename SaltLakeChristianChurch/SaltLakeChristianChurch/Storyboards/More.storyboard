@@ -55,12 +55,46 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="topCell" preservesSuperviewLayoutMargins="YES" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" rowHeight="44" id="yEz-IO-tgm">
+                                        <rect key="frame" x="0.0" y="72" width="414" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="yEz-IO-tgm" id="jiT-3h-4lY">
+                                            <rect key="frame" x="0.0" y="0.0" width="376" height="43.666666666666664"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="contactUs" translatesAutoresizingMaskIntoConstraints="NO" id="KSe-6X-fmX">
+                                                    <rect key="frame" x="3" y="6.0000000000000018" width="45" height="29.666666666666671"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="45" id="yng-Br-e6S"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Contact us" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1EX-bm-lgJ">
+                                                    <rect key="frame" x="62" y="11" width="306" height="22"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="1EX-bm-lgJ" firstAttribute="leading" secondItem="KSe-6X-fmX" secondAttribute="trailing" constant="14" id="Hdv-oF-waq"/>
+                                                <constraint firstItem="KSe-6X-fmX" firstAttribute="top" secondItem="jiT-3h-4lY" secondAttribute="top" constant="6" id="P1b-r0-whI"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="1EX-bm-lgJ" secondAttribute="trailing" id="Ups-tr-IHH"/>
+                                                <constraint firstAttribute="bottom" secondItem="KSe-6X-fmX" secondAttribute="bottom" constant="8" id="ZKj-42-jKA"/>
+                                                <constraint firstItem="KSe-6X-fmX" firstAttribute="leading" secondItem="jiT-3h-4lY" secondAttribute="leading" constant="3" id="hzl-IR-BEN"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="1EX-bm-lgJ" secondAttribute="bottom" id="kvz-2U-cU5"/>
+                                                <constraint firstItem="1EX-bm-lgJ" firstAttribute="top" secondItem="jiT-3h-4lY" secondAttribute="topMargin" id="sxf-Te-LNN"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="DXa-hq-dD5" kind="show" id="3cL-PW-Q7Q"/>
+                                        </connections>
+                                    </tableViewCell>
                                 </cells>
                             </tableViewSection>
                             <tableViewSection headerTitle="Read along with us" id="Krw-17-bNC">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="300" id="PgX-CU-f6V" userLabel="ReadScriptureCell">
-                                        <rect key="frame" x="0.0" y="100" width="414" height="300"/>
+                                        <rect key="frame" x="0.0" y="144" width="414" height="300"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="PgX-CU-f6V" id="Ss2-Mc-jGU">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="299.66666666666669"/>
@@ -229,10 +263,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="572-dD-XDD">
-                                <rect key="frame" x="0.0" y="44" width="414" height="489"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="692"/>
                                 <subviews>
                                     <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1I4-GA-VUU" customClass="UIViewX" customModule="SaltLakeChristianChurch" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="-29.999999999999986" width="414" height="235"/>
+                                        <rect key="frame" x="0.0" y="-30" width="414" height="235"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="TempPP" translatesAutoresizingMaskIntoConstraints="NO" id="33B-pe-9aK" customClass="UIImageViewX" customModule="SaltLakeChristianChurch" customModuleProvider="target">
                                                 <rect key="frame" x="143" y="72" width="128" height="128"/>
@@ -295,13 +329,14 @@
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="eVA-Mr-CPc">
-                                        <rect key="frame" x="5" y="213" width="404" height="271"/>
+                                        <rect key="frame" x="5" y="213" width="404" height="474"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="-3" translatesAutoresizingMaskIntoConstraints="NO" id="y3X-Sy-JB6">
-                                                <rect key="frame" x="0.0" y="0.33333333333337123" width="404" height="57"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="404" height="124.66666666666667"/>
                                                 <subviews>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Phonenumber..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1Ta-pi-xTT" customClass="UITextFieldX" customModule="SaltLakeChristianChurch" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="0.33333333333337123" width="404" height="30"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="404" height="64"/>
+                                                        <color key="tintColor" name="Tint"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="30" id="I8u-cx-CRm"/>
                                                         </constraints>
@@ -310,7 +345,7 @@
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Phone Number" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="390-66-xwC">
-                                                        <rect key="frame" x="0.0" y="27.333333333333371" width="404" height="30"/>
+                                                        <rect key="frame" x="0.0" y="61" width="404" height="63.666666666666657"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                         <color key="textColor" red="0.53492829909999995" green="0.53492829909999995" blue="0.53492829909999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
@@ -318,10 +353,11 @@
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="-3" translatesAutoresizingMaskIntoConstraints="NO" id="2Xc-om-chc">
-                                                <rect key="frame" x="0.0" y="107.33333333333337" width="404" height="57"/>
+                                                <rect key="frame" x="0.0" y="174.66666666666669" width="404" height="124.66666666666669"/>
                                                 <subviews>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nin-rm-tEV" userLabel="Email...">
-                                                        <rect key="frame" x="0.0" y="0.33333333333337123" width="404" height="30"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="404" height="64"/>
+                                                        <color key="tintColor" name="Tint"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="30" id="M5F-tx-I1z"/>
                                                         </constraints>
@@ -330,7 +366,7 @@
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2b4-eD-VBb">
-                                                        <rect key="frame" x="0.0" y="27.333333333333371" width="404" height="30"/>
+                                                        <rect key="frame" x="0.0" y="61" width="404" height="63.666666666666657"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                         <color key="textColor" red="0.53492829909999995" green="0.53492829909999995" blue="0.53492829909999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
@@ -341,10 +377,11 @@
                                                 </constraints>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="-3" translatesAutoresizingMaskIntoConstraints="NO" id="Agb-8f-7C6">
-                                                <rect key="frame" x="0.0" y="214.33333333333331" width="404" height="57"/>
+                                                <rect key="frame" x="0.0" y="349.33333333333337" width="404" height="124.66666666666669"/>
                                                 <subviews>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Address..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ALM-VS-4gb">
-                                                        <rect key="frame" x="0.0" y="0.33333333333325754" width="404" height="30"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="404" height="64"/>
+                                                        <color key="tintColor" name="Tint"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="30" id="vcV-pv-B3I"/>
                                                         </constraints>
@@ -353,7 +390,7 @@
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eKI-0c-39d" userLabel="Address...">
-                                                        <rect key="frame" x="0.0" y="27.333333333333258" width="404" height="30"/>
+                                                        <rect key="frame" x="0.0" y="61" width="404" height="63.666666666666657"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                         <color key="textColor" red="0.53492829909999995" green="0.53492829909999995" blue="0.53492829909999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
@@ -576,6 +613,7 @@
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J9w-bz-FfE">
                                                 <rect key="frame" x="0.0" y="39" width="398" height="18"/>
+                                                <color key="tintColor" name="Tint"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                 <color key="textColor" red="0.53492829909999995" green="0.53492829909999995" blue="0.53492829909999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -721,6 +759,7 @@
                                                                     <subviews>
                                                                         <textField opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="900" verticalCompressionResistancePriority="900" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KHT-mY-1oT" customClass="UITextFieldX" customModule="SaltLakeChristianChurch" customModuleProvider="target">
                                                                             <rect key="frame" x="0.0" y="0.0" width="354" height="35"/>
+                                                                            <color key="tintColor" name="Tint"/>
                                                                             <nil key="textColor"/>
                                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                             <textInputTraits key="textInputTraits" textContentType="email"/>
@@ -733,6 +772,7 @@
                                                                         </textField>
                                                                         <textField opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="900" verticalCompressionResistancePriority="900" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zaW-3G-2aH" customClass="UITextFieldX" customModule="SaltLakeChristianChurch" customModuleProvider="target">
                                                                             <rect key="frame" x="0.0" y="44" width="354" height="35"/>
+                                                                            <color key="tintColor" name="Tint"/>
                                                                             <nil key="textColor"/>
                                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                             <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
@@ -745,6 +785,7 @@
                                                                         </textField>
                                                                         <textField opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="900" verticalCompressionResistancePriority="900" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Confirm Password..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3uZ-Aa-rBx" customClass="UITextFieldX" customModule="SaltLakeChristianChurch" customModuleProvider="target">
                                                                             <rect key="frame" x="0.0" y="88" width="354" height="35"/>
+                                                                            <color key="tintColor" name="Tint"/>
                                                                             <nil key="textColor"/>
                                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                             <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
@@ -757,6 +798,7 @@
                                                                         </textField>
                                                                         <textField opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="900" verticalCompressionResistancePriority="900" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Fullname..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rE8-Kz-cYK" customClass="UITextFieldX" customModule="SaltLakeChristianChurch" customModuleProvider="target">
                                                                             <rect key="frame" x="0.0" y="132" width="354" height="35"/>
+                                                                            <color key="tintColor" name="Tint"/>
                                                                             <nil key="textColor"/>
                                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                             <textInputTraits key="textInputTraits" textContentType="username"/>
@@ -769,6 +811,7 @@
                                                                         </textField>
                                                                         <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalCompressionResistancePriority="900" verticalCompressionResistancePriority="900" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Phonenumber..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RQX-uc-oNN" customClass="PhoneNumberTextField" customModule="PhoneNumberKit">
                                                                             <rect key="frame" x="0.0" y="176" width="354" height="35"/>
+                                                                            <color key="tintColor" name="Tint"/>
                                                                             <nil key="textColor"/>
                                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                             <textInputTraits key="textInputTraits" textContentType="tel"/>
@@ -781,6 +824,7 @@
                                                                         </textField>
                                                                         <textField opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="900" verticalCompressionResistancePriority="900" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Member Code..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="s8A-vu-ewe" customClass="UITextFieldX" customModule="SaltLakeChristianChurch" customModuleProvider="target">
                                                                             <rect key="frame" x="0.0" y="220" width="354" height="35"/>
+                                                                            <color key="tintColor" name="Tint"/>
                                                                             <nil key="textColor"/>
                                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                             <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
@@ -936,30 +980,23 @@
         <image name="TempPP" width="512" height="512"/>
         <image name="background" width="414" height="736"/>
         <image name="church" width="128" height="128"/>
+        <image name="contactUs" width="256" height="256"/>
         <image name="email" width="128" height="128"/>
         <image name="password" width="128" height="128"/>
         <image name="phonenum" width="128" height="128"/>
-        <image name="settings" width="21" height="21"/>
+        <image name="settings" width="25" height="25"/>
         <image name="username" width="128" height="128"/>
         <image name="users-group" width="256" height="256"/>
         <namedColor name="Primary">
             <color red="0.42699998620000001" green="0.43099999430000002" blue="0.44400000569999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <namedColor name="Primary">
-            <color red="0.42699998620000001" green="0.43099999430000002" blue="0.44400000569999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
         <namedColor name="Tint">
-            <color red="0.27700001000000002" green="0.77899998429999995" blue="0.92500001190000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-        <namedColor name="Tint">
-            <color red="0.27700001000000002" green="0.77899998429999995" blue="0.92500001190000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-        <namedColor name="Tint">
-            <color red="0.27700001000000002" green="0.77899998429999995" blue="0.92500001190000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.27700001001358032" green="0.77899998426437378" blue="0.92500001192092896" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="YXh-Mp-aNM"/>
+        <segue reference="1Pg-Rt-sGr"/>
+        <segue reference="3cL-PW-Q7Q"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
 </document>

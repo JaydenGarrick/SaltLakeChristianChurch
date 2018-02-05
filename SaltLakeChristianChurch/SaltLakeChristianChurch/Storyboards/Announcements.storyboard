@@ -6,6 +6,8 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -17,20 +19,180 @@
                     <view key="view" contentMode="scaleToFill" id="t6B-sh-mUg">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="sZq-9B-8ca">
+                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="350" id="ku3-f3-3cf" customClass="AnnouncementTableViewCell" customModule="SaltLakeChristianChurch" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="350"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ku3-f3-3cf" id="fsG-Ol-hMF">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="349"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qn1-n1-3gA" userLabel="ShadowView">
+                                                    <rect key="frame" x="0.0" y="10" width="375" height="330"/>
+                                                    <subviews>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8Dx-7f-E63">
+                                                            <rect key="frame" x="0.0" y="0.0" width="375" height="202"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" secondItem="8Dx-7f-E63" secondAttribute="height" multiplier="375:202" id="N9Q-ZF-a4x"/>
+                                                            </constraints>
+                                                        </imageView>
+                                                        <textView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" scrollEnabled="NO" text="(AnnouncementDetail)" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Lxh-i2-xgg">
+                                                            <rect key="frame" x="8" y="229" width="359" height="93"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                        </textView>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="(AnnouncementName)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fst-Jd-eKL">
+                                                            <rect key="frame" x="8" y="205" width="359" height="21"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0jY-qM-4ti">
+                                                            <rect key="frame" x="337" y="167" width="30" height="30"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <state key="normal" image="rsvp"/>
+                                                            <connections>
+                                                                <action selector="rsvpButtonTapped:" destination="ku3-f3-3cf" eventType="touchUpInside" id="3No-79-bVF"/>
+                                                            </connections>
+                                                        </button>
+                                                    </subviews>
+                                                    <color key="backgroundColor" red="0.86120896883289122" green="0.86120896883289122" blue="0.86120896883289122" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="trailing" secondItem="8Dx-7f-E63" secondAttribute="trailing" id="LRS-en-Ka3"/>
+                                                        <constraint firstItem="8Dx-7f-E63" firstAttribute="top" secondItem="qn1-n1-3gA" secondAttribute="top" id="PvK-sb-PEs"/>
+                                                        <constraint firstItem="8Dx-7f-E63" firstAttribute="leading" secondItem="qn1-n1-3gA" secondAttribute="leading" id="Q30-Nk-bmW"/>
+                                                    </constraints>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="qn1-n1-3gA" firstAttribute="leading" secondItem="fsG-Ol-hMF" secondAttribute="leading" id="3I7-Gp-xF8"/>
+                                                <constraint firstAttribute="bottom" secondItem="qn1-n1-3gA" secondAttribute="bottom" constant="10" id="UQf-Hl-mjR"/>
+                                                <constraint firstAttribute="trailing" secondItem="qn1-n1-3gA" secondAttribute="trailing" id="cp4-r0-lkO"/>
+                                                <constraint firstItem="qn1-n1-3gA" firstAttribute="top" secondItem="fsG-Ol-hMF" secondAttribute="top" constant="10" id="yEP-rX-hNl"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="announcementDetailTextView" destination="Lxh-i2-xgg" id="qP4-MG-nQt"/>
+                                            <outlet property="announcementImageView" destination="8Dx-7f-E63" id="CPN-RO-yCm"/>
+                                            <outlet property="announcementNameLabel" destination="fst-Jd-eKL" id="s5H-d7-Xzz"/>
+                                            <outlet property="backgroundShadowView" destination="qn1-n1-3gA" id="Zdb-we-lxv"/>
+                                            <outlet property="rsvpButton" destination="0jY-qM-4ti" id="2Wb-Co-pdO"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="sZq-9B-8ca" firstAttribute="bottom" secondItem="Og6-Zc-xuL" secondAttribute="bottom" id="YU7-21-Gye"/>
+                            <constraint firstItem="sZq-9B-8ca" firstAttribute="top" secondItem="Og6-Zc-xuL" secondAttribute="top" id="Ynm-0E-Z7y"/>
+                            <constraint firstItem="sZq-9B-8ca" firstAttribute="trailing" secondItem="Og6-Zc-xuL" secondAttribute="trailing" id="q5C-a7-2vo"/>
+                            <constraint firstItem="sZq-9B-8ca" firstAttribute="leading" secondItem="Og6-Zc-xuL" secondAttribute="leading" id="ym1-86-MPw"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Og6-Zc-xuL"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Announcements" id="oIK-gN-Xef"/>
+                    <navigationItem key="navigationItem" title="Announcements" id="oIK-gN-Xef">
+                        <barButtonItem key="rightBarButtonItem" title="Add Event" id="x8T-TU-4og">
+                            <connections>
+                                <segue destination="J4q-v5-7G9" kind="show" id="Zfq-gT-SeT"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="addEventBarButton" destination="x8T-TU-4og" id="a8K-0J-JwZ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nj-QO-Kxv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="6484" y="2951.8740629685158"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Create Announcement View Controller-->
+        <scene sceneID="9hg-l1-wQP">
+            <objects>
+                <viewController id="J4q-v5-7G9" customClass="CreateAnnouncementViewController" customModule="SaltLakeChristianChurch" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="LDU-e6-rcP">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P96-by-0Mc">
+                                <rect key="frame" x="0.0" y="64" width="375" height="202"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="P96-by-0Mc" secondAttribute="height" multiplier="375:202" id="8xB-lc-3bC"/>
+                                </constraints>
+                                <state key="normal" title="Add Image">
+                                    <color key="titleColor" name="Tint"/>
+                                </state>
+                                <connections>
+                                    <action selector="addImageButtonTapped:" destination="J4q-v5-7G9" eventType="touchUpInside" id="U6g-w0-whU"/>
+                                </connections>
+                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="qLN-bF-lck">
+                                <rect key="frame" x="4" y="271" width="367" height="342"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Announcement Title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8iK-Tu-1c7">
+                                        <rect key="frame" x="33.5" y="0.0" width="300" height="35"/>
+                                        <color key="tintColor" name="Tint"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="35" id="aRZ-7t-2cJ"/>
+                                            <constraint firstAttribute="width" constant="300" id="kF8-QC-aGk"/>
+                                        </constraints>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="(AnnouncementDetail)" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="mV5-R2-uA7">
+                                        <rect key="frame" x="12" y="43" width="343" height="256"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="tintColor" name="Tint"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5xr-hc-Mb4">
+                                        <rect key="frame" x="106.5" y="307" width="154" height="35"/>
+                                        <color key="tintColor" name="Tint"/>
+                                        <state key="normal" title="Create Announcement"/>
+                                        <connections>
+                                            <action selector="createAnnouncementButtonTapped:" destination="J4q-v5-7G9" eventType="touchUpInside" id="lsk-HP-7ei"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="tintColor" name="Tint"/>
+                        <constraints>
+                            <constraint firstItem="P96-by-0Mc" firstAttribute="leading" secondItem="lJb-uT-1AY" secondAttribute="leading" id="8Ng-z0-utJ"/>
+                            <constraint firstItem="P96-by-0Mc" firstAttribute="trailing" secondItem="lJb-uT-1AY" secondAttribute="trailing" id="DM5-Z9-UhU"/>
+                            <constraint firstItem="qLN-bF-lck" firstAttribute="leading" secondItem="lJb-uT-1AY" secondAttribute="leading" constant="4" id="Oqs-D7-spx"/>
+                            <constraint firstItem="lJb-uT-1AY" firstAttribute="trailing" secondItem="qLN-bF-lck" secondAttribute="trailing" constant="4" id="Uhx-WH-DAY"/>
+                            <constraint firstItem="qLN-bF-lck" firstAttribute="top" secondItem="P96-by-0Mc" secondAttribute="bottom" constant="5" id="VzY-wo-WNA"/>
+                            <constraint firstItem="lJb-uT-1AY" firstAttribute="bottom" secondItem="qLN-bF-lck" secondAttribute="bottom" constant="5" id="ae3-9S-H07"/>
+                            <constraint firstItem="P96-by-0Mc" firstAttribute="top" secondItem="lJb-uT-1AY" secondAttribute="top" id="d9k-qD-FYH"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="lJb-uT-1AY"/>
+                    </view>
+                    <connections>
+                        <outlet property="announcementDescriptionTextView" destination="mV5-R2-uA7" id="ThJ-hu-nDf"/>
+                        <outlet property="announcementImageButton" destination="P96-by-0Mc" id="jUW-5E-bJA"/>
+                        <outlet property="announcementNameTextField" destination="8iK-Tu-1c7" id="cAH-WM-NCb"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1oW-so-Kl4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="7248.8000000000002" y="2951.8740629685158"/>
+        </scene>
+        <!--Announcements-->
         <scene sceneID="cBV-eQ-qaw">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="2BT-wu-tdM" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" systemItem="mostRecent" id="R6q-ev-i3t"/>
+                    <tabBarItem key="tabBarItem" title="Announcements" image="Announcements" id="R6q-ev-i3t"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="qad-qh-6kJ">
@@ -47,4 +209,11 @@
             <point key="canvasLocation" x="5782" y="2952"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Announcements" width="25" height="25"/>
+        <image name="rsvp" width="159" height="200"/>
+        <namedColor name="Tint">
+            <color red="0.27700001001358032" green="0.77899998426437378" blue="0.92500001192092896" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
 </document>

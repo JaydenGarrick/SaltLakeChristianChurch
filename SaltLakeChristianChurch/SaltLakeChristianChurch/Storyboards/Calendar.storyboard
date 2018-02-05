@@ -26,11 +26,11 @@
             </objects>
             <point key="canvasLocation" x="412" y="146.17691154422789"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Calendar-->
         <scene sceneID="7Xm-tE-TSc">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ZFV-9G-op5" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" systemItem="mostViewed" id="vlJ-DI-xG7"/>
+                    <tabBarItem key="tabBarItem" title="Calendar" image="Calendar" id="vlJ-DI-xG7"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="SiB-Ue-gfC">
@@ -47,4 +47,7 @@
             <point key="canvasLocation" x="-335" y="146"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Calendar" width="25" height="25"/>
+    </resources>
 </document>

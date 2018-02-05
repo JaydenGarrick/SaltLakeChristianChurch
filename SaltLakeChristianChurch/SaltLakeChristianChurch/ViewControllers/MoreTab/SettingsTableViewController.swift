@@ -83,6 +83,7 @@ extension SettingsTableViewController {
                 print("Error logging user out: \(error.localizedDescription)")
             }
             self.loginSignUpLabel.text = "Login / Register"
+            self.dismiss(animated: true)
             self.tableView.reloadData()
         }
         alertController.addAction(cancelAction)

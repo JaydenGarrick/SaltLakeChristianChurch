@@ -12,14 +12,14 @@ import Firebase
 class MemberController {
     
     // Singleton
-    static let shared = MemberController()
+    static let shared = MemberController() ; private init(){} 
     
     // Constants
     var members: [Member] = []
     var isLoggedIn = false
     var loggedInMember: Member?
     
-    private init(){}
+    
     
     // MARK: - Firebase Database References
     let baseReference = Database.database().reference()

@@ -7,15 +7,20 @@
 //
 
 import UIKit
+import Firebase
 
 class AnnouncementTableViewCell: UITableViewCell {
     
-    // MARK: - IBOutlets
+    // MARK: - IBOutlets / Constants and Variables
     @IBOutlet weak var announcementImageView: UIImageView!
     @IBOutlet weak var announcementDetailTextView: UITextView!
-    @IBOutlet weak var rsvpButton: UIButton!
     @IBOutlet weak var announcementNameLabel: UILabel!
     @IBOutlet weak var backgroundShadowView: UIView!
+    @IBOutlet weak var dateCreatedLabel: UILabel!
+    
+    weak var delegate: AnnouncementtableViewCellDelegate? // Delegate for cell
+    
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -26,9 +31,13 @@ class AnnouncementTableViewCell: UITableViewCell {
         backgroundShadowView.layer.shadowOpacity = 0.8
         
     }
-
-    @IBAction func rsvpButtonTapped(_ sender: Any) {
-    }
     
-
+    @IBAction func rsvpButtonTapped(_ sender: Any) {
+        print(Database.database().reference().child(Announcement.AnnouncementKey.announcements).childByAutoId().key)
+    }
 }
+protocol AnnouncementtableViewCellDelegate : class {
+    func rsvpButtonTapped(sender: AnnouncementTableViewCell)
+}
+
+

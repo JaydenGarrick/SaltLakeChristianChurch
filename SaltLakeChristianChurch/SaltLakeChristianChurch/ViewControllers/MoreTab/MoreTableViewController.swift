@@ -27,19 +27,7 @@ class MoreTableViewController: UITableViewController {
         tableView.estimatedRowHeight = 350
         tableView.rowHeight = UITableViewAutomaticDimension
     }
-    
-//    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-//
-//
-//        if indexPath.section == 1 {
-//            return 44
-//        }
-//        if indexPath.section == 2 {
-//            return UITableViewAutomaticDimension
-//        } else {
-//            return 44
-//        }
-//    }
+
     
     override func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         if section == 1 {

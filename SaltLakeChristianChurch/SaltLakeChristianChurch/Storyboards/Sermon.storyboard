@@ -26,11 +26,11 @@
             </objects>
             <point key="canvasLocation" x="512.79999999999995" y="156.97151424287858"/>
         </scene>
-        <!--Sermon-->
+        <!--Lessons-->
         <scene sceneID="xja-JP-g9W">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Dha-Ha-9Jz" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Sermon" image="Sermon" id="r0V-dx-lai"/>
+                    <tabBarItem key="tabBarItem" title="Lessons" image="Sermon" id="r0V-dx-lai"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="pwS-bX-LPj">
@@ -48,6 +48,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Sermon" width="25" height="25"/>
+        <image name="Sermon" width="23" height="21"/>
     </resources>
 </document>

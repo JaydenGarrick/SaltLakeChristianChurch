@@ -6,16 +6,17 @@
 //  Copyright © 2018 Jayden Garrick. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 class Announcement {
     
     // MARK: - Properties
     var announcementID: String
-    var announcementName: String
-    var announcementImageAsStringURL: String
+    var name: String
+    var imageAsStringURL: String
     var rsvpTotal: Int
     var description: String
+    var creationDate: Date
     
     // MARK: - Firebase Keys
     enum AnnouncementKey {
@@ -25,28 +26,34 @@ class Announcement {
         
         // Properties
         static let announcementID = "announcementID"
-        static let announcementName = "announcementName"
-        static let announcementImageAsStringURL = "announcementImageAsStringURL"
+        static let name = "name"
+        static let imageAsStringURL = "imageAsStringURL"
         static let rsvpTotal = "rsvpTotal"
         static let description = "description"
+        static let creationDate = "creationDate"
     }
     
     // MARK: - Initialization
-    init(announcementID: String, announcementName: String, announcementImageAsStringURL: String, rsvpTotal: Int, description: String) {
+    init(announcementID: String, name: String, imageAsStringURL: String, rsvpTotal: Int, description: String, creationDate: Date) {
         self.announcementID = announcementID
-        self.announcementName = announcementName
-        self.announcementImageAsStringURL = announcementImageAsStringURL
+        self.name = name
+        self.imageAsStringURL = imageAsStringURL
         self.rsvpTotal = rsvpTotal
         self.description = description
+        self.creationDate = creationDate
     }
     
-    convenience init?(announcementID: String, announcementDictionary: [String:Any]) {
-        guard let announcementName = announcementDictionary[AnnouncementKey.announcementName] as? String,
-            let announcementImageAsStringURL = announcementDictionary[AnnouncementKey.announcementImageAsStringURL] as? String,
+    convenience init?(announcementDictionary: [String:Any]) {
+        guard let announcementID = announcementDictionary[AnnouncementKey.announcementID] as? String,
+            let announcementName = announcementDictionary[AnnouncementKey.name] as? String,
+            let announcementImageAsStringURL = announcementDictionary[AnnouncementKey.imageAsStringURL] as? String,
             let rsvpTotal = announcementDictionary[AnnouncementKey.rsvpTotal] as? Int,
-            let description = announcementDictionary[AnnouncementKey.description] as? String else { return nil }
+            let description = announcementDictionary[AnnouncementKey.description] as? String,
+            let dateAsDobule = announcementDictionary[AnnouncementKey.creationDate] as? Double else { return nil }
         
-        self.init(announcementID: announcementID, announcementName: announcementName, announcementImageAsStringURL: announcementImageAsStringURL, rsvpTotal: rsvpTotal, description: description)
+        let creationDate = Date(timeIntervalSince1970: dateAsDobule)
+        
+        self.init(announcementID: announcementID, name: announcementName, imageAsStringURL: announcementImageAsStringURL, rsvpTotal: rsvpTotal, description: description, creationDate: creationDate)
         
     }
     

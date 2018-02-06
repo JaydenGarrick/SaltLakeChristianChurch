@@ -11,6 +11,11 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="AvenirNext.ttc">
+            <string>AvenirNext-Regular</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Give-->
         <scene sceneID="7aG-Ft-WA5">
@@ -20,18 +25,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You are about to leave the app to go to an external donation service. 🚪🏃🏻" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5OL-jC-GxQ">
-                                <rect key="frame" x="67.333333333333343" y="429" width="279.33333333333326" height="50"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="IV7-j7-sga"/>
-                                    <constraint firstAttribute="width" constant="240" id="zTr-LD-4GI"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                <color key="textColor" red="0.53732824634594878" green="0.53732824634594878" blue="0.53732824634594878" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cmg-1J-M3Z" customClass="UIButtonX" customModule="SaltLakeChristianChurch" customModuleProvider="target">
-                                <rect key="frame" x="134.33333333333331" y="499" width="145.33333333333331" height="38"/>
+                                <rect key="frame" x="134.33333333333334" y="499" width="106" height="38"/>
                                 <color key="backgroundColor" name="Primary"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="106" id="Dq7-r8-YlH"/>
@@ -39,6 +34,7 @@
                                     <constraint firstAttribute="width" secondItem="Cmg-1J-M3Z" secondAttribute="height" multiplier="53:19" id="ewr-74-BBu"/>
                                     <constraint firstAttribute="height" constant="38" id="ihh-Ry-tme"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
                                 <color key="tintColor" name="Tint"/>
                                 <state key="normal" title="Give ">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -61,8 +57,18 @@
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ToTithely" translatesAutoresizingMaskIntoConstraints="NO" id="EXc-Pr-lVm">
-                                <rect key="frame" x="67.333333333333343" y="91" width="279.33333333333326" height="258"/>
+                                <rect key="frame" x="67.333333333333314" y="91" width="240" height="258"/>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You are about to leave the app to go to an external donation service. 🚪🏃🏻" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5OL-jC-GxQ">
+                                <rect key="frame" x="67.000000000000014" y="429" width="240.33333333333337" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="IV7-j7-sga"/>
+                                    <constraint firstAttribute="width" constant="240" id="zTr-LD-4GI"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
+                                <color key="textColor" red="0.53732824634594878" green="0.53732824634594878" blue="0.53732824634594878" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>

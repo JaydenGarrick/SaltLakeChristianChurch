@@ -37,7 +37,7 @@
         <scene sceneID="v1u-1z-Crg">
             <objects>
                 <viewControllerPlaceholder storyboardName="Sermon" id="KMu-2U-lFu" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Sermon" image="Sermon" selectedImage="Sermon" id="kdh-Ix-X69"/>
+                    <tabBarItem key="tabBarItem" title="Lessons" image="Sermon" selectedImage="Sermon" id="kdh-Ix-X69"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xuy-LX-aPU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -90,7 +90,7 @@
         <image name="Announcements" width="25" height="25"/>
         <image name="Calendar" width="25" height="25"/>
         <image name="Give" width="25" height="25"/>
-        <image name="Sermon" width="25" height="25"/>
+        <image name="Sermon" width="23" height="21"/>
         <namedColor name="PrimaryRed">
             <color red="0.77300000190734863" green="0.12999999523162842" blue="0.15299999713897705" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

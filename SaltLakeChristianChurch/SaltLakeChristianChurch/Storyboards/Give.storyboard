@@ -59,7 +59,7 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ToTithely" translatesAutoresizingMaskIntoConstraints="NO" id="EXc-Pr-lVm">
                                 <rect key="frame" x="67.333333333333314" y="91" width="240" height="258"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You are about to leave the app to go to an external donation service. 🚪🏃🏻" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5OL-jC-GxQ">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You are about to leave the app to go to an external donation service. 🚪🏃🏻" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="5OL-jC-GxQ">
                                 <rect key="frame" x="67.000000000000014" y="429" width="240.33333333333337" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="IV7-j7-sga"/>

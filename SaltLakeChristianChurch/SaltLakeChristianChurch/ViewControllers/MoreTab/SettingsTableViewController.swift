@@ -82,6 +82,7 @@ extension SettingsTableViewController {
             } catch let error {
                 print("Error logging user out: \(error.localizedDescription)")
             }
+            MemberController.shared.loggedInMember = nil
             self.loginSignUpLabel.text = "Login / Register"
             self.dismiss(animated: true)
             self.tableView.reloadData()

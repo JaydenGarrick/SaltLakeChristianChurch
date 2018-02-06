@@ -16,7 +16,8 @@ class AnnouncementsViewController: UIViewController {
     @IBOutlet weak var addEventBarButton: UIBarButtonItem!
     @IBOutlet weak var tableView: UITableView!
     
-    var refreshControl: UIRefreshControl!
+    var refreshControl: UIRefreshControl! // Refresh Control for reloading
+    let imageCache = NSCache<NSString, UIImage>()
     
     
     override func viewDidLoad() {
@@ -57,12 +58,12 @@ class AnnouncementsViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        tableView.estimatedRowHeight = 535.0
+        tableView.estimatedRowHeight = 450.0
         tableView.rowHeight = UITableViewAutomaticDimension
         
         
         // Handle bug where button is left on selected
-        if MemberController.shared.loggedInMember?.isAdmin == true {
+        if MemberController.shared.loggedInMember?.isAdmin == true && MemberController.shared.loggedInMember != nil {
             addEventBarButton.isEnabled = false
             addEventBarButton.isEnabled = true
         }
@@ -79,11 +80,9 @@ class AnnouncementsViewController: UIViewController {
         }
     }
     
-    
-
-
 }
 
+// MARK: - TableView Delegate and Datasourcec functions
 extension AnnouncementsViewController: UITableViewDelegate, UITableViewDataSource, AnnouncementtableViewCellDelegate {
     
     
@@ -97,10 +96,19 @@ extension AnnouncementsViewController: UITableViewDelegate, UITableViewDataSourc
         let announcement = AnnouncementController.shared.announcements[indexPath.row]
        
         cell.delegate = self  // Set delegate of cell
+        cell.imageActivityIndicator.startAnimating()
         
         // Set up image from storage
-        AnnouncementController.shared.loadImageFrom(imageURL: announcement.imageAsStringURL) { (image) in
-            cell.announcementImageView.image = image
+        cell.announcementImageView.image = nil
+        if let cachedImage = imageCache.object(forKey: announcement.imageAsStringURL as NSString) {
+            cell.announcementImageView.image = cachedImage
+        } else {
+            AnnouncementController.shared.loadImageFrom(imageURL: announcement.imageAsStringURL) { (image) in
+                guard let image = image else { return }
+                self.imageCache.setObject(image, forKey: announcement.imageAsStringURL as NSString)
+                cell.announcementImageView.image = image
+                cell.imageActivityIndicator.isHidden = true
+            }
         }
         
         // Set properties
@@ -129,7 +137,7 @@ extension AnnouncementsViewController: UITableViewDelegate, UITableViewDataSourc
         cell.alpha = 0
         let transform = CATransform3DTranslate(CATransform3DIdentity, -5, 10, 0)
         cell.layer.transform = transform
-        UIView.animate(withDuration: 0.55) {
+        UIView.animate(withDuration: 0.10) {
             cell.alpha = 1.0
             cell.layer.transform = CATransform3DIdentity
         }

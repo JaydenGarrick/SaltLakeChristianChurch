@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8102DB50202A4BCE0043A604 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8102DB4F202A4BCE0043A604 /* Event.swift */; };
+		8102DB52202A4BD80043A604 /* EventController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8102DB51202A4BD80043A604 /* EventController.swift */; };
 		8109FBA320216B00004B1655 /* Sermon.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8109FBA220216B00004B1655 /* Sermon.storyboard */; };
 		8109FBA520216B1D004B1655 /* Calendar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8109FBA420216B1D004B1655 /* Calendar.storyboard */; };
 		8109FBA720216B41004B1655 /* Announcements.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8109FBA620216B41004B1655 /* Announcements.storyboard */; };
@@ -54,6 +56,9 @@
 
 /* Begin PBXFileReference section */
 		0078708EDF6217E47E032469 /* Pods-SaltLakeChristianChurch.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SaltLakeChristianChurch.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SaltLakeChristianChurch/Pods-SaltLakeChristianChurch.debug.xcconfig"; sourceTree = "<group>"; };
+		8102DB4E202A25590043A604 /* SaltLakeChristianChurch.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SaltLakeChristianChurch.entitlements; sourceTree = "<group>"; };
+		8102DB4F202A4BCE0043A604 /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
+		8102DB51202A4BD80043A604 /* EventController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventController.swift; sourceTree = "<group>"; };
 		8109FBA220216B00004B1655 /* Sermon.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Sermon.storyboard; sourceTree = "<group>"; };
 		8109FBA420216B1D004B1655 /* Calendar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Calendar.storyboard; sourceTree = "<group>"; };
 		8109FBA620216B41004B1655 /* Announcements.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Announcements.storyboard; sourceTree = "<group>"; };
@@ -135,6 +140,7 @@
 		815E23E0201FE47500157B18 /* SaltLakeChristianChurch */ = {
 			isa = PBXGroup;
 			children = (
+				8102DB4E202A25590043A604 /* SaltLakeChristianChurch.entitlements */,
 				815E23E1201FE47500157B18 /* AppDelegate.swift */,
 				815E2410201FE9A000157B18 /* Models */,
 				815E2411201FE9B800157B18 /* ModelControllers */,
@@ -196,6 +202,7 @@
 			children = (
 				815E2423202115F400157B18 /* Member.swift */,
 				8199A82D2028BD2100E02BC0 /* Announcement.swift */,
+				8102DB4F202A4BCE0043A604 /* Event.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -205,6 +212,7 @@
 			children = (
 				815E2425202116F600157B18 /* MemberController.swift */,
 				8199A82F2028BD3500E02BC0 /* AnnouncementController.swift */,
+				8102DB51202A4BD80043A604 /* EventController.swift */,
 			);
 			path = ModelControllers;
 			sourceTree = "<group>";
@@ -339,6 +347,11 @@
 					815E23DD201FE47500157B18 = {
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -425,6 +438,7 @@
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManager/IQKeyboardManager.framework",
 				"${BUILT_PRODUCTS_DIR}/PhoneNumberKit/PhoneNumberKit.framework",
+				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
@@ -434,6 +448,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManager.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PhoneNumberKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
@@ -450,6 +465,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8199A8302028BD3500E02BC0 /* AnnouncementController.swift in Sources */,
+				8102DB50202A4BCE0043A604 /* Event.swift in Sources */,
 				81DBA59120217DE0001EF8E7 /* GiveWebViewController.swift in Sources */,
 				815E240C201FE8F800157B18 /* UILabelX.swift in Sources */,
 				8109FBAD20216D30004B1655 /* SermonViewController.swift in Sources */,
@@ -464,6 +480,7 @@
 				815E24222020F02100157B18 /* LoginOrRegisterViewController.swift in Sources */,
 				81DBA593202231D7001EF8E7 /* MoreTableViewController.swift in Sources */,
 				8199A7BD2022484400E02BC0 /* DirectoryTableViewController.swift in Sources */,
+				8102DB52202A4BD80043A604 /* EventController.swift in Sources */,
 				8199A7C12022951700E02BC0 /* SettingsTableViewController.swift in Sources */,
 				8199A82E2028BD2100E02BC0 /* Announcement.swift in Sources */,
 				8199A7FA2023DD6600E02BC0 /* LaunchScreenCopyViewController.swift in Sources */,
@@ -618,6 +635,7 @@
 			baseConfigurationReference = 0078708EDF6217E47E032469 /* Pods-SaltLakeChristianChurch.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = SaltLakeChristianChurch/SaltLakeChristianChurch.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 94C4Q5DME5;
 				INFOPLIST_FILE = "$(SRCROOT)/SaltLakeChristianChurch/Resources/Info.plist";
@@ -634,6 +652,7 @@
 			baseConfigurationReference = 9E424914063860F44B256AA9 /* Pods-SaltLakeChristianChurch.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = SaltLakeChristianChurch/SaltLakeChristianChurch.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 94C4Q5DME5;
 				INFOPLIST_FILE = "$(SRCROOT)/SaltLakeChristianChurch/Resources/Info.plist";

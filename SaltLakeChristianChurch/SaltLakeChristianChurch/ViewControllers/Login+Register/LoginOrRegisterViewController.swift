@@ -19,7 +19,7 @@ class LoginOrRegisterViewController: UIViewController {
     @IBOutlet weak var fullnameTextField: UITextFieldX!
     @IBOutlet weak var phoneNumberTextField: PhoneNumberTextField!
     @IBOutlet weak var churchCodeTextField: UITextFieldX!
-    @IBOutlet weak var bottomConstraint: NSLayoutConstraint! // Constraint to update view
+//    @IBOutlet weak var bottomConstraint: NSLayoutConstraint! // Constraint to update view
     @IBOutlet weak var loginView: UIViewX!
     @IBOutlet weak var blurView: UIView!
     @IBOutlet weak var loginButton: UIButton!
@@ -62,7 +62,7 @@ class LoginOrRegisterViewController: UIViewController {
         fullnameTextField.isHidden = true
         phoneNumberTextField.isHidden = true
         churchCodeTextField.isHidden = true
-        bottomConstraint.constant = 200.0
+//        bottomConstraint.constant = 200.0
         blurView.layoutIfNeeded()
         
         // Hide keyboard when tapped around
@@ -85,7 +85,7 @@ class LoginOrRegisterViewController: UIViewController {
                 self.phoneNumberTextField.isHidden = true
                 self.churchCodeTextField.isHidden = true
                 self.loginButton.setTitle("Login", for: .normal)
-                self.bottomConstraint.constant = 200.0
+//                self.bottomConstraint.constant = 200.0
                 self.blurView.layoutIfNeeded()
             })
             
@@ -101,7 +101,7 @@ class LoginOrRegisterViewController: UIViewController {
                 self.phoneNumberTextField.isHidden = false
                 self.churchCodeTextField.isHidden = false
                 self.loginButton.setTitle("Register", for: .normal)
-                self.bottomConstraint.constant = 100
+//                self.bottomConstraint.constant = 100
                 self.blurView.layoutIfNeeded()
             })
             

@@ -17,6 +17,7 @@ class AnnouncementTableViewCell: UITableViewCell {
     @IBOutlet weak var announcementNameLabel: UILabel!
     @IBOutlet weak var backgroundShadowView: UIView!
     @IBOutlet weak var dateCreatedLabel: UILabel!
+    @IBOutlet weak var imageActivityIndicator: UIActivityIndicatorView!
     
     weak var delegate: AnnouncementtableViewCellDelegate? // Delegate for cell
     
@@ -29,6 +30,7 @@ class AnnouncementTableViewCell: UITableViewCell {
         backgroundShadowView.layer.shadowColor = UIColor.black.withAlphaComponent(0.5).cgColor
         backgroundShadowView.layer.shadowOffset = CGSize(width: 0, height: 0)
         backgroundShadowView.layer.shadowOpacity = 0.8
+        imageActivityIndicator.startAnimating()
         
     }
     

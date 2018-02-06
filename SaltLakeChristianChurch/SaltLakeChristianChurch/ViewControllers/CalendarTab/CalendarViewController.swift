@@ -14,7 +14,14 @@ class CalendarViewController: UIViewController {
         super.viewDidLoad()
 
         // HandleNavBar and Keyboard
-        self.hideKeyboardWhenTappedAroundAndSetNavBar()    }
+        self.hideKeyboardWhenTappedAroundAndSetNavBar()
+        EventController.shared.fetchEvents { (success) in
+            if success {
+                print("success")
+            }
+        }
+        
+    }
 
   
 

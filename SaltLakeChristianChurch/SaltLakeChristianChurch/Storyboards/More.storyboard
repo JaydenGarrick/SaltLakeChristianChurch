@@ -733,12 +733,12 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                             </imageView>
                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QNS-gw-k9F" customClass="UIViewX" customModule="SaltLakeChristianChurch" customModuleProvider="target">
-                                <rect key="frame" x="20" y="120" width="374" height="466"/>
+                                <rect key="frame" x="20" y="120" width="374" height="469"/>
                                 <subviews>
                                     <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iJa-J9-GV8">
-                                        <rect key="frame" x="0.0" y="0.0" width="374" height="466"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="469"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="MFw-Cc-c8L">
-                                            <rect key="frame" x="0.0" y="0.0" width="374" height="466"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="374" height="469"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="JustMountainLogoPNG" translatesAutoresizingMaskIntoConstraints="NO" id="sIW-Y9-fOO">
@@ -748,10 +748,10 @@
                                                     </constraints>
                                                 </imageView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Hrn-7Q-E7s">
-                                                    <rect key="frame" x="5" y="143" width="364" height="318"/>
+                                                    <rect key="frame" x="5" y="143" width="364" height="321"/>
                                                     <subviews>
-                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="78C-wx-uuP">
-                                                            <rect key="frame" x="0.0" y="0.0" width="364" height="258"/>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="78C-wx-uuP">
+                                                            <rect key="frame" x="0.0" y="0.0" width="364" height="261"/>
                                                             <subviews>
                                                                 <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="kBB-f3-FK9">
                                                                     <rect key="frame" x="5" y="0.0" width="354" height="29"/>
@@ -769,7 +769,7 @@
                                                                     </connections>
                                                                 </segmentedControl>
                                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="9" translatesAutoresizingMaskIntoConstraints="NO" id="f4o-ox-TCt">
-                                                                    <rect key="frame" x="5" y="33" width="354" height="225"/>
+                                                                    <rect key="frame" x="5" y="36" width="354" height="225"/>
                                                                     <subviews>
                                                                         <textField opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="900" verticalCompressionResistancePriority="900" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KHT-mY-1oT" customClass="UITextFieldX" customModule="SaltLakeChristianChurch" customModuleProvider="target">
                                                                             <rect key="frame" x="0.0" y="0.0" width="354" height="30"/>
@@ -860,7 +860,7 @@
                                                             </constraints>
                                                         </stackView>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="SuQ-2l-Pb9">
-                                                            <rect key="frame" x="0.0" y="258" width="364" height="60"/>
+                                                            <rect key="frame" x="0.0" y="261" width="364" height="60"/>
                                                             <subviews>
                                                                 <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f8f-p3-pPt">
                                                                     <rect key="frame" x="160" y="0.0" width="44" height="36"/>

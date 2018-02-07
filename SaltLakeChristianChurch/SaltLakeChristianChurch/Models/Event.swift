@@ -8,25 +8,25 @@
 
 import Foundation
 
-struct EventTopLevelItems {
-    let items: [Item]
+struct EventTopLevelItems: Codable {
+    let items: [Event]
+}
+//
+//struct Item: Codable {
+//    let event: Event
+//}
+
+struct Event: Codable {
+    let summary: String?
+    let location: String?
+    let start: Start?
+    let end: End?
 }
 
-struct Item {
-    let event: Event
+struct Start: Codable {
+    let dateTime: String?
 }
 
-struct Event {
-    let summary: String
-    let location: String
-    let start: Start
-    let end: End
-}
-
-struct Start {
-    let dateTime: Date
-}
-
-struct End {
-    let dateTime: Date
+struct End: Codable {
+    let dateTime: String?
 }

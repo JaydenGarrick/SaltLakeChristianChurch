@@ -24,7 +24,7 @@ class LoginOrRegisterViewController: UIViewController {
     @IBOutlet weak var blurView: UIView!
     @IBOutlet weak var loginButton: UIButton!
     
-    // Checks for which index
+    // Checks for which index the segmented controller is on
     var isLogin = true
     
     // MemberCode

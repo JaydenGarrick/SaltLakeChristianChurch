@@ -14,6 +14,67 @@ class EventController {
     var baseURL = URL(string: "https://www.googleapis.com/calendar/v3/calendars/jep04cit3p2odlnuh6462ppjig%40group.calendar.google.com")
     var events: [Event] = []
     
+    var eventsByMonth: [(String,[Event])] {
+        
+        var january: (String,[Event]) = ("January", [])
+        var february: (String,[Event]) = ("February", [])
+        var march: (String,[Event]) = ("March", [])
+        var april: (String,[Event]) = ("April", [])
+        var may: (String,[Event]) = ("May", [])
+        var june: (String,[Event]) = ("June", [])
+        var july: (String,[Event]) = ("July", [])
+        var august: (String,[Event]) = ("August", [])
+        var september: (String,[Event]) = ("September", [])
+        var october: (String,[Event]) = ("October", [])
+        var november: (String,[Event]) = ("November", [])
+        var december: (String,[Event]) = ("December", [])
+        
+        for event in events {
+            
+            if let start = event.start, let dateAsString = start.dateTime {
+                
+                guard let startDate = DateHelper.inputFormatter.date(from: dateAsString ) else { return [] }
+                
+                let startDateString = DateHelper.outputFormatter.string(from: startDate)
+                
+                guard let month = startDateString.components(separatedBy: " ").first else { return [] }
+                
+                switch month {
+                case "Jan":
+                    january.1.append(event)
+                case "Feb":
+                    february.1.append(event)
+                case "Mar":
+                    march.1.append(event)
+                case "Apr":
+                    april.1.append(event)
+                case "May":
+                    may.1.append(event)
+                case "Jun":
+                    june.1.append(event)
+                case "Jul":
+                    july.1.append(event)
+                case "Aug":
+                    august.1.append(event)
+                case "Sep":
+                    september.1.append(event)
+                case "Oct":
+                    october.1.append(event)
+                case "Nov":
+                    november.1.append(event)
+                case "Dec":
+                    december.1.append(event)
+                default:
+                break
+                }
+            }
+        }
+        
+        let monthArray = [january, february, march, april, may, june, july, august, september, october, november, december]
+
+        return monthArray.filter { $0.1.count > 0 }
+    }
+    
     func fetchEvents(completion: @escaping ((Bool)->Void)) {
         
         // url
@@ -21,9 +82,10 @@ class EventController {
         guard let url = baseURL else { completion(false) ; return }
         var components = URLComponents(url: url, resolvingAgainstBaseURL: true)
         
-        //let limitQueryItem = URLQueryItem(name: "maxResults", value: "25")
+        let orderByQueryItem = URLQueryItem(name: "orderBy", value: "startTime")
+        let singleEventsQuery = URLQueryItem(name: "singleEvents", value: "true")
         let keyQueryItem = URLQueryItem(name: "key", value: "AIzaSyCEzvWdpJPzf6a2dcRjHBScX0Rk6aYgkYk")
-        components?.queryItems = [keyQueryItem]
+        components?.queryItems = [orderByQueryItem, singleEventsQuery ,keyQueryItem]
         guard let newURL = components?.url else { completion(false) ; return }
         print(newURL.absoluteString)
         
@@ -45,14 +107,17 @@ class EventController {
                 let topLevelData = try decoder.decode(EventTopLevelItems.self, from: data)
                 let items = topLevelData.items
                 var tempEventArray: [Event] = []
-                for item in items {
-                    let newEvent = item
-                    tempEventArray.append(newEvent)
+                for event in items {
+                    guard let dateFromEvent = DateHelper.inputFormatter.date(from: event.start?.dateTime ?? "") else { continue }
+                    if dateFromEvent >= Date() {
+                        let newEvent = event
+                        tempEventArray.append(newEvent)
+                    }
                 }
                 if tempEventArray.count == 0 {
                     completion(false)
                 } else {
-                    self.events = tempEventArray.reversed()
+                    self.events = tempEventArray
                     completion(true)
                 }
             } catch let error {

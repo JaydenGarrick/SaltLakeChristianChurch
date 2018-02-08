@@ -7,16 +7,21 @@
 //
 
 import UIKit
+import PhoneNumberKit
 
 class EditProfileViewController: UIViewController, UINavigationControllerDelegate {
 
     // MARK: - IBOutlets and constants / variables
     @IBOutlet weak var profilePictureImageView: UIImageViewX!
     @IBOutlet weak var fullnameLabel: UILabel!
-    @IBOutlet weak var phoneNumberTextField: UITextFieldX!
+    @IBOutlet weak var phoneNumberTextField: PhoneNumberTextField!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var addressTextField: UITextField!
     
+    // PhoneNumberKit
+    let phoneNumberKit = PhoneNumberKit()
+    
+    // Image Controllers
     let pickerController = UIImagePickerController() // Image picker for profile picture
     var imageToSaveToStorage: UIImage?
     

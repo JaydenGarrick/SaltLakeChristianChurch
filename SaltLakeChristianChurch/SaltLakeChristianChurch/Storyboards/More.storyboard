@@ -339,7 +339,7 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="-3" translatesAutoresizingMaskIntoConstraints="NO" id="y3X-Sy-JB6">
                                                 <rect key="frame" x="0.0" y="0.33333333333337123" width="404" height="57"/>
                                                 <subviews>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Phonenumber..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1Ta-pi-xTT" customClass="UITextFieldX" customModule="SaltLakeChristianChurch" customModuleProvider="target">
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Phonenumber..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1Ta-pi-xTT" customClass="PhoneNumberTextField" customModule="PhoneNumberKit">
                                                         <rect key="frame" x="0.0" y="0.33333333333337123" width="404" height="30"/>
                                                         <color key="tintColor" name="Tint"/>
                                                         <constraints>

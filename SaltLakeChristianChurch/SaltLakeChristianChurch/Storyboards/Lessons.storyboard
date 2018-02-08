@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Sermons-->
+        <!--Lessons-->
         <scene sceneID="Zzn-cy-g9C">
             <objects>
                 <viewController id="vtx-o1-4iz" customClass="SermonViewController" customModule="SaltLakeChristianChurch" customModuleProvider="target" sceneMemberID="viewController">
@@ -20,7 +20,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="mrd-Qm-F6G"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Sermons" id="heT-CP-Jr7"/>
+                    <navigationItem key="navigationItem" title="Lessons" id="heT-CP-Jr7"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rWp-mY-Nmv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -11,10 +11,6 @@ import Foundation
 struct EventTopLevelItems: Codable {
     let items: [Event]
 }
-//
-//struct Item: Codable {
-//    let event: Event
-//}
 
 struct Event: Codable {
     let summary: String?

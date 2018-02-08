@@ -20,6 +20,7 @@ class AnnouncementsViewController: UIViewController {
     let imageCache = NSCache<NSString, UIImage>()
     
     
+    // MARK: - ViewDidLoad / ViewDidAppear
     override func viewDidLoad() {
         super.viewDidLoad()
 

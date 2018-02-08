@@ -9,8 +9,9 @@
 import UIKit
 
 class CalendarViewController: UIViewController {
-
+    
     @IBOutlet weak var tableView: UITableView!
+    var eventsByMonth: [(String, [Event])] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,35 +23,74 @@ class CalendarViewController: UIViewController {
         
         // HandleNavBar and Keyboard
         self.hideKeyboardWhenTappedAroundAndSetNavBar()
+        UIApplication.shared.isNetworkActivityIndicatorVisible = true
+        
+        // Initial Fetch of Events
         EventController.shared.fetchEvents { (success) in
             if success {
                 DispatchQueue.main.async {
                     self.tableView.reloadData()
-                    print("Successfully fetched calendar events!")
+                    print("Successfully fetched Calendar events!")
+                    UIApplication.shared.isNetworkActivityIndicatorVisible = false
                 }
             }
         }
         
     }
-
-  
-
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        tableView.estimatedRowHeight = 55
+        tableView.rowHeight = UITableViewAutomaticDimension
+    }
 }
 
 extension CalendarViewController: UITableViewDataSource, UITableViewDelegate {
     
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return EventController.shared.eventsByMonth.count
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return EventController.shared.events.count
+        return EventController.shared.eventsByMonth[section].1.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "CalendarCell", for: indexPath)
-        let event = EventController.shared.events[indexPath.row]  
+        let cell = tableView.dequeueReusableCell(withIdentifier: "CalendarCell", for: indexPath) as! CalendarTableViewCell
         
-        cell.textLabel?.text = event.summary ?? ""
-        cell.detailTextLabel?.text = event.location ?? ""
+        let eventArray = EventController.shared.eventsByMonth[indexPath.section].1
+        let event = eventArray[indexPath.row]
+        var timeText = "All Day"
+        if let dateString = event.start?.dateTime {
+            if let date = DateHelper.inputFormatter.date(from: dateString) {
+                let time = DateHelper.outputFormatter.string(from: date)
+                print(time)
+                timeText = time
+            }
+        }
+        
+        cell.timeLabel.text = timeText
+        cell.summaryLabel.text = event.summary ?? ""
+        cell.locationTextView.text = event.location ?? ""
         
         return cell
     }
     
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableViewAutomaticDimension
+    }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        
+        return EventController.shared.eventsByMonth[section].0
+    }
+
+    
 }
+
+
+
+
+
+
+

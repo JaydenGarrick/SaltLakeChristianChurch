@@ -55,6 +55,12 @@ extension UIImage {
     }
 }
 
+extension String {
+    
+}
+
+
+
 
 
 

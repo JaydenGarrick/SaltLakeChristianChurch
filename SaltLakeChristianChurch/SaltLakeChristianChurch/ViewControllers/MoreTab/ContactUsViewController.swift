@@ -21,7 +21,6 @@ class ContactUsViewController: UIViewController {
         guard let url = URL(string: "https://www.saltlakechristianchurch.com/contact-1/#contact") else { return }
         let request = URLRequest(url: url)
         webView.load(request)
-
     }
 
  

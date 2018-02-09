@@ -105,15 +105,16 @@ extension AnnouncementsViewController: UITableViewDelegate, UITableViewDataSourc
             AnnouncementController.shared.loadImageFrom(imageURL: announcement.imageAsStringURL) { (image) in
                 guard let image = image else { return }
                 self.imageCache.setObject(image, forKey: announcement.imageAsStringURL as NSString)
-                cell.announcementImageView.image = image
-                cell.imageActivityIndicator.isHidden = true
+                DispatchQueue.main.async {
+                    cell.announcementImageView.image = image
+                    cell.imageActivityIndicator.isHidden = true
+                }
             }
         }
         
         // Set properties
         cell.announcementNameLabel.text = announcement.name
         cell.announcementDetailTextView.text = announcement.description
-        
         
         // Set up date
         let dateFormatter = DateFormatter()
@@ -140,8 +141,6 @@ extension AnnouncementsViewController: UITableViewDelegate, UITableViewDataSourc
     }
     
     func rsvpButtonTapped(sender: AnnouncementTableViewCell) {}//FIXME: - Later add RSVP
-
-    
     
 }
 

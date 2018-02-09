@@ -6,7 +6,7 @@
 //  Copyright © 2018 Jayden Garrick. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 class LessonController: NSObject, XMLParserDelegate {
 
@@ -126,4 +126,36 @@ class LessonController: NSObject, XMLParserDelegate {
     }
 
 }
+
+// MARK: - DownlaodImage Function
+extension LessonController {
+    
+    func downloadImageFrom(urlString: String, completion: @escaping ((UIImage?)->Void)) {
+        // url
+        guard let url = URL(string: urlString) else { completion(nil) ; return }
+        
+        // request
+        var request = URLRequest(url: url)
+        request.httpBody = nil
+        request.httpMethod = "GET"
+        
+        //dataTask + resume
+        let dataTask = URLSession.shared.dataTask(with: request) { (data, _, error) in
+            if let error = error {
+                print("Error Loading Image Data: \(error.localizedDescription)")
+                completion(nil)
+                return
+            }
+            guard let data = data else { completion(nil) ; return }
+            let image = UIImage(data: data)
+            completion(image)
+        }
+        dataTask.resume()
+    }
+    
+}
+
+
+
+
 

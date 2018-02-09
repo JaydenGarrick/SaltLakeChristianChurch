@@ -62,7 +62,6 @@ extension CalendarViewController: UITableViewDataSource, UITableViewDelegate {
         if let dateString = event.start?.dateTime {
             if let date = DateHelper.inputFormatter.date(from: dateString) {
                 let time = DateHelper.outputFormatter.string(from: date)
-                print(time)
                 timeText = time
             }
         }

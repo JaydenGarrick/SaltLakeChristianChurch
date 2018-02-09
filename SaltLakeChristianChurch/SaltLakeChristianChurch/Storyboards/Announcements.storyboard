@@ -30,7 +30,7 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                                 <color key="backgroundColor" red="0.86120896879999997" green="0.86120896879999997" blue="0.86120896879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="tintColor" name="Tint"/>
-                                <color key="sectionIndexBackgroundColor" red="0.86120896879999997" green="0.86120896879999997" blue="0.86120896879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="sectionIndexBackgroundColor" red="0.86120896879999997" green="0.86120896879999997" blue="0.86120896879999997" alpha="0.98999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="annoucementCell" rowHeight="525" id="ku3-f3-3cf" customClass="AnnouncementTableViewCell" customModule="SaltLakeChristianChurch" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="525"/>

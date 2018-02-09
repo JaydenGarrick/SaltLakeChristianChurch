@@ -10,7 +10,6 @@ import UIKit
 import Firebase
 
 class AnnouncementsViewController: UIViewController {
-
     
     // MARK: - IBOutlets and constants / variables
     @IBOutlet weak var addEventBarButton: UIBarButtonItem!
@@ -87,7 +86,6 @@ class AnnouncementsViewController: UIViewController {
 // MARK: - TableView Delegate and Datasourcec functions
 extension AnnouncementsViewController: UITableViewDelegate, UITableViewDataSource, AnnouncementtableViewCellDelegate {
     
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return AnnouncementController.shared.announcements.count
     }
@@ -140,6 +138,9 @@ extension AnnouncementsViewController: UITableViewDelegate, UITableViewDataSourc
             cell.layer.transform = CATransform3DIdentity
         }
     }
+    
+    func rsvpButtonTapped(sender: AnnouncementTableViewCell) {}//FIXME: - Later add RSVP
+
     
     
 }

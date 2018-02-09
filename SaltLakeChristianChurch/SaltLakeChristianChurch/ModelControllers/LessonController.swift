@@ -14,8 +14,8 @@ class LessonController: NSObject, XMLParserDelegate {
     static let shared = LessonController() // Singleton
 
     var lessons:[Lesson] = []
-    var imageURLAsString = ""
-    var audioURLAsString = ""
+    private var imageURLAsString = ""
+    private var audioURLAsString = ""
     private var currentElement = ""
 
     private var currentTitle = "" {

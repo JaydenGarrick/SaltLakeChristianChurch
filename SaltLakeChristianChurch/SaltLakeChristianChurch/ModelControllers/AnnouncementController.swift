@@ -48,7 +48,6 @@ class AnnouncementController {
     
     func fetchAnnouncements(completion: @escaping ((Bool)->Void)) {
         let annoucementQuery = announcementDatabase.queryOrdered(byChild: Announcement.AnnouncementKey.creationDate)
-        
         annoucementQuery.observeSingleEvent(of: .value) { (snapshot) in
             var fetchedAnnouncements: [Announcement] = []
             for announcement in snapshot.children.allObjects as! [DataSnapshot] {

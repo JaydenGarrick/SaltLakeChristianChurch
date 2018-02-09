@@ -20,7 +20,7 @@ class AnnouncementsViewController: UIViewController {
     let imageCache = NSCache<NSString, UIImage>()
     
     
-    // MARK: - ViewDidLoad / ViewDidAppear
+    // MARK: - ViewDidLoad / ViewWillAppear
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -53,12 +53,12 @@ class AnnouncementsViewController: UIViewController {
         refreshControl.tintColor = UIColor(named: "Tint")
         refreshControl.addTarget(self, action: #selector(didPullForRefresh), for: .valueChanged)
         tableView.addSubview(refreshControl)
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+        // Set estimated height for self sizing tableview
         tableView.estimatedRowHeight = 450.0
         tableView.rowHeight = UITableViewAutomaticDimension
         
@@ -70,6 +70,7 @@ class AnnouncementsViewController: UIViewController {
         }
     }
     
+    // MARK: - Refresh Function
     @objc func didPullForRefresh() {
         AnnouncementController.shared.fetchAnnouncements { (success) in
             if success {
@@ -92,7 +93,6 @@ extension AnnouncementsViewController: UITableViewDelegate, UITableViewDataSourc
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    
         let cell = tableView.dequeueReusableCell(withIdentifier: "annoucementCell", for: indexPath) as! AnnouncementTableViewCell
         let announcement = AnnouncementController.shared.announcements[indexPath.row]
        
@@ -126,15 +126,12 @@ extension AnnouncementsViewController: UITableViewDelegate, UITableViewDataSourc
         return cell
     }
     
-    func rsvpButtonTapped(sender: AnnouncementTableViewCell) {
-        print("Working")
-    }
-    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableViewAutomaticDimension
     }
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+       // Set initial animation of cell
         cell.alpha = 0
         let transform = CATransform3DTranslate(CATransform3DIdentity, -5, 10, 0)
         cell.layer.transform = transform

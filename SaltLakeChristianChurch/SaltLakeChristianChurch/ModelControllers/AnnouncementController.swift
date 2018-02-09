@@ -24,9 +24,7 @@ class AnnouncementController {
     
     // MARK: - Firebase Upload and Download Methods
     func createAnnouncement(announcementImage: UIImage, announcementName: String, description: String, completion: @escaping ((Bool)-> Void)) {
-        
         guard let imageData = UIImageJPEGRepresentation(announcementImage, 0.9) else { completion(false) ; return }
-        
         photoStorageReference.child(announcementName).putData(imageData, metadata: nil) { (metaData, error) in
             if let error = error {
                 print("Error creating announcement - Can't store image: \(error.localizedDescription)")
@@ -84,14 +82,12 @@ class AnnouncementController {
         if alreadyGoing == false {
             let announcementID = announcement.announcementID
             let rsvpCount = announcement.rsvpTotal + 1
-            
             let values = ["announcementID" : announcementID,
                           "description" : announcement.description,
                           "imageAsStringURL" : announcement.imageAsStringURL,
                           "name" : announcement.name,
                           "rsvpTotal" : rsvpCount
                 ] as [String : Any]
-            
             announcementDatabase.child(announcementID).updateChildValues(values)
         }
     }

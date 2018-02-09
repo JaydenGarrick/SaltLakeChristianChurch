@@ -14,7 +14,6 @@ class LaunchScreenCopyViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         UIApplication.shared.isNetworkActivityIndicatorVisible = true
-
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -28,7 +27,6 @@ class LaunchScreenCopyViewController: UIViewController {
     }
     
     func fetchLoggedInUser() {
-        
         if Auth.auth().currentUser?.uid != nil {
             guard let uuid = Auth.auth().currentUser?.uid else { self.performSegue(withIdentifier: "LaunchSegue", sender: self) ; return }
             let reference = Database.database().reference().child("members").child(uuid)
@@ -47,10 +45,6 @@ class LaunchScreenCopyViewController: UIViewController {
             print("User isn't logged in")
             self.performSegue(withIdentifier: "LaunchSegue", sender: self)
         }
-        
     }
     
-  
-
-
 }

@@ -19,8 +19,6 @@ class MemberController {
     var isLoggedIn = false
     var loggedInMember: Member?
     
-    
-    
     // MARK: - Firebase Database References
     let baseReference = Database.database().reference()
     let memberDatabase = Database.database().reference().child("members")
@@ -31,7 +29,6 @@ class MemberController {
     // MARK: - Firebase Upload and Download Methods
     func fetchMembersForDirectory(memberID: String?, completion: @escaping((Bool)->Void)) {
         let memberQuery = memberDatabase.queryOrdered(byChild: "fullName")
-        
         memberQuery.observeSingleEvent(of: .value) { (snapshot) in
             var fetchedMembers: [Member] = []
             for member in snapshot.children.allObjects as! [DataSnapshot] {
@@ -64,15 +61,12 @@ class MemberController {
     }
     
     func updateMemberWith(image: UIImage, address: String?, email: String?, fullName: String?, phoneNumber: String?, completion: @escaping ((Bool)->Void)) {
-        
         guard let loggedInMember = loggedInMember,
             let imageData = UIImageJPEGRepresentation(image, 0.5) else { completion(false) ; return }
         let address = address ?? loggedInMember.address
         let email = email ?? loggedInMember.email
         let fullName = fullName ?? loggedInMember.fullName
         let phoneNumber = phoneNumber ?? loggedInMember.fullName
-        
-        
         Storage.storage().reference().child(loggedInMember.fullName).putData(imageData, metadata: nil) { (metaData, error) in
             if let error = error {
                 print("Error uploading image to Firebase storage: \(error.localizedDescription)")

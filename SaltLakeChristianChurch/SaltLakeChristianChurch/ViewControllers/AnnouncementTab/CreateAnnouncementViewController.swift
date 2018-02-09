@@ -28,9 +28,6 @@ class CreateAnnouncementViewController: UIViewController, UINavigationController
         
         // Set Delegate
         pickerController.delegate = self
-        
-        
-
     }
     
     // MARK: - IBActions
@@ -49,11 +46,9 @@ class CreateAnnouncementViewController: UIViewController, UINavigationController
                 let announcementName = announcementNameTextField.text,
                 let description = announcementDescriptionTextView.text else { print("Couldn't create announcement, line 47") ; return }
             
-            
             AnnouncementController.shared.createAnnouncement(announcementImage: announcementImage, announcementName: announcementName, description: description) { (success) in
                 if success {
                     UIApplication.shared.isNetworkActivityIndicatorVisible = false
-                    
                     self.navigationController?.popViewController(animated: true)
                 }
             }
@@ -75,7 +70,6 @@ extension CreateAnnouncementViewController: UIImagePickerControllerDelegate {
         DispatchQueue.main.async {
             self.dismiss(animated: true, completion: nil)
         }
-        
     }
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {

@@ -16,7 +16,6 @@ extension UIViewController {
         view.addGestureRecognizer(tap)
         navigationController?.navigationBar.barTintColor = UIColor(named: "Primary")
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white]
-
     }
     
     @objc func dismissKeyboard() {
@@ -36,6 +35,7 @@ extension UIViewController {
 
 extension UIImage {
     func scale(newWidth: CGFloat) -> UIImage {
+        
         // Make sure the given widths is different from the existing one
         if self.size.width == newWidth {
             return self
@@ -50,14 +50,11 @@ extension UIImage {
         self.draw(in: CGRect(x: 0, y: 0, width: newWidth, height: newHeight))
         let newImage: UIImage? = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
-        
         return newImage ?? self
     }
 }
 
-extension String {
-    
-}
+
 
 
 

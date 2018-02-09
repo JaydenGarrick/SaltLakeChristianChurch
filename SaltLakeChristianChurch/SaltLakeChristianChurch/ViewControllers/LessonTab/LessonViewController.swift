@@ -8,13 +8,19 @@
 
 import UIKit
 
-class SermonViewController: UIViewController {
+class LessonViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // HandleNavBar and Keyboard
         self.hideKeyboardWhenTappedAroundAndSetNavBar()
+        
+        LessonController.shared.parseFeedWith(urlString: "https://www.saltlakechristianchurch.com/lessons-on-audio/?format=rss") { (lessons) in
+          // RELOAD TABLEVIEW
+        }
     }
 
 }
+
+

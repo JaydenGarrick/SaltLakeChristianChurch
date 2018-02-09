@@ -100,13 +100,11 @@ class LoginOrRegisterViewController: UIViewController {
                 self.loginButton.setTitle("Register", for: .normal)
                 self.blurView.layoutIfNeeded()
             })
-            
         }
     }
     
     
     @IBAction func loginButtonTapped(_ sender: Any) {
-        
         
         // Handle Creating User
         if isLogin == false {
@@ -120,15 +118,12 @@ class LoginOrRegisterViewController: UIViewController {
             guard let memberCode = memberCode else { self.presentAlertControllerWithOkayAction(title: "Service Error", message: "Unable to create account.") ; return }
             if loggedMemberCode == "\(memberCode)" {
                 
-                
                 // Handle Creating a new user
                 Auth.auth().createUser(withEmail: email, password: password) { (user, error) in
-                    
                     if let error = error {
                         self.presentAlertControllerWithOkayAction(title: "Registration Error", message: error.localizedDescription)
                         return
                     }
-                    
                     guard let user = user else { return }
                     let uuid = user.uid
                     let memberID = UUID().uuidString
@@ -147,6 +142,7 @@ class LoginOrRegisterViewController: UIViewController {
                             return
                         }
                         
+                        // Create the uid
                         guard let uuid = Auth.auth().currentUser?.uid else { self.presentAlertControllerWithOkayAction(title: "Registration Error", message: "Couldn't create user. Please try again.") ; return }
                         MemberController.shared.fetchUserWith(uuid: uuid, completion: { (success) in
                             if success {
@@ -159,14 +155,11 @@ class LoginOrRegisterViewController: UIViewController {
                         })
                     })
                 }
-                
             } else {
                 self.presentAlertControllerWithOkayAction(title: "Registration Error", message: "Invalid member code.")
                 return
             }
         
-            
-            
         // Handle logging in user
         } else {
             guard let email = emailTextField.text, email != "", let password = passwordTextField.text, password != "" else { self.presentAlertControllerWithOkayAction(title: "Login Error", message: "Please provide a valid Email and Password.") ; return }
@@ -202,7 +195,6 @@ class LoginOrRegisterViewController: UIViewController {
 // MARK: - Textfield Delegate
 extension LoginOrRegisterViewController: UITextFieldDelegate {
 
-    
     // MARK: - Password check
         func textFieldDidEndEditing(_ textField: UITextField, reason: UITextFieldDidEndEditingReason) {
         guard let password = passwordTextField.text, let confirmedPassword = confirmPasswordTextField.text else { return }
@@ -226,7 +218,6 @@ extension LoginOrRegisterViewController: UITextFieldDelegate {
             }
     }
 
-    
 }
 
 // MARK: - Fetch Member Code

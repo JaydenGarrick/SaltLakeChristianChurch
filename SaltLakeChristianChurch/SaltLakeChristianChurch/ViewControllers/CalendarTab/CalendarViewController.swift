@@ -20,7 +20,6 @@ class CalendarViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         
-        
         // HandleNavBar and Keyboard
         self.hideKeyboardWhenTappedAroundAndSetNavBar()
         UIApplication.shared.isNetworkActivityIndicatorVisible = true
@@ -35,7 +34,6 @@ class CalendarViewController: UIViewController {
                 }
             }
         }
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -81,11 +79,9 @@ extension CalendarViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        
         return EventController.shared.eventsByMonth[section].0
     }
 
-    
 }
 
 

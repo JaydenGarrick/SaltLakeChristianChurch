@@ -32,11 +32,8 @@ class EventController {
         for event in events {
             
             if let start = event.start, let dateAsString = start.dateTime {
-                
                 guard let startDate = DateHelper.inputFormatter.date(from: dateAsString ) else { return [] }
-                
                 let startDateString = DateHelper.outputFormatter.string(from: startDate)
-                
                 guard let month = startDateString.components(separatedBy: " ").first else { return [] }
                 
                 switch month {
@@ -71,7 +68,6 @@ class EventController {
         }
         
         let monthArray = [january, february, march, april, may, june, july, august, september, october, november, december]
-
         return monthArray.filter { $0.1.count > 0 }
     }
     
@@ -81,7 +77,6 @@ class EventController {
         baseURL?.appendPathComponent("events")
         guard let url = baseURL else { completion(false) ; return }
         var components = URLComponents(url: url, resolvingAgainstBaseURL: true)
-        
         let orderByQueryItem = URLQueryItem(name: "orderBy", value: "startTime")
         let singleEventsQuery = URLQueryItem(name: "singleEvents", value: "true")
         let keyQueryItem = URLQueryItem(name: "key", value: "AIzaSyCEzvWdpJPzf6a2dcRjHBScX0Rk6aYgkYk")
@@ -103,6 +98,7 @@ class EventController {
             guard let data = data else { completion(false) ; return }
             let decoder = JSONDecoder()
             
+            // decode JSON
             do {
                 let topLevelData = try decoder.decode(EventTopLevelItems.self, from: data)
                 let items = topLevelData.items

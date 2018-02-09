@@ -21,8 +21,6 @@ class AnnouncementTableViewCell: UITableViewCell {
     
     weak var delegate: AnnouncementtableViewCellDelegate? // Delegate for cell
     
-    
-    
     override func awakeFromNib() {
         super.awakeFromNib()
         backgroundShadowView.layer.cornerRadius = 3.0
@@ -31,7 +29,6 @@ class AnnouncementTableViewCell: UITableViewCell {
         backgroundShadowView.layer.shadowOffset = CGSize(width: 0, height: 0)
         backgroundShadowView.layer.shadowOpacity = 0.8
         imageActivityIndicator.startAnimating()
-        
     }
     
     @IBAction func rsvpButtonTapped(_ sender: Any) {

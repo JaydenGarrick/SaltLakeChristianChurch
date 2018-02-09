@@ -43,7 +43,7 @@
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                 </textView>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rvs-G7-pgl" userLabel="SeperatorView">
-                                                    <rect key="frame" x="50.5" y="2" width="3" height="50.5"/>
+                                                    <rect key="frame" x="50.5" y="3" width="3" height="48.5"/>
                                                     <color key="backgroundColor" name="Confirmed"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="3" id="E7D-q8-4JX"/>
@@ -78,8 +78,8 @@
                                                 <constraint firstItem="Rvs-G7-pgl" firstAttribute="leading" secondItem="0MY-U3-8iu" secondAttribute="trailing" constant="5" id="Tn8-QU-D65"/>
                                                 <constraint firstItem="0MY-U3-8iu" firstAttribute="top" secondItem="l8j-oU-gLP" secondAttribute="top" constant="5" id="Wc6-ha-fDU"/>
                                                 <constraint firstItem="r6f-Jn-sSr" firstAttribute="leading" secondItem="Rvs-G7-pgl" secondAttribute="trailing" id="cLs-Ox-Fvf"/>
-                                                <constraint firstAttribute="bottom" secondItem="Rvs-G7-pgl" secondAttribute="bottom" constant="2" id="n06-fo-aem"/>
-                                                <constraint firstItem="Rvs-G7-pgl" firstAttribute="top" secondItem="l8j-oU-gLP" secondAttribute="top" constant="2" id="wOV-4r-rzc"/>
+                                                <constraint firstAttribute="bottom" secondItem="Rvs-G7-pgl" secondAttribute="bottom" constant="3" id="n06-fo-aem"/>
+                                                <constraint firstItem="Rvs-G7-pgl" firstAttribute="top" secondItem="l8j-oU-gLP" secondAttribute="top" constant="3" id="wOV-4r-rzc"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>

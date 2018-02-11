@@ -21,6 +21,8 @@ class AudioLessonViewController: UIViewController {
     @IBOutlet weak var playPauseButton: UIButton!
     @IBOutlet weak var timeSoFarLabel: UILabel!
     @IBOutlet weak var timeRemainingLabel: UILabel!
+    @IBOutlet weak var blurView: UIVisualEffectViewX!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     var player: AVAudioPlayer = AVAudioPlayer()
     var mp3URL: URL?
@@ -35,6 +37,10 @@ class AudioLessonViewController: UIViewController {
         // Disable UIElements while audio is loading
         playPauseButton.isEnabled = false
         slider.isEnabled = false
+        activityIndicator.tintColor = UIColor(named: "Tint")
+        activityIndicator.startAnimating()
+        
+        
         
         // Setup while waiting for audio
         UIApplication.shared.isNetworkActivityIndicatorVisible = true
@@ -47,12 +53,12 @@ class AudioLessonViewController: UIViewController {
                     self.slider.isEnabled = true
                     self.mp3URL = fetchedURL
                     self.playPauseButtonImageView.image = #imageLiteral(resourceName: "pause-button")
-                    Timer.scheduledTimer(timeInterval: 0.001, target: self, selector: #selector(self.updateSlider), userInfo: nil, repeats: true)
+                    Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(self.updateSlider), userInfo: nil, repeats: true)
                     Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(self.updateTimeLabel), userInfo: nil, repeats: true)
+                    self.blurView.isHidden = true
                 }
             })
         }
-        
     }
     
     // MARK: - IBActions
@@ -67,7 +73,7 @@ class AudioLessonViewController: UIViewController {
     @IBAction func playOrPauseButtonTapped(_ sender: Any) {
         if player.isPlaying == true {
             UIView.animate(withDuration: 0.5, animations: {
-                self.playPauseButtonImageView.image = #imageLiteral(resourceName: "playButton")
+                self.playPauseButtonImageView.image = #imageLiteral(resourceName: "play-button")
             })
             player.pause()
         } else {
@@ -84,6 +90,12 @@ class AudioLessonViewController: UIViewController {
     
     func play(url: URL) {
         do {
+            do {
+                try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback)
+            } catch {
+                print("Error with AVAudioSession: \(error.localizedDescription)")
+            }
+            
             self.player = try AVAudioPlayer(contentsOf: url)
             player.prepareToPlay()
             player.volume = 1.0
@@ -142,7 +154,7 @@ class AudioLessonViewController: UIViewController {
         let hours:Int = minutes/60
         let seconds:Int = intSeconds%60
         
-        let timeString:String = ((hours<10) ? "0" : "") + String(hours) + ":" + ((minutes<10) ? "0" : "") + String(minutes) + ":" + ((seconds<10) ? "0" : "") + String(seconds)
+        let timeString:String = ((hours<10) ? "" : "") + String(hours) + ":" + ((minutes<10) ? "0" : "") + String(minutes) + ":" + ((seconds<10) ? "0" : "") + String(seconds)
         return timeString
     }
     

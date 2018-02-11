@@ -25,7 +25,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cmg-1J-M3Z" customClass="UIButtonX" customModule="SaltLakeChristianChurch" customModuleProvider="target">
-                                <rect key="frame" x="134.33333333333334" y="499" width="106" height="38"/>
+                                <rect key="frame" x="134.33333333333331" y="499" width="145.33333333333331" height="38"/>
                                 <color key="backgroundColor" name="Primary"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="106" id="Dq7-r8-YlH"/>
@@ -54,10 +54,10 @@
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ToTithely" translatesAutoresizingMaskIntoConstraints="NO" id="EXc-Pr-lVm">
-                                <rect key="frame" x="67.333333333333314" y="91" width="240" height="258"/>
+                                <rect key="frame" x="67.333333333333343" y="91" width="279.33333333333326" height="258"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You are about to leave the app to go to an external donation service. 🚪🏃🏻" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="5OL-jC-GxQ">
-                                <rect key="frame" x="67.000000000000014" y="429" width="240.33333333333337" height="50"/>
+                                <rect key="frame" x="67" y="429" width="279.66666666666669" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="IV7-j7-sga"/>
                                     <constraint firstAttribute="width" constant="240" id="zTr-LD-4GI"/>

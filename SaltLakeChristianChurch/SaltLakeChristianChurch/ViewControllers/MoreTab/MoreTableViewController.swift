@@ -17,10 +17,8 @@ class MoreTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
      
-        
         // Hides Keyboard and sets NavigationBar
         self.hideKeyboardWhenTappedAroundAndSetNavBar()
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -38,16 +36,17 @@ class MoreTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if indexPath.row == 0 {
-            if MemberController.shared.isLoggedIn == true {
-                performSegue(withIdentifier: "ToDirectory", sender: self)
-            } else {
-                presentActionSheet()
+
+        if indexPath.section == 0 {
+            if indexPath.row == 0 {
+                if MemberController.shared.isLoggedIn == true {
+                    performSegue(withIdentifier: "ToDirectory", sender: self)
+                } else {
+                    presentActionSheet()
+                }
             }
         }
     }
-
-   
 
 }
 
@@ -55,13 +54,12 @@ class MoreTableViewController: UITableViewController {
 extension MoreTableViewController {
     
     func presentActionSheet() {
-        
         let actionSheet = UIAlertController(title: "Member feature", message: "For privacy reasons, you must be a member of Salt Lake Christian Church to access the directory", preferredStyle: .actionSheet)
         let okayAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
-        let contactUsAction = UIAlertAction(title: "Interested in becoming a member? Contact us!", style: .default) { (_) in
+        let contactUsAction = UIAlertAction(title: "Interested in becoming a member? Contact us", style: .default) { (_) in
             self.performSegue(withIdentifier: "ToContactUs", sender: self)
         }
-        let loginAction = UIAlertAction(title: "Already a member? Login!", style: .default) { (_) in
+        let loginAction = UIAlertAction(title: "Already a member? Login", style: .default) { (_) in
             self.performSegue(withIdentifier: "ToLogin", sender: self)
         }
         actionSheet.addAction(contactUsAction)

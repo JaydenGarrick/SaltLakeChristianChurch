@@ -39,7 +39,6 @@ class EditProfileViewController: UIViewController, UINavigationControllerDelegat
         // Make imageView a circle
         let cornerRadius = profilePictureImageView.bounds.height / 2
         profilePictureImageView.layer.cornerRadius = cornerRadius
-
     }
 
     // MARK: - IBActions

@@ -20,6 +20,8 @@ class MemberDetailViewController: UIViewController {
     @IBOutlet weak var emailLabel: UILabel!
     @IBOutlet weak var phoneNumberLabel: UILabel!
     @IBOutlet weak var imageView: UIImageViewX!
+    let imageCache = NSCache<NSString, UIImage>()
+    
     
     // MARK: - ViewDidLoad / Appear
     override func viewDidLoad() {
@@ -30,6 +32,10 @@ class MemberDetailViewController: UIViewController {
         self.navigationController?.navigationBar.shadowImage = UIImage()
         self.navigationController?.navigationBar.isTranslucent = true
         self.navigationController?.view.backgroundColor = .clear
+        
+        // Create round Profile Picture
+        self.imageView.layer.cornerRadius = self.imageView.frame.size.width / 2
+        self.imageView.clipsToBounds = true
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -44,16 +50,22 @@ class MemberDetailViewController: UIViewController {
             emailLabel.text = member.email
             phoneNumberLabel.text = member.phoneNumber
             
-            
+            // Check  to see if they have profile picture
             if member.imageAsURL != "" {
                 guard let imageAsURL = member.imageAsURL else { return }
-                MemberController.shared.loadImageFrom(imageURL: imageAsURL, completion: { (image) in
-                    self.imageView.image = image
-                })
+                if let cachedImage = imageCache.object(forKey: imageAsURL as NSString) {
+                    self.imageView.image = cachedImage
+                } else {
+                    MemberController.shared.loadImageFrom(imageURL: imageAsURL, completion: { (image) in
+                        guard let image = image else { return }
+                        self.imageCache.setObject(image, forKey: imageAsURL as NSString)
+                        DispatchQueue.main.async {
+                            self.imageView.image = image
+                        }
+                    })
+                }
             }
-        
         }
-        
     }
  
 

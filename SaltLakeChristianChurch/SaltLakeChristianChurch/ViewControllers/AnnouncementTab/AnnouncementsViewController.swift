@@ -8,12 +8,14 @@
 
 import UIKit
 import Firebase
+import MessageUI
 
 class AnnouncementsViewController: UIViewController {
     
     // MARK: - IBOutlets and constants / variables
     @IBOutlet weak var addEventBarButton: UIBarButtonItem!
     @IBOutlet weak var tableView: UITableView!
+   
     
     var refreshControl: UIRefreshControl! // Refresh Control for reloading
     let imageCache = NSCache<NSString, UIImage>()
@@ -22,7 +24,7 @@ class AnnouncementsViewController: UIViewController {
     // MARK: - ViewDidLoad / ViewWillAppear
     override func viewDidLoad() {
         super.viewDidLoad()
-
+    
         // HandleNavBar and Keyboard and Set network indicator
         self.hideKeyboardWhenTappedAroundAndSetNavBar()
         UIApplication.shared.isNetworkActivityIndicatorVisible = true
@@ -35,7 +37,6 @@ class AnnouncementsViewController: UIViewController {
         // Delegate
         tableView.delegate = self
         tableView.dataSource = self
-        
         
         // Initial Fetch for events
         AnnouncementController.shared.fetchAnnouncements { (success) in
@@ -68,6 +69,12 @@ class AnnouncementsViewController: UIViewController {
             addEventBarButton.isEnabled = true
         }
     }
+    
+    // MARK: - IBActions
+    @IBAction func actionButtonTapped(_ sender: Any) {
+        presentHideAlert()
+    }
+    
     
     // MARK: - Refresh Function
     @objc func didPullForRefresh() {
@@ -141,6 +148,36 @@ extension AnnouncementsViewController: UITableViewDelegate, UITableViewDataSourc
     }
     
     func rsvpButtonTapped(sender: AnnouncementTableViewCell) {}//FIXME: - Later add RSVP
+    
+}
+
+// MARK: - Add Action Sheet for reporting / hiding
+extension AnnouncementsViewController: MFMailComposeViewControllerDelegate {
+    
+    func presentHideAlert() {
+        let actionSheet = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        let hideAction = UIAlertAction(title: "Hide", style: .default) { (_) in
+            //FIXME: - Add hide functionality
+        }
+        let reportAction = UIAlertAction(title: "Report as Offenseive", style: .destructive) { (_) in
+            
+            let mailComposeViewController = MFMailComposeViewController()
+            mailComposeViewController.mailComposeDelegate = self
+            if MFMailComposeViewController.canSendMail() {
+                mailComposeViewController.setToRecipients(["jaydengarrick@gmail.com"])
+                mailComposeViewController.setSubject("Offensive material")
+                mailComposeViewController.setMessageBody("", isHTML: false)
+                self.present(mailComposeViewController, animated: true)
+            }
+            
+            
+        }
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        actionSheet.addAction(hideAction)
+        actionSheet.addAction(reportAction)
+        actionSheet.addAction(cancelAction)
+        self.present(actionSheet, animated: true)
+    }
     
 }
 

@@ -114,7 +114,8 @@ class LessonController: NSObject, XMLParserDelegate {
 
     func parser(_ parser: XMLParser, didEndElement elementName: String, namespaceURI: String?, qualifiedName qName: String?) {
         if elementName == tagKey.item.rawValue {
-            let lesson = Lesson(title: currentTitle, summary: currentTitle, pubDate: currentPubDate, imageURL: imageURLAsString, audioURLAsString: audioURLAsString)
+            let lesson = Lesson(title: currentTitle, summary: currentSummary, pubDate: currentPubDate, imageURL: imageURLAsString, audioURLAsString: audioURLAsString)
+            print(imageURLAsString)
             imageURLAsString = ""
             audioURLAsString = ""
             lessons.append(lesson)

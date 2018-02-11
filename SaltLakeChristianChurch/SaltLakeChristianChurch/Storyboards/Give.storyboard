@@ -6,7 +6,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -30,8 +29,6 @@
                                 <color key="backgroundColor" name="Primary"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="106" id="Dq7-r8-YlH"/>
-                                    <constraint firstAttribute="width" constant="106" id="UrZ-Ri-sPd"/>
-                                    <constraint firstAttribute="width" secondItem="Cmg-1J-M3Z" secondAttribute="height" multiplier="53:19" id="ewr-74-BBu"/>
                                     <constraint firstAttribute="height" constant="38" id="ihh-Ry-tme"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
@@ -53,10 +50,10 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <segue destination="Eaf-2f-HcY" kind="show" id="kgv-5Q-zhs"/>
+                                    <action selector="giveButtonTapped:" destination="lmY-uZ-80V" eventType="touchUpInside" id="5ZY-9V-N8B"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ToTithely" translatesAutoresizingMaskIntoConstraints="NO" id="EXc-Pr-lVm">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ToTithely" translatesAutoresizingMaskIntoConstraints="NO" id="EXc-Pr-lVm">
                                 <rect key="frame" x="67.333333333333314" y="91" width="240" height="258"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You are about to leave the app to go to an external donation service. 🚪🏃🏻" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="5OL-jC-GxQ">
@@ -90,41 +87,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lOq-Mr-Nnc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="368.80000000000001" y="179.46026986506749"/>
-        </scene>
-        <!--Give Web View Controller-->
-        <scene sceneID="U4f-8L-zUx">
-            <objects>
-                <viewController id="Eaf-2f-HcY" customClass="GiveWebViewController" customModule="SaltLakeChristianChurch" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="vSP-a5-pWa">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ys4-Fm-X4F">
-                                <rect key="frame" x="0.0" y="44" width="414" height="643"/>
-                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <wkWebViewConfiguration key="configuration">
-                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
-                                    <wkPreferences key="preferences"/>
-                                </wkWebViewConfiguration>
-                            </wkWebView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="tJ2-hw-vx4" firstAttribute="bottom" secondItem="Ys4-Fm-X4F" secondAttribute="bottom" id="CWi-p0-dwb"/>
-                            <constraint firstItem="tJ2-hw-vx4" firstAttribute="trailing" secondItem="Ys4-Fm-X4F" secondAttribute="trailing" id="P8m-4N-ecw"/>
-                            <constraint firstItem="tJ2-hw-vx4" firstAttribute="top" secondItem="Ys4-Fm-X4F" secondAttribute="top" constant="20" id="nOJ-U8-tjw"/>
-                            <constraint firstItem="Ys4-Fm-X4F" firstAttribute="leading" secondItem="tJ2-hw-vx4" secondAttribute="leading" id="vNH-Ka-k4q"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="tJ2-hw-vx4"/>
-                    </view>
-                    <connections>
-                        <outlet property="webView" destination="Ys4-Fm-X4F" id="3V2-6w-7Zz"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="VoC-hl-sXI" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1213" y="179"/>
         </scene>
         <!--Give-->
         <scene sceneID="6Ac-7T-5zU">

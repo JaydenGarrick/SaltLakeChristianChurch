@@ -39,6 +39,17 @@ class LessonViewController: UIViewController {
         collectionView.addSubview(refreshControl)
     }
     
+    // MARK: - Navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "LessonAudio" {
+            guard let indexPaths = collectionView.indexPathsForSelectedItems else { return }
+            guard let indexPath = indexPaths.first else { return }
+            let destinationVC = segue.destination as! AudioLessonViewController
+            let lesson = lessons[indexPath.row]
+            destinationVC.lesson = lesson
+        }
+    }
+    
 }
 
 // MARK: - CollectionView Datasource and Delegate
@@ -54,18 +65,21 @@ extension LessonViewController: UICollectionViewDelegate, UICollectionViewDataSo
         // Configure the cell
         let lesson = lessons[indexPath.row]
         
-        if let cachedImage = imageCache.object(forKey: lesson.imageURL as NSString) {
-            cell.lessonImageView.image = cachedImage
+        if lesson.imageURL ==  "http://static1.squarespace.com/static/58b1f2c003596e617b2a55ad/t/5a09269a9140b7f3b7b8b654/1510549154825/1500w/SLCC+Logo+iTunes.png" {
+            cell.lessonImageView.image = #imageLiteral(resourceName: "CollectionViewHolder")
         } else {
-            LessonController.shared.downloadImageFrom(urlString: lesson.imageURL) { (image) in
-                guard let image = image else { return }
-                self.imageCache.setObject(image, forKey: lesson.imageURL as NSString)
-                DispatchQueue.main.async {
-                    cell.lessonImageView.image = image
+            if let cachedImage = imageCache.object(forKey: lesson.imageURL as NSString) {
+                cell.lessonImageView.image = cachedImage
+            } else {
+                LessonController.shared.downloadImageFrom(urlString: lesson.imageURL) { (image) in
+                    guard let image = image else { return }
+                    self.imageCache.setObject(image, forKey: lesson.imageURL as NSString)
+                    DispatchQueue.main.async {
+                        cell.lessonImageView.image = image
+                    }
                 }
             }
         }
-        
         cell.lessonTitle.text = lesson.title
         return cell
     }
@@ -81,7 +95,7 @@ extension LessonViewController: UICollectionViewDelegate, UICollectionViewDataSo
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 160.0, height: 230.0)
+        return CGSize(width: 160.0, height: 180.0)
     }
     
     @objc func refresh() {

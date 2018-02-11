@@ -54,7 +54,7 @@
 		8199A82E2028BD2100E02BC0 /* Announcement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8199A82D2028BD2100E02BC0 /* Announcement.swift */; };
 		8199A8302028BD3500E02BC0 /* AnnouncementController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8199A82F2028BD3500E02BC0 /* AnnouncementController.swift */; };
 		8199A8352028BDB000E02BC0 /* AnnouncementTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8199A8342028BDB000E02BC0 /* AnnouncementTableViewCell.swift */; };
-		81DBA59120217DE0001EF8E7 /* GiveWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81DBA59020217DE0001EF8E7 /* GiveWebViewController.swift */; };
+		819F7FC2202E56110067FBDF /* AudioLessonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819F7FC1202E56110067FBDF /* AudioLessonViewController.swift */; };
 		81DBA593202231D7001EF8E7 /* MoreTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81DBA592202231D7001EF8E7 /* MoreTableViewController.swift */; };
 		FBF458CABE07E4278BD949DB /* Pods_SaltLakeChristianChurch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83F1D8FC62F7E113BACAD970 /* Pods_SaltLakeChristianChurch.framework */; };
 /* End PBXBuildFile section */
@@ -111,7 +111,7 @@
 		8199A82D2028BD2100E02BC0 /* Announcement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Announcement.swift; sourceTree = "<group>"; };
 		8199A82F2028BD3500E02BC0 /* AnnouncementController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnouncementController.swift; sourceTree = "<group>"; };
 		8199A8342028BDB000E02BC0 /* AnnouncementTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnouncementTableViewCell.swift; sourceTree = "<group>"; };
-		81DBA59020217DE0001EF8E7 /* GiveWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GiveWebViewController.swift; sourceTree = "<group>"; };
+		819F7FC1202E56110067FBDF /* AudioLessonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioLessonViewController.swift; sourceTree = "<group>"; };
 		81DBA592202231D7001EF8E7 /* MoreTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreTableViewController.swift; sourceTree = "<group>"; };
 		83F1D8FC62F7E113BACAD970 /* Pods_SaltLakeChristianChurch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SaltLakeChristianChurch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9E424914063860F44B256AA9 /* Pods-SaltLakeChristianChurch.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SaltLakeChristianChurch.release.xcconfig"; path = "Pods/Target Support Files/Pods-SaltLakeChristianChurch/Pods-SaltLakeChristianChurch.release.xcconfig"; sourceTree = "<group>"; };
@@ -260,7 +260,6 @@
 			isa = PBXGroup;
 			children = (
 				8109FBB220216D6B004B1655 /* GiveViewController.swift */,
-				81DBA59020217DE0001EF8E7 /* GiveWebViewController.swift */,
 			);
 			path = GiveTab;
 			sourceTree = "<group>";
@@ -295,6 +294,7 @@
 			isa = PBXGroup;
 			children = (
 				8109FBAC20216D30004B1655 /* LessonViewController.swift */,
+				819F7FC1202E56110067FBDF /* AudioLessonViewController.swift */,
 			);
 			path = LessonTab;
 			sourceTree = "<group>";
@@ -481,7 +481,6 @@
 			files = (
 				8199A8302028BD3500E02BC0 /* AnnouncementController.swift in Sources */,
 				8102DB50202A4BCE0043A604 /* Event.swift in Sources */,
-				81DBA59120217DE0001EF8E7 /* GiveWebViewController.swift in Sources */,
 				817B4958202B737A00A62211 /* CalendarTableViewCell.swift in Sources */,
 				815E240C201FE8F800157B18 /* UILabelX.swift in Sources */,
 				8109FBAD20216D30004B1655 /* LessonViewController.swift in Sources */,
@@ -494,6 +493,7 @@
 				815E2406201FE8F800157B18 /* UIImageViewX.swift in Sources */,
 				815E240E201FE8F800157B18 /* UITextFieldX.swift in Sources */,
 				8109FBB320216D6B004B1655 /* GiveViewController.swift in Sources */,
+				819F7FC2202E56110067FBDF /* AudioLessonViewController.swift in Sources */,
 				815E24222020F02100157B18 /* LoginOrRegisterViewController.swift in Sources */,
 				817B4980202D06EC00A62211 /* LessonController.swift in Sources */,
 				81DBA593202231D7001EF8E7 /* MoreTableViewController.swift in Sources */,

@@ -88,8 +88,6 @@ class AnnouncementsViewController: UIViewController, NSFetchedResultsControllerD
 // MARK: - TableView Delegate and Datasourcec functions
 extension AnnouncementsViewController: UITableViewDelegate, UITableViewDataSource {
 
-    
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return AnnouncementController.shared.announcements.count
     }

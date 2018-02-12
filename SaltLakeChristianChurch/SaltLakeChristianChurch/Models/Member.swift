@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Member {
+class Member: Equatable {
 
     // MARK: - Properties
     var memberID: String
@@ -54,6 +54,11 @@ class Member {
             let address = memberDictionary[MemberKey.address] as? String,
             let isAdmin = memberDictionary[MemberKey.isAdmin] as? Bool else { return nil }
         self.init(memberID: memberID, fullName: fullName, email: email, phoneNumber: phoneNumber, imageAsURL: imageAsURL, address: address, isAdmin: isAdmin)
+    }
+    
+    // MARK: - Equatable protocol
+    static func ==(lhs: Member, rhs: Member) -> Bool {
+        return lhs.memberID == rhs.memberID
     }
 }
 

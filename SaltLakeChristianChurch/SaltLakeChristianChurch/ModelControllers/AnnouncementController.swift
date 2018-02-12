@@ -61,13 +61,13 @@ class AnnouncementController {
                 }
             }
             
+            // Filter for blocked announcements
             for announcement in fetchedAnnouncements {
                 for blockedAnnouncement in BlockedAnnouncementController.shared.blockedAnnouncements {
                     guard let announcementID = blockedAnnouncement.announcementID else { continue }
                     if announcementID == announcement.announcementID {
                         guard let index = fetchedAnnouncements.index(of: announcement) else { continue }
                         fetchedAnnouncements.remove(at: index)
-                        print("\(fetchedAnnouncements.count) is the total number of objects in the fetchedAnnouncementsArray")
                     }
                 }
             }

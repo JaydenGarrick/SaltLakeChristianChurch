@@ -40,6 +40,16 @@ class MemberController {
                     return
                 }
             }
+            
+            for member in fetchedMembers {
+                for blockedMember in BlockedMemberController.shared.blockedMembers {
+                    guard let blockID = blockedMember.memberID else { continue }
+                    if blockID == member.memberID {
+                        guard let index =  fetchedMembers.index(of: member) else { continue }
+                        fetchedMembers.remove(at: index)
+                    }
+                }
+            }
             self.members = fetchedMembers
             completion(true)
         }

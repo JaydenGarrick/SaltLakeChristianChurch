@@ -59,6 +59,8 @@
 		819F7FCA20310F430067FBDF /* CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819F7FC920310F430067FBDF /* CoreData.swift */; };
 		819F7FCC20310FC50067FBDF /* BlockedAnnouncement+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819F7FCB20310FC50067FBDF /* BlockedAnnouncement+Convenience.swift */; };
 		819F7FCE203111740067FBDF /* BlockedAnnouncementController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819F7FCD203111740067FBDF /* BlockedAnnouncementController.swift */; };
+		819F7FD02031385E0067FBDF /* BlockedMember.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819F7FCF2031385E0067FBDF /* BlockedMember.swift */; };
+		819F7FD2203138F20067FBDF /* BlockedMemberController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819F7FD1203138F20067FBDF /* BlockedMemberController.swift */; };
 		81DBA593202231D7001EF8E7 /* MoreTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81DBA592202231D7001EF8E7 /* MoreTableViewController.swift */; };
 		FBF458CABE07E4278BD949DB /* Pods_SaltLakeChristianChurch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83F1D8FC62F7E113BACAD970 /* Pods_SaltLakeChristianChurch.framework */; };
 /* End PBXBuildFile section */
@@ -120,6 +122,8 @@
 		819F7FC920310F430067FBDF /* CoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreData.swift; sourceTree = "<group>"; };
 		819F7FCB20310FC50067FBDF /* BlockedAnnouncement+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BlockedAnnouncement+Convenience.swift"; sourceTree = "<group>"; };
 		819F7FCD203111740067FBDF /* BlockedAnnouncementController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockedAnnouncementController.swift; sourceTree = "<group>"; };
+		819F7FCF2031385E0067FBDF /* BlockedMember.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockedMember.swift; sourceTree = "<group>"; };
+		819F7FD1203138F20067FBDF /* BlockedMemberController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockedMemberController.swift; sourceTree = "<group>"; };
 		81DBA592202231D7001EF8E7 /* MoreTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreTableViewController.swift; sourceTree = "<group>"; };
 		83F1D8FC62F7E113BACAD970 /* Pods_SaltLakeChristianChurch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SaltLakeChristianChurch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9E424914063860F44B256AA9 /* Pods-SaltLakeChristianChurch.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SaltLakeChristianChurch.release.xcconfig"; path = "Pods/Target Support Files/Pods-SaltLakeChristianChurch/Pods-SaltLakeChristianChurch.release.xcconfig"; sourceTree = "<group>"; };
@@ -226,6 +230,7 @@
 				8102DB4F202A4BCE0043A604 /* Event.swift */,
 				817B4981202D127500A62211 /* Lesson.swift */,
 				819F7FCB20310FC50067FBDF /* BlockedAnnouncement+Convenience.swift */,
+				819F7FCF2031385E0067FBDF /* BlockedMember.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -238,6 +243,7 @@
 				8102DB51202A4BD80043A604 /* EventController.swift */,
 				817B497F202D06EC00A62211 /* LessonController.swift */,
 				819F7FCD203111740067FBDF /* BlockedAnnouncementController.swift */,
+				819F7FD1203138F20067FBDF /* BlockedMemberController.swift */,
 			);
 			path = ModelControllers;
 			sourceTree = "<group>";
@@ -520,6 +526,7 @@
 				8199A7C12022951700E02BC0 /* SettingsTableViewController.swift in Sources */,
 				8199A82E2028BD2100E02BC0 /* Announcement.swift in Sources */,
 				8199A7FA2023DD6600E02BC0 /* LaunchScreenCopyViewController.swift in Sources */,
+				819F7FD2203138F20067FBDF /* BlockedMemberController.swift in Sources */,
 				815E23E2201FE47500157B18 /* AppDelegate.swift in Sources */,
 				815E2405201FE8F800157B18 /* UITextViewX.swift in Sources */,
 				815E2408201FE8F800157B18 /* UIViewX.swift in Sources */,
@@ -536,6 +543,7 @@
 				815E240A201FE8F800157B18 /* UIViewXRadialGradient.swift in Sources */,
 				817B495A202B80B100A62211 /* DateHelper.swift in Sources */,
 				8199A7FC202506CC00E02BC0 /* ContactUsViewController.swift in Sources */,
+				819F7FD02031385E0067FBDF /* BlockedMember.swift in Sources */,
 				8181E0992028C9460093CC04 /* CreateAnnouncementViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

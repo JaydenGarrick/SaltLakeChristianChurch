@@ -13,20 +13,28 @@ import CoreData
 class LaunchScreenCopyViewController: UIViewController, NSFetchedResultsControllerDelegate {
 
     // MARK: - FetchRequestController for CoreData
-    let fetchRequestController: NSFetchedResultsController<BlockedAnnouncement> = {
+    let announcementsFetchRequestController: NSFetchedResultsController<BlockedAnnouncement> = {
         let fetchRequest: NSFetchRequest<BlockedAnnouncement> = BlockedAnnouncement.fetchRequest()
         fetchRequest.sortDescriptors = [NSSortDescriptor(key: "announcementID", ascending: true)]
+        return NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: CoreDataStack.context, sectionNameKeyPath: nil, cacheName: nil)
+    }()
+    
+    let memberFetchRequestController: NSFetchedResultsController<BlockedMember> = {
+        let fetchRequest: NSFetchRequest<BlockedMember> = BlockedMember.fetchRequest()
+        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "memberID", ascending: true)]
         return NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: CoreDataStack.context, sectionNameKeyPath: nil, cacheName: nil)
     }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        fetchRequestController.delegate = self
-        // Fetch Blocked Announcements
+        announcementsFetchRequestController.delegate = self
+        
+        // Fetch Blocked Announcements and Members
         do {
-            try fetchRequestController.performFetch()
-            BlockedAnnouncementController.shared.blockedAnnouncements = fetchRequestController.fetchedObjects ?? []
-            print("\(BlockedAnnouncementController.shared.blockedAnnouncements.count) is the total the ammount of announcements this user has blocked")
+            try announcementsFetchRequestController.performFetch()
+            try memberFetchRequestController.performFetch()
+            BlockedAnnouncementController.shared.blockedAnnouncements = announcementsFetchRequestController.fetchedObjects ?? []
+            BlockedMemberController.shared.blockedMembers = memberFetchRequestController.fetchedObjects ?? []
         } catch {
             print("Error performing fetch from FetchRequestController: \(error.localizedDescription)")
         }

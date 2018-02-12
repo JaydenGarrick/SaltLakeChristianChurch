@@ -145,24 +145,30 @@ extension AnnouncementsViewController: UITableViewDelegate, UITableViewDataSourc
         }
     }
     
-
-    
-  
-    
 }
 
 // MARK: - Add Action Sheet for reporting / hiding
 extension AnnouncementsViewController: MFMailComposeViewControllerDelegate, AnnouncementtableViewCellDelegate {
     
     func announcementButtonTapped(sender: AnnouncementTableViewCell) {
+        
+        // Create Action Sheet
         let actionSheet = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        
+        // Create Action for hiding
         let hideAction = UIAlertAction(title: "Hide", style: .default) { (_) in
-        self.hideContent(cell: sender)
+            
+            // Hides the content
+            self.hideContent(cell: sender)
         }
         let reportAction = UIAlertAction(title: "Report as Offenseive", style: .destructive) { (_) in
+            
+            // Presents mail controller and hides content
             self.presentMailViewController()
             self.hideContent(cell: sender)
         }
+        
+        // Cancel Action
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
         actionSheet.addAction(hideAction)
         actionSheet.addAction(reportAction)

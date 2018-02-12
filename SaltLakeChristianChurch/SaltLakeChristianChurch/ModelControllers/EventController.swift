@@ -10,12 +10,11 @@ import Foundation
 
 class EventController {
     
-    static let shared = EventController()
+    static let shared = EventController() ; private init(){} // Singleton
     var baseURL = URL(string: "https://www.googleapis.com/calendar/v3/calendars/jep04cit3p2odlnuh6462ppjig%40group.calendar.google.com")
     var events: [Event] = []
     
     var eventsByMonth: [(String,[Event])] {
-        
         var january: (String,[Event]) = ("January", [])
         var february: (String,[Event]) = ("February", [])
         var march: (String,[Event]) = ("March", [])
@@ -29,8 +28,8 @@ class EventController {
         var november: (String,[Event]) = ("November", [])
         var december: (String,[Event]) = ("December", [])
         
+        // Sort through events
         for event in events {
-            
             if let start = event.start, let dateAsString = start.dateTime {
                 guard let startDate = DateHelper.inputFormatter.date(from: dateAsString ) else { return [] }
                 let startDateString = DateHelper.outputFormatter.string(from: startDate)
@@ -68,6 +67,7 @@ class EventController {
             }
         }
         
+        // Returns month array
         let monthArray = [january, february, march, april, may, june, july, august, september, october, november, december]
         return monthArray.filter { $0.1.count > 0 }
     }

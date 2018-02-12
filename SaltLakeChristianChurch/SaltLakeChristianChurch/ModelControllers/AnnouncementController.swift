@@ -11,15 +11,7 @@ import Firebase
 import CoreData
 
 class AnnouncementController {
-    
-    // MARK: - FetchRequestController for CoreData
-    let fetchRequestController: NSFetchedResultsController<BlockedAnnouncement> = {
-        let fetchRequest: NSFetchRequest<BlockedAnnouncement> = BlockedAnnouncement.fetchRequest()
-        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "announcementID", ascending: true)]
-        return NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: CoreDataStack.context, sectionNameKeyPath: nil, cacheName: nil)
-        
-    }()
-    
+
     // MARK: - Variables and constants
     static let shared = AnnouncementController() ; private init(){} // Singleton
     var announcements: [Announcement] = [] // Datasource
@@ -104,7 +96,6 @@ class AnnouncementController {
         completion(true)
     }
     
-
 }
 
 

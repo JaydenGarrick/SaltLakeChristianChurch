@@ -7,7 +7,6 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
-        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -29,7 +28,7 @@
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="xPt-q2-ZDB">
                                 <rect key="frame" x="22" y="64" width="331" height="554"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <color key="tintColor" name="Tint"/>
+                                <color key="tintColor" red="0.27700001001358032" green="0.77899998426437378" blue="0.92500001192092896" alpha="0.98999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="xs8-1k-Uyb">
                                     <size key="itemSize" width="180" height="250"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -165,7 +164,7 @@
                             </stackView>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="2cb-g2-RwK" customClass="UISliderX" customModule="SaltLakeChristianChurch" customModuleProvider="target">
                                 <rect key="frame" x="4" y="576" width="367" height="31"/>
-                                <color key="minimumTrackTintColor" name="Tint"/>
+                                <color key="minimumTrackTintColor" red="0.27700001001358032" green="0.77899998426437378" blue="0.92500001192092896" alpha="0.98999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <action selector="sliderDidChange:" destination="DtL-so-DAi" eventType="valueChanged" id="Lfg-TH-gBY"/>
                                 </connections>
@@ -369,8 +368,5 @@
     <resources>
         <image name="Sermon" width="23" height="21"/>
         <image name="play-button" width="128" height="128"/>
-        <namedColor name="Tint">
-            <color red="0.27700001001358032" green="0.77899998426437378" blue="0.92500001192092896" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
     </resources>
 </document>

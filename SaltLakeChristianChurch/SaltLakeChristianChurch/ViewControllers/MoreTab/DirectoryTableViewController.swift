@@ -31,7 +31,7 @@ class DirectoryTableViewController: UITableViewController {
     override func viewWillAppear(_ animated: Bool) {
         self.hideKeyboardWhenTappedAroundAndSetNavBar()
         self.navigationController?.navigationBar.isTranslucent = false
-        self.navigationController?.view.backgroundColor = UIColor(named: "Primary")
+        self.navigationController?.view.backgroundColor = UIColor(red: 71.0/255.0, green: 199.0/255.0, blue: 236/255.0, alpha: 1.0)
     }
     
     // MARK: - TableView Delegate and DataSource Functions

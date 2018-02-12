@@ -200,20 +200,20 @@ extension LoginOrRegisterViewController: UITextFieldDelegate {
         guard let password = passwordTextField.text, let confirmedPassword = confirmPasswordTextField.text else { return }
             if textField == confirmPasswordTextField {
                 if password != confirmedPassword {
-                    passwordTextField.backgroundColor = UIColor(named: "Denied")
-                    confirmPasswordTextField.backgroundColor = UIColor(named: "Denied")
+                    passwordTextField.backgroundColor = UIColor(red: 254.0/255.0, green: 177.0/255.0, blue: 178.0/255.0, alpha: 1)
+                    confirmPasswordTextField.backgroundColor = UIColor(red: 254.0/255.0, green: 177.0/255.0, blue: 178.0/255.0, alpha: 1)
                 } else {
-                    passwordTextField.backgroundColor = UIColor(named: "Confirmed")
-                    confirmPasswordTextField.backgroundColor = UIColor(named: "Confirmed")
+                    passwordTextField.backgroundColor = UIColor(red: 153.0/255.0, green: 204.0/255.0, blue: 153.0/255.0, alpha: 1)
+                    confirmPasswordTextField.backgroundColor = UIColor(red: 153.0/255.0, green: 204.0/255.0, blue: 153.0/255.0, alpha: 1)
                 }
             }
             if textField == passwordTextField && confirmPasswordTextField.text != "" {
                 if password != confirmedPassword {
-                    passwordTextField.backgroundColor = UIColor(named: "Denied")
-                    confirmPasswordTextField.backgroundColor = UIColor(named: "Denied")
+                    passwordTextField.backgroundColor = UIColor(red: 254.0/255.0, green: 177.0/255.0, blue: 178.0/255.0, alpha: 1)
+                    confirmPasswordTextField.backgroundColor = UIColor(red: 254.0/255.0, green: 177.0/255.0, blue: 178.0/255.0, alpha: 1)
                 } else {
-                    passwordTextField.backgroundColor = UIColor(named: "Confirmed")
-                    confirmPasswordTextField.backgroundColor = UIColor(named: "Confirmed")
+                    passwordTextField.backgroundColor = UIColor(red: 153.0/255.0, green: 204.0/255.0, blue: 153.0/255.0, alpha: 1)
+                    confirmPasswordTextField.backgroundColor = UIColor(red: 153.0/255.0, green: 204.0/255.0, blue: 153.0/255.0, alpha: 1)
                 }
             }
     }

@@ -37,7 +37,7 @@ class AudioLessonViewController: UIViewController {
         // Disable UIElements while audio is loading
         playPauseButton.isEnabled = false
         slider.isEnabled = false
-        activityIndicator.tintColor = UIColor(named: "Tint")
+        activityIndicator.tintColor = UIColor(red: 71.0/255.0, green: 199.0/255.0, blue: 236/255.0, alpha: 1.0)
         activityIndicator.startAnimating()
         
         // Setup while waiting for audio

@@ -51,7 +51,7 @@ class AnnouncementsViewController: UIViewController, NSFetchedResultsControllerD
         tableView.alwaysBounceVertical = true
         tableView.bounces = true
         refreshControl = UIRefreshControl()
-        refreshControl.tintColor = UIColor(named: "Tint")
+        refreshControl.tintColor = UIColor(red: 71.0/255.0, green: 199.0/255.0, blue: 236/255.0, alpha: 1.0)
         refreshControl.addTarget(self, action: #selector(didPullForRefresh), for: .valueChanged)
         tableView.addSubview(refreshControl)
     }

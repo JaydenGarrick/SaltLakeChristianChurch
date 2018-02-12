@@ -109,7 +109,6 @@ extension LessonViewController: UICollectionViewDelegate, UICollectionViewDataSo
                 self.collectionView.reloadData()
                 self.refreshControl.endRefreshing()
                 UIApplication.shared.isNetworkActivityIndicatorVisible = false
-
             }
         }
     }

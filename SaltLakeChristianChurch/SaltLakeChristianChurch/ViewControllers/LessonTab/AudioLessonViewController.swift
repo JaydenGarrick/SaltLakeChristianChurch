@@ -24,12 +24,15 @@ class AudioLessonViewController: UIViewController {
     @IBOutlet weak var blurView: UIVisualEffectViewX!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
-    var player: AVAudioPlayer = AVAudioPlayer()
-    var mp3URL: URL?
+    var player: AVAudioPlayer?
     
     // MARK: - viewDidLoad / viewDidAppear
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Set RestorationID
+        restorationIdentifier = "LessonAudioID"
+        restorationClass = AudioLessonViewController.self
         
         // Update views based on selected lesson
         updateViews()
@@ -45,7 +48,8 @@ class AudioLessonViewController: UIViewController {
         if let lesson = lesson {
             downloadFileFrom(urlString: lesson.audioURLAsString, completion: { (fetchedURL) in
                 DispatchQueue.main.async {
-                    self.slider.maximumValue = Float(self.player.duration)
+                    guard let player = self.player else { return }
+                    self.slider.maximumValue = Float(player.duration)
                     UIApplication.shared.isNetworkActivityIndicatorVisible = false
                     self.playPauseButton.isEnabled = true
                     self.slider.isEnabled = true
@@ -60,8 +64,16 @@ class AudioLessonViewController: UIViewController {
         }
     }
     
+//    override func viewWillDisappear(_ animated: Bool) {
+//        guard let player = player else { return }
+//        if player.isPlaying == true {
+//            player.pause()
+//        }
+//    }
+    
     // MARK: - IBActions
     @IBAction func sliderDidChange(_ sender: Any) {
+        guard let player = player else { return }
         player.stop()
         player.currentTime = TimeInterval(slider.value)
         player.prepareToPlay()
@@ -71,6 +83,7 @@ class AudioLessonViewController: UIViewController {
     }
     
     @IBAction func playOrPauseButtonTapped(_ sender: Any) {
+        guard let player = player else { return }
         if player.isPlaying == true {
             UIView.animate(withDuration: 0.5, animations: {
                 self.playPauseButtonImageView.image = #imageLiteral(resourceName: "play-button")
@@ -88,20 +101,21 @@ class AudioLessonViewController: UIViewController {
         dismiss(animated: true, completion: nil)
     }
     
-    func play(url: URL) {
+    func play(url: URL, completion: @escaping ((Bool)->Void)) {
+        //guard let player = player else { return }
         do {
-            do {
-                try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback)
-            } catch {
-                print("Error with AVAudioSession: \(error.localizedDescription)")
-            }
-            
+            try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback)
+            self.player = AVAudioPlayer()
             self.player = try AVAudioPlayer(contentsOf: url)
+            guard let player = player else { completion(false) ; return }
             player.prepareToPlay()
             player.volume = 1.0
             player.play()
+            completion(true)
         } catch {
             self.presentAlertControllerWithOkayAction(title: "Error Playing Audio", message: "\(error.localizedDescription)")
+            print("Error with AVAudioSession: \(error.localizedDescription)")
+            completion(false)
         }
     }
     
@@ -125,8 +139,13 @@ class AudioLessonViewController: UIViewController {
                 print("Error with downloadTask: \(error.localizedDescription)")
             }
             guard let downloadedURL = downloadedURL else { print("Unable to get url") ; completion(nil) ; return }
-            self.play(url: downloadedURL)
-            completion(downloadedURL)
+            self.play(url: downloadedURL, completion: { (success) in
+                if success {
+                    completion(downloadedURL)
+                } else {
+                    completion(nil)
+                }
+            })
         })
         downloadTask.resume()
     }
@@ -135,11 +154,13 @@ class AudioLessonViewController: UIViewController {
     // MARK: - Functions for audio
     /// Updates slider based on audio being played
     @objc func updateSlider() {
+        guard let player = player else { return }
         slider.value = Float(player.currentTime)
     }
     
     /// Updates timelabel based on audio being played
     @objc func updateTimeLabel() {
+        guard let player = player else { return }
         let timeRemaining = Int(player.duration - player.currentTime)
         let timeSoFar = Int(player.currentTime)
 
@@ -158,6 +179,31 @@ class AudioLessonViewController: UIViewController {
         return timeString
     }
     
+}
+
+// MARK: - State Restoration
+extension AudioLessonViewController: UIViewControllerRestoration {
+    
+    static func viewController(withRestorationIdentifierPath identifierComponents: [Any], coder: NSCoder) -> UIViewController? {
+        let viewController = AudioLessonViewController()
+        return viewController
+    }
+
+    
+    
+    
+    
+    //    override func encodeRestorableState(with coder: NSCoder) {
+//        if let player = player {
+//            coder.encode(player, forKey: "player")
+//        }
+//        super.encodeRestorableState(with: coder)
+//    }
+//
+//    override func decodeRestorableState(with coder: NSCoder) {
+//        player = coder.decodeObject(forKey: "player") as? AVAudioPlayer
+//        super.decodeRestorableState(with: coder)
+//    }
 }
 
 

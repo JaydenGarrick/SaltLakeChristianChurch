@@ -71,7 +71,6 @@ class AnnouncementController {
                     }
                 }
             }
-            
             self.announcements = fetchedAnnouncements.reversed()
             completion(true)
         }

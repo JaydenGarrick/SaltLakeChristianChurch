@@ -15,6 +15,8 @@ class Lesson {
     var pubDate: String
     var imageURL: String
     var audioURLAsString: String
+    var mp3Url: URL?
+    var playbackPostion: Double?
     
     init(title: String, summary: String, pubDate: String, imageURL: String, audioURLAsString: String) {
         self.title = title

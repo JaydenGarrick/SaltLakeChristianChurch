@@ -105,26 +105,28 @@ class LoginOrRegisterViewController: UIViewController {
     
     
     @IBAction func loginButtonTapped(_ sender: Any) {
-        
+        UIApplication.shared.isNetworkActivityIndicatorVisible = true
         // Handle Creating User
         if isLogin == false {
             // Validate input
             guard let email = emailTextField.text, email != "", let password = passwordTextField.text, password != "", let fullname = fullnameTextField.text, fullname != "", let phoneNumber = phoneNumberTextField.text, phoneNumber != "", let loggedMemberCode = churchCodeTextField.text, loggedMemberCode != "" else {
+                UIApplication.shared.isNetworkActivityIndicatorVisible = false
                 self.presentAlertControllerWithOkayAction(title: "Registration Error", message: "Please make sure you provide your name, email address and password to complete the registration.")
                 return
             }
             
         // Fetch Member Code
-            guard let memberCode = memberCode else { self.presentAlertControllerWithOkayAction(title: "Service Error", message: "Unable to create account.") ; return }
+            guard let memberCode = memberCode else { self.presentAlertControllerWithOkayAction(title: "Service Error", message: "Unable to create account.") ; UIApplication.shared.isNetworkActivityIndicatorVisible = false ; return }
             if loggedMemberCode == "\(memberCode)" {
                 
                 // Handle Creating a new user
                 Auth.auth().createUser(withEmail: email, password: password) { (user, error) in
                     if let error = error {
                         self.presentAlertControllerWithOkayAction(title: "Registration Error", message: error.localizedDescription)
+                        UIApplication.shared.isNetworkActivityIndicatorVisible = false
                         return
                     }
-                    guard let user = user else { return }
+                    guard let user = user else { UIApplication.shared.isNetworkActivityIndicatorVisible = false ; return }
                     let uuid = user.uid
                     let memberID = UUID().uuidString
                     let memberRef = Database.database().reference().child("members").child(uuid)
@@ -139,33 +141,39 @@ class LoginOrRegisterViewController: UIViewController {
                     memberRef.updateChildValues(values, withCompletionBlock: { (error, reference) in
                         if let error = error {
                             self.presentAlertControllerWithOkayAction(title: "Registration Error", message: error.localizedDescription)
+                            UIApplication.shared.isNetworkActivityIndicatorVisible = false
                             return
                         }
                         
                         // Create the uid
-                        guard let uuid = Auth.auth().currentUser?.uid else { self.presentAlertControllerWithOkayAction(title: "Registration Error", message: "Couldn't create user. Please try again.") ; return }
+                        guard let uuid = Auth.auth().currentUser?.uid else { self.presentAlertControllerWithOkayAction(title: "Registration Error", message: "Couldn't create user. Please try again.") ; UIApplication.shared.isNetworkActivityIndicatorVisible = false ;return }
                         MemberController.shared.fetchUserWith(uuid: uuid, completion: { (success) in
                             if success {
                                 // Present the main view
                                 print("Successfully created a user!")
+                                UIApplication.shared.isNetworkActivityIndicatorVisible = false
                                 self.dismiss(animated: true, completion: nil)
                             } else {
+                                UIApplication.shared.isNetworkActivityIndicatorVisible = false
                                 return
                             }
                         })
                     })
                 }
             } else {
+                UIApplication.shared.isNetworkActivityIndicatorVisible = false
                 self.presentAlertControllerWithOkayAction(title: "Registration Error", message: "Invalid member code.")
                 return
             }
         
         // Handle logging in user
         } else {
-            guard let email = emailTextField.text, email != "", let password = passwordTextField.text, password != "" else { self.presentAlertControllerWithOkayAction(title: "Login Error", message: "Please provide a valid Email and Password.") ; return }
+            guard let email = emailTextField.text, email != "", let password = passwordTextField.text, password != "" else { 
+                self.presentAlertControllerWithOkayAction(title: "Login Error", message: "Please provide a valid Email and Password.") ; UIApplication.shared.isNetworkActivityIndicatorVisible = false ; return }
             Auth.auth().signIn(withEmail: email, password: password, completion: { (user, error) in
                 if let error = error {
                     self.presentAlertControllerWithOkayAction(title: "Logging in error", message: error.localizedDescription)
+                    UIApplication.shared.isNetworkActivityIndicatorVisible = false
                     return
                 }
                 guard let uid = Auth.auth().currentUser?.uid else { self.presentAlertControllerWithOkayAction(title: "Logging in error", message: "Couldn't log in. Please try again.") ; return }
@@ -174,10 +182,12 @@ class LoginOrRegisterViewController: UIViewController {
                         print("Successfully logged in!")
                         
                         // Present Main View
+                        UIApplication.shared.isNetworkActivityIndicatorVisible = false
                         MemberController.shared.isLoggedIn = true
                         self.dismiss(animated: true, completion: nil)
                     } else {
-                        return 
+                        UIApplication.shared.isNetworkActivityIndicatorVisible = false
+                        return
                     }
                 })
             })

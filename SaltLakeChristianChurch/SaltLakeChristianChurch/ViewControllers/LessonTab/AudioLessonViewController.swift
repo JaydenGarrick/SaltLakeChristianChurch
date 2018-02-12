@@ -30,10 +30,6 @@ class AudioLessonViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Set RestorationID
-        restorationIdentifier = "LessonAudioID"
-        restorationClass = AudioLessonViewController.self
-        
         // Update views based on selected lesson
         updateViews()
         
@@ -53,6 +49,10 @@ class AudioLessonViewController: UIViewController {
                     UIApplication.shared.isNetworkActivityIndicatorVisible = false
                     self.playPauseButton.isEnabled = true
                     self.slider.isEnabled = true
+                    if lesson.playbackPostion != nil {
+                        player.currentTime = Double(lesson.playbackPostion!)
+                        self.slider.value = lesson.playbackPostion!
+                    }
                     self.playPauseButtonImageView.image = #imageLiteral(resourceName: "pause-button")
                     Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(self.updateSlider), userInfo: nil, repeats: true)
                     Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(self.updateTimeLabel), userInfo: nil, repeats: true)
@@ -64,12 +64,13 @@ class AudioLessonViewController: UIViewController {
         }
     }
     
-//    override func viewWillDisappear(_ animated: Bool) {
-//        guard let player = player else { return }
-//        if player.isPlaying == true {
-//            player.pause()
-//        }
-//    }
+    override func viewWillDisappear(_ animated: Bool) {
+        guard let player = player else { return }
+        if player.isPlaying == true {
+            lesson?.playbackPostion = Float(player.currentTime)
+            player.pause()
+        }
+    }
     
     // MARK: - IBActions
     @IBAction func sliderDidChange(_ sender: Any) {
@@ -88,6 +89,7 @@ class AudioLessonViewController: UIViewController {
             UIView.animate(withDuration: 0.5, animations: {
                 self.playPauseButtonImageView.image = #imageLiteral(resourceName: "play-button")
             })
+            lesson?.playbackPostion = Float(player.currentTime)
             player.pause()
         } else {
             UIView.animate(withDuration: 0.5, animations: {
@@ -169,42 +171,19 @@ class AudioLessonViewController: UIViewController {
     }
     
     
-    /// Converts seconds into a 00:00:00 format
+    /// Converts seconds into a 0:00:00 format
     func secondsToHoursMinutesSeconds (intSeconds : Int) -> String {
         let minutes:Int = intSeconds/60
         let hours:Int = minutes/60
         let seconds:Int = intSeconds%60
-        
+
+        // Convert to 0:00:00 format
         let timeString:String = ((hours<10) ? "" : "") + String(hours) + ":" + ((minutes<10) ? "0" : "") + String(minutes) + ":" + ((seconds<10) ? "0" : "") + String(seconds)
         return timeString
     }
     
 }
 
-// MARK: - State Restoration
-extension AudioLessonViewController: UIViewControllerRestoration {
-    
-    static func viewController(withRestorationIdentifierPath identifierComponents: [Any], coder: NSCoder) -> UIViewController? {
-        let viewController = AudioLessonViewController()
-        return viewController
-    }
-
-    
-    
-    
-    
-    //    override func encodeRestorableState(with coder: NSCoder) {
-//        if let player = player {
-//            coder.encode(player, forKey: "player")
-//        }
-//        super.encodeRestorableState(with: coder)
-//    }
-//
-//    override func decodeRestorableState(with coder: NSCoder) {
-//        player = coder.decodeObject(forKey: "player") as? AVAudioPlayer
-//        super.decodeRestorableState(with: coder)
-//    }
-}
 
 
 

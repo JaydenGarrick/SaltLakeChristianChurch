@@ -8,8 +8,17 @@
 
 import UIKit
 import Firebase
+import CoreData
 
 class AnnouncementController {
+    
+    // MARK: - FetchRequestController for CoreData
+    let fetchRequestController: NSFetchedResultsController<BlockedAnnouncement> = {
+        let fetchRequest: NSFetchRequest<BlockedAnnouncement> = BlockedAnnouncement.fetchRequest()
+        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "announcementID", ascending: true)]
+        return NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: CoreDataStack.context, sectionNameKeyPath: nil, cacheName: nil)
+        
+    }()
     
     // MARK: - Variables and constants
     static let shared = AnnouncementController() ; private init(){} // Singleton
@@ -59,6 +68,18 @@ class AnnouncementController {
                     return
                 }
             }
+            
+            for announcement in fetchedAnnouncements {
+                for blockedAnnouncement in BlockedAnnouncementController.shared.blockedAnnouncements {
+                    guard let announcementID = blockedAnnouncement.announcementID else { continue }
+                    if announcementID == announcement.announcementID {
+                        guard let index = fetchedAnnouncements.index(of: announcement) else { continue }
+                        fetchedAnnouncements.remove(at: index)
+                        print("\(fetchedAnnouncements.count) is the total number of objects in the fetchedAnnouncementsArray")
+                    }
+                }
+            }
+            
             self.announcements = fetchedAnnouncements.reversed()
             completion(true)
         }
@@ -77,19 +98,13 @@ class AnnouncementController {
         }
     }
     
-    func rsvpTapped(announcement: Announcement, completion: @escaping ((Bool)->Void)) {
-        if alreadyGoing == false {
-            let announcementID = announcement.announcementID
-            let rsvpCount = announcement.rsvpTotal + 1
-            let values = ["announcementID" : announcementID,
-                          "description" : announcement.description,
-                          "imageAsStringURL" : announcement.imageAsStringURL,
-                          "name" : announcement.name,
-                          "rsvpTotal" : rsvpCount
-                ] as [String : Any]
-            announcementDatabase.child(announcementID).updateChildValues(values)
-        }
+    func hide(announcement: Announcement, completion: @escaping ((Bool)->Void)) {
+        guard let indexPath = announcements.index(of: announcement) else {  return }
+        announcements.remove(at: indexPath)
+        completion(true)
     }
+    
+
 }
 
 

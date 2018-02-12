@@ -99,7 +99,7 @@
                                                                 </userDefinedRuntimeAttribute>
                                                             </userDefinedRuntimeAttributes>
                                                             <connections>
-                                                                <action selector="actionButtonTapped:" destination="MmP-E6-x8x" eventType="touchUpInside" id="mSU-fB-aLb"/>
+                                                                <action selector="hideAnnouncementButtonTapped:" destination="ku3-f3-3cf" eventType="touchUpInside" id="Y7G-md-plb"/>
                                                             </connections>
                                                         </button>
                                                     </subviews>

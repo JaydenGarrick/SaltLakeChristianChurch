@@ -100,7 +100,6 @@ class LessonController: NSObject, XMLParserDelegate {
     }
 
     func parser(_ parser: XMLParser, foundCharacters string: String) {
-        //print(currentElement)
         switch currentElement {
         case tagKey.title.rawValue:
             currentTitle += string

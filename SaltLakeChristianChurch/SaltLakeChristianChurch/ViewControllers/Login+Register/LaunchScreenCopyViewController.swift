@@ -8,11 +8,29 @@
 
 import UIKit
 import Firebase
+import CoreData
 
-class LaunchScreenCopyViewController: UIViewController {
+class LaunchScreenCopyViewController: UIViewController, NSFetchedResultsControllerDelegate {
+
+    // MARK: - FetchRequestController for CoreData
+    let fetchRequestController: NSFetchedResultsController<BlockedAnnouncement> = {
+        let fetchRequest: NSFetchRequest<BlockedAnnouncement> = BlockedAnnouncement.fetchRequest()
+        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "announcementID", ascending: true)]
+        return NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: CoreDataStack.context, sectionNameKeyPath: nil, cacheName: nil)
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        fetchRequestController.delegate = self
+        // Fetch Blocked Announcements
+        do {
+            try fetchRequestController.performFetch()
+            BlockedAnnouncementController.shared.blockedAnnouncements = fetchRequestController.fetchedObjects ?? []
+            print("\(BlockedAnnouncementController.shared.blockedAnnouncements.count) is the total the ammount of announcements this user has blocked")
+        } catch {
+            print("Error performing fetch from FetchRequestController: \(error.localizedDescription)")
+        }
+
         UIApplication.shared.isNetworkActivityIndicatorVisible = true
     }
     

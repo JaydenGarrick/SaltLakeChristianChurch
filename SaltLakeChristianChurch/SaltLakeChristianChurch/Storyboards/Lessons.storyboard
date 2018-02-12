@@ -330,11 +330,20 @@
                         <outlet property="timeRemainingLabel" destination="G3n-b0-GLs" id="crB-Mt-Kle"/>
                         <outlet property="timeSoFarLabel" destination="dfW-PR-ZKS" id="EoO-2S-qLV"/>
                         <outlet property="titleLabel" destination="TnC-o7-Mec" id="ZcH-NZ-H1K"/>
+                        <segue destination="MQc-tR-Z81" kind="show" identifier="BackSegue" id="dK1-ln-8as"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sRq-kE-D0U" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1464.8" y="156.97151424287858"/>
+            <point key="canvasLocation" x="1340" y="157"/>
+        </scene>
+        <!--Login-->
+        <scene sceneID="qFj-PH-xGG">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Login" id="MQc-tR-Z81" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Us4-03-Jrf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1962" y="157"/>
         </scene>
         <!--Lessons-->
         <scene sceneID="xja-JP-g9W">

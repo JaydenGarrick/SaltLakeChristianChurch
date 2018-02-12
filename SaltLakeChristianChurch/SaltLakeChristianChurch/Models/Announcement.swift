@@ -8,8 +8,8 @@
 
 import UIKit
 
-class Announcement {
-    
+class Announcement: Equatable {
+
     // MARK: - Properties
     var announcementID: String
     var name: String
@@ -54,7 +54,11 @@ class Announcement {
         let creationDate = Date(timeIntervalSince1970: dateAsDobule)
         
         self.init(announcementID: announcementID, name: announcementName, imageAsStringURL: announcementImageAsStringURL, rsvpTotal: rsvpTotal, description: description, creationDate: creationDate)
-        
+    }
+    
+    // Equatable Protocol Function
+    static func ==(lhs: Announcement, rhs: Announcement) -> Bool {
+        return lhs.announcementID == rhs.announcementID
     }
     
     

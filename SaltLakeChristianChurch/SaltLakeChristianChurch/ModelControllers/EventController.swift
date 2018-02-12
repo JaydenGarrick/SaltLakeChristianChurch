@@ -36,6 +36,7 @@ class EventController {
                 let startDateString = DateHelper.outputFormatter.string(from: startDate)
                 guard let month = startDateString.components(separatedBy: " ").first else { return [] }
                 
+                // Months
                 switch month {
                 case "Jan":
                     january.1.append(event)

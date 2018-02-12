@@ -22,7 +22,6 @@ extension UIViewController {
         view.endEditing(true)
     }
     
-    
     func presentAlertControllerWithOkayAction(title: String, message: String) {
         let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
         let okayAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)

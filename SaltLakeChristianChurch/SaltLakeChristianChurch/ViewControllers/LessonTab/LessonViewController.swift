@@ -39,6 +39,8 @@ class LessonViewController: UIViewController {
         collectionView.addSubview(refreshControl)
     }
     
+    
+    
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "LessonAudio" {
@@ -49,6 +51,7 @@ class LessonViewController: UIViewController {
             destinationVC.lesson = lesson
         }
     }
+    
     
 }
 

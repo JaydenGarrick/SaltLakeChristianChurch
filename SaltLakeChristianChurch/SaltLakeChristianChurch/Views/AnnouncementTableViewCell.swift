@@ -18,6 +18,7 @@ class AnnouncementTableViewCell: UITableViewCell {
     @IBOutlet weak var backgroundShadowView: UIView!
     @IBOutlet weak var dateCreatedLabel: UILabel!
     @IBOutlet weak var imageActivityIndicator: UIActivityIndicatorView!
+    var announcement: Announcement?
     
     weak var delegate: AnnouncementtableViewCellDelegate? // Delegate for cell
     
@@ -31,12 +32,13 @@ class AnnouncementTableViewCell: UITableViewCell {
         imageActivityIndicator.startAnimating()
     }
     
-    @IBAction func rsvpButtonTapped(_ sender: Any) {
-        print(Database.database().reference().child(Announcement.AnnouncementKey.announcements).childByAutoId().key)
+    @IBAction func hideAnnouncementButtonTapped(_ sender: Any) {
+        delegate?.announcementButtonTapped(sender: self)
     }
+
 }
 protocol AnnouncementtableViewCellDelegate : class {
-    func rsvpButtonTapped(sender: AnnouncementTableViewCell)
+    func announcementButtonTapped(sender: AnnouncementTableViewCell)
 }
 
 

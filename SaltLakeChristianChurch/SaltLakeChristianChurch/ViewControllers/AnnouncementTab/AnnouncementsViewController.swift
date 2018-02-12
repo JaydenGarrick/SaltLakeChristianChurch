@@ -8,18 +8,17 @@
 
 import UIKit
 import Firebase
+import CoreData
 import MessageUI
 
-class AnnouncementsViewController: UIViewController {
+class AnnouncementsViewController: UIViewController, NSFetchedResultsControllerDelegate {
     
     // MARK: - IBOutlets and constants / variables
     @IBOutlet weak var addEventBarButton: UIBarButtonItem!
     @IBOutlet weak var tableView: UITableView!
    
-    
     var refreshControl: UIRefreshControl! // Refresh Control for reloading
     let imageCache = NSCache<NSString, UIImage>()
-    
     
     // MARK: - ViewDidLoad / ViewWillAppear
     override func viewDidLoad() {
@@ -37,10 +36,12 @@ class AnnouncementsViewController: UIViewController {
         // Delegate
         tableView.delegate = self
         tableView.dataSource = self
-        
+ 
+ 
         // Initial Fetch for events
         AnnouncementController.shared.fetchAnnouncements { (success) in
             if success {
+                print("\(BlockedAnnouncementController.shared.blockedAnnouncements.count) is the total amount of blocked announcements")
                 self.tableView.reloadData()
                 UIApplication.shared.isNetworkActivityIndicatorVisible = false
             }
@@ -70,12 +71,6 @@ class AnnouncementsViewController: UIViewController {
         }
     }
     
-    // MARK: - IBActions
-    @IBAction func actionButtonTapped(_ sender: Any) {
-        presentHideAlert()
-    }
-    
-    
     // MARK: - Refresh Function
     @objc func didPullForRefresh() {
         AnnouncementController.shared.fetchAnnouncements { (success) in
@@ -91,7 +86,9 @@ class AnnouncementsViewController: UIViewController {
 }
 
 // MARK: - TableView Delegate and Datasourcec functions
-extension AnnouncementsViewController: UITableViewDelegate, UITableViewDataSource, AnnouncementtableViewCellDelegate {
+extension AnnouncementsViewController: UITableViewDelegate, UITableViewDataSource {
+
+    
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return AnnouncementController.shared.announcements.count
@@ -102,6 +99,7 @@ extension AnnouncementsViewController: UITableViewDelegate, UITableViewDataSourc
         let announcement = AnnouncementController.shared.announcements[indexPath.row]
        
         cell.delegate = self  // Set delegate of cell
+        cell.announcement = announcement
         cell.imageActivityIndicator.startAnimating()
         
         // Set up image from storage
@@ -147,36 +145,54 @@ extension AnnouncementsViewController: UITableViewDelegate, UITableViewDataSourc
         }
     }
     
-    func rsvpButtonTapped(sender: AnnouncementTableViewCell) {}//FIXME: - Later add RSVP
+
+    
+  
     
 }
 
 // MARK: - Add Action Sheet for reporting / hiding
-extension AnnouncementsViewController: MFMailComposeViewControllerDelegate {
+extension AnnouncementsViewController: MFMailComposeViewControllerDelegate, AnnouncementtableViewCellDelegate {
     
-    func presentHideAlert() {
+    func announcementButtonTapped(sender: AnnouncementTableViewCell) {
         let actionSheet = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         let hideAction = UIAlertAction(title: "Hide", style: .default) { (_) in
-            //FIXME: - Add hide functionality
+        self.hideContent(cell: sender)
         }
         let reportAction = UIAlertAction(title: "Report as Offenseive", style: .destructive) { (_) in
-            
-            let mailComposeViewController = MFMailComposeViewController()
-            mailComposeViewController.mailComposeDelegate = self
-            if MFMailComposeViewController.canSendMail() {
-                mailComposeViewController.setToRecipients(["jaydengarrick@gmail.com"])
-                mailComposeViewController.setSubject("Offensive material")
-                mailComposeViewController.setMessageBody("", isHTML: false)
-                self.present(mailComposeViewController, animated: true)
-            }
-            
-            
+            self.presentMailViewController()
+            self.hideContent(cell: sender)
         }
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
         actionSheet.addAction(hideAction)
         actionSheet.addAction(reportAction)
         actionSheet.addAction(cancelAction)
         self.present(actionSheet, animated: true)
+    }
+    
+    func presentMailViewController() {
+        let mailComposeViewController = MFMailComposeViewController()
+        mailComposeViewController.mailComposeDelegate = self
+        if MFMailComposeViewController.canSendMail() {
+            mailComposeViewController.setToRecipients(["jaydengarrick@gmail.com"])
+            mailComposeViewController.setSubject("Offensive material")
+            mailComposeViewController.setMessageBody("", isHTML: false)
+            self.present(mailComposeViewController, animated: true)
+        }
+    }
+    
+    func hideContent(cell: UITableViewCell) {
+        if let indexPath = self.tableView.indexPath(for: cell) {
+            let announcement = AnnouncementController.shared.announcements[indexPath.row]
+            AnnouncementController.shared.hide(announcement: announcement, completion: { (success) in
+                if success  {
+                    let blockedAnnouncement = BlockedAnnouncement(announcementID: announcement.announcementID)
+                    BlockedAnnouncementController.shared.blockedAnnouncements.append(blockedAnnouncement)
+                    BlockedAnnouncementController.shared.add(blockedID: blockedAnnouncement.announcementID!)
+                    self.tableView.reloadData()
+                }
+            })
+        }
     }
     
 }

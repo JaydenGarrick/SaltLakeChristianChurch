@@ -40,8 +40,6 @@ class AudioLessonViewController: UIViewController {
         activityIndicator.tintColor = UIColor(named: "Tint")
         activityIndicator.startAnimating()
         
-        
-        
         // Setup while waiting for audio
         UIApplication.shared.isNetworkActivityIndicatorVisible = true
         if let lesson = lesson {
@@ -51,11 +49,12 @@ class AudioLessonViewController: UIViewController {
                     UIApplication.shared.isNetworkActivityIndicatorVisible = false
                     self.playPauseButton.isEnabled = true
                     self.slider.isEnabled = true
-                    self.mp3URL = fetchedURL
                     self.playPauseButtonImageView.image = #imageLiteral(resourceName: "pause-button")
                     Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(self.updateSlider), userInfo: nil, repeats: true)
                     Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(self.updateTimeLabel), userInfo: nil, repeats: true)
-                    self.blurView.isHidden = true
+                    UIView.animate(withDuration: 0.25, animations: {
+                        self.blurView.layer.opacity = 0
+                    })
                 }
             })
         }
@@ -67,6 +66,7 @@ class AudioLessonViewController: UIViewController {
         player.currentTime = TimeInterval(slider.value)
         player.prepareToPlay()
         player.play()
+        playPauseButtonImageView.image = #imageLiteral(resourceName: "pause-button")
         updateTimeLabel()
     }
     

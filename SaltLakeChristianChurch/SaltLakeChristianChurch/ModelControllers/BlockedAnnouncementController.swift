@@ -11,10 +11,9 @@ import CoreData
 
 class BlockedAnnouncementController {
     
-    // Singleton
-    static let shared = BlockedAnnouncementController()
-    
-    var blockedAnnouncements: [BlockedAnnouncement] = []
+    // MARK: - Constants and Variables
+    static let shared = BlockedAnnouncementController() // Singleton
+    var blockedAnnouncements: [BlockedAnnouncement] = [] // Datasource
     
     // CRUD Functions
     func add(blockedID: String) {

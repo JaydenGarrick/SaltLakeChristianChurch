@@ -21,7 +21,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+    
+        // Notifications
         if #available(iOS 10.0, *) {
             // For iOS 10 display notification (sent via APNS)
             UNUserNotificationCenter.current().delegate = self
@@ -36,9 +37,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
                 UIUserNotificationSettings(types: [.alert, .badge, .sound], categories: nil)
             application.registerUserNotificationSettings(settings)
         }
-        
         application.registerForRemoteNotifications()
-
+        
+        // URL Cache
+        let directory = FileManager.default.temporaryDirectory
+        print(directory)
+        let cache = URLCache(memoryCapacity: 40000000, diskCapacity: 80000000, diskPath: directory.absoluteString)
+        URLCache.shared = cache
+        
         FirebaseApp.configure()
         IQKeyboardManager.shared().isEnabled = true
         IQKeyboardManager.shared().isEnableAutoToolbar = false

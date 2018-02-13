@@ -14,6 +14,7 @@ class MoreTableViewController: UITableViewController {
     @IBOutlet weak var readScriptureLabel: UILabel!
     @IBOutlet weak var directoryCell: UITableViewCell!
     
+    // MARK: - viewDidLoad / viewWillAppear
     override func viewDidLoad() {
         super.viewDidLoad()
      
@@ -36,7 +37,6 @@ class MoreTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-
         if indexPath.section == 0 {
             if indexPath.row == 0 {
                 if MemberController.shared.isLoggedIn == true {
@@ -54,7 +54,7 @@ class MoreTableViewController: UITableViewController {
 extension MoreTableViewController {
     
     func presentActionSheet() {
-        let actionSheet = UIAlertController(title: "Member feature", message: "For privacy reasons, you must be a member of Salt Lake Christian Church to access the directory", preferredStyle: .actionSheet)
+        let actionSheet = UIAlertController(title: "For privacy reasons, you must be a member of Salt Lake Christian Church to access the directory", message: nil, preferredStyle: .actionSheet)
         let okayAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
         let contactUsAction = UIAlertAction(title: "Interested in becoming a member? Contact us", style: .default) { (_) in
             self.performSegue(withIdentifier: "ToContactUs", sender: self)

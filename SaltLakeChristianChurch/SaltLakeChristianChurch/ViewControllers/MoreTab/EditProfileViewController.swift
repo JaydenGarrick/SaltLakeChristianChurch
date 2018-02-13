@@ -51,8 +51,10 @@ class EditProfileViewController: UIViewController, UINavigationControllerDelegat
     
     @IBAction func saveButtonTapped(_ sender: Any) {
         
+        // Set activity indicator
         UIApplication.shared.isNetworkActivityIndicatorVisible = true
         
+        // Set properties to be saved
         guard let image = profilePictureImageView.image,
             let phoneNumber = phoneNumberTextField.text,
             let email = emailTextField.text,
@@ -75,8 +77,8 @@ class EditProfileViewController: UIViewController, UINavigationControllerDelegat
     
     @IBAction func cancelButtonTapped(_ sender: Any) {
         dismiss(animated: true)
-        
     }
+    
     // MARK: - Functions
     func updateViews() {
         guard let loggedInMember = MemberController.shared.loggedInMember else { return }
@@ -102,13 +104,14 @@ class EditProfileViewController: UIViewController, UINavigationControllerDelegat
 
 // MARK: - UIImagePickerController Delegate method(s)
 extension EditProfileViewController: UIImagePickerControllerDelegate {
+    
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
-        
         guard let profilePicture = info[UIImagePickerControllerEditedImage] as? UIImage else { return }
         profilePictureImageView.image = profilePicture
         profilePictureImageView.contentMode = .scaleAspectFit
         imageToSaveToStorage = profilePicture
         
+        // Update UI
         DispatchQueue.main.async {
             self.dismiss(animated: true, completion: nil)
             self.profilePictureImageView.alpha = 1
@@ -118,6 +121,7 @@ extension EditProfileViewController: UIImagePickerControllerDelegate {
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         dismiss(animated: true, completion: nil)
     }
+    
 }
 
 

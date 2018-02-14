@@ -45,6 +45,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         let cache = URLCache(memoryCapacity: 40000000, diskCapacity: 80000000, diskPath: directory.absoluteString)
         URLCache.shared = cache
         
+        // Configure pods
         FirebaseApp.configure()
         IQKeyboardManager.shared().isEnabled = true
         IQKeyboardManager.shared().isEnableAutoToolbar = false

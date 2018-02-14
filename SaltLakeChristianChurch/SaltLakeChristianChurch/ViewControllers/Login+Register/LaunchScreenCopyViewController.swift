@@ -38,8 +38,8 @@ class LaunchScreenCopyViewController: UIViewController, NSFetchedResultsControll
         } catch {
             print("Error performing fetch from FetchRequestController: \(error.localizedDescription)")
         }
-
         UIApplication.shared.isNetworkActivityIndicatorVisible = true
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {

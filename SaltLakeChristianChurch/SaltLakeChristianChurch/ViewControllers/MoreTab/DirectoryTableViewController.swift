@@ -121,6 +121,7 @@ class DirectoryTableViewController: UITableViewController {
                 let member = memberValues[indexPath.row]
                 destinationVC.member = member
             }
+        
         }
     }
 

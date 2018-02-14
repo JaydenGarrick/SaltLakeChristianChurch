@@ -1,0 +1,371 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Dha-Ha-9Jz">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="AvenirNext.ttc">
+            <string>AvenirNext-Medium</string>
+            <string>AvenirNext-Regular</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Lessons-->
+        <scene sceneID="Zzn-cy-g9C">
+            <objects>
+                <viewController id="vtx-o1-4iz" customClass="LessonViewController" customModule="SaltLakeChristianChurch" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="IpG-w4-9eI">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="xPt-q2-ZDB">
+                                <rect key="frame" x="22" y="64" width="331" height="554"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="tintColor" red="0.27700001001358032" green="0.77899998426437378" blue="0.92500001192092896" alpha="0.98999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="xs8-1k-Uyb">
+                                    <size key="itemSize" width="180" height="250"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="LessonCell" id="nrF-jR-FV2" customClass="CollectionViewCell" customModule="SaltLakeChristianChurch" customModuleProvider="target">
+                                        <rect key="frame" x="75.5" y="0.0" width="180" height="150"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="180" height="150"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="63F-Xb-Kgi" userLabel="ContentView">
+                                                    <rect key="frame" x="0.0" y="0.0" width="180" height="80"/>
+                                                    <subviews>
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xKv-Ki-g5y" userLabel="ShadowView">
+                                                            <rect key="frame" x="5" y="5" width="170" height="95.5"/>
+                                                            <subviews>
+                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="35x-QN-xsG" customClass="UIImageViewX" customModule="SaltLakeChristianChurch" customModuleProvider="target">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="170" height="95.5"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="width" secondItem="35x-QN-xsG" secondAttribute="height" multiplier="16:9" id="oUf-i3-iJn"/>
+                                                                    </constraints>
+                                                                    <userDefinedRuntimeAttributes>
+                                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                            <real key="value" value="3"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                    </userDefinedRuntimeAttributes>
+                                                                </imageView>
+                                                            </subviews>
+                                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="trailing" secondItem="35x-QN-xsG" secondAttribute="trailing" id="6rM-f3-ptu"/>
+                                                                <constraint firstItem="35x-QN-xsG" firstAttribute="leading" secondItem="xKv-Ki-g5y" secondAttribute="leading" id="aWw-Pn-96g"/>
+                                                                <constraint firstAttribute="bottom" secondItem="35x-QN-xsG" secondAttribute="bottom" id="bT9-NK-9Im"/>
+                                                                <constraint firstItem="35x-QN-xsG" firstAttribute="top" secondItem="xKv-Ki-g5y" secondAttribute="top" id="qwr-9U-uba"/>
+                                                            </constraints>
+                                                        </view>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstItem="xKv-Ki-g5y" firstAttribute="leading" secondItem="63F-Xb-Kgi" secondAttribute="leading" constant="5" id="5n4-98-uDK"/>
+                                                        <constraint firstAttribute="trailing" secondItem="xKv-Ki-g5y" secondAttribute="trailing" constant="5" id="7zy-M9-hdP"/>
+                                                        <constraint firstItem="xKv-Ki-g5y" firstAttribute="top" secondItem="63F-Xb-Kgi" secondAttribute="top" constant="5" id="BVt-Rv-9xu"/>
+                                                    </constraints>
+                                                </view>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(Lesson Title)" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="8" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="GPE-l4-lOG">
+                                                    <rect key="frame" x="0.0" y="104.5" width="180" height="45.5"/>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="18"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </view>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="GPE-l4-lOG" secondAttribute="bottom" id="9hr-EH-uo5"/>
+                                            <constraint firstItem="GPE-l4-lOG" firstAttribute="leading" secondItem="nrF-jR-FV2" secondAttribute="leading" id="OrW-z2-JhR"/>
+                                            <constraint firstAttribute="trailing" secondItem="GPE-l4-lOG" secondAttribute="trailing" id="SIV-ay-veD"/>
+                                            <constraint firstAttribute="trailing" secondItem="63F-Xb-Kgi" secondAttribute="trailing" id="Twk-0g-pe2"/>
+                                            <constraint firstItem="GPE-l4-lOG" firstAttribute="top" secondItem="35x-QN-xsG" secondAttribute="bottom" constant="4" id="byG-fU-E1j"/>
+                                            <constraint firstItem="63F-Xb-Kgi" firstAttribute="top" secondItem="nrF-jR-FV2" secondAttribute="top" id="eHQ-Ke-SqT"/>
+                                            <constraint firstItem="63F-Xb-Kgi" firstAttribute="leading" secondItem="nrF-jR-FV2" secondAttribute="leading" id="fhY-1O-Go2"/>
+                                            <constraint firstAttribute="bottom" secondItem="63F-Xb-Kgi" secondAttribute="bottom" constant="70" id="mKh-qr-9d9"/>
+                                        </constraints>
+                                        <size key="customSize" width="180" height="150"/>
+                                        <connections>
+                                            <outlet property="backgroundShadowView" destination="xKv-Ki-g5y" id="trW-zJ-x18"/>
+                                            <outlet property="lessonImageView" destination="35x-QN-xsG" id="Skt-Ae-FM5"/>
+                                            <outlet property="lessonTitle" destination="GPE-l4-lOG" id="glg-Mb-04E"/>
+                                            <segue destination="DtL-so-DAi" kind="presentation" identifier="LessonAudio" id="gr8-Wr-14U"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.98999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="mrd-Qm-F6G" firstAttribute="bottom" secondItem="xPt-q2-ZDB" secondAttribute="bottom" id="0aY-tc-ecK"/>
+                            <constraint firstItem="xPt-q2-ZDB" firstAttribute="leading" secondItem="mrd-Qm-F6G" secondAttribute="leading" constant="22" id="3kJ-gq-CJQ"/>
+                            <constraint firstItem="mrd-Qm-F6G" firstAttribute="trailing" secondItem="xPt-q2-ZDB" secondAttribute="trailing" constant="22" id="Xrl-yk-Yaa"/>
+                            <constraint firstItem="xPt-q2-ZDB" firstAttribute="top" secondItem="mrd-Qm-F6G" secondAttribute="top" id="jy2-Ac-TXf"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="mrd-Qm-F6G"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Lessons" id="heT-CP-Jr7"/>
+                    <connections>
+                        <outlet property="collectionView" destination="xPt-q2-ZDB" id="wnd-Zg-gZQ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rWp-mY-Nmv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="512.79999999999995" y="156.97151424287858"/>
+        </scene>
+        <!--Title-->
+        <scene sceneID="SZE-6D-4Dq">
+            <objects>
+                <viewController storyboardIdentifier="LessonAudioID" useStoryboardIdentifierAsRestorationIdentifier="YES" id="DtL-so-DAi" customClass="AudioLessonViewController" customModule="SaltLakeChristianChurch" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Oww-DJ-6x2">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="smD-DM-0rf">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="400"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="smD-DM-0rf" secondAttribute="height" multiplier="125:104" constant="-105.76923076923077" id="rtI-Zm-oES"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(title)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TnC-o7-Mec">
+                                <rect key="frame" x="6" y="415" width="363" height="27.5"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="nry-7i-0yo">
+                                <rect key="frame" x="6" y="561" width="363" height="14"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0:00:00" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dfW-PR-ZKS">
+                                        <rect key="frame" x="0.0" y="0.0" width="181.5" height="14"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="10"/>
+                                        <color key="textColor" red="0.59893070291777195" green="0.59893070291777195" blue="0.59893070291777195" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0:00:00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G3n-b0-GLs">
+                                        <rect key="frame" x="181.5" y="0.0" width="181.5" height="14"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="10"/>
+                                        <color key="textColor" red="0.59893070291777195" green="0.59893070291777195" blue="0.59893070291777195" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="2cb-g2-RwK" customClass="UISliderX" customModule="SaltLakeChristianChurch" customModuleProvider="target">
+                                <rect key="frame" x="4" y="576" width="367" height="31"/>
+                                <color key="minimumTrackTintColor" red="0.27700001001358032" green="0.77899998426437378" blue="0.92500001192092896" alpha="0.98999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="sliderDidChange:" destination="DtL-so-DAi" eventType="valueChanged" id="Lfg-TH-gBY"/>
+                                </connections>
+                            </slider>
+                            <textView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" editable="NO" text="(Summary)" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="8jE-zJ-dea">
+                                <rect key="frame" x="6" y="446" width="363" height="111"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="textColor" red="0.59893070289999994" green="0.59893070289999994" blue="0.59893070289999994" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="15"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vgx-Ag-1KS" userLabel="TopView">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="63"/>
+                                <subviews>
+                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gNg-nP-0Vs" customClass="UIButtonX" customModule="SaltLakeChristianChurch" customModuleProvider="target">
+                                        <rect key="frame" x="309" y="22" width="54" height="27"/>
+                                        <color key="backgroundColor" red="0.5004135505516315" green="0.50619803177977141" blue="0.52355147546419101" alpha="0.37692916027607359" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="54" id="fS1-8H-Iqg"/>
+                                        </constraints>
+                                        <state key="normal" title="Done">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="3"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="0.5"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="doneButtonTapped:" destination="DtL-so-DAi" eventType="touchUpInside" id="48q-rL-Vbm"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="gNg-nP-0Vs" secondAttribute="trailing" constant="12" id="QQE-Ht-91m"/>
+                                    <constraint firstItem="gNg-nP-0Vs" firstAttribute="top" secondItem="vgx-Ag-1KS" secondAttribute="top" constant="22" id="fl0-Yv-nRZ"/>
+                                    <constraint firstAttribute="width" secondItem="vgx-Ag-1KS" secondAttribute="height" multiplier="125:21" id="nyX-w4-XUl"/>
+                                    <constraint firstAttribute="bottom" secondItem="gNg-nP-0Vs" secondAttribute="bottom" constant="14" id="uAb-0W-yIn"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Hs-E2-feZ" userLabel="BottomView">
+                                <rect key="frame" x="0.0" y="614" width="375" height="53"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" alpha="0.5" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="play-button" translatesAutoresizingMaskIntoConstraints="NO" id="8Tx-bf-K6j">
+                                        <rect key="frame" x="170" y="9" width="35" height="35"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="35" id="0pI-Wa-ZFN"/>
+                                            <constraint firstAttribute="height" constant="35" id="etg-er-Cgw"/>
+                                        </constraints>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hOu-DU-f1L" userLabel="PlayButton">
+                                        <rect key="frame" x="170" y="9" width="35" height="35"/>
+                                        <connections>
+                                            <action selector="playOrPauseButtonTapped:" destination="DtL-so-DAi" eventType="touchUpInside" id="Mcd-F3-XGt"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="hOu-DU-f1L" firstAttribute="top" secondItem="8Tx-bf-K6j" secondAttribute="top" id="2w4-IJ-SPs"/>
+                                    <constraint firstAttribute="width" secondItem="6Hs-E2-feZ" secondAttribute="height" multiplier="375:53" id="Id0-UQ-kF4"/>
+                                    <constraint firstItem="hOu-DU-f1L" firstAttribute="bottom" secondItem="8Tx-bf-K6j" secondAttribute="bottom" id="NaG-Un-CWc"/>
+                                    <constraint firstItem="8Tx-bf-K6j" firstAttribute="centerY" secondItem="6Hs-E2-feZ" secondAttribute="centerY" id="TWV-Uh-Fcs"/>
+                                    <constraint firstItem="hOu-DU-f1L" firstAttribute="leading" secondItem="8Tx-bf-K6j" secondAttribute="leading" id="eM4-Oj-oNJ"/>
+                                    <constraint firstItem="hOu-DU-f1L" firstAttribute="trailing" secondItem="8Tx-bf-K6j" secondAttribute="trailing" id="fWv-Qo-cn5"/>
+                                    <constraint firstItem="8Tx-bf-K6j" firstAttribute="centerX" secondItem="6Hs-E2-feZ" secondAttribute="centerX" id="uFC-Dn-MD0"/>
+                                </constraints>
+                            </view>
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="m2Z-32-4Fp" customClass="UIVisualEffectViewX" customModule="SaltLakeChristianChurch" customModuleProvider="target">
+                                <rect key="frame" x="107" y="323.5" width="161.5" height="40"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="KNG-8x-tYI">
+                                    <rect key="frame" x="0.0" y="0.0" width="161.5" height="40"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="Vf2-Sa-ixW">
+                                            <rect key="frame" x="8" y="8" width="20" height="24"/>
+                                        </activityIndicatorView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loading Lesson" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dHc-9K-e0N">
+                                            <rect key="frame" x="32" y="8" width="121.5" height="24"/>
+                                            <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
+                                            <color key="textColor" red="0.083892189485435587" green="0.084639857654159378" blue="0.088123756631299788" alpha="0.65000718941717794" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="Vf2-Sa-ixW" secondAttribute="bottom" constant="8" id="9hX-tA-Aef"/>
+                                        <constraint firstItem="Vf2-Sa-ixW" firstAttribute="leading" secondItem="KNG-8x-tYI" secondAttribute="leading" constant="8" id="F8l-gc-eIa"/>
+                                        <constraint firstItem="dHc-9K-e0N" firstAttribute="leading" secondItem="Vf2-Sa-ixW" secondAttribute="trailing" constant="4" id="Kxi-mg-woK"/>
+                                        <constraint firstAttribute="trailing" secondItem="dHc-9K-e0N" secondAttribute="trailing" constant="8" id="N9x-Xf-5Vk"/>
+                                        <constraint firstItem="dHc-9K-e0N" firstAttribute="top" secondItem="KNG-8x-tYI" secondAttribute="top" constant="8" id="YSv-JL-eXa"/>
+                                        <constraint firstItem="Vf2-Sa-ixW" firstAttribute="top" secondItem="KNG-8x-tYI" secondAttribute="top" constant="8" id="czc-ug-8M7"/>
+                                        <constraint firstAttribute="bottom" secondItem="dHc-9K-e0N" secondAttribute="bottom" constant="8" id="ojZ-2c-Ujb"/>
+                                    </constraints>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                            <real key="value" value="5"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </view>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="m2Z-32-4Fp" secondAttribute="height" multiplier="4:1" id="aVG-eg-6Vi"/>
+                                </constraints>
+                                <blurEffect style="light"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="0.5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </visualEffectView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="6Hs-E2-feZ" firstAttribute="leading" secondItem="3S8-JV-yAa" secondAttribute="leading" id="4JA-bL-gmx"/>
+                            <constraint firstItem="6Hs-E2-feZ" firstAttribute="trailing" secondItem="3S8-JV-yAa" secondAttribute="trailing" id="4dg-i8-bgP"/>
+                            <constraint firstItem="3S8-JV-yAa" firstAttribute="trailing" secondItem="2cb-g2-RwK" secondAttribute="trailing" constant="6" id="6gh-IG-KWJ"/>
+                            <constraint firstItem="3S8-JV-yAa" firstAttribute="trailing" secondItem="8jE-zJ-dea" secondAttribute="trailing" constant="6" id="B7T-Nw-whk"/>
+                            <constraint firstItem="smD-DM-0rf" firstAttribute="top" secondItem="Oww-DJ-6x2" secondAttribute="top" id="E2F-Ox-gZy"/>
+                            <constraint firstItem="vgx-Ag-1KS" firstAttribute="trailing" secondItem="3S8-JV-yAa" secondAttribute="trailing" id="EDO-Zj-KFR"/>
+                            <constraint firstItem="6Hs-E2-feZ" firstAttribute="top" secondItem="2cb-g2-RwK" secondAttribute="bottom" constant="8" id="FQF-lI-CIB"/>
+                            <constraint firstItem="TnC-o7-Mec" firstAttribute="top" secondItem="smD-DM-0rf" secondAttribute="bottom" constant="15" id="FTM-4r-04g"/>
+                            <constraint firstItem="smD-DM-0rf" firstAttribute="leading" secondItem="3S8-JV-yAa" secondAttribute="leading" id="Him-zG-LME"/>
+                            <constraint firstItem="3S8-JV-yAa" firstAttribute="trailing" secondItem="TnC-o7-Mec" secondAttribute="trailing" constant="6" id="IdH-Na-poV"/>
+                            <constraint firstItem="2cb-g2-RwK" firstAttribute="top" secondItem="nry-7i-0yo" secondAttribute="bottom" constant="1" id="KmE-3d-vyS"/>
+                            <constraint firstItem="nry-7i-0yo" firstAttribute="top" secondItem="8jE-zJ-dea" secondAttribute="bottom" constant="4" id="Ndc-OJ-1RD"/>
+                            <constraint firstItem="6Hs-E2-feZ" firstAttribute="bottom" secondItem="Oww-DJ-6x2" secondAttribute="bottom" id="Ph6-40-J3H"/>
+                            <constraint firstItem="2cb-g2-RwK" firstAttribute="leading" secondItem="3S8-JV-yAa" secondAttribute="leading" constant="6" id="Vij-e5-eDc"/>
+                            <constraint firstItem="m2Z-32-4Fp" firstAttribute="centerX" secondItem="3S8-JV-yAa" secondAttribute="centerX" id="W2s-67-0b7"/>
+                            <constraint firstItem="3S8-JV-yAa" firstAttribute="trailing" secondItem="nry-7i-0yo" secondAttribute="trailing" constant="6" id="dKI-9P-cTI"/>
+                            <constraint firstItem="8jE-zJ-dea" firstAttribute="leading" secondItem="3S8-JV-yAa" secondAttribute="leading" constant="6" id="epT-fW-0Oc"/>
+                            <constraint firstItem="8jE-zJ-dea" firstAttribute="top" secondItem="TnC-o7-Mec" secondAttribute="bottom" constant="3.5" id="n31-hb-lP0"/>
+                            <constraint firstItem="vgx-Ag-1KS" firstAttribute="leading" secondItem="3S8-JV-yAa" secondAttribute="leading" id="oTN-sk-5uY"/>
+                            <constraint firstItem="smD-DM-0rf" firstAttribute="trailing" secondItem="3S8-JV-yAa" secondAttribute="trailing" id="qzW-MG-tIP"/>
+                            <constraint firstItem="vgx-Ag-1KS" firstAttribute="top" secondItem="Oww-DJ-6x2" secondAttribute="top" id="utz-Mm-QwI"/>
+                            <constraint firstItem="nry-7i-0yo" firstAttribute="leading" secondItem="3S8-JV-yAa" secondAttribute="leading" constant="6" id="vIi-LN-4Kb"/>
+                            <constraint firstItem="TnC-o7-Mec" firstAttribute="leading" secondItem="3S8-JV-yAa" secondAttribute="leading" constant="6" id="yrD-Bg-BPK"/>
+                            <constraint firstItem="m2Z-32-4Fp" firstAttribute="centerY" secondItem="3S8-JV-yAa" secondAttribute="centerY" id="yxj-ys-ggP"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="3S8-JV-yAa"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Title" id="Sct-Ch-Xfx"/>
+                    <connections>
+                        <outlet property="activityIndicator" destination="Vf2-Sa-ixW" id="UD2-K7-GIL"/>
+                        <outlet property="blurView" destination="m2Z-32-4Fp" id="wbj-3t-dze"/>
+                        <outlet property="imageView" destination="smD-DM-0rf" id="U8u-vQ-2PK"/>
+                        <outlet property="playPauseButton" destination="hOu-DU-f1L" id="tJ0-lP-iO5"/>
+                        <outlet property="playPauseButtonImageView" destination="8Tx-bf-K6j" id="Pat-5b-1Sa"/>
+                        <outlet property="slider" destination="2cb-g2-RwK" id="2nb-0O-1hQ"/>
+                        <outlet property="summaryTextView" destination="8jE-zJ-dea" id="QWw-Xr-dWQ"/>
+                        <outlet property="timeRemainingLabel" destination="G3n-b0-GLs" id="crB-Mt-Kle"/>
+                        <outlet property="timeSoFarLabel" destination="dfW-PR-ZKS" id="EoO-2S-qLV"/>
+                        <outlet property="titleLabel" destination="TnC-o7-Mec" id="ZcH-NZ-H1K"/>
+                        <segue destination="MQc-tR-Z81" kind="show" identifier="BackSegue" id="dK1-ln-8as"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sRq-kE-D0U" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1340" y="157"/>
+        </scene>
+        <!--Login-->
+        <scene sceneID="qFj-PH-xGG">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Login" id="MQc-tR-Z81" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Us4-03-Jrf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1962" y="157"/>
+        </scene>
+        <!--Lessons-->
+        <scene sceneID="xja-JP-g9W">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Dha-Ha-9Jz" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Lessons" image="Sermon" id="r0V-dx-lai"/>
+                    <toolbarItems/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="pwS-bX-LPj">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="vtx-o1-4iz" kind="relationship" relationship="rootViewController" id="WxR-3S-HYN"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JJ5-Sk-Xi1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-204" y="157"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Sermon" width="23" height="21"/>
+        <image name="play-button" width="128" height="128"/>
+    </resources>
+</document>

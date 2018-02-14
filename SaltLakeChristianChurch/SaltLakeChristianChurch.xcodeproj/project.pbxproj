@@ -1,0 +1,753 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		8102DB50202A4BCE0043A604 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8102DB4F202A4BCE0043A604 /* Event.swift */; };
+		8102DB52202A4BD80043A604 /* EventController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8102DB51202A4BD80043A604 /* EventController.swift */; };
+		8109FBA320216B00004B1655 /* Lessons.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8109FBA220216B00004B1655 /* Lessons.storyboard */; };
+		8109FBA520216B1D004B1655 /* Calendar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8109FBA420216B1D004B1655 /* Calendar.storyboard */; };
+		8109FBA720216B41004B1655 /* Announcements.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8109FBA620216B41004B1655 /* Announcements.storyboard */; };
+		8109FBA920216B62004B1655 /* Give.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8109FBA820216B62004B1655 /* Give.storyboard */; };
+		8109FBAB20216B6E004B1655 /* More.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8109FBAA20216B6E004B1655 /* More.storyboard */; };
+		8109FBAD20216D30004B1655 /* LessonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8109FBAC20216D30004B1655 /* LessonViewController.swift */; };
+		8109FBAF20216D4B004B1655 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8109FBAE20216D4B004B1655 /* CalendarViewController.swift */; };
+		8109FBB120216D59004B1655 /* AnnouncementsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8109FBB020216D59004B1655 /* AnnouncementsViewController.swift */; };
+		8109FBB320216D6B004B1655 /* GiveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8109FBB220216D6B004B1655 /* GiveViewController.swift */; };
+		815E23E2201FE47500157B18 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 815E23E1201FE47500157B18 /* AppDelegate.swift */; };
+		815E23E7201FE47500157B18 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 815E23E5201FE47500157B18 /* Login.storyboard */; };
+		815E23E9201FE47500157B18 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 815E23E8201FE47500157B18 /* Assets.xcassets */; };
+		815E23EC201FE47500157B18 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 815E23EA201FE47500157B18 /* LaunchScreen.storyboard */; };
+		815E23F6201FE55900157B18 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 815E23F5201FE55900157B18 /* GoogleService-Info.plist */; };
+		815E23F8201FE88F00157B18 /* extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 815E23F7201FE88F00157B18 /* extensions.swift */; };
+		815E2404201FE8F800157B18 /* UISliderX.swift in Sources */ = {isa = PBXBuildFile; fileRef = 815E23F9201FE8F600157B18 /* UISliderX.swift */; };
+		815E2405201FE8F800157B18 /* UITextViewX.swift in Sources */ = {isa = PBXBuildFile; fileRef = 815E23FA201FE8F700157B18 /* UITextViewX.swift */; };
+		815E2406201FE8F800157B18 /* UIImageViewX.swift in Sources */ = {isa = PBXBuildFile; fileRef = 815E23FB201FE8F700157B18 /* UIImageViewX.swift */; };
+		815E2407201FE8F800157B18 /* UIViewAnchorPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 815E23FC201FE8F700157B18 /* UIViewAnchorPoint.swift */; };
+		815E2408201FE8F800157B18 /* UIViewX.swift in Sources */ = {isa = PBXBuildFile; fileRef = 815E23FD201FE8F700157B18 /* UIViewX.swift */; };
+		815E2409201FE8F800157B18 /* UIViewControllerX.swift in Sources */ = {isa = PBXBuildFile; fileRef = 815E23FE201FE8F700157B18 /* UIViewControllerX.swift */; };
+		815E240A201FE8F800157B18 /* UIViewXRadialGradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 815E23FF201FE8F700157B18 /* UIViewXRadialGradient.swift */; };
+		815E240B201FE8F800157B18 /* UIVisualEffectViewX.swift in Sources */ = {isa = PBXBuildFile; fileRef = 815E2400201FE8F700157B18 /* UIVisualEffectViewX.swift */; };
+		815E240C201FE8F800157B18 /* UILabelX.swift in Sources */ = {isa = PBXBuildFile; fileRef = 815E2401201FE8F700157B18 /* UILabelX.swift */; };
+		815E240D201FE8F800157B18 /* UIButtonX.swift in Sources */ = {isa = PBXBuildFile; fileRef = 815E2402201FE8F800157B18 /* UIButtonX.swift */; };
+		815E240E201FE8F800157B18 /* UITextFieldX.swift in Sources */ = {isa = PBXBuildFile; fileRef = 815E2403201FE8F800157B18 /* UITextFieldX.swift */; };
+		815E24222020F02100157B18 /* LoginOrRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 815E24212020F02100157B18 /* LoginOrRegisterViewController.swift */; };
+		815E2424202115F400157B18 /* Member.swift in Sources */ = {isa = PBXBuildFile; fileRef = 815E2423202115F400157B18 /* Member.swift */; };
+		815E2426202116F600157B18 /* MemberController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 815E2425202116F600157B18 /* MemberController.swift */; };
+		815E7C4A202E15B000D0C46B /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 815E7C49202E15B000D0C46B /* CollectionViewCell.swift */; };
+		817B4958202B737A00A62211 /* CalendarTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817B4957202B737A00A62211 /* CalendarTableViewCell.swift */; };
+		817B495A202B80B100A62211 /* DateHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817B4959202B80B100A62211 /* DateHelper.swift */; };
+		817B4980202D06EC00A62211 /* LessonController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817B497F202D06EC00A62211 /* LessonController.swift */; };
+		817B4982202D127500A62211 /* Lesson.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817B4981202D127500A62211 /* Lesson.swift */; };
+		8181E0992028C9460093CC04 /* CreateAnnouncementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8181E0982028C9460093CC04 /* CreateAnnouncementViewController.swift */; };
+		8199A7BD2022484400E02BC0 /* DirectoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8199A7BC2022484400E02BC0 /* DirectoryTableViewController.swift */; };
+		8199A7BF20228D2A00E02BC0 /* MemberDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8199A7BE20228D2A00E02BC0 /* MemberDetailViewController.swift */; };
+		8199A7C12022951700E02BC0 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8199A7C02022951700E02BC0 /* SettingsTableViewController.swift */; };
+		8199A7F82023DCAE00E02BC0 /* LaunchScreenCopy.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8199A7F72023DCAE00E02BC0 /* LaunchScreenCopy.storyboard */; };
+		8199A7FA2023DD6600E02BC0 /* LaunchScreenCopyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8199A7F92023DD6600E02BC0 /* LaunchScreenCopyViewController.swift */; };
+		8199A7FC202506CC00E02BC0 /* ContactUsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8199A7FB202506CC00E02BC0 /* ContactUsViewController.swift */; };
+		8199A7FE20250E1900E02BC0 /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8199A7FD20250E1900E02BC0 /* EditProfileViewController.swift */; };
+		8199A82E2028BD2100E02BC0 /* Announcement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8199A82D2028BD2100E02BC0 /* Announcement.swift */; };
+		8199A8302028BD3500E02BC0 /* AnnouncementController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8199A82F2028BD3500E02BC0 /* AnnouncementController.swift */; };
+		8199A8352028BDB000E02BC0 /* AnnouncementTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8199A8342028BDB000E02BC0 /* AnnouncementTableViewCell.swift */; };
+		819F7FC2202E56110067FBDF /* AudioLessonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819F7FC1202E56110067FBDF /* AudioLessonViewController.swift */; };
+		819F7FC820310DC70067FBDF /* SaltLakeChristianChurch.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 819F7FC620310DC70067FBDF /* SaltLakeChristianChurch.xcdatamodeld */; };
+		819F7FCA20310F430067FBDF /* CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819F7FC920310F430067FBDF /* CoreData.swift */; };
+		819F7FCC20310FC50067FBDF /* BlockedAnnouncement+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819F7FCB20310FC50067FBDF /* BlockedAnnouncement+Convenience.swift */; };
+		819F7FCE203111740067FBDF /* BlockedAnnouncementController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819F7FCD203111740067FBDF /* BlockedAnnouncementController.swift */; };
+		819F7FD02031385E0067FBDF /* BlockedMember.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819F7FCF2031385E0067FBDF /* BlockedMember.swift */; };
+		819F7FD2203138F20067FBDF /* BlockedMemberController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819F7FD1203138F20067FBDF /* BlockedMemberController.swift */; };
+		81DBA593202231D7001EF8E7 /* MoreTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81DBA592202231D7001EF8E7 /* MoreTableViewController.swift */; };
+		FBF458CABE07E4278BD949DB /* Pods_SaltLakeChristianChurch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83F1D8FC62F7E113BACAD970 /* Pods_SaltLakeChristianChurch.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		0078708EDF6217E47E032469 /* Pods-SaltLakeChristianChurch.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SaltLakeChristianChurch.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SaltLakeChristianChurch/Pods-SaltLakeChristianChurch.debug.xcconfig"; sourceTree = "<group>"; };
+		8102DB4E202A25590043A604 /* SaltLakeChristianChurch.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SaltLakeChristianChurch.entitlements; sourceTree = "<group>"; };
+		8102DB4F202A4BCE0043A604 /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
+		8102DB51202A4BD80043A604 /* EventController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventController.swift; sourceTree = "<group>"; };
+		8109FBA220216B00004B1655 /* Lessons.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Lessons.storyboard; sourceTree = "<group>"; };
+		8109FBA420216B1D004B1655 /* Calendar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Calendar.storyboard; sourceTree = "<group>"; };
+		8109FBA620216B41004B1655 /* Announcements.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Announcements.storyboard; sourceTree = "<group>"; };
+		8109FBA820216B62004B1655 /* Give.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Give.storyboard; sourceTree = "<group>"; };
+		8109FBAA20216B6E004B1655 /* More.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = More.storyboard; sourceTree = "<group>"; };
+		8109FBAC20216D30004B1655 /* LessonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonViewController.swift; sourceTree = "<group>"; };
+		8109FBAE20216D4B004B1655 /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
+		8109FBB020216D59004B1655 /* AnnouncementsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnouncementsViewController.swift; sourceTree = "<group>"; };
+		8109FBB220216D6B004B1655 /* GiveViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GiveViewController.swift; sourceTree = "<group>"; };
+		815E23DE201FE47500157B18 /* SaltLakeChristianChurch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SaltLakeChristianChurch.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		815E23E1201FE47500157B18 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		815E23E6201FE47500157B18 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Login.storyboard; sourceTree = "<group>"; };
+		815E23E8201FE47500157B18 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		815E23EB201FE47500157B18 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		815E23ED201FE47500157B18 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		815E23F5201FE55900157B18 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		815E23F7201FE88F00157B18 /* extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = extensions.swift; sourceTree = "<group>"; };
+		815E23F9201FE8F600157B18 /* UISliderX.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UISliderX.swift; sourceTree = "<group>"; };
+		815E23FA201FE8F700157B18 /* UITextViewX.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITextViewX.swift; sourceTree = "<group>"; };
+		815E23FB201FE8F700157B18 /* UIImageViewX.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageViewX.swift; sourceTree = "<group>"; };
+		815E23FC201FE8F700157B18 /* UIViewAnchorPoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewAnchorPoint.swift; sourceTree = "<group>"; };
+		815E23FD201FE8F700157B18 /* UIViewX.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewX.swift; sourceTree = "<group>"; };
+		815E23FE201FE8F700157B18 /* UIViewControllerX.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewControllerX.swift; sourceTree = "<group>"; };
+		815E23FF201FE8F700157B18 /* UIViewXRadialGradient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewXRadialGradient.swift; sourceTree = "<group>"; };
+		815E2400201FE8F700157B18 /* UIVisualEffectViewX.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIVisualEffectViewX.swift; sourceTree = "<group>"; };
+		815E2401201FE8F700157B18 /* UILabelX.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UILabelX.swift; sourceTree = "<group>"; };
+		815E2402201FE8F800157B18 /* UIButtonX.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIButtonX.swift; sourceTree = "<group>"; };
+		815E2403201FE8F800157B18 /* UITextFieldX.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITextFieldX.swift; sourceTree = "<group>"; };
+		815E24212020F02100157B18 /* LoginOrRegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginOrRegisterViewController.swift; sourceTree = "<group>"; };
+		815E2423202115F400157B18 /* Member.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Member.swift; sourceTree = "<group>"; };
+		815E2425202116F600157B18 /* MemberController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberController.swift; sourceTree = "<group>"; };
+		815E7C49202E15B000D0C46B /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
+		817B4957202B737A00A62211 /* CalendarTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarTableViewCell.swift; sourceTree = "<group>"; };
+		817B4959202B80B100A62211 /* DateHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateHelper.swift; sourceTree = "<group>"; };
+		817B497F202D06EC00A62211 /* LessonController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonController.swift; sourceTree = "<group>"; };
+		817B4981202D127500A62211 /* Lesson.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lesson.swift; sourceTree = "<group>"; };
+		8181E0982028C9460093CC04 /* CreateAnnouncementViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAnnouncementViewController.swift; sourceTree = "<group>"; };
+		8199A7BC2022484400E02BC0 /* DirectoryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectoryTableViewController.swift; sourceTree = "<group>"; };
+		8199A7BE20228D2A00E02BC0 /* MemberDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberDetailViewController.swift; sourceTree = "<group>"; };
+		8199A7C02022951700E02BC0 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
+		8199A7F72023DCAE00E02BC0 /* LaunchScreenCopy.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreenCopy.storyboard; sourceTree = "<group>"; };
+		8199A7F92023DD6600E02BC0 /* LaunchScreenCopyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenCopyViewController.swift; sourceTree = "<group>"; };
+		8199A7FB202506CC00E02BC0 /* ContactUsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactUsViewController.swift; sourceTree = "<group>"; };
+		8199A7FD20250E1900E02BC0 /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
+		8199A82D2028BD2100E02BC0 /* Announcement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Announcement.swift; sourceTree = "<group>"; };
+		8199A82F2028BD3500E02BC0 /* AnnouncementController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnouncementController.swift; sourceTree = "<group>"; };
+		8199A8342028BDB000E02BC0 /* AnnouncementTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnouncementTableViewCell.swift; sourceTree = "<group>"; };
+		819F7FC1202E56110067FBDF /* AudioLessonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioLessonViewController.swift; sourceTree = "<group>"; };
+		819F7FC720310DC70067FBDF /* BlockedAnnouncements.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BlockedAnnouncements.xcdatamodel; sourceTree = "<group>"; };
+		819F7FC920310F430067FBDF /* CoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreData.swift; sourceTree = "<group>"; };
+		819F7FCB20310FC50067FBDF /* BlockedAnnouncement+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BlockedAnnouncement+Convenience.swift"; sourceTree = "<group>"; };
+		819F7FCD203111740067FBDF /* BlockedAnnouncementController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockedAnnouncementController.swift; sourceTree = "<group>"; };
+		819F7FCF2031385E0067FBDF /* BlockedMember.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockedMember.swift; sourceTree = "<group>"; };
+		819F7FD1203138F20067FBDF /* BlockedMemberController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockedMemberController.swift; sourceTree = "<group>"; };
+		81DBA592202231D7001EF8E7 /* MoreTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreTableViewController.swift; sourceTree = "<group>"; };
+		83F1D8FC62F7E113BACAD970 /* Pods_SaltLakeChristianChurch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SaltLakeChristianChurch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9E424914063860F44B256AA9 /* Pods-SaltLakeChristianChurch.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SaltLakeChristianChurch.release.xcconfig"; path = "Pods/Target Support Files/Pods-SaltLakeChristianChurch/Pods-SaltLakeChristianChurch.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		815E23DB201FE47500157B18 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FBF458CABE07E4278BD949DB /* Pods_SaltLakeChristianChurch.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		815E23D5201FE47500157B18 = {
+			isa = PBXGroup;
+			children = (
+				815E23E0201FE47500157B18 /* SaltLakeChristianChurch */,
+				815E23DF201FE47500157B18 /* Products */,
+				E71A5DAAEF967F3214EB762A /* Pods */,
+				A2EBD76ADE5D7418EADB3AB4 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		815E23DF201FE47500157B18 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				815E23DE201FE47500157B18 /* SaltLakeChristianChurch.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		815E23E0201FE47500157B18 /* SaltLakeChristianChurch */ = {
+			isa = PBXGroup;
+			children = (
+				8102DB4E202A25590043A604 /* SaltLakeChristianChurch.entitlements */,
+				819F7FC620310DC70067FBDF /* SaltLakeChristianChurch.xcdatamodeld */,
+				815E23E1201FE47500157B18 /* AppDelegate.swift */,
+				815E2410201FE9A000157B18 /* Models */,
+				815E2411201FE9B800157B18 /* ModelControllers */,
+				815E2412201FEA1300157B18 /* ViewControllers */,
+				8199A8332028BD5F00E02BC0 /* Views */,
+				815E23F3201FE48600157B18 /* Storyboards */,
+				815E23F4201FE4A500157B18 /* Resources */,
+			);
+			path = SaltLakeChristianChurch;
+			sourceTree = "<group>";
+		};
+		815E23F3201FE48600157B18 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				815E23E5201FE47500157B18 /* Login.storyboard */,
+				8109FBA220216B00004B1655 /* Lessons.storyboard */,
+				8109FBA420216B1D004B1655 /* Calendar.storyboard */,
+				8109FBA620216B41004B1655 /* Announcements.storyboard */,
+				8109FBA820216B62004B1655 /* Give.storyboard */,
+				8109FBAA20216B6E004B1655 /* More.storyboard */,
+				815E23EA201FE47500157B18 /* LaunchScreen.storyboard */,
+				8199A7F72023DCAE00E02BC0 /* LaunchScreenCopy.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		815E23F4201FE4A500157B18 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				815E23E8201FE47500157B18 /* Assets.xcassets */,
+				815E23F7201FE88F00157B18 /* extensions.swift */,
+				817B4959202B80B100A62211 /* DateHelper.swift */,
+				819F7FC920310F430067FBDF /* CoreData.swift */,
+				815E240F201FE90900157B18 /* IBDesignables */,
+				815E23ED201FE47500157B18 /* Info.plist */,
+				815E23F5201FE55900157B18 /* GoogleService-Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		815E240F201FE90900157B18 /* IBDesignables */ = {
+			isa = PBXGroup;
+			children = (
+				815E2402201FE8F800157B18 /* UIButtonX.swift */,
+				815E23FB201FE8F700157B18 /* UIImageViewX.swift */,
+				815E2401201FE8F700157B18 /* UILabelX.swift */,
+				815E23F9201FE8F600157B18 /* UISliderX.swift */,
+				815E2403201FE8F800157B18 /* UITextFieldX.swift */,
+				815E23FA201FE8F700157B18 /* UITextViewX.swift */,
+				815E23FC201FE8F700157B18 /* UIViewAnchorPoint.swift */,
+				815E23FE201FE8F700157B18 /* UIViewControllerX.swift */,
+				815E23FD201FE8F700157B18 /* UIViewX.swift */,
+				815E23FF201FE8F700157B18 /* UIViewXRadialGradient.swift */,
+				815E2400201FE8F700157B18 /* UIVisualEffectViewX.swift */,
+			);
+			path = IBDesignables;
+			sourceTree = "<group>";
+		};
+		815E2410201FE9A000157B18 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				815E2423202115F400157B18 /* Member.swift */,
+				8199A82D2028BD2100E02BC0 /* Announcement.swift */,
+				8102DB4F202A4BCE0043A604 /* Event.swift */,
+				817B4981202D127500A62211 /* Lesson.swift */,
+				819F7FCB20310FC50067FBDF /* BlockedAnnouncement+Convenience.swift */,
+				819F7FCF2031385E0067FBDF /* BlockedMember.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		815E2411201FE9B800157B18 /* ModelControllers */ = {
+			isa = PBXGroup;
+			children = (
+				815E2425202116F600157B18 /* MemberController.swift */,
+				8199A82F2028BD3500E02BC0 /* AnnouncementController.swift */,
+				8102DB51202A4BD80043A604 /* EventController.swift */,
+				817B497F202D06EC00A62211 /* LessonController.swift */,
+				819F7FCD203111740067FBDF /* BlockedAnnouncementController.swift */,
+				819F7FD1203138F20067FBDF /* BlockedMemberController.swift */,
+			);
+			path = ModelControllers;
+			sourceTree = "<group>";
+		};
+		815E2412201FEA1300157B18 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				8181E0952028C5180093CC04 /* Login+Register */,
+				8181E0972028C5360093CC04 /* LessonTab */,
+				8181E0962028C52C0093CC04 /* CalendarTab */,
+				8181E0942028C50E0093CC04 /* AnnouncementTab */,
+				8181E0932028C4D90093CC04 /* GiveTab */,
+				8181E0922028C4CD0093CC04 /* MoreTab */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		8181E0922028C4CD0093CC04 /* MoreTab */ = {
+			isa = PBXGroup;
+			children = (
+				81DBA592202231D7001EF8E7 /* MoreTableViewController.swift */,
+				8199A7FB202506CC00E02BC0 /* ContactUsViewController.swift */,
+				8199A7BC2022484400E02BC0 /* DirectoryTableViewController.swift */,
+				8199A7BE20228D2A00E02BC0 /* MemberDetailViewController.swift */,
+				8199A7C02022951700E02BC0 /* SettingsTableViewController.swift */,
+				8199A7FD20250E1900E02BC0 /* EditProfileViewController.swift */,
+			);
+			path = MoreTab;
+			sourceTree = "<group>";
+		};
+		8181E0932028C4D90093CC04 /* GiveTab */ = {
+			isa = PBXGroup;
+			children = (
+				8109FBB220216D6B004B1655 /* GiveViewController.swift */,
+			);
+			path = GiveTab;
+			sourceTree = "<group>";
+		};
+		8181E0942028C50E0093CC04 /* AnnouncementTab */ = {
+			isa = PBXGroup;
+			children = (
+				8109FBB020216D59004B1655 /* AnnouncementsViewController.swift */,
+				8181E0982028C9460093CC04 /* CreateAnnouncementViewController.swift */,
+			);
+			path = AnnouncementTab;
+			sourceTree = "<group>";
+		};
+		8181E0952028C5180093CC04 /* Login+Register */ = {
+			isa = PBXGroup;
+			children = (
+				8199A7F92023DD6600E02BC0 /* LaunchScreenCopyViewController.swift */,
+				815E24212020F02100157B18 /* LoginOrRegisterViewController.swift */,
+			);
+			path = "Login+Register";
+			sourceTree = "<group>";
+		};
+		8181E0962028C52C0093CC04 /* CalendarTab */ = {
+			isa = PBXGroup;
+			children = (
+				8109FBAE20216D4B004B1655 /* CalendarViewController.swift */,
+			);
+			path = CalendarTab;
+			sourceTree = "<group>";
+		};
+		8181E0972028C5360093CC04 /* LessonTab */ = {
+			isa = PBXGroup;
+			children = (
+				8109FBAC20216D30004B1655 /* LessonViewController.swift */,
+				819F7FC1202E56110067FBDF /* AudioLessonViewController.swift */,
+			);
+			path = LessonTab;
+			sourceTree = "<group>";
+		};
+		8199A8332028BD5F00E02BC0 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				8199A8342028BDB000E02BC0 /* AnnouncementTableViewCell.swift */,
+				817B4957202B737A00A62211 /* CalendarTableViewCell.swift */,
+				815E7C49202E15B000D0C46B /* CollectionViewCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		A2EBD76ADE5D7418EADB3AB4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				83F1D8FC62F7E113BACAD970 /* Pods_SaltLakeChristianChurch.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E71A5DAAEF967F3214EB762A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				0078708EDF6217E47E032469 /* Pods-SaltLakeChristianChurch.debug.xcconfig */,
+				9E424914063860F44B256AA9 /* Pods-SaltLakeChristianChurch.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		815E23DD201FE47500157B18 /* SaltLakeChristianChurch */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 815E23F0201FE47500157B18 /* Build configuration list for PBXNativeTarget "SaltLakeChristianChurch" */;
+			buildPhases = (
+				2C7B56A4D6FB154F53CA60A4 /* [CP] Check Pods Manifest.lock */,
+				815E23DA201FE47500157B18 /* Sources */,
+				815E23DB201FE47500157B18 /* Frameworks */,
+				815E23DC201FE47500157B18 /* Resources */,
+				E2BEB58FDD0791303390DCAE /* [CP] Embed Pods Frameworks */,
+				C248FF59797D5BE4A6872DE9 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SaltLakeChristianChurch;
+			productName = SaltLakeChristianChurch;
+			productReference = 815E23DE201FE47500157B18 /* SaltLakeChristianChurch.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		815E23D6201FE47500157B18 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0920;
+				LastUpgradeCheck = 0920;
+				ORGANIZATIONNAME = "Jayden Garrick";
+				TargetAttributes = {
+					815E23DD201FE47500157B18 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
+					};
+				};
+			};
+			buildConfigurationList = 815E23D9201FE47500157B18 /* Build configuration list for PBXProject "SaltLakeChristianChurch" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 815E23D5201FE47500157B18;
+			productRefGroup = 815E23DF201FE47500157B18 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				815E23DD201FE47500157B18 /* SaltLakeChristianChurch */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		815E23DC201FE47500157B18 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8109FBA520216B1D004B1655 /* Calendar.storyboard in Resources */,
+				8109FBAB20216B6E004B1655 /* More.storyboard in Resources */,
+				8199A7F82023DCAE00E02BC0 /* LaunchScreenCopy.storyboard in Resources */,
+				8109FBA920216B62004B1655 /* Give.storyboard in Resources */,
+				8109FBA720216B41004B1655 /* Announcements.storyboard in Resources */,
+				815E23EC201FE47500157B18 /* LaunchScreen.storyboard in Resources */,
+				8109FBA320216B00004B1655 /* Lessons.storyboard in Resources */,
+				815E23F6201FE55900157B18 /* GoogleService-Info.plist in Resources */,
+				815E23E9201FE47500157B18 /* Assets.xcassets in Resources */,
+				815E23E7201FE47500157B18 /* Login.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2C7B56A4D6FB154F53CA60A4 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SaltLakeChristianChurch-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C248FF59797D5BE4A6872DE9 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SaltLakeChristianChurch/Pods-SaltLakeChristianChurch-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E2BEB58FDD0791303390DCAE /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-SaltLakeChristianChurch/Pods-SaltLakeChristianChurch-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/IQKeyboardManager/IQKeyboardManager.framework",
+				"${BUILT_PRODUCTS_DIR}/PhoneNumberKit/PhoneNumberKit.framework",
+				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManager.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PhoneNumberKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SaltLakeChristianChurch/Pods-SaltLakeChristianChurch-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		815E23DA201FE47500157B18 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8199A8302028BD3500E02BC0 /* AnnouncementController.swift in Sources */,
+				8102DB50202A4BCE0043A604 /* Event.swift in Sources */,
+				817B4958202B737A00A62211 /* CalendarTableViewCell.swift in Sources */,
+				819F7FCA20310F430067FBDF /* CoreData.swift in Sources */,
+				815E240C201FE8F800157B18 /* UILabelX.swift in Sources */,
+				8109FBAD20216D30004B1655 /* LessonViewController.swift in Sources */,
+				815E2407201FE8F800157B18 /* UIViewAnchorPoint.swift in Sources */,
+				815E2404201FE8F800157B18 /* UISliderX.swift in Sources */,
+				815E7C4A202E15B000D0C46B /* CollectionViewCell.swift in Sources */,
+				815E240B201FE8F800157B18 /* UIVisualEffectViewX.swift in Sources */,
+				815E2424202115F400157B18 /* Member.swift in Sources */,
+				8109FBAF20216D4B004B1655 /* CalendarViewController.swift in Sources */,
+				815E2406201FE8F800157B18 /* UIImageViewX.swift in Sources */,
+				815E240E201FE8F800157B18 /* UITextFieldX.swift in Sources */,
+				8109FBB320216D6B004B1655 /* GiveViewController.swift in Sources */,
+				819F7FC2202E56110067FBDF /* AudioLessonViewController.swift in Sources */,
+				815E24222020F02100157B18 /* LoginOrRegisterViewController.swift in Sources */,
+				817B4980202D06EC00A62211 /* LessonController.swift in Sources */,
+				819F7FC820310DC70067FBDF /* SaltLakeChristianChurch.xcdatamodeld in Sources */,
+				81DBA593202231D7001EF8E7 /* MoreTableViewController.swift in Sources */,
+				8199A7BD2022484400E02BC0 /* DirectoryTableViewController.swift in Sources */,
+				819F7FCC20310FC50067FBDF /* BlockedAnnouncement+Convenience.swift in Sources */,
+				8102DB52202A4BD80043A604 /* EventController.swift in Sources */,
+				8199A7C12022951700E02BC0 /* SettingsTableViewController.swift in Sources */,
+				8199A82E2028BD2100E02BC0 /* Announcement.swift in Sources */,
+				8199A7FA2023DD6600E02BC0 /* LaunchScreenCopyViewController.swift in Sources */,
+				819F7FD2203138F20067FBDF /* BlockedMemberController.swift in Sources */,
+				815E23E2201FE47500157B18 /* AppDelegate.swift in Sources */,
+				815E2405201FE8F800157B18 /* UITextViewX.swift in Sources */,
+				815E2408201FE8F800157B18 /* UIViewX.swift in Sources */,
+				815E240D201FE8F800157B18 /* UIButtonX.swift in Sources */,
+				8199A7FE20250E1900E02BC0 /* EditProfileViewController.swift in Sources */,
+				817B4982202D127500A62211 /* Lesson.swift in Sources */,
+				8199A8352028BDB000E02BC0 /* AnnouncementTableViewCell.swift in Sources */,
+				815E23F8201FE88F00157B18 /* extensions.swift in Sources */,
+				815E2426202116F600157B18 /* MemberController.swift in Sources */,
+				815E2409201FE8F800157B18 /* UIViewControllerX.swift in Sources */,
+				8109FBB120216D59004B1655 /* AnnouncementsViewController.swift in Sources */,
+				8199A7BF20228D2A00E02BC0 /* MemberDetailViewController.swift in Sources */,
+				819F7FCE203111740067FBDF /* BlockedAnnouncementController.swift in Sources */,
+				815E240A201FE8F800157B18 /* UIViewXRadialGradient.swift in Sources */,
+				817B495A202B80B100A62211 /* DateHelper.swift in Sources */,
+				8199A7FC202506CC00E02BC0 /* ContactUsViewController.swift in Sources */,
+				819F7FD02031385E0067FBDF /* BlockedMember.swift in Sources */,
+				8181E0992028C9460093CC04 /* CreateAnnouncementViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		815E23E5201FE47500157B18 /* Login.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				815E23E6201FE47500157B18 /* Base */,
+			);
+			name = Login.storyboard;
+			sourceTree = "<group>";
+		};
+		815E23EA201FE47500157B18 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				815E23EB201FE47500157B18 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		815E23EE201FE47500157B18 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		815E23EF201FE47500157B18 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		815E23F1201FE47500157B18 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0078708EDF6217E47E032469 /* Pods-SaltLakeChristianChurch.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = SaltLakeChristianChurch/SaltLakeChristianChurch.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 94C4Q5DME5;
+				INFOPLIST_FILE = "$(SRCROOT)/SaltLakeChristianChurch/Resources/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.jaydencraig.SaltLakeChristianChurch;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		815E23F2201FE47500157B18 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9E424914063860F44B256AA9 /* Pods-SaltLakeChristianChurch.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = SaltLakeChristianChurch/SaltLakeChristianChurch.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 94C4Q5DME5;
+				INFOPLIST_FILE = "$(SRCROOT)/SaltLakeChristianChurch/Resources/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.jaydencraig.SaltLakeChristianChurch;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		815E23D9201FE47500157B18 /* Build configuration list for PBXProject "SaltLakeChristianChurch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				815E23EE201FE47500157B18 /* Debug */,
+				815E23EF201FE47500157B18 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		815E23F0201FE47500157B18 /* Build configuration list for PBXNativeTarget "SaltLakeChristianChurch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				815E23F1201FE47500157B18 /* Debug */,
+				815E23F2201FE47500157B18 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		819F7FC620310DC70067FBDF /* SaltLakeChristianChurch.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				819F7FC720310DC70067FBDF /* BlockedAnnouncements.xcdatamodel */,
+			);
+			currentVersion = 819F7FC720310DC70067FBDF /* BlockedAnnouncements.xcdatamodel */;
+			path = SaltLakeChristianChurch.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 815E23D6201FE47500157B18 /* Project object */;
+}

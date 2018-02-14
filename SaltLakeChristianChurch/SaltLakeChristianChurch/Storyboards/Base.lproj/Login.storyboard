@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="nXp-OC-wVd">
+    <device id="retina5_5" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--MainView-->
+        <scene sceneID="gmS-Pc-2lo">
+            <objects>
+                <tabBarController storyboardIdentifier="MainView" title="MainView" id="nXp-OC-wVd" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="0ep-US-dya">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <color key="tintColor" red="0.27700001000000002" green="0.77899998429999995" blue="0.92500001190000003" alpha="0.99106115800000005" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="selectedImageTintColor" red="0.27700001001358032" green="0.77899998426437378" blue="0.92500001192092896" alpha="0.99106115797546013" colorSpace="custom" customColorSpace="sRGB"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="KMu-2U-lFu" kind="relationship" relationship="viewControllers" id="4An-TB-Bs0"/>
+                        <segue destination="kxz-gy-9bj" kind="relationship" relationship="viewControllers" id="OLa-MD-pqB"/>
+                        <segue destination="wR6-QO-4Wd" kind="relationship" relationship="viewControllers" id="gwH-JV-4Pn"/>
+                        <segue destination="SH8-IM-yjh" kind="relationship" relationship="viewControllers" id="Ky5-Kp-3i5"/>
+                        <segue destination="Jyx-hP-MpY" kind="relationship" relationship="viewControllers" id="gd1-rk-iwP"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AD1-40-bpK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="658" y="298"/>
+        </scene>
+        <!--Lessons-->
+        <scene sceneID="v1u-1z-Crg">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Lessons" id="KMu-2U-lFu" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Lessons" image="Sermon" selectedImage="Sermon" id="kdh-Ix-X69"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Xuy-LX-aPU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1520" y="50"/>
+        </scene>
+        <!--Calendar-->
+        <scene sceneID="qgQ-uD-OSg">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Calendar" id="kxz-gy-9bj" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" image="Calendar" selectedImage="Calendar" id="Ya7-xO-Ge5"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dNh-eA-eoI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1508" y="149"/>
+        </scene>
+        <!--Announcements-->
+        <scene sceneID="VeH-oG-qvq">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Announcements" id="wR6-QO-4Wd" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" image="Announcements" selectedImage="Announcements" id="aSZ-Ec-Hvi"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Jcj-x1-Oyb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1508" y="227"/>
+        </scene>
+        <!--Give-->
+        <scene sceneID="RbL-QB-NI4">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Give" id="SH8-IM-yjh" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" image="Give" selectedImage="Give" id="9Yv-Dx-NmX"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3BZ-l8-oCg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1496" y="316"/>
+        </scene>
+        <!--More-->
+        <scene sceneID="DzW-65-Ty1">
+            <objects>
+                <viewControllerPlaceholder storyboardName="More" id="Jyx-hP-MpY" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="8Lz-Lb-DIk"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FJ9-47-xSd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1508" y="418"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Announcements" width="25" height="25"/>
+        <image name="Calendar" width="25" height="25"/>
+        <image name="Give" width="25" height="25"/>
+        <image name="Sermon" width="23" height="21"/>
+    </resources>
+</document>

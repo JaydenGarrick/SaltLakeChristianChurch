@@ -10,7 +10,7 @@ Firebase, RESTful APIs, CoreData, Autolayout, XMLParser, AVFoundation
 
 ## RESTFul APIS
 
-Implemented Google Calendar API to 
+Implemented Google Calendar API to keep members up to date with all events happening within the church. 
 
 ## Highlights
 

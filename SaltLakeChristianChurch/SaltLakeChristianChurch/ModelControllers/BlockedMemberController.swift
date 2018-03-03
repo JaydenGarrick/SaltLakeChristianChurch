@@ -12,9 +12,8 @@ import CoreData
 class BlockedMemberController {
     
     // Singleton
-    static let shared = BlockedMemberController()
-    
-    var blockedMembers: [BlockedMember] = []
+    static let shared = BlockedMemberController() ; private init(){}
+    var blockedMembers: [BlockedMember] = [] // Datasource for blocked members
     
     // CRUD Functions
     func add(blockedID: String) {

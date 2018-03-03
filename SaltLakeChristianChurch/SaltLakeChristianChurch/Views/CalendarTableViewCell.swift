@@ -14,10 +14,7 @@ class CalendarTableViewCell: UITableViewCell {
     @IBOutlet weak var summaryLabel: UILabel!
     @IBOutlet weak var locationTextView: UITextView!
     
-    
     override func awakeFromNib() {
         super.awakeFromNib()
     }
-
-
 }

@@ -52,5 +52,7 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
+	<key>NSCalendarsUsageDescription</key>
+	<string>Salt Lake Christian Church needs access to your calendar so you can add events to your personal calendar. 📆</string>
 </dict>
 </plist>

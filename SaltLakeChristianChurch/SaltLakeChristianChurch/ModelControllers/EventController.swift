@@ -66,6 +66,7 @@ class EventController {
                 }
             }
         }
+        // Look up calendar and date components API
         
         // Returns month array
         let monthArray = [january, february, march, april, may, june, july, august, september, october, november, december]

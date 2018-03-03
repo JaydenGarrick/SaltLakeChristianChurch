@@ -85,7 +85,6 @@ class LoginOrRegisterViewController: UIViewController {
                 self.loginButton.setTitle("Login", for: .normal)
                 self.blurView.layoutIfNeeded()
             })
-            
         } else {
             isLogin = false
             UIView.animate(withDuration: 0.3, animations: {
@@ -199,7 +198,6 @@ class LoginOrRegisterViewController: UIViewController {
         dismiss(animated: true)
     }
 
-
 }
 
 // MARK: - Textfield Delegate
@@ -236,9 +234,9 @@ extension LoginOrRegisterViewController {
         Database.database().reference().child("memberKey").observeSingleEvent(of: .value) { (snapshot) in
             guard let memberKey  = snapshot.value as? Int else { return }
             self.memberCode = memberKey
-            
         }
     }
+    
 }
 
 

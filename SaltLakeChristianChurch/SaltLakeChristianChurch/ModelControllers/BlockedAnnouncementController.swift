@@ -12,7 +12,7 @@ import CoreData
 class BlockedAnnouncementController {
     
     // MARK: - Constants and Variables
-    static let shared = BlockedAnnouncementController() // Singleton
+    static let shared = BlockedAnnouncementController() ; private init(){} // Singleton
     var blockedAnnouncements: [BlockedAnnouncement] = [] // Datasource
     
     // CRUD Functions

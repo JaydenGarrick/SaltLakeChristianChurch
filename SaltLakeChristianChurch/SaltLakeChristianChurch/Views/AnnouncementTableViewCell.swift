@@ -37,6 +37,7 @@ class AnnouncementTableViewCell: UITableViewCell {
     }
 
 }
+
 protocol AnnouncementtableViewCellDelegate : class {
     func announcementButtonTapped(sender: AnnouncementTableViewCell)
 }

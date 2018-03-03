@@ -37,12 +37,11 @@ class AnnouncementsViewController: UIViewController, NSFetchedResultsControllerD
         tableView.delegate = self
         tableView.dataSource = self
  
- 
         // Initial Fetch for events
-        AnnouncementController.shared.fetchAnnouncements { (success) in
+        AnnouncementController.shared.fetchAnnouncements { [weak self](success) in
             if success {
                 print("\(BlockedAnnouncementController.shared.blockedAnnouncements.count) is the total amount of blocked announcements")
-                self.tableView.reloadData()
+                self?.tableView.reloadData()
                 UIApplication.shared.isNetworkActivityIndicatorVisible = false
             }
         }
@@ -73,11 +72,11 @@ class AnnouncementsViewController: UIViewController, NSFetchedResultsControllerD
     
     // MARK: - Refresh Function
     @objc func didPullForRefresh() {
-        AnnouncementController.shared.fetchAnnouncements { (success) in
+        AnnouncementController.shared.fetchAnnouncements { [weak self](success) in
             if success {
                 DispatchQueue.main.async {
-                    self.tableView.reloadData()
-                    self.refreshControl.endRefreshing()
+                    self?.tableView.reloadData()
+                    self?.refreshControl.endRefreshing()
                 }
             }
         }
@@ -105,9 +104,9 @@ extension AnnouncementsViewController: UITableViewDelegate, UITableViewDataSourc
         if let cachedImage = imageCache.object(forKey: announcement.imageAsStringURL as NSString) {
             cell.announcementImageView.image = cachedImage
         } else {
-            AnnouncementController.shared.loadImageFrom(imageURL: announcement.imageAsStringURL) { (image) in
+            AnnouncementController.shared.loadImageFrom(imageURL: announcement.imageAsStringURL) { [weak self](image) in
                 guard let image = image else { return }
-                self.imageCache.setObject(image, forKey: announcement.imageAsStringURL as NSString)
+                self?.imageCache.setObject(image, forKey: announcement.imageAsStringURL as NSString)
                 DispatchQueue.main.async {
                     cell.announcementImageView.image = image
                     cell.imageActivityIndicator.isHidden = true
@@ -154,16 +153,16 @@ extension AnnouncementsViewController: MFMailComposeViewControllerDelegate, Anno
         let actionSheet = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         
         // Create Action for hiding
-        let hideAction = UIAlertAction(title: "Hide", style: .default) { (_) in
+        let hideAction = UIAlertAction(title: "Hide", style: .default) { [weak self](_) in
             
             // Hides the content
-            self.hideContent(cell: sender)
+            self?.hideContent(cell: sender)
         }
-        let reportAction = UIAlertAction(title: "Report as Offenseive", style: .destructive) { (_) in
+        let reportAction = UIAlertAction(title: "Report as Offenseive", style: .destructive) { [weak self](_) in
             
             // Presents mail controller and hides content
-            self.presentMailViewController()
-            self.hideContent(cell: sender)
+            self?.presentMailViewController()
+            self?.hideContent(cell: sender)
         }
         
         // Cancel Action
@@ -188,12 +187,12 @@ extension AnnouncementsViewController: MFMailComposeViewControllerDelegate, Anno
     func hideContent(cell: UITableViewCell) {
         if let indexPath = self.tableView.indexPath(for: cell) {
             let announcement = AnnouncementController.shared.announcements[indexPath.row]
-            AnnouncementController.shared.hide(announcement: announcement, completion: { (success) in
+            AnnouncementController.shared.hide(announcement: announcement, completion: { [weak self](success) in
                 if success  {
                     let blockedAnnouncement = BlockedAnnouncement(announcementID: announcement.announcementID)
                     BlockedAnnouncementController.shared.blockedAnnouncements.append(blockedAnnouncement)
                     BlockedAnnouncementController.shared.add(blockedID: blockedAnnouncement.announcementID!)
-                    self.tableView.reloadData()
+                    self?.tableView.reloadData()
                 }
             })
         }

@@ -8,6 +8,8 @@
 
 import UIKit
 
+// ONO Xml opensource for iOS
+
 class LessonController: NSObject, XMLParserDelegate {
 
     // MARK: - Properties
@@ -148,7 +150,9 @@ extension LessonController {
             }
             guard let data = data else { completion(nil) ; return }
             let image = UIImage(data: data)
-            completion(image)
+            DispatchQueue.main.async {
+                completion(image)
+            }
         }
         dataTask.resume()
     }

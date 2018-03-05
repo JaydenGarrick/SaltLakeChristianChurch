@@ -7,9 +7,12 @@
 //
 
 import Foundation
+import EventKit
+import CoreData
 
 class EventController {
     
+    // MARK: - Constants and Variales
     static let shared = EventController() ; private init(){} // Singleton
     var baseURL = URL(string: "https://www.googleapis.com/calendar/v3/calendars/jep04cit3p2odlnuh6462ppjig%40group.calendar.google.com")
     var events: [Event] = []
@@ -125,4 +128,59 @@ class EventController {
         }
         dataTask.resume()
     }
+    
+    func addEventToCalendar(title: String, description: String?, startDate: Date, endDate: Date, completion: ((_ success: Bool, _ error: NSError?) -> Void)? = nil) {
+        let eventStore = EKEventStore()
+        
+        eventStore.requestAccess(to: .event, completion: { (granted, error) in
+            if granted && error == nil {
+                let event = EKEvent(eventStore: eventStore)
+                event.title = title
+                event.startDate = startDate
+                event.endDate = endDate
+                event.notes = description
+                event.calendar = eventStore.defaultCalendarForNewEvents
+                do {
+                    try eventStore.save(event, span: .thisEvent)
+                } catch let error as NSError {
+                    completion?(false, error)
+                    print(error.localizedDescription as Any)
+                    return
+                }
+                completion?(true, nil)
+            } else {
+                completion?(false, error as NSError?)
+                print(error?.localizedDescription as Any)
+            }
+        })
+    }
+    
 }
+
+// MARK: - Calendar ID controller, so you don't add multiples of calendar events
+class AddedCalendarIDController {
+    
+    // Constants / Variables
+    static let shared = AddedCalendarIDController() ; private init(){}
+    var addedCalendarEventIDs = [AddedCalendarIDs]() {
+        didSet {
+            print("\(addedCalendarEventIDs.count) is the total amount of calendar IDS")
+        }
+    } // Datasource
+    
+    // CRUD Functions
+    func add(calendarID: String) {
+        let _ = AddedCalendarIDs(calendarID: calendarID)
+        save()
+    }
+    
+    func save() {
+        do {
+            try CoreDataStack.context.save()
+        } catch {
+            print("\(error.localizedDescription)")
+        }
+    }
+    
+}
+

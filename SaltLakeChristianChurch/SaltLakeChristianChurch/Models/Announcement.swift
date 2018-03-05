@@ -60,7 +60,5 @@ class Announcement: Equatable {
     static func ==(lhs: Announcement, rhs: Announcement) -> Bool {
         return lhs.announcementID == rhs.announcementID
     }
-    
-    
-    
+
 }

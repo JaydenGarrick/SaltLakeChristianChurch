@@ -13,15 +13,12 @@ class CalendarViewController: UIViewController {
     
     // MARK: - Constants and Variables
     var eventsByMonth: [(String, [Event])] = [] // Datasource
-    let eventStore = EKEventStore()
     
     // IBOutlets
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        requestAccessToCalendar()
         
         // Set Delegate / DataSource
         tableView.delegate = self
@@ -62,7 +59,6 @@ extension CalendarViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CalendarCell", for: indexPath) as! CalendarTableViewCell
-        
         let eventArray = EventController.shared.eventsByMonth[indexPath.section].1
         let event = eventArray[indexPath.row]
         var timeText = "All Day"
@@ -72,11 +68,9 @@ extension CalendarViewController: UITableViewDataSource, UITableViewDelegate {
                 timeText = time
             }
         }
-        
         cell.timeLabel.text = timeText
         cell.summaryLabel.text = event.summary ?? ""
         cell.locationTextView.text = event.location ?? ""
-        
         return cell
     }
     
@@ -88,20 +82,16 @@ extension CalendarViewController: UITableViewDataSource, UITableViewDelegate {
         return EventController.shared.eventsByMonth[section].0
     }
     
-//    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-//        if editingStyle == .insert {
-//            let eventArray = EventController.shared.eventsByMonth[indexPath.section].1
-//            let event = eventArray[indexPath.row]
-//
-//            print(event.summary ?? "No location")
-//        }
-//    }
-    
-    func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         
+        // Event for indexPath
+        let eventArray = EventController.shared.eventsByMonth[indexPath.section].1
+        let event = eventArray[indexPath.row]
+
         // Add Action
-        let addToCalendar = UIContextualAction(style: .normal, title: "Add to Calendar") { (action, view, nil) in
-            print("addToCalendar")
+        let addToCalendar = UIContextualAction(style: .normal, title: "Add to Calendar") { [weak self](action, view, nil) in
+            self?.addCalendarEventToLocalCalendarAlert(event)
         }
         addToCalendar.backgroundColor = #colorLiteral(red: 0.2392156869, green: 0.6745098233, blue: 0.9686274529, alpha: 1)
 
@@ -113,41 +103,39 @@ extension CalendarViewController: UITableViewDataSource, UITableViewDelegate {
 
 }
 
+// MARK: - Alert functions for adding eents
 extension CalendarViewController {
-
-    //    func checkCalendarAuthorizationStatus() {
-//        let status = EKEventStore.authorizationStatus(for: EKEntityType.event)
-//
-//        switch (status) {
-//        case EKAuthorizationStatus.notDetermined:
-//            // This happens on first-run
-//        case EKAuthorizationStatus.authorized:
-//            // Things are in line with being able to show the calendars in the table view
-//        case EKAuthorizationStatus.restricted, EKAuthorizationStatus.denied:
-//            // We need to help them give us permission
-//        }
-//    }
     
-    func requestAccessToCalendar() {
-        eventStore.requestAccess(to: .event) { (accessGranted, error) in
-            if let error = error {
-                print("⚠️Error granting access to users calendar: \(error.localizedDescription)")
+    /// Function that alerts user the event they are trying to add to the calendar already exists
+    func addCalendarEventToLocalCalendarAlert(_ event: Event) {
+        let alertController = UIAlertController(title: "Add \(event.summary!) to your calendar? 📆", message: nil, preferredStyle: .alert)
+        let okayAction = UIAlertAction(title: "OK", style: .default) { (_) in
+            let formatter = DateHelper.inputFormatter
+            guard let startDateStringAsString = event.start?.dateTime else { return }
+            guard let startDate = formatter.date(from: startDateStringAsString) else { return }
+            guard let calendarID = event.id else { return }
+            let calendarIDObj = AddedCalendarIDs(calendarID: calendarID)
+            
+            // Check to see if calendar event has been saved, if not, add it to the event.
+            for alreadySavedCalendarID in AddedCalendarIDController.shared.addedCalendarEventIDs {
+                if alreadySavedCalendarID.calendarID == calendarID {
+                    self.presentAlertControllerWithOkayAction(title: "\(event.summary!) is already saved to your calendar!", message: "")
+                    return
+                    // DO WORK - Add alert saying calendar already exists
+                }
             }
-            if accessGranted {
-                print("✅Successfully gained access to calendar")
-            } else {
-                print("❌Permission to access calendar denied")
-            }
+            
+            // Adds to Coredata and locally so you don't have to refetch from coredata
+            AddedCalendarIDController.shared.addedCalendarEventIDs.append(calendarIDObj)
+            AddedCalendarIDController.shared.add(calendarID: calendarID)
+            
+            // Function that adds event to apple calendar
+            EventController.shared.addEventToCalendar(title: event.summary ?? "", description: event.location ?? "", startDate: startDate, endDate: startDate)
         }
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        alertController.addAction(okayAction)
+        alertController.addAction(cancelAction)
+        present(alertController, animated: true)
     }
 }
-
-
-
-
-
-
-
-
-
 

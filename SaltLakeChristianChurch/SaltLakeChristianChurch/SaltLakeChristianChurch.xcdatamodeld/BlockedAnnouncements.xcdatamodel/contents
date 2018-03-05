@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="13772" systemVersion="16G1212" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="AddedCalendarIDs" representedClassName="AddedCalendarIDs" syncable="YES" codeGenerationType="class">
+        <attribute name="calendarID" attributeType="String" syncable="YES"/>
+    </entity>
     <entity name="BlockedAnnouncement" representedClassName="BlockedAnnouncement" syncable="YES" codeGenerationType="class">
         <attribute name="announcementID" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
@@ -9,5 +12,6 @@
     <elements>
         <element name="BlockedAnnouncement" positionX="-63" positionY="-18" width="128" height="58"/>
         <element name="BlockedMember" positionX="-36" positionY="18" width="128" height="60"/>
+        <element name="AddedCalendarIDs" positionX="-45" positionY="9" width="128" height="60"/>
     </elements>
 </model>

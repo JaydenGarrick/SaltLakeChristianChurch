@@ -17,7 +17,7 @@ class Lesson {
     var audioURLAsString: String
     var playbackPostion: Float?
     let uuid: String = UUID().uuidString
-    
+
     init(title: String, summary: String, pubDate: String, imageURL: String, audioURLAsString: String) {
         self.title = title
         self.summary = summary
@@ -26,11 +26,3 @@ class Lesson {
         self.audioURLAsString = audioURLAsString
     }
 }
-
-
-
-
-
-
-
-

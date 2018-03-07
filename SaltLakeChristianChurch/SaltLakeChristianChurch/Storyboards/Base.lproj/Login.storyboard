@@ -4,7 +4,6 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -66,7 +65,9 @@
         <scene sceneID="RbL-QB-NI4">
             <objects>
                 <viewControllerPlaceholder storyboardName="Give" id="SH8-IM-yjh" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" image="Give" selectedImage="Give" id="9Yv-Dx-NmX"/>
+                    <tabBarItem key="tabBarItem" title="Item" image="Give" selectedImage="Give" id="9Yv-Dx-NmX">
+                        <color key="badgeColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    </tabBarItem>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3BZ-l8-oCg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

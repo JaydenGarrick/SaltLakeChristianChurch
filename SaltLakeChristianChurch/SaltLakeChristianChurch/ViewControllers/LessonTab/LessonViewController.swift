@@ -52,7 +52,6 @@ class LessonViewController: UIViewController {
         }
     }
     
-    
 }
 
 // MARK: - CollectionView Datasource and Delegate
@@ -67,16 +66,15 @@ extension LessonViewController: UICollectionViewDelegate, UICollectionViewDataSo
         
         // Configure the cell
         let lesson = lessons[indexPath.row]
-        
         if lesson.imageURL ==  "http://static1.squarespace.com/static/58b1f2c003596e617b2a55ad/t/5a09269a9140b7f3b7b8b654/1510549154825/1500w/SLCC+Logo+iTunes.png" {
             cell.lessonImageView.image = #imageLiteral(resourceName: "CollectionViewHolder")
         } else {
             if let cachedImage = imageCache.object(forKey: lesson.imageURL as NSString) {
                 cell.lessonImageView.image = cachedImage
             } else {
-                LessonController.shared.downloadImageFrom(urlString: lesson.imageURL) { (image) in
+                LessonController.shared.downloadImageFrom(urlString: lesson.imageURL) { [weak self](image) in
                     guard let image = image else { return }
-                    self.imageCache.setObject(image, forKey: lesson.imageURL as NSString)
+                    self?.imageCache.setObject(image, forKey: lesson.imageURL as NSString)
                     DispatchQueue.main.async {
                         cell.lessonImageView.image = image
                     }
@@ -103,11 +101,11 @@ extension LessonViewController: UICollectionViewDelegate, UICollectionViewDataSo
     
     @objc func refresh() {
         UIApplication.shared.isNetworkActivityIndicatorVisible = true
-        LessonController.shared.parseFeedWith(urlString: "https://www.saltlakechristianchurch.com/lessons-on-audio/?format=rss") { (parsedLessons) in
-            self.lessons = parsedLessons
+        LessonController.shared.parseFeedWith(urlString: "https://www.saltlakechristianchurch.com/lessons-on-audio/?format=rss") { [weak self](parsedLessons) in
+            self?.lessons = parsedLessons
             DispatchQueue.main.async {
-                self.collectionView.reloadData()
-                self.refreshControl.endRefreshing()
+                self?.collectionView.reloadData()
+                self?.refreshControl.endRefreshing()
                 UIApplication.shared.isNetworkActivityIndicatorVisible = false
             }
         }

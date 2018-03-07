@@ -17,14 +17,14 @@ class MoreTableViewController: UITableViewController {
     // MARK: - viewDidLoad / viewWillAppear
     override func viewDidLoad() {
         super.viewDidLoad()
-     
-        // Hides Keyboard and sets NavigationBar
-        self.hideKeyboardWhenTappedAroundAndSetNavBar()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         tableView.estimatedRowHeight = 350
         tableView.rowHeight = UITableViewAutomaticDimension
+        
+        // Hides Keyboard and sets NavigationBar
+        self.hideKeyboardWhenTappedAroundAndSetNavBar()
     }
 
     
@@ -67,6 +67,7 @@ extension MoreTableViewController {
         actionSheet.addAction(okayAction)
         present(actionSheet, animated: true)
     }
+    
 }
 
 

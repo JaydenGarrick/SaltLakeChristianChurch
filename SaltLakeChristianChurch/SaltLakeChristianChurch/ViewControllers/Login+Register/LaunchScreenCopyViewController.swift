@@ -24,7 +24,13 @@ class LaunchScreenCopyViewController: UIViewController, NSFetchedResultsControll
         fetchRequest.sortDescriptors = [NSSortDescriptor(key: "memberID", ascending: true)]
         return NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: CoreDataStack.context, sectionNameKeyPath: nil, cacheName: nil)
     }()
-
+    
+    let calendarIDFetchRequestController: NSFetchedResultsController<AddedCalendarIDs> = {
+        let fetchRequest: NSFetchRequest<AddedCalendarIDs> = AddedCalendarIDs.fetchRequest()
+        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "calendarID", ascending: true)]
+        return NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: CoreDataStack.context, sectionNameKeyPath: nil, cacheName: nil)
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         announcementsFetchRequestController.delegate = self
@@ -33,8 +39,10 @@ class LaunchScreenCopyViewController: UIViewController, NSFetchedResultsControll
         do {
             try announcementsFetchRequestController.performFetch()
             try memberFetchRequestController.performFetch()
+            try calendarIDFetchRequestController.performFetch()
             BlockedAnnouncementController.shared.blockedAnnouncements = announcementsFetchRequestController.fetchedObjects ?? []
             BlockedMemberController.shared.blockedMembers = memberFetchRequestController.fetchedObjects ?? []
+            AddedCalendarIDController.shared.addedCalendarEventIDs = calendarIDFetchRequestController.fetchedObjects ?? []
         } catch {
             print("Error performing fetch from FetchRequestController: \(error.localizedDescription)")
         }

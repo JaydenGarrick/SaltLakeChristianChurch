@@ -72,7 +72,7 @@ class MemberController {
     
     func updateMemberWith(image: UIImage, address: String?, email: String?, fullName: String?, phoneNumber: String?, completion: @escaping ((Bool)->Void)) {
         guard let loggedInMember = loggedInMember,
-            let imageData = UIImageJPEGRepresentation(image, 0.5) else { completion(false) ; return }
+        let imageData = UIImageJPEGRepresentation(image, 0.5) else { completion(false) ; return }
         let address = address ?? loggedInMember.address
         let email = email ?? loggedInMember.email
         let fullName = fullName ?? loggedInMember.fullName

@@ -48,12 +48,13 @@ class DirectoryTableViewController: UITableViewController {
             let memberName = member.fullName
             let firstLetterIndex = memberName.index(memberName.startIndex, offsetBy: 1)
             let memberKey = String(memberName[..<firstLetterIndex])
-            if var memberValues = membersDictionary[memberKey] {
-                memberValues.append(member)
-                membersDictionary[memberKey] = memberValues
-            } else {
-                membersDictionary[memberKey] = [member]
-            }
+            membersDictionary[memberKey, default: []].append(member)
+//            if var memberValues = membersDictionary[memberKey] {
+//                memberValues.append(member)
+//                membersDictionary[memberKey] = memberValues
+//            } else {
+//                membersDictionary[memberKey] = [member]
+//            }
         }
         
         // Get the section titles from the dictionary's keys and sort them in ascending order

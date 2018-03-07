@@ -24,6 +24,7 @@ class AudioLessonViewController: UIViewController {
     @IBOutlet weak var blurView: UIVisualEffectViewX!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
+    // Creating player
     var player: AVAudioPlayer?
     
     // MARK: - viewDidLoad / viewDidAppear
@@ -171,7 +172,6 @@ class AudioLessonViewController: UIViewController {
         timeSoFarLabel.text = secondsToHoursMinutesSeconds(intSeconds: timeSoFar)
     }
     
-    
     /// Converts seconds into a 0:00:00 format
     func secondsToHoursMinutesSeconds (intSeconds : Int) -> String {
         let minutes:Int = intSeconds/60
@@ -184,10 +184,3 @@ class AudioLessonViewController: UIViewController {
     }
     
 }
-
-
-
-
-
-
-

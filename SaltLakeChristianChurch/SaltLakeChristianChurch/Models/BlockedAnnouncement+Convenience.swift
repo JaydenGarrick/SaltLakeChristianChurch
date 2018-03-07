@@ -15,4 +15,3 @@ extension BlockedAnnouncement {
         self.announcementID = announcementID
     }
 }
-

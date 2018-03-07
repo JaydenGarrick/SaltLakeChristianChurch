@@ -45,6 +45,7 @@ class AudioLessonViewController: UIViewController {
         if let lesson = lesson {
             downloadFileFrom(urlString: lesson.audioURLAsString, completion: { (fetchedURL) in
                 DispatchQueue.main.async {
+                    
                     guard let player = self.player else { return }
                     self.slider.maximumValue = Float(player.duration)
                     UIApplication.shared.isNetworkActivityIndicatorVisible = false
@@ -71,6 +72,7 @@ class AudioLessonViewController: UIViewController {
             lesson?.playbackPostion = Float(player.currentTime)
             player.pause()
         }
+        
     }
     
     // MARK: - IBActions
@@ -136,22 +138,42 @@ class AudioLessonViewController: UIViewController {
     
     func downloadFileFrom(urlString: String, completion: @escaping ((URL?)->Void)) {
         guard let url = URL(string: urlString) else { completion(nil) ; return }
-        var downloadTask: URLSessionDownloadTask
-        downloadTask = URLSession.shared.downloadTask(with: url, completionHandler: { (downloadedURL, _, error) in
-            if let error = error {
-                print("Error with downloadTask: \(error.localizedDescription)")
-            }
-            guard let downloadedURL = downloadedURL else { print("Unable to get url") ; completion(nil) ; return }
-            self.play(url: downloadedURL, completion: { (success) in
+        let documentsUrl: URL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first as URL!
+        let destinationFileUrl = documentsUrl.appendingPathComponent(url.lastPathComponent)
+        
+       // Check to see if we already downloaded file, and if we did, play it.
+        if FileManager.default.fileExists(atPath: destinationFileUrl.path) {
+            print(destinationFileUrl.absoluteString)
+            play(url: destinationFileUrl, completion: { (success) in
                 if success {
-                    completion(downloadedURL)
+                    completion(destinationFileUrl)
                 } else {
                     completion(nil)
                 }
             })
-        })
-        downloadTask.resume()
         
+        // If not, download it, and then save locally, and then play.
+        } else {
+            URLSession.shared.downloadTask(with: url, completionHandler: { [weak self](downloadedURL, _, error) in
+                if let error = error {
+                    print("Error with downloadTask: \(error.localizedDescription)")
+                }
+                guard let downloadedURL = downloadedURL else { print("Unable to get url") ; completion(nil) ; return }
+                do {
+                    try FileManager.default.copyItem(at: downloadedURL, to: destinationFileUrl)
+                } catch {
+                    print("error downloading URL to local file: \(error.localizedDescription)")
+                }
+                self?.play(url: downloadedURL, completion: { (success) in
+                    if success {
+                        completion(downloadedURL)
+                    } else {
+                        completion(nil)
+                    }
+                })
+            }).resume()
+        }
+     
     }
     
     
@@ -184,3 +206,22 @@ class AudioLessonViewController: UIViewController {
     }
     
 }
+
+//extension AudioLessonViewController {
+//    func getCacheFolderURL() -> URL? {
+//        if cacheFolder != nil {
+//            return cacheFolder
+//        }
+//        let nsDocumentDirectory:FileManager.SearchPathDirectory = FileManager.SearchPathDirectory.documentDirectory
+//        let nsUserDomainMask:FileManager.SearchPathDomainMask = FileManager.SearchPathDomainMask.userDomainMask;
+//        let paths:[String] = NSSearchPathForDirectoriesInDomains(nsDocumentDirectory, nsUserDomainMask, true);
+//        if paths.count > 0 {
+//            let folderPath:String = String(paths[0])
+//            cacheFolder = URL.init(fileURLWithPath: folderPath)
+//            cacheFolder = cacheFolder?.appendingPathComponent("cache", isDirectory: true)
+//            return cacheFolder
+//        }
+//        return nil
+//    }
+//}
+

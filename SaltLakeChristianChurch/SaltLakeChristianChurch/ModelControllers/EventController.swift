@@ -164,7 +164,7 @@ class AddedCalendarIDController {
     static let shared = AddedCalendarIDController() ; private init(){}
     var addedCalendarEventIDs = [AddedCalendarIDs]() {
         didSet {
-            print("\(addedCalendarEventIDs.count) is the total amount of calendar IDS")
+            print("📆\(addedCalendarEventIDs.count) is the total amount of calendar IDS")
         }
     } // Datasource
     

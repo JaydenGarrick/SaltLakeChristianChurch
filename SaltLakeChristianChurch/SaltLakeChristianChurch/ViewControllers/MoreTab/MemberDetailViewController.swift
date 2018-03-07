@@ -41,7 +41,7 @@ class MemberDetailViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         updateViews()
     }
-
+    
     // MARK: - UpdateViews Based on selected member
     func updateViews() {
         if let member = member {

@@ -28,16 +28,3 @@ XML parsing was used primarily for the RSS feed. The church hosts a podcast that
 #####  Highlights
 Managed to work with a client and exceed all expectations in a timely manner.
 
-![Alt text](https://static1.squarespace.com/static/58b1f2c003596e617b2a55ad/t/59922de52994ca5618af3272/1502752297619/lake+blanche.jpg)
-
-# Root - Local Art Finder
-Find Root on [github](https://github.com/JaydenGarrick/root)
-
-### Technologies used
-MapKit, CloudKit, CoreLocation
-
-#####  CloudKit
-CloudKit was used to handle user authentication, and managed all persistence with the application. We also used CKPredicates to handle how the feed works - i.e. it only pulls events happening within 50 miles of the user.
-
-##### CoreLocation and MapKit
-Implemented CoreLocation and MapKit to handle how the feed works. The user gets all events within 50 miles of their current location, which CoreLocation prompts you to allow access. Then those events are put on a MapView using MapKit using MKAnnotations. 

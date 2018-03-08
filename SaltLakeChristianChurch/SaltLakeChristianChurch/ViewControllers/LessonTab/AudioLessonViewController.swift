@@ -43,23 +43,23 @@ class AudioLessonViewController: UIViewController {
         // Setup while waiting for audio
         UIApplication.shared.isNetworkActivityIndicatorVisible = true
         if let lesson = lesson {
-            downloadFileFrom(urlString: lesson.audioURLAsString, completion: { (fetchedURL) in
+            downloadFileFrom(urlString: lesson.audioURLAsString, completion: { [weak self](fetchedURL) in
                 DispatchQueue.main.async {
                     
-                    guard let player = self.player else { return }
-                    self.slider.maximumValue = Float(player.duration)
+                    guard let player = self?.player else { return }
+                    self?.slider.maximumValue = Float(player.duration)
                     UIApplication.shared.isNetworkActivityIndicatorVisible = false
-                    self.playPauseButton.isEnabled = true
-                    self.slider.isEnabled = true
+                    self?.playPauseButton.isEnabled = true
+                    self?.slider.isEnabled = true
                     if lesson.playbackPostion != nil {
                         player.currentTime = Double(lesson.playbackPostion!)
-                        self.slider.value = lesson.playbackPostion!
+                        self?.slider.value = lesson.playbackPostion!
                     }
-                    self.playPauseButtonImageView.image = #imageLiteral(resourceName: "pause-button")
-                    Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(self.updateSlider), userInfo: nil, repeats: true)
-                    Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(self.updateTimeLabel), userInfo: nil, repeats: true)
+                    self?.playPauseButtonImageView.image = #imageLiteral(resourceName: "pause-button")
+                    Timer.scheduledTimer(timeInterval: 0.1, target: self!, selector: #selector(self?.updateSlider), userInfo: nil, repeats: true)
+                    Timer.scheduledTimer(timeInterval: 1.0, target: self!, selector: #selector(self?.updateTimeLabel), userInfo: nil, repeats: true)
                     UIView.animate(withDuration: 0.25, animations: {
-                        self.blurView.layer.opacity = 0
+                        self?.blurView.layer.opacity = 0
                     })
                 }
             })
@@ -173,9 +173,8 @@ class AudioLessonViewController: UIViewController {
                 })
             }).resume()
         }
-     
+
     }
-    
     
     // MARK: - Functions for audio
     /// Updates slider based on audio being played

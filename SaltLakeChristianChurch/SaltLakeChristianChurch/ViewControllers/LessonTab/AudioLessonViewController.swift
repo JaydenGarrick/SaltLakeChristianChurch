@@ -207,21 +207,3 @@ class AudioLessonViewController: UIViewController {
     
 }
 
-//extension AudioLessonViewController {
-//    func getCacheFolderURL() -> URL? {
-//        if cacheFolder != nil {
-//            return cacheFolder
-//        }
-//        let nsDocumentDirectory:FileManager.SearchPathDirectory = FileManager.SearchPathDirectory.documentDirectory
-//        let nsUserDomainMask:FileManager.SearchPathDomainMask = FileManager.SearchPathDomainMask.userDomainMask;
-//        let paths:[String] = NSSearchPathForDirectoriesInDomains(nsDocumentDirectory, nsUserDomainMask, true);
-//        if paths.count > 0 {
-//            let folderPath:String = String(paths[0])
-//            cacheFolder = URL.init(fileURLWithPath: folderPath)
-//            cacheFolder = cacheFolder?.appendingPathComponent("cache", isDirectory: true)
-//            return cacheFolder
-//        }
-//        return nil
-//    }
-//}
-

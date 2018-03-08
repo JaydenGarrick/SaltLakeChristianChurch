@@ -23,6 +23,7 @@ class BlockedAnnouncementController {
     
     func delete(blockedAnnouncement: BlockedAnnouncement) {
         CoreDataStack.context.delete(blockedAnnouncement)
+        save()
     }
     
     func save() {

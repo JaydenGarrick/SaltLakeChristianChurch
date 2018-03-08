@@ -43,22 +43,23 @@ class AudioLessonViewController: UIViewController {
         // Setup while waiting for audio
         UIApplication.shared.isNetworkActivityIndicatorVisible = true
         if let lesson = lesson {
-            downloadFileFrom(urlString: lesson.audioURLAsString, completion: { (fetchedURL) in
+            downloadFileFrom(urlString: lesson.audioURLAsString, completion: { [weak self](fetchedURL) in
                 DispatchQueue.main.async {
-                    guard let player = self.player else { return }
-                    self.slider.maximumValue = Float(player.duration)
+                    
+                    guard let player = self?.player else { return }
+                    self?.slider.maximumValue = Float(player.duration)
                     UIApplication.shared.isNetworkActivityIndicatorVisible = false
-                    self.playPauseButton.isEnabled = true
-                    self.slider.isEnabled = true
+                    self?.playPauseButton.isEnabled = true
+                    self?.slider.isEnabled = true
                     if lesson.playbackPostion != nil {
                         player.currentTime = Double(lesson.playbackPostion!)
-                        self.slider.value = lesson.playbackPostion!
+                        self?.slider.value = lesson.playbackPostion!
                     }
-                    self.playPauseButtonImageView.image = #imageLiteral(resourceName: "pause-button")
-                    Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(self.updateSlider), userInfo: nil, repeats: true)
-                    Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(self.updateTimeLabel), userInfo: nil, repeats: true)
+                    self?.playPauseButtonImageView.image = #imageLiteral(resourceName: "pause-button")
+                    Timer.scheduledTimer(timeInterval: 0.1, target: self!, selector: #selector(self?.updateSlider), userInfo: nil, repeats: true)
+                    Timer.scheduledTimer(timeInterval: 1.0, target: self!, selector: #selector(self?.updateTimeLabel), userInfo: nil, repeats: true)
                     UIView.animate(withDuration: 0.25, animations: {
-                        self.blurView.layer.opacity = 0
+                        self?.blurView.layer.opacity = 0
                     })
                 }
             })
@@ -71,6 +72,7 @@ class AudioLessonViewController: UIViewController {
             lesson?.playbackPostion = Float(player.currentTime)
             player.pause()
         }
+        
     }
     
     // MARK: - IBActions
@@ -136,24 +138,43 @@ class AudioLessonViewController: UIViewController {
     
     func downloadFileFrom(urlString: String, completion: @escaping ((URL?)->Void)) {
         guard let url = URL(string: urlString) else { completion(nil) ; return }
-        var downloadTask: URLSessionDownloadTask
-        downloadTask = URLSession.shared.downloadTask(with: url, completionHandler: { (downloadedURL, _, error) in
-            if let error = error {
-                print("Error with downloadTask: \(error.localizedDescription)")
-            }
-            guard let downloadedURL = downloadedURL else { print("Unable to get url") ; completion(nil) ; return }
-            self.play(url: downloadedURL, completion: { (success) in
+        let documentsUrl: URL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first as URL!
+        let destinationFileUrl = documentsUrl.appendingPathComponent(url.lastPathComponent)
+        
+       // Check to see if we already downloaded file, and if we did, play it.
+        if FileManager.default.fileExists(atPath: destinationFileUrl.path) {
+            print(destinationFileUrl.absoluteString)
+            play(url: destinationFileUrl, completion: { (success) in
                 if success {
-                    completion(downloadedURL)
+                    completion(destinationFileUrl)
                 } else {
                     completion(nil)
                 }
             })
-        })
-        downloadTask.resume()
         
+        // If not, download it, and then save locally, and then play.
+        } else {
+            URLSession.shared.downloadTask(with: url, completionHandler: { [weak self](downloadedURL, _, error) in
+                if let error = error {
+                    print("Error with downloadTask: \(error.localizedDescription)")
+                }
+                guard let downloadedURL = downloadedURL else { print("Unable to get url") ; completion(nil) ; return }
+                do {
+                    try FileManager.default.copyItem(at: downloadedURL, to: destinationFileUrl)
+                } catch {
+                    print("error downloading URL to local file: \(error.localizedDescription)")
+                }
+                self?.play(url: downloadedURL, completion: { (success) in
+                    if success {
+                        completion(downloadedURL)
+                    } else {
+                        completion(nil)
+                    }
+                })
+            }).resume()
+        }
+
     }
-    
     
     // MARK: - Functions for audio
     /// Updates slider based on audio being played
@@ -184,3 +205,4 @@ class AudioLessonViewController: UIViewController {
     }
     
 }
+

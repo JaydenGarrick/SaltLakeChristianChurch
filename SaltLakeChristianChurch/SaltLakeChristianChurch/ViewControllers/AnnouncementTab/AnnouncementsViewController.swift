@@ -70,6 +70,10 @@ class AnnouncementsViewController: UIViewController, NSFetchedResultsControllerD
         }
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        UIApplication.shared.statusBarStyle = .lightContent // Set the nav bar to default configuration when the view dissapears, so it doesn't stay dark.
+    }
+
     // MARK: - Refresh Function
     @objc func didPullForRefresh() {
         AnnouncementController.shared.fetchAnnouncements { [weak self](success) in
@@ -139,6 +143,24 @@ extension AnnouncementsViewController: UITableViewDelegate, UITableViewDataSourc
         UIView.animate(withDuration: 0.10) {
             cell.alpha = 1.0
             cell.layer.transform = CATransform3DIdentity
+        }
+    }
+    
+    // Function that hides the navigation bar when scroll down.
+    func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
+        if velocity.y > 0 {
+            //Code will work without the animation block.I am using animation block incase if you want to set any delay to it.
+            UIView.animate(withDuration: 2.5, delay: 0.75, options: UIViewAnimationOptions(), animations: {
+                self.navigationController?.setNavigationBarHidden(true, animated: true)
+                self.navigationController?.setToolbarHidden(true, animated: true)
+                UIApplication.shared.statusBarStyle = .default
+            }, completion: nil)
+        } else {
+            UIView.animate(withDuration: 2.5, delay: 0.75, options: UIViewAnimationOptions(), animations: {
+                self.navigationController?.setNavigationBarHidden(false, animated: true)
+                self.navigationController?.setToolbarHidden(false, animated: true)
+                UIApplication.shared.statusBarStyle = .lightContent
+            }, completion: nil)
         }
     }
     

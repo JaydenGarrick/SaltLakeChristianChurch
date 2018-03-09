@@ -128,7 +128,7 @@ class LessonController: NSObject, XMLParserDelegate {
 
 }
 
-// MARK: - DownlaodImage Function
+// MARK: - DownloadImage Function
 extension LessonController {
     
     func downloadImageFrom(urlString: String, completion: @escaping ((UIImage?)->Void)) {

@@ -94,9 +94,14 @@ extension CalendarViewController: UITableViewDataSource, UITableViewDelegate {
         // Event for indexPath
         let eventArray = EventController.shared.eventsByMonth[indexPath.section].1
         let event = eventArray[indexPath.row]
+        
+        // Gives small vibration when user slides out event
+        let generator = UIImpactFeedbackGenerator(style: UIImpactFeedbackStyle.light)
+        generator.impactOccurred()
 
         // Add Action
         let addToCalendar = UIContextualAction(style: .normal, title: "Add to Calendar") { [weak self](action, view, nil) in
+
             self?.addCalendarEventToLocalCalendarAlert(event)
         }
         addToCalendar.backgroundColor = #colorLiteral(red: 0.2392156869, green: 0.6745098233, blue: 0.9686274529, alpha: 1)
@@ -113,13 +118,11 @@ extension CalendarViewController: UITableViewDataSource, UITableViewDelegate {
             //Code will work without the animation block.I am using animation block incase if you want to set any delay to it.
             UIView.animate(withDuration: 2.5, delay: 0.75, options: UIViewAnimationOptions(), animations: {
                 self.navigationController?.setNavigationBarHidden(true, animated: true)
-                self.navigationController?.setToolbarHidden(true, animated: true)
                 UIApplication.shared.statusBarStyle = .default
             }, completion: nil)
         } else {
             UIView.animate(withDuration: 2.5, delay: 0.75, options: UIViewAnimationOptions(), animations: {
                 self.navigationController?.setNavigationBarHidden(false, animated: true)
-                self.navigationController?.setToolbarHidden(false, animated: true)
                 UIApplication.shared.statusBarStyle = .lightContent
             }, completion: nil)
         }

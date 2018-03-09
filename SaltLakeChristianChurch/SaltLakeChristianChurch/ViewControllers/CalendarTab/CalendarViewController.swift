@@ -33,7 +33,7 @@ class CalendarViewController: UIViewController {
             if success {
                 DispatchQueue.main.async {
                     self.tableView.reloadData()
-                    print("Successfully fetched Calendar events!")
+                    print("✅Successfully fetched Calendar events!")
                     UIApplication.shared.isNetworkActivityIndicatorVisible = false
                 }
             }
@@ -44,6 +44,7 @@ class CalendarViewController: UIViewController {
         super.viewWillAppear(animated)
         tableView.estimatedRowHeight = 55
         tableView.rowHeight = UITableViewAutomaticDimension
+        UIApplication.shared.isStatusBarHidden = false
     }
     
     override func viewWillDisappear(_ animated: Bool) {

@@ -97,7 +97,7 @@ class EventController {
         // dataTask + Resume
         let dataTask = URLSession.shared.dataTask(with: request) { (data, _, error) in
             if let error = error {
-                print("Error fetching events: \(error.localizedDescription)")
+                print("❌Error fetching events: \(error.localizedDescription)")
                 completion(false)
             }
             guard let data = data else { completion(false) ; return }
@@ -122,7 +122,7 @@ class EventController {
                     completion(true)
                 }
             } catch let error {
-                print("Decoder Error: \(error.localizedDescription)")
+                print("❌Decoder Error: \(error.localizedDescription)")
                 completion(false)
             }
         }
@@ -178,7 +178,7 @@ class AddedCalendarIDController {
         do {
             try CoreDataStack.context.save()
         } catch {
-            print("\(error.localizedDescription)")
+            print("❌\(error.localizedDescription)")
         }
     }
     

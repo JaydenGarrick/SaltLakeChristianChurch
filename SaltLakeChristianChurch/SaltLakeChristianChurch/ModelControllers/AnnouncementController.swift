@@ -28,7 +28,7 @@ class AnnouncementController {
         guard let imageData = UIImageJPEGRepresentation(announcementImage, 0.9) else { completion(false) ; return }
         photoStorageReference.child(announcementName).putData(imageData, metadata: nil) { (metaData, error) in
             if let error = error {
-                print("Error creating announcement - Can't store image: \(error.localizedDescription)")
+                print("❌Error creating announcement - Can't store image: \(error.localizedDescription)")
                 completion(false)
                 return
             }
@@ -80,7 +80,7 @@ class AnnouncementController {
         let downloadedData = Storage.storage().reference(forURL: imageURL)
         downloadedData.getData(maxSize: 5 * 1024 * 1024) { (data, error) in
             if let error = error {
-                print("Error loading image from Storage: \(error.localizedDescription)")
+                print("❌Error loading image from Storage: \(error.localizedDescription)")
                 completion(nil)
             }
             guard let imageData = data,

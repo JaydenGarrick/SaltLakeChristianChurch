@@ -144,7 +144,7 @@ extension LessonController {
         //dataTask + resume
         let dataTask = URLSession.shared.dataTask(with: request) { (data, _, error) in
             if let error = error {
-                print("Error Loading Image Data: \(error.localizedDescription)")
+                print("❌Error Loading Image Data: \(error.localizedDescription)")
                 completion(nil)
                 return
             }

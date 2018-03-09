@@ -149,7 +149,7 @@ class LoginOrRegisterViewController: UIViewController {
                         MemberController.shared.fetchUserWith(uuid: uuid, completion: { (success) in
                             if success {
                                 // Present the main view
-                                print("Successfully created a user!")
+                                print("✅Successfully created a user!")
                                 UIApplication.shared.isNetworkActivityIndicatorVisible = false
                                 self.dismiss(animated: true, completion: nil)
                             } else {
@@ -178,7 +178,7 @@ class LoginOrRegisterViewController: UIViewController {
                 guard let uid = Auth.auth().currentUser?.uid else { self.presentAlertControllerWithOkayAction(title: "Logging in error", message: "Couldn't log in. Please try again.") ; return }
                 MemberController.shared.fetchUserWith(uuid: uid, completion: { (success) in
                     if success {
-                        print("Successfully logged in!")
+                        print("✅Successfully logged in!")
                         
                         // Present Main View
                         UIApplication.shared.isNetworkActivityIndicatorVisible = false

@@ -39,8 +39,11 @@ class LessonViewController: UIViewController {
         collectionView.addSubview(refreshControl)
     }
     
-    
-    
+    override func viewWillDisappear(_ animated: Bool) {
+        UIApplication.shared.statusBarStyle = .lightContent // Set the nav bar to default configuration when the view dissapears, so it doesn't stay dark.
+        UIApplication.shared.isStatusBarHidden = false
+    }
+
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "LessonAudio" {
@@ -95,6 +98,23 @@ extension LessonViewController: UICollectionViewDelegate, UICollectionViewDataSo
         }
     }
     
+    // Function that hides the navigation bar when scroll down.
+    func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
+        if velocity.y > 0 {
+            //Code will work without the animation block.I am using animation block incase if you want to set any delay to it.
+            UIView.animate(withDuration: 0.25, delay: 0.75, options: UIViewAnimationOptions(), animations: {
+                self.navigationController?.setNavigationBarHidden(true, animated: true)
+                UIApplication.shared.isStatusBarHidden = true
+            }, completion: nil)
+        } else {
+            UIView.animate(withDuration: 0.25, delay: 0.75, options: UIViewAnimationOptions(), animations: {
+                self.navigationController?.setNavigationBarHidden(false, animated: true)
+                UIApplication.shared.isStatusBarHidden = false
+                UIApplication.shared.statusBarStyle = .lightContent
+            }, completion: nil)
+        }
+    }
+
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: 160.0, height: 180.0)
     }

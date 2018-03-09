@@ -143,7 +143,6 @@ class AudioLessonViewController: UIViewController {
         
        // Check to see if we already downloaded file, and if we did, play it.
         if FileManager.default.fileExists(atPath: destinationFileUrl.path) {
-            print(destinationFileUrl.absoluteString)
             play(url: destinationFileUrl, completion: { (success) in
                 if success {
                     completion(destinationFileUrl)

@@ -18,6 +18,9 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <color key="tintColor" red="0.27700001000000002" green="0.77899998429999995" blue="0.92500001190000003" alpha="0.99106115800000005" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="selectedImageTintColor" red="0.27700001001358032" green="0.77899998426437378" blue="0.92500001192092896" alpha="0.99106115797546013" colorSpace="custom" customColorSpace="sRGB"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="ambience" value="YES"/>
+                        </userDefinedRuntimeAttributes>
                     </tabBar>
                     <connections>
                         <segue destination="KMu-2U-lFu" kind="relationship" relationship="viewControllers" id="4An-TB-Bs0"/>

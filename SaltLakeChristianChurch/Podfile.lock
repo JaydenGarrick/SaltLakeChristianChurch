@@ -1,4 +1,5 @@
 PODS:
+  - Ambience (0.1.1)
   - Firebase/Auth (4.8.2):
     - Firebase/Core
     - FirebaseAuth (= 4.4.2)
@@ -70,6 +71,7 @@ PODS:
   - Protobuf (3.5.0)
 
 DEPENDENCIES:
+  - Ambience
   - Firebase/Auth
   - Firebase/Core
   - Firebase/Database
@@ -79,6 +81,7 @@ DEPENDENCIES:
   - PhoneNumberKit (~> 2.1)
 
 SPEC CHECKSUMS:
+  Ambience: 7b65da120d270b6a2a2591a3e2ab08871363f43d
   Firebase: 7d3b8cd837ad9fcd391657734c0d56dab8e9a5a3
   FirebaseAnalytics: 388b630c15713f5dbf364071f5f3d6077fb52f4e
   FirebaseAuth: bd2738c5c1e92b108ba5f7f7335908097a4e50bb
@@ -95,6 +98,6 @@ SPEC CHECKSUMS:
   PhoneNumberKit: 62003f40ff75315fd3738286558bc365365ac222
   Protobuf: 8a9838fba8dae3389230e1b7f8c104aa32389c03
 
-PODFILE CHECKSUM: e4e5648c7b598fad24c81e3a58f582e7ef9c4ce3
+PODFILE CHECKSUM: 7699be270331b3d06e4eb2ff1329fdd57bed8ba1
 
 COCOAPODS: 1.4.0

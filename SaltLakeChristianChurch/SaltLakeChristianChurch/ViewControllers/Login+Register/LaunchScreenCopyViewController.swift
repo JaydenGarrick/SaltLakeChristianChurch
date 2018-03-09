@@ -44,7 +44,7 @@ class LaunchScreenCopyViewController: UIViewController, NSFetchedResultsControll
             BlockedMemberController.shared.blockedMembers = memberFetchRequestController.fetchedObjects ?? []
             AddedCalendarIDController.shared.addedCalendarEventIDs = calendarIDFetchRequestController.fetchedObjects ?? []
         } catch {
-            print("Error performing fetch from FetchRequestController: \(error.localizedDescription)")
+            print("❌Error performing fetch from FetchRequestController: \(error.localizedDescription)")
         }
         UIApplication.shared.isNetworkActivityIndicatorVisible = true
         
@@ -66,17 +66,17 @@ class LaunchScreenCopyViewController: UIViewController, NSFetchedResultsControll
             let reference = Database.database().reference().child("members").child(uuid)
             reference.observeSingleEvent(of: .value, with: { (snapshot) in
                 guard let memberDictionary = snapshot.value as? [String : Any] else {
-                    print("Error retrieving Snapshot")
+                    print("❌Error retrieving Snapshot")
                     self.performSegue(withIdentifier: "LaunchSegue", sender: self)
                     return
                 }
                 MemberController.shared.loggedInMember = Member(memberID: snapshot.key, memberDictionary: memberDictionary)
                 MemberController.shared.isLoggedIn = true
-                print("Successfully Fetched logged in user!")
+                print("✅Successfully Fetched logged in user!")
                 self.performSegue(withIdentifier: "LaunchSegue", sender: self)
             })
         } else {
-            print("User isn't logged in")
+            print("⚠️User isn't logged in")
             self.performSegue(withIdentifier: "LaunchSegue", sender: self)
         }
     }

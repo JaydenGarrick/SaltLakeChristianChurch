@@ -25,6 +25,7 @@ extension UIViewController {
     
     func presentAlertControllerWithOkayAction(title: String, message: String) {
         let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        alertController.view.tintColor = #colorLiteral(red: 0.2779999971, green: 0.7799999714, blue: 0.9250000119, alpha: 1)
         let okayAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
         alertController.addAction(okayAction)
         self.present(alertController, animated: true, completion: nil)

@@ -70,6 +70,11 @@ class AnnouncementsViewController: UIViewController, NSFetchedResultsControllerD
         }
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        UIApplication.shared.statusBarStyle = .lightContent // Set the nav bar to default configuration when the view dissapears, so it doesn't stay dark.
+        UIApplication.shared.isStatusBarHidden = false
+    }
+
     // MARK: - Refresh Function
     @objc func didPullForRefresh() {
         AnnouncementController.shared.fetchAnnouncements { [weak self](success) in
@@ -142,6 +147,23 @@ extension AnnouncementsViewController: UITableViewDelegate, UITableViewDataSourc
         }
     }
     
+    // Function that hides the navigation bar when scroll down.
+    func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
+        if velocity.y > 0 {
+            //Code will work without the animation block.I am using animation block incase if you want to set any delay to it.
+            UIView.animate(withDuration: 0.25, delay: 0.75, options: UIViewAnimationOptions(), animations: {
+                self.navigationController?.setNavigationBarHidden(true, animated: true)
+                UIApplication.shared.isStatusBarHidden = true
+            }, completion: nil)
+        } else {
+            UIView.animate(withDuration: 0.25, delay: 0.75, options: UIViewAnimationOptions(), animations: {
+                self.navigationController?.setNavigationBarHidden(false, animated: true)
+                UIApplication.shared.isStatusBarHidden = false
+                UIApplication.shared.statusBarStyle = .lightContent
+            }, completion: nil)
+        }
+    }
+    
 }
 
 // MARK: - Add Action Sheet for reporting / hiding
@@ -151,6 +173,7 @@ extension AnnouncementsViewController: MFMailComposeViewControllerDelegate, Anno
         
         // Create Action Sheet
         let actionSheet = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        actionSheet.view.tintColor = UIColor(named: "Tint")
         
         // Create Action for hiding
         let hideAction = UIAlertAction(title: "Hide", style: .default) { [weak self](_) in

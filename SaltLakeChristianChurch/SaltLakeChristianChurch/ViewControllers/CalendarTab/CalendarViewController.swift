@@ -33,7 +33,7 @@ class CalendarViewController: UIViewController {
             if success {
                 DispatchQueue.main.async {
                     self.tableView.reloadData()
-                    print("Successfully fetched Calendar events!")
+                    print("✅Successfully fetched Calendar events!")
                     UIApplication.shared.isNetworkActivityIndicatorVisible = false
                 }
             }
@@ -44,8 +44,15 @@ class CalendarViewController: UIViewController {
         super.viewWillAppear(animated)
         tableView.estimatedRowHeight = 55
         tableView.rowHeight = UITableViewAutomaticDimension
+        UIApplication.shared.isStatusBarHidden = false
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        UIApplication.shared.statusBarStyle = .lightContent // Set the nav bar to default configuration when the view dissapears, so it doesn't stay dark.
     }
 }
+
+
 
 extension CalendarViewController: UITableViewDataSource, UITableViewDelegate {
     
@@ -88,9 +95,14 @@ extension CalendarViewController: UITableViewDataSource, UITableViewDelegate {
         // Event for indexPath
         let eventArray = EventController.shared.eventsByMonth[indexPath.section].1
         let event = eventArray[indexPath.row]
+        
+        // Gives small vibration when user slides out event
+        let generator = UIImpactFeedbackGenerator(style: UIImpactFeedbackStyle.light)
+        generator.impactOccurred()
 
         // Add Action
         let addToCalendar = UIContextualAction(style: .normal, title: "Add to Calendar") { [weak self](action, view, nil) in
+
             self?.addCalendarEventToLocalCalendarAlert(event)
         }
         addToCalendar.backgroundColor = #colorLiteral(red: 0.2392156869, green: 0.6745098233, blue: 0.9686274529, alpha: 1)
@@ -99,6 +111,22 @@ extension CalendarViewController: UITableViewDataSource, UITableViewDelegate {
         let configuration = UISwipeActionsConfiguration(actions: [addToCalendar])
         configuration.performsFirstActionWithFullSwipe = false // Makes it so you need to tap, rather than just swipe.
         return configuration
+    }
+    
+    // Function that hides the navigation bar when scroll down.
+    func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
+        if velocity.y > 0 {
+            //Code will work without the animation block.I am using animation block incase if you want to set any delay to it.
+            UIView.animate(withDuration: 2.5, delay: 0.75, options: UIViewAnimationOptions(), animations: {
+                self.navigationController?.setNavigationBarHidden(true, animated: true)
+                UIApplication.shared.statusBarStyle = .default
+            }, completion: nil)
+        } else {
+            UIView.animate(withDuration: 2.5, delay: 0.75, options: UIViewAnimationOptions(), animations: {
+                self.navigationController?.setNavigationBarHidden(false, animated: true)
+                UIApplication.shared.statusBarStyle = .lightContent
+            }, completion: nil)
+        }
     }
 
 }
@@ -109,6 +137,7 @@ extension CalendarViewController {
     /// Function that alerts user the event they are trying to add to the calendar already exists
     func addCalendarEventToLocalCalendarAlert(_ event: Event) {
         let alertController = UIAlertController(title: "Add \(event.summary!) to your calendar? 📆", message: nil, preferredStyle: .alert)
+        alertController.view.tintColor = #colorLiteral(red: 0.2784313725, green: 0.7803921569, blue: 0.9254901961, alpha: 1)
         let okayAction = UIAlertAction(title: "OK", style: .default) { (_) in
             let formatter = DateHelper.inputFormatter
             guard let startDateStringAsString = event.start?.dateTime else { return }

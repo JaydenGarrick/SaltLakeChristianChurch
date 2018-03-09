@@ -30,7 +30,7 @@ class BlockedAnnouncementController {
         do {
             try CoreDataStack.context.save()
         } catch {
-            print("\(error.localizedDescription)")
+            print("❌\(error.localizedDescription)")
         }
     }
 }

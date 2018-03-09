@@ -55,6 +55,7 @@ extension MoreTableViewController {
     
     func presentActionSheet() {
         let actionSheet = UIAlertController(title: "For privacy reasons, you must be a member of Salt Lake Christian Church to access the directory", message: nil, preferredStyle: .actionSheet)
+        actionSheet.view.tintColor = #colorLiteral(red: 0.2784313725, green: 0.7803921569, blue: 0.9254901961, alpha: 1)
         let okayAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
         let contactUsAction = UIAlertAction(title: "Interested in becoming a member? Contact us", style: .default) { (_) in
             self.performSegue(withIdentifier: "ToContactUs", sender: self)
@@ -69,10 +70,3 @@ extension MoreTableViewController {
     }
     
 }
-
-
-
-
-
-
-

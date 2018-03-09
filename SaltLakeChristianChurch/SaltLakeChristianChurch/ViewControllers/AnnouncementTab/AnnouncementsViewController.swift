@@ -173,6 +173,7 @@ extension AnnouncementsViewController: MFMailComposeViewControllerDelegate, Anno
         
         // Create Action Sheet
         let actionSheet = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        actionSheet.view.tintColor = UIColor(named: "Tint")
         
         // Create Action for hiding
         let hideAction = UIAlertAction(title: "Hide", style: .default) { [weak self](_) in

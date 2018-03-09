@@ -13,7 +13,7 @@ class GiveViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         UIApplication.shared.isNetworkActivityIndicatorVisible = true
-        
+
         // HandleNavBar and Keyboard
         self.hideKeyboardWhenTappedAroundAndSetNavBar()
     }

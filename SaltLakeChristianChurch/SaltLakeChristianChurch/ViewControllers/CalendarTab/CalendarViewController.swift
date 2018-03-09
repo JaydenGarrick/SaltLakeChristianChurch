@@ -137,6 +137,7 @@ extension CalendarViewController {
     /// Function that alerts user the event they are trying to add to the calendar already exists
     func addCalendarEventToLocalCalendarAlert(_ event: Event) {
         let alertController = UIAlertController(title: "Add \(event.summary!) to your calendar? 📆", message: nil, preferredStyle: .alert)
+        alertController.view.tintColor = #colorLiteral(red: 0.2784313725, green: 0.7803921569, blue: 0.9254901961, alpha: 1)
         let okayAction = UIAlertAction(title: "OK", style: .default) { (_) in
             let formatter = DateHelper.inputFormatter
             guard let startDateStringAsString = event.start?.dateTime else { return }

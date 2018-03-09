@@ -12,6 +12,7 @@ import FirebaseInstanceID
 import FirebaseMessaging
 import UserNotifications
 import IQKeyboardManager
+import Ambience
 
 
 @UIApplicationMain
@@ -41,10 +42,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         // URL Cache
         let directory = FileManager.default.temporaryDirectory
         print(directory)
-        let cache = URLCache(memoryCapacity: 4000000000, diskCapacity: 8000000000, diskPath: directory.absoluteString)
+        let cache = URLCache(memoryCapacity: 40000000, diskCapacity: 80000000, diskPath: directory.absoluteString)
         URLCache.shared = cache
         
         // Configure pods
+        _ = Ambience.shared
         FirebaseApp.configure()
         IQKeyboardManager.shared().isEnabled = true
         IQKeyboardManager.shared().isEnableAutoToolbar = false

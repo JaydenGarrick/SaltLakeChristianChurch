@@ -28,6 +28,7 @@ class AudioLessonViewController: UIViewController {
     var player: AVAudioPlayer?
     
     // MARK: - viewDidLoad / viewDidAppear
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -44,24 +45,7 @@ class AudioLessonViewController: UIViewController {
         UIApplication.shared.isNetworkActivityIndicatorVisible = true
         if let lesson = lesson {
             downloadFileFrom(urlString: lesson.audioURLAsString, completion: { [weak self](fetchedURL) in
-                DispatchQueue.main.async {
-                    
-                    guard let player = self?.player else { return }
-                    self?.slider.maximumValue = Float(player.duration)
-                    UIApplication.shared.isNetworkActivityIndicatorVisible = false
-                    self?.playPauseButton.isEnabled = true
-                    self?.slider.isEnabled = true
-                    if lesson.playbackPostion != nil {
-                        player.currentTime = Double(lesson.playbackPostion!)
-                        self?.slider.value = lesson.playbackPostion!
-                    }
-                    self?.playPauseButtonImageView.image = #imageLiteral(resourceName: "pause-button")
-                    Timer.scheduledTimer(timeInterval: 0.1, target: self!, selector: #selector(self?.updateSlider), userInfo: nil, repeats: true)
-                    Timer.scheduledTimer(timeInterval: 1.0, target: self!, selector: #selector(self?.updateTimeLabel), userInfo: nil, repeats: true)
-                    UIView.animate(withDuration: 0.25, animations: {
-                        self?.blurView.layer.opacity = 0
-                    })
-                }
+                self?.updateUIAfterDownloadIsFinished()
             })
         }
     }
@@ -106,6 +90,8 @@ class AudioLessonViewController: UIViewController {
         dismiss(animated: true, completion: nil)
     }
     
+    
+    // MARK: - Audio Player functions
     func play(url: URL, completion: @escaping ((Bool)->Void)) {
         //guard let player = player else { return }
         do {
@@ -124,17 +110,6 @@ class AudioLessonViewController: UIViewController {
         }
     }
     
-    func updateViews() {
-        if let lesson = lesson {
-            LessonController.shared.downloadImageFrom(urlString: lesson.imageURL, completion: { (image) in
-                DispatchQueue.main.async {
-                    self.imageView.image = image
-                }
-            })
-            titleLabel.text = lesson.title
-            summaryTextView.text = lesson.summary
-        }
-    }
     
     func downloadFileFrom(urlString: String, completion: @escaping ((URL?)->Void)) {
         guard let url = URL(string: urlString) else { completion(nil) ; return }
@@ -172,10 +147,21 @@ class AudioLessonViewController: UIViewController {
                 })
             }).resume()
         }
-
     }
     
-    // MARK: - Functions for audio
+    // MARK: - Update functions
+    func updateViews() {
+        if let lesson = lesson {
+            LessonController.shared.downloadImageFrom(urlString: lesson.imageURL, completion: { (image) in
+                DispatchQueue.main.async {
+                    self.imageView.image = image
+                }
+            })
+            titleLabel.text = lesson.title
+            summaryTextView.text = lesson.summary
+        }
+    }
+    
     /// Updates slider based on audio being played
     @objc func updateSlider() {
         guard let player = player else { return }
@@ -191,6 +177,28 @@ class AudioLessonViewController: UIViewController {
         timeRemainingLabel.text = secondsToHoursMinutesSeconds(intSeconds: timeRemaining)
         timeSoFarLabel.text = secondsToHoursMinutesSeconds(intSeconds: timeSoFar)
     }
+    
+    fileprivate func updateUIAfterDownloadIsFinished() {
+        DispatchQueue.main.async { [weak self] in
+            guard let lesson = self?.lesson else { return }
+            guard let player = self?.player else { return }
+            self?.slider.maximumValue = Float(player.duration)
+            UIApplication.shared.isNetworkActivityIndicatorVisible = false
+            self?.playPauseButton.isEnabled = true
+            self?.slider.isEnabled = true
+            if lesson.playbackPostion != nil {
+                player.currentTime = Double(lesson.playbackPostion!)
+                self?.slider.value = lesson.playbackPostion!
+            }
+            self?.playPauseButtonImageView.image = #imageLiteral(resourceName: "pause-button")
+            Timer.scheduledTimer(timeInterval: 0.1, target: self!, selector: #selector(self?.updateSlider), userInfo: nil, repeats: true)
+            Timer.scheduledTimer(timeInterval: 1.0, target: self!, selector: #selector(self?.updateTimeLabel), userInfo: nil, repeats: true)
+            UIView.animate(withDuration: 0.25, animations: {
+                self?.blurView.layer.opacity = 0
+            })
+        }
+    }
+
     
     /// Converts seconds into a 0:00:00 format
     func secondsToHoursMinutesSeconds (intSeconds : Int) -> String {

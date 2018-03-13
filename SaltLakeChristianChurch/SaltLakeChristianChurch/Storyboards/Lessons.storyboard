@@ -265,6 +265,7 @@
                                         <color key="backgroundColor" red="0.5004135505516315" green="0.50619803177977141" blue="0.52355147546419101" alpha="0.37692916027607359" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="54" id="fS1-8H-Iqg"/>
+                                            <constraint firstAttribute="height" constant="27" id="jg7-iw-y5B"/>
                                         </constraints>
                                         <state key="normal" title="Done">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -290,7 +291,6 @@
                                     <constraint firstAttribute="trailing" secondItem="gNg-nP-0Vs" secondAttribute="trailing" constant="12" id="QQE-Ht-91m"/>
                                     <constraint firstItem="gNg-nP-0Vs" firstAttribute="top" secondItem="vgx-Ag-1KS" secondAttribute="top" constant="22" id="fl0-Yv-nRZ"/>
                                     <constraint firstAttribute="width" secondItem="vgx-Ag-1KS" secondAttribute="height" multiplier="125:21" id="nyX-w4-XUl"/>
-                                    <constraint firstAttribute="bottom" secondItem="gNg-nP-0Vs" secondAttribute="bottom" constant="14" id="uAb-0W-yIn"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Hs-E2-feZ" userLabel="BottomView">

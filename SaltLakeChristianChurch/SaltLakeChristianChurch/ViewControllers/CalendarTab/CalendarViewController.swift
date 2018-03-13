@@ -52,8 +52,6 @@ class CalendarViewController: UIViewController {
     }
 }
 
-
-
 extension CalendarViewController: UITableViewDataSource, UITableViewDelegate {
     
     func numberOfSections(in tableView: UITableView) -> Int {

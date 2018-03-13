@@ -2,15 +2,17 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "SLCC Logo-Final-Icon-White-1000x1000.jpg",
+      "filename" : "PNG Logo-2.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
+      "filename" : "PNG Logo.png",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
+      "filename" : "PNG Logo-1.png",
       "scale" : "3x"
     }
   ],

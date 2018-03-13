@@ -10,7 +10,6 @@ import UIKit
 
 class MemberDetailViewController: UIViewController {
     
-    
     // Member for current directory
     var member: Member?
 
@@ -21,7 +20,6 @@ class MemberDetailViewController: UIViewController {
     @IBOutlet weak var phoneNumberLabel: UILabel!
     @IBOutlet weak var imageView: UIImageViewX!
     let imageCache = NSCache<NSString, UIImage>()
-    
     
     // MARK: - ViewDidLoad / Appear
     override func viewDidLoad() {
@@ -68,5 +66,4 @@ class MemberDetailViewController: UIViewController {
         }
     }
  
-
 }

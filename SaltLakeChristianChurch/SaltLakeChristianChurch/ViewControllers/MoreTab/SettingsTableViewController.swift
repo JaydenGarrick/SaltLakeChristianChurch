@@ -20,7 +20,6 @@ class SettingsTableViewController: UITableViewController {
         if MemberController.shared.isLoggedIn == true {
             loginSignUpLabel.text = MemberController.shared.loggedInMember?.fullName
         }
-
     }
     
     override func viewDidAppear(_ animated: Bool) {

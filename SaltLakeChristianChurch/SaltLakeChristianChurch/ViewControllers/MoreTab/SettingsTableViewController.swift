@@ -28,19 +28,11 @@ class SettingsTableViewController: UITableViewController {
         if MemberController.shared.isLoggedIn == true {
             loginSignUpLabel.text = MemberController.shared.loggedInMember?.fullName
         }
-        
     }
     
     // MARK: - IBActions
     @IBAction func cancelButtonTapped(_ sender: Any) {
         dismiss(animated: true, completion: nil)
-    }
-    // MARK: - Table view data source
-
-    
-    // MARK: - Navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-    
     }
     
     // MARK: - TableView Delegate and DataSource

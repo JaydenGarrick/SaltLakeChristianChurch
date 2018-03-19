@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6F5907E75B97B77F4D23A665 /* Pods_SaltLakeChristianChurchTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C1B60ED3DBBE6E76FBCE974 /* Pods_SaltLakeChristianChurchTests.framework */; };
 		8102DB50202A4BCE0043A604 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8102DB4F202A4BCE0043A604 /* Event.swift */; };
 		8102DB52202A4BD80043A604 /* EventController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8102DB51202A4BD80043A604 /* EventController.swift */; };
 		8109FBA320216B00004B1655 /* Lessons.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8109FBA220216B00004B1655 /* Lessons.storyboard */; };
@@ -61,12 +62,26 @@
 		819F7FCE203111740067FBDF /* BlockedAnnouncementController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819F7FCD203111740067FBDF /* BlockedAnnouncementController.swift */; };
 		819F7FD02031385E0067FBDF /* BlockedMember.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819F7FCF2031385E0067FBDF /* BlockedMember.swift */; };
 		819F7FD2203138F20067FBDF /* BlockedMemberController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819F7FD1203138F20067FBDF /* BlockedMemberController.swift */; };
+		81DA22A22060407400F65E0E /* SaltLakeChristianChurchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81DA22A12060407400F65E0E /* SaltLakeChristianChurchTests.swift */; };
 		81DBA593202231D7001EF8E7 /* MoreTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81DBA592202231D7001EF8E7 /* MoreTableViewController.swift */; };
 		FBF458CABE07E4278BD949DB /* Pods_SaltLakeChristianChurch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83F1D8FC62F7E113BACAD970 /* Pods_SaltLakeChristianChurch.framework */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		81DA22A42060407400F65E0E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 815E23D6201FE47500157B18 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 815E23DD201FE47500157B18;
+			remoteInfo = SaltLakeChristianChurch;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		0078708EDF6217E47E032469 /* Pods-SaltLakeChristianChurch.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SaltLakeChristianChurch.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SaltLakeChristianChurch/Pods-SaltLakeChristianChurch.debug.xcconfig"; sourceTree = "<group>"; };
+		020378341645C8885DB58DAF /* Pods-SaltLakeChristianChurchTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SaltLakeChristianChurchTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SaltLakeChristianChurchTests/Pods-SaltLakeChristianChurchTests.release.xcconfig"; sourceTree = "<group>"; };
+		6C1B60ED3DBBE6E76FBCE974 /* Pods_SaltLakeChristianChurchTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SaltLakeChristianChurchTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6D1CE519DB14F63C84D58491 /* Pods-SaltLakeChristianChurchTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SaltLakeChristianChurchTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SaltLakeChristianChurchTests/Pods-SaltLakeChristianChurchTests.debug.xcconfig"; sourceTree = "<group>"; };
 		8102DB4E202A25590043A604 /* SaltLakeChristianChurch.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SaltLakeChristianChurch.entitlements; sourceTree = "<group>"; };
 		8102DB4F202A4BCE0043A604 /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		8102DB51202A4BD80043A604 /* EventController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventController.swift; sourceTree = "<group>"; };
@@ -124,6 +139,9 @@
 		819F7FCD203111740067FBDF /* BlockedAnnouncementController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockedAnnouncementController.swift; sourceTree = "<group>"; };
 		819F7FCF2031385E0067FBDF /* BlockedMember.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockedMember.swift; sourceTree = "<group>"; };
 		819F7FD1203138F20067FBDF /* BlockedMemberController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockedMemberController.swift; sourceTree = "<group>"; };
+		81DA229F2060407400F65E0E /* SaltLakeChristianChurchTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SaltLakeChristianChurchTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		81DA22A12060407400F65E0E /* SaltLakeChristianChurchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaltLakeChristianChurchTests.swift; sourceTree = "<group>"; };
+		81DA22A32060407400F65E0E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		81DBA592202231D7001EF8E7 /* MoreTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreTableViewController.swift; sourceTree = "<group>"; };
 		83F1D8FC62F7E113BACAD970 /* Pods_SaltLakeChristianChurch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SaltLakeChristianChurch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9E424914063860F44B256AA9 /* Pods-SaltLakeChristianChurch.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SaltLakeChristianChurch.release.xcconfig"; path = "Pods/Target Support Files/Pods-SaltLakeChristianChurch/Pods-SaltLakeChristianChurch.release.xcconfig"; sourceTree = "<group>"; };
@@ -138,6 +156,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		81DA229C2060407400F65E0E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6F5907E75B97B77F4D23A665 /* Pods_SaltLakeChristianChurchTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -145,6 +171,7 @@
 			isa = PBXGroup;
 			children = (
 				815E23E0201FE47500157B18 /* SaltLakeChristianChurch */,
+				81DA22A02060407400F65E0E /* SaltLakeChristianChurchTests */,
 				815E23DF201FE47500157B18 /* Products */,
 				E71A5DAAEF967F3214EB762A /* Pods */,
 				A2EBD76ADE5D7418EADB3AB4 /* Frameworks */,
@@ -155,6 +182,7 @@
 			isa = PBXGroup;
 			children = (
 				815E23DE201FE47500157B18 /* SaltLakeChristianChurch.app */,
+				81DA229F2060407400F65E0E /* SaltLakeChristianChurchTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -327,10 +355,20 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		81DA22A02060407400F65E0E /* SaltLakeChristianChurchTests */ = {
+			isa = PBXGroup;
+			children = (
+				81DA22A12060407400F65E0E /* SaltLakeChristianChurchTests.swift */,
+				81DA22A32060407400F65E0E /* Info.plist */,
+			);
+			path = SaltLakeChristianChurchTests;
+			sourceTree = "<group>";
+		};
 		A2EBD76ADE5D7418EADB3AB4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 				83F1D8FC62F7E113BACAD970 /* Pods_SaltLakeChristianChurch.framework */,
+				6C1B60ED3DBBE6E76FBCE974 /* Pods_SaltLakeChristianChurchTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -340,6 +378,8 @@
 			children = (
 				0078708EDF6217E47E032469 /* Pods-SaltLakeChristianChurch.debug.xcconfig */,
 				9E424914063860F44B256AA9 /* Pods-SaltLakeChristianChurch.release.xcconfig */,
+				6D1CE519DB14F63C84D58491 /* Pods-SaltLakeChristianChurchTests.debug.xcconfig */,
+				020378341645C8885DB58DAF /* Pods-SaltLakeChristianChurchTests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -367,6 +407,27 @@
 			productReference = 815E23DE201FE47500157B18 /* SaltLakeChristianChurch.app */;
 			productType = "com.apple.product-type.application";
 		};
+		81DA229E2060407400F65E0E /* SaltLakeChristianChurchTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 81DA22A82060407400F65E0E /* Build configuration list for PBXNativeTarget "SaltLakeChristianChurchTests" */;
+			buildPhases = (
+				45AE5E1A8657ED71F0409A45 /* [CP] Check Pods Manifest.lock */,
+				81DA229B2060407400F65E0E /* Sources */,
+				81DA229C2060407400F65E0E /* Frameworks */,
+				81DA229D2060407400F65E0E /* Resources */,
+				7C9805F77F9AE4AC58723659 /* [CP] Embed Pods Frameworks */,
+				173576E891382C20F3BB7D8A /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				81DA22A52060407400F65E0E /* PBXTargetDependency */,
+			);
+			name = SaltLakeChristianChurchTests;
+			productName = SaltLakeChristianChurchTests;
+			productReference = 81DA229F2060407400F65E0E /* SaltLakeChristianChurchTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -389,6 +450,11 @@
 							};
 						};
 					};
+					81DA229E2060407400F65E0E = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 815E23DD201FE47500157B18;
+					};
 				};
 			};
 			buildConfigurationList = 815E23D9201FE47500157B18 /* Build configuration list for PBXProject "SaltLakeChristianChurch" */;
@@ -405,6 +471,7 @@
 			projectRoot = "";
 			targets = (
 				815E23DD201FE47500157B18 /* SaltLakeChristianChurch */,
+				81DA229E2060407400F65E0E /* SaltLakeChristianChurchTests */,
 			);
 		};
 /* End PBXProject section */
@@ -427,9 +494,31 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		81DA229D2060407400F65E0E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		173576E891382C20F3BB7D8A /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SaltLakeChristianChurchTests/Pods-SaltLakeChristianChurchTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		2C7B56A4D6FB154F53CA60A4 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -446,6 +535,44 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		45AE5E1A8657ED71F0409A45 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SaltLakeChristianChurchTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7C9805F77F9AE4AC58723659 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-SaltLakeChristianChurchTests/Pods-SaltLakeChristianChurchTests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac-Defines-NSData+zlib/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SaltLakeChristianChurchTests/Pods-SaltLakeChristianChurchTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		C248FF59797D5BE4A6872DE9 /* [CP] Copy Pods Resources */ = {
@@ -472,7 +599,7 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-SaltLakeChristianChurch/Pods-SaltLakeChristianChurch-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Ambience/Ambience.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
-				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac-615f275e/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManager/IQKeyboardManager.framework",
 				"${BUILT_PRODUCTS_DIR}/PhoneNumberKit/PhoneNumberKit.framework",
 				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
@@ -550,7 +677,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		81DA229B2060407400F65E0E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				81DA22A22060407400F65E0E /* SaltLakeChristianChurchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		81DA22A52060407400F65E0E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 815E23DD201FE47500157B18 /* SaltLakeChristianChurch */;
+			targetProxy = 81DA22A42060407400F65E0E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		815E23E5201FE47500157B18 /* Login.storyboard */ = {
@@ -687,13 +830,28 @@
 				CODE_SIGN_ENTITLEMENTS = SaltLakeChristianChurch/SaltLakeChristianChurch.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 94C4Q5DME5;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"${PODS_ROOT}/Firebase/Core/Sources",
+					"$(inherited)",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"\"${PODS_ROOT}/Headers/Public/Firebase\"",
+					"\"${PODS_ROOT}/Headers/Public/FirebaseAnalytics\"",
+					"\"${PODS_ROOT}/Headers/Public/FirebaseAuth\"",
+					"\"${PODS_ROOT}/Headers/Public/FirebaseCore\"",
+					"\"${PODS_ROOT}/Headers/Public/FirebaseDatabase\"",
+					"\"${PODS_ROOT}/Headers/Public/FirebaseInstanceID\"",
+					"\"${PODS_ROOT}/Headers/Public/FirebaseMessaging\"",
+					"\"${PODS_ROOT}/Headers/Public/FirebaseStorage\"",
+					"\"${PODS_ROOT}/Firebase/Core/Sources\"",
+				);
 				INFOPLIST_FILE = "$(SRCROOT)/SaltLakeChristianChurch/Resources/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.jaydencraig.SaltLakeChristianChurch;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -705,13 +863,64 @@
 				CODE_SIGN_ENTITLEMENTS = SaltLakeChristianChurch/SaltLakeChristianChurch.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 94C4Q5DME5;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"${PODS_ROOT}/Firebase/Core/Sources",
+					"$(inherited)",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"\"${PODS_ROOT}/Headers/Public/Firebase\"",
+					"\"${PODS_ROOT}/Headers/Public/FirebaseAnalytics\"",
+					"\"${PODS_ROOT}/Headers/Public/FirebaseAuth\"",
+					"\"${PODS_ROOT}/Headers/Public/FirebaseCore\"",
+					"\"${PODS_ROOT}/Headers/Public/FirebaseDatabase\"",
+					"\"${PODS_ROOT}/Headers/Public/FirebaseInstanceID\"",
+					"\"${PODS_ROOT}/Headers/Public/FirebaseMessaging\"",
+					"\"${PODS_ROOT}/Headers/Public/FirebaseStorage\"",
+					"\"${PODS_ROOT}/Firebase/Core/Sources\"",
+				);
 				INFOPLIST_FILE = "$(SRCROOT)/SaltLakeChristianChurch/Resources/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.jaydencraig.SaltLakeChristianChurch;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		81DA22A62060407400F65E0E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6D1CE519DB14F63C84D58491 /* Pods-SaltLakeChristianChurchTests.debug.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 94C4Q5DME5;
+				HEADER_SEARCH_PATHS = "\"${PODS_ROOT}/Firebase/Core/Sources\"";
+				INFOPLIST_FILE = SaltLakeChristianChurchTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.jaydencraig.SaltLakeChristianChurchTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SaltLakeChristianChurch.app/SaltLakeChristianChurch";
+			};
+			name = Debug;
+		};
+		81DA22A72060407400F65E0E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 020378341645C8885DB58DAF /* Pods-SaltLakeChristianChurchTests.release.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 94C4Q5DME5;
+				HEADER_SEARCH_PATHS = "\"${PODS_ROOT}/Firebase/Core/Sources\"";
+				INFOPLIST_FILE = SaltLakeChristianChurchTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.jaydencraig.SaltLakeChristianChurchTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SaltLakeChristianChurch.app/SaltLakeChristianChurch";
 			};
 			name = Release;
 		};
@@ -732,6 +941,15 @@
 			buildConfigurations = (
 				815E23F1201FE47500157B18 /* Debug */,
 				815E23F2201FE47500157B18 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		81DA22A82060407400F65E0E /* Build configuration list for PBXNativeTarget "SaltLakeChristianChurchTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				81DA22A62060407400F65E0E /* Debug */,
+				81DA22A72060407400F65E0E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

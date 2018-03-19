@@ -69,7 +69,7 @@ extension LessonViewController: UICollectionViewDelegate, UICollectionViewDataSo
         
         // Configure the cell
         let lesson = lessons[indexPath.row]
-        if lesson.imageURL ==  "http://static1.squarespace.com/static/58b1f2c003596e617b2a55ad/t/5a09269a9140b7f3b7b8b654/1510549154825/1500w/SLCC+Logo+iTunes.png" {
+        if lesson.imageURL == "http://static1.squarespace.com/static/58b1f2c003596e617b2a55ad/t/5a09269a9140b7f3b7b8b654/1510549154825/1500w/SLCC+Logo+iTunes.png" {
             cell.lessonImageView.image = #imageLiteral(resourceName: "CollectionViewHolder")
         } else {
             if let cachedImage = imageCache.object(forKey: lesson.imageURL as NSString) {

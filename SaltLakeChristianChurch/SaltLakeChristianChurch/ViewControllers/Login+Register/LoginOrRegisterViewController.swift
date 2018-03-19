@@ -101,14 +101,6 @@ class LoginOrRegisterViewController: UIViewController {
 
 // MARK: - Textfield Delegate methods
 extension LoginOrRegisterViewController: UITextFieldDelegate {
-    
-    
-    //        emailTextField.delegate = self
-    //        passwordTextField.delegate = self
-    //        confirmPasswordTextField.delegate = self
-    //        fullnameTextField.delegate = self
-    //        phoneNumberTextField.delegate = self
-    //        churchCodeTextField.delegate = self
 
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if isLogin == true {

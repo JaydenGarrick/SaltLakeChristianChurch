@@ -24,4 +24,8 @@ pod 'PhoneNumberKit', '~> 2.1'
 #Ambience
 pod 'Ambience'
 
+target 'SaltLakeChristianChurchTests' do
+    inherit! :search_paths
+    pod 'Firebase'
+end
 end

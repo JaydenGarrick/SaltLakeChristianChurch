@@ -28,7 +28,6 @@ class AudioLessonViewController: UIViewController {
     var player: AVAudioPlayer?
     
     // MARK: - viewDidLoad / viewDidAppear
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -36,10 +35,7 @@ class AudioLessonViewController: UIViewController {
         updateViews()
         
         // Disable UIElements while audio is loading
-        playPauseButton.isEnabled = false
-        slider.isEnabled = false
-        activityIndicator.tintColor = UIColor(red: 71.0/255.0, green: 199.0/255.0, blue: 236/255.0, alpha: 1.0)
-        activityIndicator.startAnimating()
+        disableUIElementsOnLoad()
         
         // Setup while waiting for audio
         UIApplication.shared.isNetworkActivityIndicatorVisible = true
@@ -51,11 +47,11 @@ class AudioLessonViewController: UIViewController {
     }
     
     override func viewWillDisappear(_ animated: Bool) {
-        guard let player = player else { return }
-        if player.isPlaying == true {
-            lesson?.playbackPostion = Float(player.currentTime)
-            player.pause()
-        }
+//        guard let player = player else { return }
+//        if player.isPlaying == true {
+//            lesson?.playbackPostion = Float(player.currentTime)
+//            player.pause()
+//        }
         
     }
     
@@ -73,14 +69,14 @@ class AudioLessonViewController: UIViewController {
     @IBAction func playOrPauseButtonTapped(_ sender: Any) {
         guard let player = player else { return }
         if player.isPlaying == true {
-            UIView.animate(withDuration: 0.5, animations: {
-                self.playPauseButtonImageView.image = #imageLiteral(resourceName: "play-button")
+            UIView.animate(withDuration: 0.5, animations: { [weak self] in
+                self?.playPauseButtonImageView.image = #imageLiteral(resourceName: "play-button")
             })
             lesson?.playbackPostion = Float(player.currentTime)
             player.pause()
         } else {
-            UIView.animate(withDuration: 0.5, animations: {
-                self.playPauseButtonImageView.image = #imageLiteral(resourceName: "pause-button")
+            UIView.animate(withDuration: 0.5, animations: { [weak self] in
+                self?.playPauseButtonImageView.image = #imageLiteral(resourceName: "pause-button")
             })
             player.play()
         }
@@ -96,8 +92,8 @@ class AudioLessonViewController: UIViewController {
         //guard let player = player else { return }
         do {
             try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback)
-            self.player = AVAudioPlayer()
-            self.player = try AVAudioPlayer(contentsOf: url)
+            player = AVAudioPlayer()
+            player = try AVAudioPlayer(contentsOf: url)
             guard let player = player else { completion(false) ; return }
             player.prepareToPlay()
             player.volume = 1.0
@@ -151,11 +147,15 @@ class AudioLessonViewController: UIViewController {
     
     // MARK: - Update functions
     func updateViews() {
+        UIApplication.shared.isNetworkActivityIndicatorVisible = true
         if let lesson = lesson {
-            LessonController.shared.downloadImageFrom(urlString: lesson.imageURL, completion: { (image) in
+            LessonController.shared.downloadImageFrom(urlString: lesson.imageURL, completion: { [weak self](image) in
                 DispatchQueue.main.async {
-                    self.imageView.image = image
+                    self?.imageView.image = image
                 }
+            })
+            downloadFileFrom(urlString: lesson.audioURLAsString, completion: { [weak self](fetchedURL) in
+                self?.updateUIAfterDownloadIsFinished()
             })
             titleLabel.text = lesson.title
             summaryTextView.text = lesson.summary
@@ -211,5 +211,11 @@ class AudioLessonViewController: UIViewController {
         return timeString
     }
     
+    fileprivate func disableUIElementsOnLoad() {
+        playPauseButton.isEnabled = false
+        slider.isEnabled = false
+        activityIndicator.tintColor = UIColor(red: 71.0/255.0, green: 199.0/255.0, blue: 236/255.0, alpha: 1.0)
+        activityIndicator.startAnimating()
+    }    
 }
 

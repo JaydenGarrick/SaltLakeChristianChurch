@@ -26,48 +26,18 @@ class AnnouncementsViewController: UIViewController, NSFetchedResultsControllerD
     
         // HandleNavBar and Keyboard and Set network indicator
         self.hideKeyboardWhenTappedAroundAndSetNavBar()
-        UIApplication.shared.isNetworkActivityIndicatorVisible = true
         
         // Check to see if logged in member is admin
-        if MemberController.shared.loggedInMember?.isAdmin == false || MemberController.shared.isLoggedIn == false {
-            self.navigationItem.rightBarButtonItem = nil
-        }
         
-        // Delegate
-        tableView.delegate = self
-        tableView.dataSource = self
- 
-        // Initial Fetch for events
-        AnnouncementController.shared.fetchAnnouncements { [weak self](success) in
-            if success {
-                print("\(BlockedAnnouncementController.shared.blockedAnnouncements.count) is the total amount of blocked announcements")
-                self?.tableView.reloadData()
-                UIApplication.shared.isNetworkActivityIndicatorVisible = false
-            }
-        }
-        
-        // Set up Refresh Control for refresh on pulldown
-        tableView.alwaysBounceVertical = true
-        tableView.bounces = true
-        refreshControl = UIRefreshControl()
-        refreshControl.tintColor = UIColor(red: 71.0/255.0, green: 199.0/255.0, blue: 236/255.0, alpha: 1.0)
-        refreshControl.addTarget(self, action: #selector(didPullForRefresh), for: .valueChanged)
-        tableView.addSubview(refreshControl)
+        // Delegate And Setup
+        initialFetchForAnnouncements()
+        setupRefreshControler()
     }
+    
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
-        // Set estimated height for self sizing tableview
-        tableView.estimatedRowHeight = 450.0
-        tableView.rowHeight = UITableViewAutomaticDimension
-        
-        
-        // Handle bug where button is left on selected
-        if MemberController.shared.loggedInMember?.isAdmin == true && MemberController.shared.loggedInMember != nil {
-            addEventBarButton.isEnabled = false
-            addEventBarButton.isEnabled = true
-        }
+        tableViewSetup()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -89,6 +59,50 @@ class AnnouncementsViewController: UIViewController, NSFetchedResultsControllerD
     
 }
 
+// MARK: - Setup Functions
+extension AnnouncementsViewController {
+    fileprivate func setupRefreshControler() {
+        // Set up Refresh Control for refresh on pulldown
+        tableView.alwaysBounceVertical = true
+        tableView.bounces = true
+        refreshControl = UIRefreshControl()
+        refreshControl.tintColor = UIColor(red: 71.0/255.0, green: 199.0/255.0, blue: 236/255.0, alpha: 1.0)
+        refreshControl.addTarget(self, action: #selector(didPullForRefresh), for: .valueChanged)
+        tableView.addSubview(refreshControl)
+    }
+    
+    fileprivate func initialFetchForAnnouncements() {
+        // Initial Fetch for events
+        UIApplication.shared.isNetworkActivityIndicatorVisible = true
+        AnnouncementController.shared.fetchAnnouncements { [weak self](success) in
+            if success {
+                print("\(BlockedAnnouncementController.shared.blockedAnnouncements.count) is the total amount of blocked announcements")
+                self?.tableView.reloadData()
+                UIApplication.shared.isNetworkActivityIndicatorVisible = false
+            }
+        }
+    }
+    
+    fileprivate func tableViewSetup() {
+        // Set estimated height for self sizing tableview
+        tableView.estimatedRowHeight = 450.0
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.delegate = self
+        tableView.dataSource = self
+        
+        if MemberController.shared.loggedInMember?.isAdmin == false || MemberController.shared.isLoggedIn == false {
+            self.navigationItem.rightBarButtonItem = nil
+        }
+
+        // Handle bug where button is left on selected
+        if MemberController.shared.loggedInMember?.isAdmin == true && MemberController.shared.loggedInMember != nil {
+            addEventBarButton.isEnabled = false
+            addEventBarButton.isEnabled = true
+        }
+    }
+}
+
+
 // MARK: - TableView Delegate and Datasourcec functions
 extension AnnouncementsViewController: UITableViewDelegate, UITableViewDataSource {
 
@@ -99,7 +113,6 @@ extension AnnouncementsViewController: UITableViewDelegate, UITableViewDataSourc
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "annoucementCell", for: indexPath) as! AnnouncementTableViewCell
         let announcement = AnnouncementController.shared.announcements[indexPath.row]
-       
         cell.delegate = self  // Set delegate of cell
         cell.announcement = announcement
         cell.imageActivityIndicator.startAnimating()
@@ -112,9 +125,9 @@ extension AnnouncementsViewController: UITableViewDelegate, UITableViewDataSourc
             AnnouncementController.shared.loadImageFrom(imageURL: announcement.imageAsStringURL) { [weak self](image) in
                 guard let image = image else { return }
                 self?.imageCache.setObject(image, forKey: announcement.imageAsStringURL as NSString)
-                DispatchQueue.main.async {
-                    cell.announcementImageView.image = image
-                    cell.imageActivityIndicator.isHidden = true
+                DispatchQueue.main.async { [weak cell] in
+                    cell?.announcementImageView.image = image
+                    cell?.imageActivityIndicator.isHidden = true
                 }
             }
         }
@@ -141,23 +154,34 @@ extension AnnouncementsViewController: UITableViewDelegate, UITableViewDataSourc
         cell.alpha = 0
         let transform = CATransform3DTranslate(CATransform3DIdentity, -5, 10, 0)
         cell.layer.transform = transform
-        UIView.animate(withDuration: 0.10) {
-            cell.alpha = 1.0
-            cell.layer.transform = CATransform3DIdentity
+        UIView.animate(withDuration: 0.10) { [weak cell] in
+            cell?.alpha = 1.0
+            cell?.layer.transform = CATransform3DIdentity
         }
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let activiityIndicatorView = UIActivityIndicatorView(activityIndicatorStyle: .whiteLarge)
+        activiityIndicatorView.color = #colorLiteral(red: 0.2392156869, green: 0.6745098233, blue: 0.9686274529, alpha: 1)
+        activiityIndicatorView.startAnimating()
+        return activiityIndicatorView
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return AnnouncementController.shared.announcements.isEmpty ? 250 : 0
     }
     
     // Function that hides the navigation bar when scroll down.
     func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
         if velocity.y > 0 {
             //Code will work without the animation block.I am using animation block incase if you want to set any delay to it.
-            UIView.animate(withDuration: 0.25, delay: 0.75, options: UIViewAnimationOptions(), animations: {
-                self.navigationController?.setNavigationBarHidden(true, animated: true)
+            UIView.animate(withDuration: 0.25, delay: 0.25, options: UIViewAnimationOptions(), animations: { [weak self] in
+                self?.navigationController?.setNavigationBarHidden(true, animated: true)
                 UIApplication.shared.isStatusBarHidden = true
             }, completion: nil)
         } else {
-            UIView.animate(withDuration: 0.25, delay: 0.75, options: UIViewAnimationOptions(), animations: {
-                self.navigationController?.setNavigationBarHidden(false, animated: true)
+            UIView.animate(withDuration: 0.25, delay: 0.25, options: UIViewAnimationOptions(), animations: { [weak self] in
+                self?.navigationController?.setNavigationBarHidden(false, animated: true)
                 UIApplication.shared.isStatusBarHidden = false
                 UIApplication.shared.statusBarStyle = .lightContent
             }, completion: nil)

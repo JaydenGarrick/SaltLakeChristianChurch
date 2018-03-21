@@ -17,19 +17,21 @@ class EventController {
     var baseURL = URL(string: "https://www.googleapis.com/calendar/v3/calendars/jep04cit3p2odlnuh6462ppjig%40group.calendar.google.com")
     var events: [Event] = []
     
-    var eventsByMonth: [(String,[Event])] {
-        var january: (String,[Event]) = ("January", [])
-        var february: (String,[Event]) = ("February", [])
-        var march: (String,[Event]) = ("March", [])
-        var april: (String,[Event]) = ("April", [])
-        var may: (String,[Event]) = ("May", [])
-        var june: (String,[Event]) = ("June", [])
-        var july: (String,[Event]) = ("July", [])
-        var august: (String,[Event]) = ("August", [])
-        var september: (String,[Event]) = ("September", [])
-        var october: (String,[Event]) = ("October", [])
-        var november: (String,[Event]) = ("November", [])
-        var december: (String,[Event]) = ("December", [])
+    
+    typealias eventByMonth = (String, [Event]) // Type Alias for Month header and array of events
+    var eventsByMonth: [eventByMonth] {
+        var january: eventByMonth = ("January", [])
+        var february: eventByMonth = ("February", [])
+        var march: eventByMonth = ("March", [])
+        var april: eventByMonth = ("April", [])
+        var may: eventByMonth = ("May", [])
+        var june: eventByMonth = ("June", [])
+        var july: eventByMonth = ("July", [])
+        var august: eventByMonth = ("August", [])
+        var september: eventByMonth = ("September", [])
+        var october: eventByMonth = ("October", [])
+        var november: eventByMonth = ("November", [])
+        var december: eventByMonth = ("December", [])
         
         // Sort through events
         for event in events {

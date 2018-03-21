@@ -31,23 +31,28 @@ class LaunchScreenCopyViewController: UIViewController, NSFetchedResultsControll
         return NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: CoreDataStack.context, sectionNameKeyPath: nil, cacheName: nil)
     }()
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         announcementsFetchRequestController.delegate = self
         
         // Fetch Blocked Announcements and Members
         do {
-            try announcementsFetchRequestController.performFetch()
-            try memberFetchRequestController.performFetch()
-            try calendarIDFetchRequestController.performFetch()
-            BlockedAnnouncementController.shared.blockedAnnouncements = announcementsFetchRequestController.fetchedObjects ?? []
-            BlockedMemberController.shared.blockedMembers = memberFetchRequestController.fetchedObjects ?? []
-            AddedCalendarIDController.shared.addedCalendarEventIDs = calendarIDFetchRequestController.fetchedObjects ?? []
+            try fetchIDs()
         } catch {
             print("❌Error performing fetch from FetchRequestController: \(error.localizedDescription)")
         }
         UIApplication.shared.isNetworkActivityIndicatorVisible = true
         
+    }
+    
+    fileprivate func fetchIDs() throws {
+        try announcementsFetchRequestController.performFetch()
+        try memberFetchRequestController.performFetch()
+        try calendarIDFetchRequestController.performFetch()
+        BlockedAnnouncementController.shared.blockedAnnouncements = announcementsFetchRequestController.fetchedObjects ?? []
+        BlockedMemberController.shared.blockedMembers = memberFetchRequestController.fetchedObjects ?? []
+        AddedCalendarIDController.shared.addedCalendarEventIDs = calendarIDFetchRequestController.fetchedObjects ?? []
     }
     
     override func viewDidAppear(_ animated: Bool) {

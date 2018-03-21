@@ -15,11 +15,13 @@ class LessonViewController: UIViewController {
     let imageCache = NSCache<NSString, UIImage>()
     var refreshControl: UIRefreshControl!
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var activityIndicatorView: UIActivityIndicatorView!
     
     // MARK: - ViewDidLoad / ViewWillAppear
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+    
         // DataSource and Delegate
         collectionView.dataSource = self
         collectionView.delegate = self
@@ -29,14 +31,7 @@ class LessonViewController: UIViewController {
         
         // Fetch Lessons from RSS Feed
         refresh()
-        
-        // Set up Refresh Control for refresh on pulldown
-        collectionView.alwaysBounceVertical = true
-        collectionView.bounces = true
-        refreshControl = UIRefreshControl()
-        refreshControl.tintColor = #colorLiteral(red: 0.27700001, green: 0.7789999843, blue: 0.9250000119, alpha: 1)
-        refreshControl.addTarget(self, action: #selector(refresh), for: .valueChanged)
-        collectionView.addSubview(refreshControl)
+        setupRefreshControl()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -102,13 +97,13 @@ extension LessonViewController: UICollectionViewDelegate, UICollectionViewDataSo
     func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
         if velocity.y > 0 {
             //Code will work without the animation block.I am using animation block incase if you want to set any delay to it.
-            UIView.animate(withDuration: 0.25, delay: 0.75, options: UIViewAnimationOptions(), animations: {
-                self.navigationController?.setNavigationBarHidden(true, animated: true)
+            UIView.animate(withDuration: 0.25, delay: 0, options: UIViewAnimationOptions(), animations: { [weak self] in
+                self?.navigationController?.setNavigationBarHidden(true, animated: true)
                 UIApplication.shared.isStatusBarHidden = true
             }, completion: nil)
         } else {
-            UIView.animate(withDuration: 0.25, delay: 0.75, options: UIViewAnimationOptions(), animations: {
-                self.navigationController?.setNavigationBarHidden(false, animated: true)
+            UIView.animate(withDuration: 0.25, delay: 0, options: UIViewAnimationOptions(), animations:  { [weak self] in
+                self?.navigationController?.setNavigationBarHidden(false, animated: true)
                 UIApplication.shared.isStatusBarHidden = false
                 UIApplication.shared.statusBarStyle = .lightContent
             }, completion: nil)
@@ -119,11 +114,27 @@ extension LessonViewController: UICollectionViewDelegate, UICollectionViewDataSo
         return CGSize(width: 160.0, height: 180.0)
     }
     
+}
+
+// MARK: - Setup For Refresh on pulldown
+extension LessonViewController {
+    
+    fileprivate func setupRefreshControl() {
+        // Set up Refresh Control for refresh on pulldown
+        collectionView.alwaysBounceVertical = true
+        collectionView.bounces = true
+        refreshControl = UIRefreshControl()
+        refreshControl.tintColor = #colorLiteral(red: 0.27700001, green: 0.7789999843, blue: 0.9250000119, alpha: 1)
+        refreshControl.addTarget(self, action: #selector(refresh), for: .valueChanged)
+        collectionView.addSubview(refreshControl)
+    }
+    
     @objc func refresh() {
         UIApplication.shared.isNetworkActivityIndicatorVisible = true
         LessonController.shared.parseFeedWith(urlString: "https://www.saltlakechristianchurch.com/lessons-on-audio/?format=rss") { [weak self](parsedLessons) in
             self?.lessons = parsedLessons
             DispatchQueue.main.async {
+                self?.activityIndicatorView.isHidden = true
                 self?.collectionView.reloadData()
                 self?.refreshControl.endRefreshing()
                 UIApplication.shared.isNetworkActivityIndicatorVisible = false
@@ -132,5 +143,6 @@ extension LessonViewController: UICollectionViewDelegate, UICollectionViewDataSo
     }
     
 }
+
 
 

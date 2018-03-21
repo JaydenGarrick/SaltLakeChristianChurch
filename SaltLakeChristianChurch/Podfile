@@ -27,5 +27,14 @@ pod 'Ambience'
 target 'SaltLakeChristianChurchTests' do
     inherit! :search_paths
     pod 'Firebase'
-end
+    end
+
+target 'SaltLakeChristianChurchUITests' do
+    inherit! :search_paths
+    pod 'Firebase'
+    pod 'IQKeyboardManager'
+    pod 'PhoneNumberKit', '~> 2.1'
+    pod 'Ambience'
+    end
+
 end

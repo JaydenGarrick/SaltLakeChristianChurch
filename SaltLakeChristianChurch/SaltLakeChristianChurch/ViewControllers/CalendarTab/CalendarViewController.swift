@@ -17,7 +17,9 @@ class CalendarViewController: UIViewController {
     
     // IBOutlets
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
+    // MARK: - View Lifecycle Functions
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -29,16 +31,7 @@ class CalendarViewController: UIViewController {
         self.hideKeyboardWhenTappedAroundAndSetNavBar()
         UIApplication.shared.isNetworkActivityIndicatorVisible = true
         
-        // Initial Fetch of Events
-        EventController.shared.fetchEvents { (success) in
-            if success {
-                DispatchQueue.main.async {
-                    self.tableView.reloadData()
-                    print("✅Successfully fetched Calendar events!")
-                    UIApplication.shared.isNetworkActivityIndicatorVisible = false
-                }
-            }
-        }
+        initialEventFetch()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -53,6 +46,7 @@ class CalendarViewController: UIViewController {
     }
 }
 
+// MARK: - UITableViewDataSource and UITableViewDataSource
 extension CalendarViewController: UITableViewDataSource, UITableViewDelegate {
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -101,7 +95,6 @@ extension CalendarViewController: UITableViewDataSource, UITableViewDelegate {
 
         // Add Action
         let addToCalendar = UIContextualAction(style: .normal, title: "Add to Calendar") { [weak self](action, view, nil) in
-
             self?.addCalendarEventToLocalCalendarAlert(event)
         }
         addToCalendar.backgroundColor = #colorLiteral(red: 0.2392156869, green: 0.6745098233, blue: 0.9686274529, alpha: 1)
@@ -116,17 +109,34 @@ extension CalendarViewController: UITableViewDataSource, UITableViewDelegate {
     func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
         if velocity.y > 0 {
             //Code will work without the animation block.I am using animation block incase if you want to set any delay to it.
-            UIView.animate(withDuration: 2.5, delay: 0.75, options: UIViewAnimationOptions(), animations: {
-                self.navigationController?.setNavigationBarHidden(true, animated: true)
+            UIView.animate(withDuration: 2.5, delay: 0, options: UIViewAnimationOptions(), animations: { [weak self] in
+                self?.navigationController?.setNavigationBarHidden(true, animated: true)
                 UIApplication.shared.statusBarStyle = .default
             }, completion: nil)
         } else {
-            UIView.animate(withDuration: 2.5, delay: 0.75, options: UIViewAnimationOptions(), animations: {
-                self.navigationController?.setNavigationBarHidden(false, animated: true)
+            UIView.animate(withDuration: 2.5, delay: 0, options: UIViewAnimationOptions(), animations: { [weak self] in
+                self?.navigationController?.setNavigationBarHidden(false, animated: true)
                 UIApplication.shared.statusBarStyle = .lightContent
             }, completion: nil)
         }
     }
+    
+    //MARK: - Setup Function
+    fileprivate func initialEventFetch() {
+        // Initial Fetch of Events
+        EventController.shared.fetchEvents { [weak self] (success) in
+            if success {
+                DispatchQueue.main.async {
+                    self?.activityIndicator.isHidden = true
+                    self?.tableView.separatorStyle = UITableViewCellSeparatorStyle.singleLine
+                    self?.tableView.reloadData()
+                    print("✅Successfully fetched Calendar events!")
+                    UIApplication.shared.isNetworkActivityIndicatorVisible = false
+                }
+            }
+        }
+    }
+
 
 }
 
@@ -137,7 +147,7 @@ extension CalendarViewController {
     func addCalendarEventToLocalCalendarAlert(_ event: Event) {
         let alertController = UIAlertController(title: "Add \(event.summary!) to your calendar? 📆", message: nil, preferredStyle: .alert)
         alertController.view.tintColor = #colorLiteral(red: 0.2784313725, green: 0.7803921569, blue: 0.9254901961, alpha: 1)
-        let okayAction = UIAlertAction(title: "OK", style: .default) { (_) in
+        let okayAction = UIAlertAction(title: "OK", style: .default) { [weak self](_) in
             let formatter = DateHelper.inputFormatter
             guard let startDateStringAsString = event.start?.dateTime else { return }
             guard let startDate = formatter.date(from: startDateStringAsString) else { return }
@@ -147,9 +157,8 @@ extension CalendarViewController {
             // Check to see if calendar event has been saved, if not, add it to the event.
             for alreadySavedCalendarID in AddedCalendarIDController.shared.addedCalendarEventIDs {
                 if alreadySavedCalendarID.calendarID == calendarID {
-                    self.presentAlertControllerWithOkayAction(title: "\(event.summary!) is already saved to your calendar!", message: "")
+                    self?.presentAlertControllerWithOkayAction(title: "\(event.summary!) is already saved to your calendar!", message: "")
                     return
-                    // DO WORK - Add alert saying calendar already exists
                 }
             }
             

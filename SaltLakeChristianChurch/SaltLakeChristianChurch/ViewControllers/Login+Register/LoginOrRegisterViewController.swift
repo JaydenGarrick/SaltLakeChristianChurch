@@ -47,34 +47,17 @@ class LoginOrRegisterViewController: UIViewController {
     }
     
     // MARK: - IBActions
+    
     @IBAction func loginOrRegisterToggled(_ sender: UISegmentedControl) {
         if sender.selectedSegmentIndex == 0 {
             isLogin = true
-            UIView.animate(withDuration: 0.3, animations: {
-                self.confirmPasswordTextField.isHidden = true
-                self.confirmPasswordTextField.backgroundColor = .white
-                self.passwordTextField.backgroundColor = .white
-                self.confirmPasswordTextField.text = ""
-                self.passwordTextField.text = ""
-                self.fullnameTextField.isHidden = true
-                self.phoneNumberTextField.isHidden = true
-                self.churchCodeTextField.isHidden = true
-                self.loginButton.setTitle("Login", for: .normal)
-                self.blurView.layoutIfNeeded()
+            UIView.animate(withDuration: 0.3, animations: { [weak self] in
+                self?.UISetupForLoggingIn()
             })
         } else {
             isLogin = false
-            UIView.animate(withDuration: 0.3, animations: {
-                self.confirmPasswordTextField.isHidden = false
-                self.confirmPasswordTextField.backgroundColor = .white
-                self.passwordTextField.backgroundColor = .white
-                self.confirmPasswordTextField.text = ""
-                self.passwordTextField.text = ""
-                self.fullnameTextField.isHidden = false
-                self.phoneNumberTextField.isHidden = false
-                self.churchCodeTextField.isHidden = false
-                self.loginButton.setTitle("Register", for: .normal)
-                self.blurView.layoutIfNeeded()
+            UIView.animate(withDuration: 0.3, animations: { [weak self] in
+                self?.UISetupForCreatingUser()
             })
         }
     }
@@ -86,7 +69,6 @@ class LoginOrRegisterViewController: UIViewController {
         // Handle Creating User
         if isLogin == false {
             createUser()
-            
         // Handle logging in user
         } else {
             loginUser()
@@ -165,14 +147,6 @@ extension LoginOrRegisterViewController {
             guard let memberKey  = snapshot.value as? Int else { return }
             self.memberCode = memberKey
         }
-    }
-    
-    fileprivate func setUI() {
-        confirmPasswordTextField.isHidden = true
-        fullnameTextField.isHidden = true
-        phoneNumberTextField.isHidden = true
-        churchCodeTextField.isHidden = true
-        blurView.layoutIfNeeded()
     }
     
     fileprivate func setDelegates() {
@@ -282,6 +256,43 @@ extension LoginOrRegisterViewController {
         })
     }
     
+}
+
+// MARK: - Setup Functions
+extension LoginOrRegisterViewController {
+    fileprivate func UISetupForLoggingIn() {
+        self.confirmPasswordTextField.isHidden = true
+        self.confirmPasswordTextField.backgroundColor = .white
+        self.passwordTextField.backgroundColor = .white
+        self.confirmPasswordTextField.text = ""
+        self.passwordTextField.text = ""
+        self.fullnameTextField.isHidden = true
+        self.phoneNumberTextField.isHidden = true
+        self.churchCodeTextField.isHidden = true
+        self.loginButton.setTitle("Login", for: .normal)
+        self.blurView.layoutIfNeeded()
+    }
+    
+    fileprivate func UISetupForCreatingUser() {
+        self.confirmPasswordTextField.isHidden = false
+        self.confirmPasswordTextField.backgroundColor = .white
+        self.passwordTextField.backgroundColor = .white
+        self.confirmPasswordTextField.text = ""
+        self.passwordTextField.text = ""
+        self.fullnameTextField.isHidden = false
+        self.phoneNumberTextField.isHidden = false
+        self.churchCodeTextField.isHidden = false
+        self.loginButton.setTitle("Register", for: .normal)
+        self.blurView.layoutIfNeeded()
+    }
+    
+    fileprivate func setUI() {
+        confirmPasswordTextField.isHidden = true
+        fullnameTextField.isHidden = true
+        phoneNumberTextField.isHidden = true
+        churchCodeTextField.isHidden = true
+        blurView.layoutIfNeeded()
+    }
 }
 
 

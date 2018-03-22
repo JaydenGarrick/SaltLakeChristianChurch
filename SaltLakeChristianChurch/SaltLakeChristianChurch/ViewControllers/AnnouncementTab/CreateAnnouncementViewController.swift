@@ -24,7 +24,7 @@ class CreateAnnouncementViewController: UIViewController, UINavigationController
         super.viewDidLoad()
         
         // Hides keyboard and sets navigationbar
-        self.hideKeyboardWhenTappedAroundAndSetNavBar()
+        hideKeyboardWhenTappedAroundAndSetNavBar()
         
         // Set Delegate
         pickerController.delegate = self
@@ -39,17 +39,17 @@ class CreateAnnouncementViewController: UIViewController, UINavigationController
     
     @IBAction func createAnnouncementButtonTapped(_ sender: Any) {
         if announcementImageView.image == nil {
-            self.presentAlertControllerWithOkayAction(title: "Image Missing", message: "Image required to create an announcement")
+            presentAlertControllerWithOkayAction(title: "Image Missing", message: "Image required to create an announcement")
         } else {
             UIApplication.shared.isNetworkActivityIndicatorVisible = true
             guard let announcementImage = announcementImageView.image,
                 let announcementName = announcementNameTextField.text,
                 let description = announcementDescriptionTextView.text else { print("Couldn't create announcement, line 47") ; return }
             
-            AnnouncementController.shared.createAnnouncement(announcementImage: announcementImage, announcementName: announcementName, description: description) { (success) in
+            AnnouncementController.shared.createAnnouncement(announcementImage: announcementImage, announcementName: announcementName, description: description) { [weak self](success) in
                 if success {
                     UIApplication.shared.isNetworkActivityIndicatorVisible = false
-                    self.navigationController?.popViewController(animated: true)
+                    self?.navigationController?.popViewController(animated: true)
                 }
             }
         }
@@ -67,8 +67,8 @@ extension CreateAnnouncementViewController: UIImagePickerControllerDelegate {
         imageToSaveToStorage = announcementPicture
         addImageButton.setTitle("", for: .normal)
         
-        DispatchQueue.main.async {
-            self.dismiss(animated: true, completion: nil)
+        DispatchQueue.main.async { [weak self] in
+            self?.dismiss(animated: true, completion: nil)
         }
     }
     

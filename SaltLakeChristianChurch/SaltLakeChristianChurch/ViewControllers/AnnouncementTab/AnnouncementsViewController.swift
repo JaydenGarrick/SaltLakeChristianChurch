@@ -25,7 +25,7 @@ class AnnouncementsViewController: UIViewController, NSFetchedResultsControllerD
         super.viewDidLoad()
     
         // HandleNavBar and Keyboard and Set network indicator
-        self.hideKeyboardWhenTappedAroundAndSetNavBar()
+        hideKeyboardWhenTappedAroundAndSetNavBar()
         
         // Check to see if logged in member is admin
         
@@ -91,7 +91,7 @@ extension AnnouncementsViewController {
         tableView.dataSource = self
         
         if MemberController.shared.loggedInMember?.isAdmin == false || MemberController.shared.isLoggedIn == false {
-            self.navigationItem.rightBarButtonItem = nil
+            navigationItem.rightBarButtonItem = nil
         }
 
         // Handle bug where button is left on selected
@@ -217,7 +217,7 @@ extension AnnouncementsViewController: MFMailComposeViewControllerDelegate, Anno
         actionSheet.addAction(hideAction)
         actionSheet.addAction(reportAction)
         actionSheet.addAction(cancelAction)
-        self.present(actionSheet, animated: true)
+        present(actionSheet, animated: true)
     }
     
     func presentMailViewController() {
@@ -227,12 +227,12 @@ extension AnnouncementsViewController: MFMailComposeViewControllerDelegate, Anno
             mailComposeViewController.setToRecipients(["jaydengarrick@gmail.com"])
             mailComposeViewController.setSubject("Offensive material")
             mailComposeViewController.setMessageBody("", isHTML: false)
-            self.present(mailComposeViewController, animated: true)
+            present(mailComposeViewController, animated: true)
         }
     }
     
     func hideContent(cell: UITableViewCell) {
-        if let indexPath = self.tableView.indexPath(for: cell) {
+        if let indexPath = tableView.indexPath(for: cell) {
             let announcement = AnnouncementController.shared.announcements[indexPath.row]
             AnnouncementController.shared.hide(announcement: announcement, completion: { [weak self](success) in
                 if success  {

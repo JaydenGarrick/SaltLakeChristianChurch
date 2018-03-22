@@ -19,7 +19,7 @@ class MoreTableViewController: UITableViewController {
         super.viewDidLoad()
         
         // Hides Keyboard and sets NavigationBar
-        self.hideKeyboardWhenTappedAroundAndSetNavBar()
+        hideKeyboardWhenTappedAroundAndSetNavBar()
     }
     
     override func viewWillAppear(_ animated: Bool) {

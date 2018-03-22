@@ -97,7 +97,7 @@ class EventController {
         request.httpMethod = "GET"
         
         // dataTask + Resume
-        let dataTask = URLSession.shared.dataTask(with: request) { (data, _, error) in
+        let dataTask = URLSession.shared.dataTask(with: request) { [weak self](data, _, error) in
             if let error = error {
                 print("❌Error fetching events: \(error.localizedDescription)")
                 completion(false)
@@ -120,7 +120,7 @@ class EventController {
                 if tempEventArray.count == 0 {
                     completion(false)
                 } else {
-                    self.events = tempEventArray
+                    self?.events = tempEventArray
                     completion(true)
                 }
             } catch let error {

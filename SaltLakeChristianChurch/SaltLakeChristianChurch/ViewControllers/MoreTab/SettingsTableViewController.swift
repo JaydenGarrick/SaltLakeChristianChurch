@@ -16,7 +16,7 @@ class SettingsTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.hideKeyboardWhenTappedAroundAndSetNavBar()
+        hideKeyboardWhenTappedAroundAndSetNavBar()
         if MemberController.shared.isLoggedIn == true {
             loginSignUpLabel.text = MemberController.shared.loggedInMember?.fullName
         }
@@ -46,7 +46,7 @@ class SettingsTableViewController: UITableViewController {
         
         if indexPath.row == 1 {
             if MemberController.shared.isLoggedIn == false {
-                self.presentAlertControllerWithOkayAction(title: "Can't edit profile", message: "You must be logged in to edit your profile.")
+                presentAlertControllerWithOkayAction(title: "Can't edit profile", message: "You must be logged in to edit your profile.")
             } else {
                 performSegue(withIdentifier: "ToEditAccount", sender: self)
             }
@@ -59,7 +59,7 @@ extension SettingsTableViewController {
     func presentLogOutActionSheet() {
         let alertController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
-        let logoutAction = UIAlertAction(title: "Logout", style: .destructive) { (_) in
+        let logoutAction = UIAlertAction(title: "Logout", style: .destructive) { [weak self](_) in
             do {
                 try Auth.auth().signOut()
                 MemberController.shared.isLoggedIn = false
@@ -68,9 +68,9 @@ extension SettingsTableViewController {
                 print("Error logging user out: \(error.localizedDescription)")
             }
             MemberController.shared.loggedInMember = nil
-            self.loginSignUpLabel.text = "Login / Register"
-            self.dismiss(animated: true)
-            self.tableView.reloadData()
+            self?.loginSignUpLabel.text = "Login / Register"
+            self?.dismiss(animated: true)
+            self?.tableView.reloadData()
         }
         alertController.addAction(cancelAction)
         alertController.addAction(logoutAction)

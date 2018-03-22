@@ -17,7 +17,7 @@ class ContactUsViewController: UIViewController {
     // MARK: - viewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.hideKeyboardWhenTappedAroundAndSetNavBar()
+        hideKeyboardWhenTappedAroundAndSetNavBar()
         guard let url = URL(string: "https://www.saltlakechristianchurch.com/contact-1/#contact") else { return }
         let request = URLRequest(url: url)
         webView.load(request)

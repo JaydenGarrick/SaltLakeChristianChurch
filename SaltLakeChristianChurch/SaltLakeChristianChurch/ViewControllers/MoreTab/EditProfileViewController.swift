@@ -34,7 +34,7 @@ class EditProfileViewController: UIViewController, UINavigationControllerDelegat
         pickerController.delegate = self
         
         // Handle keyboard and setup navigation bar
-        self.hideKeyboardWhenTappedAroundAndSetNavBar()
+        hideKeyboardWhenTappedAroundAndSetNavBar()
         
         // Make imageView a circle
         let cornerRadius = profilePictureImageView.bounds.height / 2
@@ -60,14 +60,14 @@ class EditProfileViewController: UIViewController, UINavigationControllerDelegat
             let email = emailTextField.text,
             let address = addressTextField.text else { return }
         
-        MemberController.shared.updateMemberWith(image: image, address: address, email: email, fullName: nil, phoneNumber: phoneNumber) { (success) in
+        MemberController.shared.updateMemberWith(image: image, address: address, email: email, fullName: nil, phoneNumber: phoneNumber) { [weak self](success) in
             if success {
                 UIApplication.shared.isNetworkActivityIndicatorVisible = false
                 print("Successfully updated Member!")
-                self.dismiss(animated: true)
+                self?.dismiss(animated: true)
             } else {
                 UIApplication.shared.isNetworkActivityIndicatorVisible = false
-                self.presentAlertControllerWithOkayAction(title: "Saving error", message: "Error updating profile - Please check your connection and try again")
+                self?.presentAlertControllerWithOkayAction(title: "Saving error", message: "Error updating profile - Please check your connection and try again")
 
             }
         }
@@ -94,8 +94,8 @@ class EditProfileViewController: UIViewController, UINavigationControllerDelegat
         }
         if loggedInMember.imageAsURL != "" {
             guard let imageURL = loggedInMember.imageAsURL else { return }
-            MemberController.shared.loadImageFrom(imageURL: imageURL, completion: { (profileImage) in
-                self.profilePictureImageView.image = profileImage
+            MemberController.shared.loadImageFrom(imageURL: imageURL, completion: { [weak self](profileImage) in
+                self?.profilePictureImageView.image = profileImage
             })
         }
     }
@@ -112,9 +112,9 @@ extension EditProfileViewController: UIImagePickerControllerDelegate {
         imageToSaveToStorage = profilePicture
         
         // Update UI
-        DispatchQueue.main.async {
-            self.dismiss(animated: true, completion: nil)
-            self.profilePictureImageView.alpha = 1
+        DispatchQueue.main.async { [weak self] in
+            self?.dismiss(animated: true, completion: nil)
+            self?.profilePictureImageView.alpha = 1
         }
     }
     

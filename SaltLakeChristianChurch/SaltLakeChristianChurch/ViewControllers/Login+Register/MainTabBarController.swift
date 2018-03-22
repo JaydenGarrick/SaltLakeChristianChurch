@@ -25,11 +25,11 @@ class MainTabBarController: UITabBarController {
         bottomAnchorConstraint.constant = view.frame.height
         minimizedTopAnchorConstraint.isActive = true
         
-        UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 1, options: .curveEaseOut, animations: {
-            self.view.layoutIfNeeded()
-            self.tabBar.transform = .identity
-            self.lessonDetailView.normalPlayerView.alpha = 0
-            self.lessonDetailView.miniPlayerView.alpha = 1
+        UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 1, options: .curveEaseOut, animations: { [weak self] in
+            self?.view.layoutIfNeeded()
+            self?.tabBar.transform = .identity
+            self?.lessonDetailView.normalPlayerView.alpha = 0
+            self?.lessonDetailView.miniPlayerView.alpha = 1
         })
     }
     
@@ -43,11 +43,11 @@ class MainTabBarController: UITabBarController {
             lessonDetailView.lesson = lesson
         }
         
-        UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 1, options: .curveEaseOut, animations: {
-            self.view.layoutIfNeeded()
-            self.tabBar.transform = CGAffineTransform(translationX: 0, y: 100)
-            self.lessonDetailView.normalPlayerView.alpha = 1
-            self.lessonDetailView.miniPlayerView.alpha = 0
+        UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 1, options: .curveEaseOut, animations: { [weak self] in
+            self?.view.layoutIfNeeded()
+            self?.tabBar.transform = CGAffineTransform(translationX: 0, y: 100)
+            self?.lessonDetailView.normalPlayerView.alpha = 1
+            self?.lessonDetailView.miniPlayerView.alpha = 0
         })
     }
     

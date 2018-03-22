@@ -89,9 +89,7 @@ class LessonDetailView: UIView {
     }
     
     @objc fileprivate func checkForLag() {
-        if player.timeControlStatus == .paused {
-            return
-        } else if player.rate == 0 {
+        if player.rate == 0 {
             loadingView.isHidden = false
         } else {
             loadingView.isHidden = true
@@ -234,8 +232,8 @@ extension LessonDetailView {
         player.addPeriodicTimeObserver(forInterval: interval, queue: .main) { [weak self](time) in
             if self?.player.currentItem?.status == .readyToPlay {
                 self?.currentTimeLabel.text = time.toDisplayString()
-                let durationTime = self?.player.currentItem?.duration
-                self?.durationLabel.text = durationTime?.toDisplayString()
+                guard let durationTime = self?.player.currentItem?.duration else { return }
+                self?.durationLabel.text = (durationTime - time).toDisplayString()
                 self?.updateCurrentTimeSlider()
             }
         }
@@ -245,7 +243,7 @@ extension LessonDetailView {
         let currentTimeSeconds = CMTimeGetSeconds(player.currentTime())
         let durationSeconds = CMTimeGetSeconds(player.currentItem?.duration ?? CMTimeMake(1, 1))
         let percentage = currentTimeSeconds / durationSeconds
-        self.currentTimeSlider.value = Float(percentage)
+        currentTimeSlider.value = Float(percentage)
     }
     
     fileprivate func observeBoundaryTime() {

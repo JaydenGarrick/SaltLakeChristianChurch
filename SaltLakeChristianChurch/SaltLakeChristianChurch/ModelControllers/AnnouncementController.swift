@@ -26,7 +26,7 @@ class AnnouncementController {
     // MARK: - Firebase Upload and Download Methods
     func createAnnouncement(announcementImage: UIImage, announcementName: String, description: String, completion: @escaping ((Bool)-> Void)) {
         guard let imageData = UIImageJPEGRepresentation(announcementImage, 0.9) else { completion(false) ; return }
-        photoStorageReference.child(announcementName).putData(imageData, metadata: nil) { (metaData, error) in
+        photoStorageReference.child(announcementName).putData(imageData, metadata: nil) { [weak self](metaData, error) in
             if let error = error {
                 print("❌Error creating announcement - Can't store image: \(error.localizedDescription)")
                 completion(false)
@@ -42,14 +42,14 @@ class AnnouncementController {
                                           Announcement.AnnouncementKey.imageAsStringURL : downloadedImageURL,
                                           Announcement.AnnouncementKey.rsvpTotal : 0,
                                           Announcement.AnnouncementKey.creationDate : dateAsDouble]
-            self.announcementDatabase.child(announcementID).updateChildValues(values)
+            self?.announcementDatabase.child(announcementID).updateChildValues(values)
             completion(true)
         }
     }
     
     func fetchAnnouncements(completion: @escaping ((Bool)->Void)) {
         let annoucementQuery = announcementDatabase.queryOrdered(byChild: Announcement.AnnouncementKey.creationDate)
-        annoucementQuery.observeSingleEvent(of: .value) { (snapshot) in
+        annoucementQuery.observeSingleEvent(of: .value) { [weak self](snapshot) in
             var fetchedAnnouncements: [Announcement] = []
             for announcement in snapshot.children.allObjects as! [DataSnapshot] {
                 let announcementDictionary = announcement.value as? [String: Any] ?? [:]
@@ -71,7 +71,7 @@ class AnnouncementController {
                     }
                 }
             }
-            self.announcements = fetchedAnnouncements.reversed()
+            self?.announcements = fetchedAnnouncements.reversed()
             completion(true)
         }
     }

@@ -28,7 +28,7 @@ class CalendarViewController: UIViewController {
         tableView.dataSource = self
         
         // HandleNavBar and Keyboard
-        self.hideKeyboardWhenTappedAroundAndSetNavBar()
+        hideKeyboardWhenTappedAroundAndSetNavBar()
         UIApplication.shared.isNetworkActivityIndicatorVisible = true
         
         initialEventFetch()

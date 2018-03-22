@@ -19,23 +19,23 @@ class DirectoryTableViewController: UITableViewController {
     // MARK: - viewDidLoad / viewWillAppear
     override func viewDidLoad() {
         super.viewDidLoad()
-        MemberController.shared.fetchMembersForDirectory(memberID: nil) { (success) in
+        MemberController.shared.fetchMembersForDirectory(memberID: nil) { [weak self](success) in
             if success {
-                DispatchQueue.main.async {
-                    self.members = MemberController.shared.members
-                    self.createMemberDictionary()
-                    self.tableView.reloadData()
+                DispatchQueue.main.async { [weak self] in
+                    self?.members = MemberController.shared.members
+                    self?.createMemberDictionary()
+                    self?.tableView.reloadData()
                 }
             } else {
-                self.presentAlertControllerWithOkayAction(title: "Service Error", message: "Coudln't retrieve the members from the database")
+                self?.presentAlertControllerWithOkayAction(title: "Service Error", message: "Coudln't retrieve the members from the database")
             }
         }
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        self.hideKeyboardWhenTappedAroundAndSetNavBar()
-        self.navigationController?.navigationBar.isTranslucent = false
-        self.navigationController?.view.backgroundColor = UIColor(red: 71.0/255.0, green: 199.0/255.0, blue: 236/255.0, alpha: 1.0)
+        hideKeyboardWhenTappedAroundAndSetNavBar()
+        navigationController?.navigationBar.isTranslucent = false
+        navigationController?.view.backgroundColor = UIColor(red: 71.0/255.0, green: 199.0/255.0, blue: 236/255.0, alpha: 1.0)
     }
     
     // MARK: - Function to sort members in dictionary for index
@@ -139,23 +139,23 @@ extension DirectoryTableViewController {
         BlockedMemberController.shared.add(blockedID: memberID)
         
         // Fetch the members for the directory
-        MemberController.shared.fetchMembersForDirectory(memberID: nil) { (success) in
+        MemberController.shared.fetchMembersForDirectory(memberID: nil) { [weak self](success) in
             if success {
                 DispatchQueue.main.async {
-                    self.members = MemberController.shared.members
+                    self?.members = MemberController.shared.members
                     UIApplication.shared.isNetworkActivityIndicatorVisible = false
-                    self.tableView.reloadData()
+                    self?.tableView.reloadData()
                 }
             } else {
-                self.presentAlertControllerWithOkayAction(title: "Service Error", message: "Coudln't retrieve the members from the database")
+                self?.presentAlertControllerWithOkayAction(title: "Service Error", message: "Coudln't retrieve the members from the database")
             }
         }
     }
     
     func presentHideAlert(member: Member) {
         let alertController = UIAlertController(title: "Are you sure you want to block this member?", message: "Once you have completed this action, it can't be undone", preferredStyle: .alert)
-        let blockAction = UIAlertAction(title: "Block", style: .destructive) { (_) in
-            self.hideMember(member: member)
+        let blockAction = UIAlertAction(title: "Block", style: .destructive) { [weak self](_) in
+            self?.hideMember(member: member)
         }
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
         alertController.addAction(blockAction)

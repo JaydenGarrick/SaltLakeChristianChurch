@@ -14,7 +14,7 @@ class GiveViewController: UIViewController {
         super.viewDidLoad()
 
         // HandleNavBar and Keyboard
-        self.hideKeyboardWhenTappedAroundAndSetNavBar()
+        hideKeyboardWhenTappedAroundAndSetNavBar()
     }
     
     override func viewWillAppear(_ animated: Bool) {

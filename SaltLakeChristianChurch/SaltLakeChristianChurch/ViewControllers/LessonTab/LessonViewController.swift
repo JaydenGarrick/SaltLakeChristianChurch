@@ -27,7 +27,7 @@ class LessonViewController: UIViewController {
         collectionView.delegate = self
         
         // HandleNavBar and Keyboard
-        self.hideKeyboardWhenTappedAroundAndSetNavBar()
+        hideKeyboardWhenTappedAroundAndSetNavBar()
         
         // Fetch Lessons from RSS Feed
         refresh()

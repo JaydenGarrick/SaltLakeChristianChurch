@@ -66,6 +66,9 @@ class LaunchScreenCopyViewController: UIViewController, NSFetchedResultsControll
     }
     
     func fetchLoggedInUser() {
+        let mainStoryboard = UIStoryboard(name: "Login", bundle: nil)
+        let tabBarViewController = mainStoryboard.instantiateViewController(withIdentifier: "id") as! MainTabBarController
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
         if Auth.auth().currentUser?.uid != nil {
             guard let uuid = Auth.auth().currentUser?.uid else { self.performSegue(withIdentifier: "LaunchSegue", sender: self) ; return }
             let reference = Database.database().reference().child("members").child(uuid)
@@ -78,11 +81,11 @@ class LaunchScreenCopyViewController: UIViewController, NSFetchedResultsControll
                 MemberController.shared.loggedInMember = Member(memberID: snapshot.key, memberDictionary: memberDictionary)
                 MemberController.shared.isLoggedIn = true
                 print("✅Successfully Fetched logged in user!")
-                self.performSegue(withIdentifier: "LaunchSegue", sender: self)
+                appDelegate.window?.rootViewController = tabBarViewController
             })
         } else {
             print("⚠️User isn't logged in")
-            self.performSegue(withIdentifier: "LaunchSegue", sender: self)
+            appDelegate.window?.rootViewController = tabBarViewController
         }
     }
     

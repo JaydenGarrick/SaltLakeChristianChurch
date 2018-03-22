@@ -21,7 +21,7 @@ class LessonViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    
+        
         // DataSource and Delegate
         collectionView.dataSource = self
         collectionView.delegate = self
@@ -39,16 +39,6 @@ class LessonViewController: UIViewController {
         UIApplication.shared.isStatusBarHidden = false
     }
 
-    // MARK: - Navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "LessonAudio" {
-            guard let indexPaths = collectionView.indexPathsForSelectedItems else { return }
-            guard let indexPath = indexPaths.first else { return }
-            let destinationVC = segue.destination as! AudioLessonViewController
-            let lesson = lessons[indexPath.row]
-            destinationVC.lesson = lesson
-        }
-    }
     
 }
 
@@ -112,6 +102,11 @@ extension LessonViewController: UICollectionViewDelegate, UICollectionViewDataSo
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: 160.0, height: 180.0)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let lesson = lessons[indexPath.row]
+        UIApplication.mainTabBarController()?.maximizePlayerDetails(lesson: lesson)
     }
     
 }

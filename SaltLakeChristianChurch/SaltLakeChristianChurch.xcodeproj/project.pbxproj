@@ -19,6 +19,9 @@
 		8109FBB120216D59004B1655 /* AnnouncementsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8109FBB020216D59004B1655 /* AnnouncementsViewController.swift */; };
 		8109FBB320216D6B004B1655 /* GiveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8109FBB220216D6B004B1655 /* GiveViewController.swift */; };
 		812B088B20630C0A0030F6FF /* AudioLessonView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 812B088A20630C0A0030F6FF /* AudioLessonView.xib */; };
+		812B088D20630E240030F6FF /* LessonDetailview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 812B088C20630E240030F6FF /* LessonDetailview.swift */; };
+		812B088F20630E610030F6FF /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 812B088E20630E610030F6FF /* MainTabBarController.swift */; };
+		812B0891206323AE0030F6FF /* LessonDetailView+Gestures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 812B0890206323AE0030F6FF /* LessonDetailView+Gestures.swift */; };
 		815E23E2201FE47500157B18 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 815E23E1201FE47500157B18 /* AppDelegate.swift */; };
 		815E23E7201FE47500157B18 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 815E23E5201FE47500157B18 /* Login.storyboard */; };
 		815E23E9201FE47500157B18 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 815E23E8201FE47500157B18 /* Assets.xcassets */; };
@@ -55,7 +58,6 @@
 		8199A82E2028BD2100E02BC0 /* Announcement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8199A82D2028BD2100E02BC0 /* Announcement.swift */; };
 		8199A8302028BD3500E02BC0 /* AnnouncementController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8199A82F2028BD3500E02BC0 /* AnnouncementController.swift */; };
 		8199A8352028BDB000E02BC0 /* AnnouncementTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8199A8342028BDB000E02BC0 /* AnnouncementTableViewCell.swift */; };
-		819F7FC2202E56110067FBDF /* AudioLessonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819F7FC1202E56110067FBDF /* AudioLessonViewController.swift */; };
 		819F7FC820310DC70067FBDF /* SaltLakeChristianChurch.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 819F7FC620310DC70067FBDF /* SaltLakeChristianChurch.xcdatamodeld */; };
 		819F7FCA20310F430067FBDF /* CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819F7FC920310F430067FBDF /* CoreData.swift */; };
 		819F7FCC20310FC50067FBDF /* BlockedAnnouncement+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819F7FCB20310FC50067FBDF /* BlockedAnnouncement+Convenience.swift */; };
@@ -85,6 +87,9 @@
 		8109FBB020216D59004B1655 /* AnnouncementsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnouncementsViewController.swift; sourceTree = "<group>"; };
 		8109FBB220216D6B004B1655 /* GiveViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GiveViewController.swift; sourceTree = "<group>"; };
 		812B088A20630C0A0030F6FF /* AudioLessonView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AudioLessonView.xib; sourceTree = "<group>"; };
+		812B088C20630E240030F6FF /* LessonDetailview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonDetailview.swift; sourceTree = "<group>"; };
+		812B088E20630E610030F6FF /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
+		812B0890206323AE0030F6FF /* LessonDetailView+Gestures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LessonDetailView+Gestures.swift"; sourceTree = "<group>"; };
 		815E23DE201FE47500157B18 /* SaltLakeChristianChurch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SaltLakeChristianChurch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		815E23E1201FE47500157B18 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		815E23E6201FE47500157B18 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Login.storyboard; sourceTree = "<group>"; };
@@ -123,7 +128,6 @@
 		8199A82D2028BD2100E02BC0 /* Announcement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Announcement.swift; sourceTree = "<group>"; };
 		8199A82F2028BD3500E02BC0 /* AnnouncementController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnouncementController.swift; sourceTree = "<group>"; };
 		8199A8342028BDB000E02BC0 /* AnnouncementTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnouncementTableViewCell.swift; sourceTree = "<group>"; };
-		819F7FC1202E56110067FBDF /* AudioLessonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioLessonViewController.swift; sourceTree = "<group>"; };
 		819F7FC720310DC70067FBDF /* BlockedAnnouncements.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BlockedAnnouncements.xcdatamodel; sourceTree = "<group>"; };
 		819F7FC920310F430067FBDF /* CoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreData.swift; sourceTree = "<group>"; };
 		819F7FCB20310FC50067FBDF /* BlockedAnnouncement+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BlockedAnnouncement+Convenience.swift"; sourceTree = "<group>"; };
@@ -311,6 +315,7 @@
 		8181E0952028C5180093CC04 /* Login+Register */ = {
 			isa = PBXGroup;
 			children = (
+				812B088E20630E610030F6FF /* MainTabBarController.swift */,
 				8199A7F92023DD6600E02BC0 /* LaunchScreenCopyViewController.swift */,
 				815E24212020F02100157B18 /* LoginOrRegisterViewController.swift */,
 			);
@@ -329,7 +334,8 @@
 			isa = PBXGroup;
 			children = (
 				8109FBAC20216D30004B1655 /* LessonViewController.swift */,
-				819F7FC1202E56110067FBDF /* AudioLessonViewController.swift */,
+				812B088C20630E240030F6FF /* LessonDetailview.swift */,
+				812B0890206323AE0030F6FF /* LessonDetailView+Gestures.swift */,
 			);
 			path = LessonTab;
 			sourceTree = "<group>";
@@ -541,10 +547,11 @@
 				815E2406201FE8F800157B18 /* UIImageViewX.swift in Sources */,
 				815E240E201FE8F800157B18 /* UITextFieldX.swift in Sources */,
 				8109FBB320216D6B004B1655 /* GiveViewController.swift in Sources */,
-				819F7FC2202E56110067FBDF /* AudioLessonViewController.swift in Sources */,
+				812B088F20630E610030F6FF /* MainTabBarController.swift in Sources */,
 				815E24222020F02100157B18 /* LoginOrRegisterViewController.swift in Sources */,
 				817B4980202D06EC00A62211 /* LessonController.swift in Sources */,
 				819F7FC820310DC70067FBDF /* SaltLakeChristianChurch.xcdatamodeld in Sources */,
+				812B088D20630E240030F6FF /* LessonDetailview.swift in Sources */,
 				81DBA593202231D7001EF8E7 /* MoreTableViewController.swift in Sources */,
 				8199A7BD2022484400E02BC0 /* DirectoryTableViewController.swift in Sources */,
 				819F7FCC20310FC50067FBDF /* BlockedAnnouncement+Convenience.swift in Sources */,
@@ -565,6 +572,7 @@
 				815E2409201FE8F800157B18 /* UIViewControllerX.swift in Sources */,
 				8109FBB120216D59004B1655 /* AnnouncementsViewController.swift in Sources */,
 				8199A7BF20228D2A00E02BC0 /* MemberDetailViewController.swift in Sources */,
+				812B0891206323AE0030F6FF /* LessonDetailView+Gestures.swift in Sources */,
 				819F7FCE203111740067FBDF /* BlockedAnnouncementController.swift in Sources */,
 				815E240A201FE8F800157B18 /* UIViewXRadialGradient.swift in Sources */,
 				817B495A202B80B100A62211 /* DateHelper.swift in Sources */,

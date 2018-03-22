@@ -8,7 +8,9 @@
 
 import UIKit
 import Firebase
+import AVKit
 
+// MARK: - UIViewController
 extension UIViewController {
     func hideKeyboardWhenTappedAroundAndSetNavBar() {
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
@@ -33,6 +35,7 @@ extension UIViewController {
     
 }
 
+// MARK: - UIImage
 extension UIImage {
     func scale(newWidth: CGFloat) -> UIImage {
         
@@ -54,3 +57,28 @@ extension UIImage {
     }
     
 }
+
+// MARK: - UIApplication
+extension UIApplication {
+    static func mainTabBarController() -> MainTabBarController? {
+        return shared.keyWindow?.rootViewController as? MainTabBarController
+    }
+}
+
+// MARK: - CMTime
+extension CMTime {
+    func toDisplayString() -> String {
+        if CMTimeGetSeconds(self).isNaN {
+            return "--:--:--"
+        }
+        let totalSeconds = Int(CMTimeGetSeconds(self))
+        let seconds = totalSeconds % 60
+        let minutes = totalSeconds % (60 * 60) / 60
+        let hours = totalSeconds / 60 / 60
+        let timeFormatString = String(format: "%2d:%02d:%02d", hours, minutes, seconds)
+        return timeFormatString
+    }
+}
+
+
+

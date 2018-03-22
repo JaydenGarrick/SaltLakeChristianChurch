@@ -10,7 +10,6 @@ import UIKit
 
 class MemberDetailViewController: UIViewController {
     
-    
     // Member for current directory
     var member: Member?
 
@@ -22,20 +21,19 @@ class MemberDetailViewController: UIViewController {
     @IBOutlet weak var imageView: UIImageViewX!
     let imageCache = NSCache<NSString, UIImage>()
     
-    
     // MARK: - ViewDidLoad / Appear
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Setup for navigation bar
-        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
-        self.navigationController?.navigationBar.shadowImage = UIImage()
-        self.navigationController?.navigationBar.isTranslucent = true
-        self.navigationController?.view.backgroundColor = .clear
+        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        navigationController?.navigationBar.shadowImage = UIImage()
+        navigationController?.navigationBar.isTranslucent = true
+        navigationController?.view.backgroundColor = .clear
         
         // Create round Profile Picture
-        self.imageView.layer.cornerRadius = self.imageView.frame.size.width / 2
-        self.imageView.clipsToBounds = true
+        imageView.layer.cornerRadius = imageView.frame.size.width / 2
+        imageView.clipsToBounds = true
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -54,13 +52,13 @@ class MemberDetailViewController: UIViewController {
             if member.imageAsURL != "" {
                 guard let imageAsURL = member.imageAsURL else { return }
                 if let cachedImage = imageCache.object(forKey: imageAsURL as NSString) {
-                    self.imageView.image = cachedImage
+                    imageView.image = cachedImage
                 } else {
-                    MemberController.shared.loadImageFrom(imageURL: imageAsURL, completion: { (image) in
+                    MemberController.shared.loadImageFrom(imageURL: imageAsURL, completion: { [weak self](image) in
                         guard let image = image else { return }
-                        self.imageCache.setObject(image, forKey: imageAsURL as NSString)
-                        DispatchQueue.main.async {
-                            self.imageView.image = image
+                        self?.imageCache.setObject(image, forKey: imageAsURL as NSString)
+                        DispatchQueue.main.async { [weak self] in
+                            self?.imageView.image = image
                         }
                     })
                 }
@@ -68,5 +66,4 @@ class MemberDetailViewController: UIViewController {
         }
     }
  
-
 }

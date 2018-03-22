@@ -19,7 +19,7 @@ class MoreTableViewController: UITableViewController {
         super.viewDidLoad()
         
         // Hides Keyboard and sets NavigationBar
-        self.hideKeyboardWhenTappedAroundAndSetNavBar()
+        hideKeyboardWhenTappedAroundAndSetNavBar()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -57,11 +57,11 @@ extension MoreTableViewController {
         let actionSheet = UIAlertController(title: "For privacy reasons, you must be a member of Salt Lake Christian Church to access the directory", message: nil, preferredStyle: .actionSheet)
         actionSheet.view.tintColor = #colorLiteral(red: 0.2784313725, green: 0.7803921569, blue: 0.9254901961, alpha: 1)
         let okayAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
-        let contactUsAction = UIAlertAction(title: "Interested in becoming a member? Contact us", style: .default) { (_) in
-            self.performSegue(withIdentifier: "ToContactUs", sender: self)
+        let contactUsAction = UIAlertAction(title: "Interested in becoming a member? Contact us", style: .default) { [weak self](_) in
+            self?.performSegue(withIdentifier: "ToContactUs", sender: self)
         }
-        let loginAction = UIAlertAction(title: "Already a member? Login", style: .default) { (_) in
-            self.performSegue(withIdentifier: "ToLogin", sender: self)
+        let loginAction = UIAlertAction(title: "Already a member? Login", style: .default) { [weak self](_) in
+            self?.performSegue(withIdentifier: "ToLogin", sender: self)
         }
         actionSheet.addAction(contactUsAction)
         actionSheet.addAction(loginAction)

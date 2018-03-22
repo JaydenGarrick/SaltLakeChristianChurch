@@ -55,11 +55,11 @@ class LessonController: NSObject, XMLParserDelegate {
     // MARK: - XML Formatter Delegate functions
     func parseFeedWith(urlString: String, completionHandler: (([Lesson])-> Void)?) -> Void {
 
-        self.parserCompletionHandler = completionHandler
+        parserCompletionHandler = completionHandler
 
         let request = URLRequest(url: URL(string: urlString)!)
         let urlSession = URLSession.shared
-        let task = urlSession.dataTask(with: request) { (data, response, error) in
+        let task = urlSession.dataTask(with: request) { [weak self](data, response, error) in
 
             guard let data = data else {
                 if let error = error {

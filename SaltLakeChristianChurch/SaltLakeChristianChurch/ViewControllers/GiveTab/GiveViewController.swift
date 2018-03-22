@@ -12,10 +12,9 @@ class GiveViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        UIApplication.shared.isNetworkActivityIndicatorVisible = true
 
         // HandleNavBar and Keyboard
-        self.hideKeyboardWhenTappedAroundAndSetNavBar()
+        hideKeyboardWhenTappedAroundAndSetNavBar()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -28,6 +27,7 @@ class GiveViewController: UIViewController {
     
     @IBAction func giveButtonTapped(_ sender: Any) {
         guard let url = URL(string: "https://tithe.ly/give_new/www/#/tithely/give-one-time/69694") else { return }
+        UIApplication.shared.isNetworkActivityIndicatorVisible = true
         UIApplication.shared.open(url, options: [:]) { (success) in
             if success {
                 UIApplication.shared.isNetworkActivityIndicatorVisible = false

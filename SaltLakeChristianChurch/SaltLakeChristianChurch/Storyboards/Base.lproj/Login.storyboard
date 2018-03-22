@@ -11,7 +11,7 @@
         <!--MainView-->
         <scene sceneID="gmS-Pc-2lo">
             <objects>
-                <tabBarController storyboardIdentifier="MainView" title="MainView" id="nXp-OC-wVd" sceneMemberID="viewController">
+                <tabBarController restorationIdentifier="id" storyboardIdentifier="id" title="MainView" id="nXp-OC-wVd" customClass="MainTabBarController" customModule="SaltLakeChristianChurch" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="0ep-US-dya">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>

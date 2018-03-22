@@ -12,7 +12,7 @@ import Firebase
 class MemberController {
     
     // Singleton
-    static let shared = MemberController() ; private init(){} 
+    static let shared = MemberController()
     
     // Constants
     var members: [Member] = []

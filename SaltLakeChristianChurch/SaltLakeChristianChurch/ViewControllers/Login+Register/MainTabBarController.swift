@@ -43,10 +43,10 @@ class MainTabBarController: UITabBarController {
             lessonDetailView.lesson = lesson
         }
         
+        lessonDetailView.normalPlayerView.alpha = 1
         UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 1, options: .curveEaseOut, animations: { [weak self] in
             self?.view.layoutIfNeeded()
             self?.tabBar.transform = CGAffineTransform(translationX: 0, y: 100)
-            self?.lessonDetailView.normalPlayerView.alpha = 1
             self?.lessonDetailView.miniPlayerView.alpha = 0
         })
     }

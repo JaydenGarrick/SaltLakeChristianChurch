@@ -72,10 +72,10 @@ class LaunchScreenCopyViewController: UIViewController, NSFetchedResultsControll
         if Auth.auth().currentUser?.uid != nil {
             guard let uuid = Auth.auth().currentUser?.uid else { performSegue(withIdentifier: "LaunchSegue", sender: self) ; return }
             let reference = Database.database().reference().child("members").child(uuid)
-            reference.observeSingleEvent(of: .value, with: { [weak self](snapshot) in
+            reference.observeSingleEvent(of: .value, with: { (snapshot) in
                 guard let memberDictionary = snapshot.value as? [String : Any] else {
                     print("❌Error retrieving Snapshot")
-                    self?.performSegue(withIdentifier: "LaunchSegue", sender: self)
+                    appDelegate.window?.rootViewController = tabBarViewController
                     return
                 }
                 MemberController.shared.loggedInMember = Member(memberID: snapshot.key, memberDictionary: memberDictionary)

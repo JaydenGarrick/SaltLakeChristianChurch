@@ -16,7 +16,7 @@ class LessonDetailView: UIView {
     var lesson: Lesson! {
         didSet {
             
-                // Minis
+            // Minis
             miniTitleLabel.text = lesson.title
             LessonController.shared.downloadImageFrom(urlString: lesson.imageURL) { [weak self](image) in
                 guard let image = image else { return }
@@ -30,7 +30,7 @@ class LessonDetailView: UIView {
                 MPNowPlayingInfoCenter.default().nowPlayingInfo = nowPlayingInfo
             }
             
-                // Normals
+            // Normals
             titleLabel.text = lesson.title
             summaryTextView.text = lesson.summary
             setupNowPlayingInfo()

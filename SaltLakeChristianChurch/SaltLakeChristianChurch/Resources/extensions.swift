@@ -32,7 +32,6 @@ extension UIViewController {
         alertController.addAction(okayAction)
         present(alertController, animated: true, completion: nil)
     }
-    
 }
 
 // MARK: - UIImage

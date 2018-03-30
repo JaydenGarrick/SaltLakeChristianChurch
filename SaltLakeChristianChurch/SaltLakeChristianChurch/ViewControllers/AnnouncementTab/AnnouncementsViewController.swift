@@ -27,13 +27,10 @@ class AnnouncementsViewController: UIViewController, NSFetchedResultsControllerD
         // HandleNavBar and Keyboard and Set network indicator
         hideKeyboardWhenTappedAroundAndSetNavBar()
         
-        // Check to see if logged in member is admin
-        
         // Delegate And Setup
         initialFetchForAnnouncements()
         setupRefreshControler()
     }
-    
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)

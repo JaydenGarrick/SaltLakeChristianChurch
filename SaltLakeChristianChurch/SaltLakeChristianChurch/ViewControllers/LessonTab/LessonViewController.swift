@@ -17,8 +17,7 @@ class LessonViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var activityIndicatorView: UIActivityIndicatorView!
     
-    // MARK: - ViewDidLoad / ViewWillAppear
-    
+    // MARK: - View Lifecycle functions
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -31,7 +30,6 @@ class LessonViewController: UIViewController {
         
         // Fetch Lessons from RSS Feed
         refresh()
-        setupRefreshControl()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -39,7 +37,6 @@ class LessonViewController: UIViewController {
         UIApplication.shared.isStatusBarHidden = false
     }
 
-    
 }
 
 // MARK: - CollectionView Datasource and Delegate
@@ -114,16 +111,6 @@ extension LessonViewController: UICollectionViewDelegate, UICollectionViewDataSo
 // MARK: - Setup For Refresh on pulldown
 extension LessonViewController {
     
-    fileprivate func setupRefreshControl() {
-        // Set up Refresh Control for refresh on pulldown
-        collectionView.alwaysBounceVertical = true
-        collectionView.bounces = true
-        refreshControl = UIRefreshControl()
-        refreshControl.tintColor = #colorLiteral(red: 0.27700001, green: 0.7789999843, blue: 0.9250000119, alpha: 1)
-        refreshControl.addTarget(self, action: #selector(refresh), for: .valueChanged)
-        collectionView.addSubview(refreshControl)
-    }
-    
     @objc func refresh() {
         UIApplication.shared.isNetworkActivityIndicatorVisible = true
         LessonController.shared.parseFeedWith(urlString: "https://www.saltlakechristianchurch.com/lessons-on-audio/?format=rss") { [weak self](parsedLessons) in
@@ -131,7 +118,6 @@ extension LessonViewController {
             DispatchQueue.main.async {
                 self?.activityIndicatorView.isHidden = true
                 self?.collectionView.reloadData()
-                self?.refreshControl.endRefreshing()
                 UIApplication.shared.isNetworkActivityIndicatorVisible = false
             }
         }

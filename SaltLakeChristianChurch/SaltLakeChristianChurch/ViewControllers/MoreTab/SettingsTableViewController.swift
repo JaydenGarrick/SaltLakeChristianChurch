@@ -43,7 +43,6 @@ class SettingsTableViewController: UITableViewController {
                 presentLogOutActionSheet()
             }
         }
-        
         if indexPath.row == 1 {
             if MemberController.shared.isLoggedIn == false {
                 presentAlertControllerWithOkayAction(title: "Can't edit profile", message: "You must be logged in to edit your profile.")

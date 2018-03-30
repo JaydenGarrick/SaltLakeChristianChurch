@@ -13,7 +13,6 @@ class CalendarViewController: UIViewController {
     
     // MARK: - Constants and Variables
     var eventsByMonth: [(String, [Event])] = [] // Datasource
-    let session = URLSession.shared
     
     // IBOutlets
     @IBOutlet weak var tableView: UITableView!
@@ -136,7 +135,6 @@ extension CalendarViewController: UITableViewDataSource, UITableViewDelegate {
             }
         }
     }
-
 
 }
 

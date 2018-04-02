@@ -42,12 +42,13 @@
 		815E24222020F02100157B18 /* LoginOrRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 815E24212020F02100157B18 /* LoginOrRegisterViewController.swift */; };
 		815E2424202115F400157B18 /* Member.swift in Sources */ = {isa = PBXBuildFile; fileRef = 815E2423202115F400157B18 /* Member.swift */; };
 		815E2426202116F600157B18 /* MemberController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 815E2425202116F600157B18 /* MemberController.swift */; };
-		815E7C4A202E15B000D0C46B /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 815E7C49202E15B000D0C46B /* CollectionViewCell.swift */; };
+		815E7C4A202E15B000D0C46B /* LessonCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 815E7C49202E15B000D0C46B /* LessonCollectionViewCell.swift */; };
 		817B4958202B737A00A62211 /* CalendarTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817B4957202B737A00A62211 /* CalendarTableViewCell.swift */; };
 		817B495A202B80B100A62211 /* DateHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817B4959202B80B100A62211 /* DateHelper.swift */; };
 		817B4980202D06EC00A62211 /* LessonController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817B497F202D06EC00A62211 /* LessonController.swift */; };
 		817B4982202D127500A62211 /* Lesson.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817B4981202D127500A62211 /* Lesson.swift */; };
 		8181E0992028C9460093CC04 /* CreateAnnouncementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8181E0982028C9460093CC04 /* CreateAnnouncementViewController.swift */; };
+		81907A9A2072D99700DD2FE0 /* MoreCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81907A992072D99700DD2FE0 /* MoreCollectionViewController.swift */; };
 		8199A7BD2022484400E02BC0 /* DirectoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8199A7BC2022484400E02BC0 /* DirectoryTableViewController.swift */; };
 		8199A7BF20228D2A00E02BC0 /* MemberDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8199A7BE20228D2A00E02BC0 /* MemberDetailViewController.swift */; };
 		8199A7C12022951700E02BC0 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8199A7C02022951700E02BC0 /* SettingsTableViewController.swift */; };
@@ -64,6 +65,7 @@
 		819F7FCE203111740067FBDF /* BlockedAnnouncementController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819F7FCD203111740067FBDF /* BlockedAnnouncementController.swift */; };
 		819F7FD02031385E0067FBDF /* BlockedMember.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819F7FCF2031385E0067FBDF /* BlockedMember.swift */; };
 		819F7FD2203138F20067FBDF /* BlockedMemberController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819F7FD1203138F20067FBDF /* BlockedMemberController.swift */; };
+		81DAE48E2072DB0F00299CEC /* MoreCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81DAE48D2072DB0F00299CEC /* MoreCollectionViewCell.swift */; };
 		81DBA593202231D7001EF8E7 /* MoreTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81DBA592202231D7001EF8E7 /* MoreTableViewController.swift */; };
 		FBF458CABE07E4278BD949DB /* Pods_SaltLakeChristianChurch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83F1D8FC62F7E113BACAD970 /* Pods_SaltLakeChristianChurch.framework */; };
 /* End PBXBuildFile section */
@@ -112,12 +114,13 @@
 		815E24212020F02100157B18 /* LoginOrRegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginOrRegisterViewController.swift; sourceTree = "<group>"; };
 		815E2423202115F400157B18 /* Member.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Member.swift; sourceTree = "<group>"; };
 		815E2425202116F600157B18 /* MemberController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberController.swift; sourceTree = "<group>"; };
-		815E7C49202E15B000D0C46B /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
+		815E7C49202E15B000D0C46B /* LessonCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonCollectionViewCell.swift; sourceTree = "<group>"; };
 		817B4957202B737A00A62211 /* CalendarTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarTableViewCell.swift; sourceTree = "<group>"; };
 		817B4959202B80B100A62211 /* DateHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateHelper.swift; sourceTree = "<group>"; };
 		817B497F202D06EC00A62211 /* LessonController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonController.swift; sourceTree = "<group>"; };
 		817B4981202D127500A62211 /* Lesson.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lesson.swift; sourceTree = "<group>"; };
 		8181E0982028C9460093CC04 /* CreateAnnouncementViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAnnouncementViewController.swift; sourceTree = "<group>"; };
+		81907A992072D99700DD2FE0 /* MoreCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreCollectionViewController.swift; sourceTree = "<group>"; };
 		8199A7BC2022484400E02BC0 /* DirectoryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectoryTableViewController.swift; sourceTree = "<group>"; };
 		8199A7BE20228D2A00E02BC0 /* MemberDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberDetailViewController.swift; sourceTree = "<group>"; };
 		8199A7C02022951700E02BC0 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
@@ -134,6 +137,7 @@
 		819F7FCD203111740067FBDF /* BlockedAnnouncementController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockedAnnouncementController.swift; sourceTree = "<group>"; };
 		819F7FCF2031385E0067FBDF /* BlockedMember.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockedMember.swift; sourceTree = "<group>"; };
 		819F7FD1203138F20067FBDF /* BlockedMemberController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockedMemberController.swift; sourceTree = "<group>"; };
+		81DAE48D2072DB0F00299CEC /* MoreCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreCollectionViewCell.swift; sourceTree = "<group>"; };
 		81DBA592202231D7001EF8E7 /* MoreTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreTableViewController.swift; sourceTree = "<group>"; };
 		83F1D8FC62F7E113BACAD970 /* Pods_SaltLakeChristianChurch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SaltLakeChristianChurch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9E424914063860F44B256AA9 /* Pods-SaltLakeChristianChurch.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SaltLakeChristianChurch.release.xcconfig"; path = "Pods/Target Support Files/Pods-SaltLakeChristianChurch/Pods-SaltLakeChristianChurch.release.xcconfig"; sourceTree = "<group>"; };
@@ -286,6 +290,7 @@
 			isa = PBXGroup;
 			children = (
 				81DBA592202231D7001EF8E7 /* MoreTableViewController.swift */,
+				81907A992072D99700DD2FE0 /* MoreCollectionViewController.swift */,
 				8199A7FB202506CC00E02BC0 /* ContactUsViewController.swift */,
 				8199A7BC2022484400E02BC0 /* DirectoryTableViewController.swift */,
 				8199A7BE20228D2A00E02BC0 /* MemberDetailViewController.swift */,
@@ -345,7 +350,8 @@
 			children = (
 				8199A8342028BDB000E02BC0 /* AnnouncementTableViewCell.swift */,
 				817B4957202B737A00A62211 /* CalendarTableViewCell.swift */,
-				815E7C49202E15B000D0C46B /* CollectionViewCell.swift */,
+				815E7C49202E15B000D0C46B /* LessonCollectionViewCell.swift */,
+				81DAE48D2072DB0F00299CEC /* MoreCollectionViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -540,7 +546,7 @@
 				8109FBAD20216D30004B1655 /* LessonViewController.swift in Sources */,
 				815E2407201FE8F800157B18 /* UIViewAnchorPoint.swift in Sources */,
 				815E2404201FE8F800157B18 /* UISliderX.swift in Sources */,
-				815E7C4A202E15B000D0C46B /* CollectionViewCell.swift in Sources */,
+				815E7C4A202E15B000D0C46B /* LessonCollectionViewCell.swift in Sources */,
 				815E240B201FE8F800157B18 /* UIVisualEffectViewX.swift in Sources */,
 				815E2424202115F400157B18 /* Member.swift in Sources */,
 				8109FBAF20216D4B004B1655 /* CalendarViewController.swift in Sources */,
@@ -567,10 +573,12 @@
 				8199A7FE20250E1900E02BC0 /* EditProfileViewController.swift in Sources */,
 				817B4982202D127500A62211 /* Lesson.swift in Sources */,
 				8199A8352028BDB000E02BC0 /* AnnouncementTableViewCell.swift in Sources */,
+				81DAE48E2072DB0F00299CEC /* MoreCollectionViewCell.swift in Sources */,
 				815E23F8201FE88F00157B18 /* extensions.swift in Sources */,
 				815E2426202116F600157B18 /* MemberController.swift in Sources */,
 				815E2409201FE8F800157B18 /* UIViewControllerX.swift in Sources */,
 				8109FBB120216D59004B1655 /* AnnouncementsViewController.swift in Sources */,
+				81907A9A2072D99700DD2FE0 /* MoreCollectionViewController.swift in Sources */,
 				8199A7BF20228D2A00E02BC0 /* MemberDetailViewController.swift in Sources */,
 				812B0891206323AE0030F6FF /* LessonDetailView+Gestures.swift in Sources */,
 				819F7FCE203111740067FBDF /* BlockedAnnouncementController.swift in Sources */,

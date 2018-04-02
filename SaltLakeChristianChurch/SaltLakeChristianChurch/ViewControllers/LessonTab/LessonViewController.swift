@@ -15,7 +15,6 @@ class LessonViewController: UIViewController {
     let imageCache = NSCache<NSString, UIImage>()
     var refreshControl: UIRefreshControl!
     @IBOutlet weak var collectionView: UICollectionView!
-    @IBOutlet weak var activityIndicatorView: UIActivityIndicatorView!
     
     // MARK: - View Lifecycle functions
     override func viewDidLoad() {
@@ -47,21 +46,24 @@ extension LessonViewController: UICollectionViewDelegate, UICollectionViewDataSo
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "LessonCell", for: indexPath) as! CollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "LessonCell", for: indexPath) as! LessonCollectionViewCell
         
         // Configure the cell
         let lesson = lessons[indexPath.row]
         if lesson.imageURL == "http://static1.squarespace.com/static/58b1f2c003596e617b2a55ad/t/5a09269a9140b7f3b7b8b654/1510549154825/1500w/SLCC+Logo+iTunes.png" {
             cell.lessonImageView.image = #imageLiteral(resourceName: "CollectionViewHolder")
+            cell.activityIndicator.isHidden = true
         } else {
             if let cachedImage = imageCache.object(forKey: lesson.imageURL as NSString) {
                 cell.lessonImageView.image = cachedImage
+                cell.activityIndicator.isHidden = true
             } else {
                 LessonController.shared.downloadImageFrom(urlString: lesson.imageURL) { [weak self](image) in
                     guard let image = image else { return }
                     self?.imageCache.setObject(image, forKey: lesson.imageURL as NSString)
                     DispatchQueue.main.async {
                         cell.lessonImageView.image = image
+                        cell.activityIndicator.isHidden = true
                     }
                 }
             }
@@ -116,7 +118,6 @@ extension LessonViewController {
         LessonController.shared.parseFeedWith(urlString: "https://www.saltlakechristianchurch.com/lessons-on-audio/?format=rss") { [weak self](parsedLessons) in
             self?.lessons = parsedLessons
             DispatchQueue.main.async {
-                self?.activityIndicatorView.isHidden = true
                 self?.collectionView.reloadData()
                 UIApplication.shared.isNetworkActivityIndicatorVisible = false
             }

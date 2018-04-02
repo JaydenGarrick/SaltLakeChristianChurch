@@ -16,6 +16,13 @@ class LessonDetailView: UIView {
     var lesson: Lesson! {
         didSet {
             
+            // Normals
+            titleLabel.text = lesson.title
+            summaryTextView.text = lesson.summary
+            setupNowPlayingInfo()
+            setupAudioSession()
+            playEpisode()
+            
             // Minis
             miniTitleLabel.text = lesson.title
             LessonController.shared.downloadImageFrom(urlString: lesson.imageURL) { [weak self](image) in
@@ -30,18 +37,12 @@ class LessonDetailView: UIView {
                 MPNowPlayingInfoCenter.default().nowPlayingInfo = nowPlayingInfo
             }
             
-            // Normals
-            titleLabel.text = lesson.title
-            summaryTextView.text = lesson.summary
-            setupNowPlayingInfo()
-            setupAudioSession()
-            playEpisode()
         }
     }
     
     let player: AVPlayer = {
         let avPlayer = AVPlayer()
-        avPlayer.automaticallyWaitsToMinimizeStalling = false
+        avPlayer.automaticallyWaitsToMinimizeStalling = true
         return avPlayer
     }()
     var panGesture: UIPanGestureRecognizer!
@@ -49,6 +50,7 @@ class LessonDetailView: UIView {
     // MARK: - IBOutlets
         //Mini View Controller
     @IBOutlet weak var miniPlayerView: UIView!
+    @IBOutlet weak var hiddenPlayPauseButton: UIButton!
     @IBOutlet weak var miniEpisodeImageView: UIImageView!
     @IBOutlet weak var miniTitleLabel: UILabel!
     @IBOutlet weak var miniPlayPauseButton: UIButton! {
@@ -89,10 +91,12 @@ class LessonDetailView: UIView {
     }
     
     @objc fileprivate func checkForLag() {
-        if player.rate == 0 {
+        if player.reasonForWaitingToPlay == AVPlayer.WaitingReason.evaluatingBufferingRate || player.reasonForWaitingToPlay == AVPlayer.WaitingReason.toMinimizeStalls {
             loadingView.isHidden = false
+            hiddenPlayPauseButton.isEnabled = false
         } else {
             loadingView.isHidden = true
+            hiddenPlayPauseButton.isEnabled = true
         }
     }
     

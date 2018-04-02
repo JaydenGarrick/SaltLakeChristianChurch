@@ -21,7 +21,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-    
+        UIApplication.shared.applicationIconBadgeNumber = 0
+
         // Notifications
         if #available(iOS 10.0, *) {
             // For iOS 10 display notification (sent via APNS)

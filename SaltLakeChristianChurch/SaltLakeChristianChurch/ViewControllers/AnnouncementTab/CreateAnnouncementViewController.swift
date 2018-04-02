@@ -59,7 +59,6 @@ class CreateAnnouncementViewController: UIViewController, UINavigationController
 // MARK: -- UIImagePickerController Delegate method(s)
 extension CreateAnnouncementViewController: UIImagePickerControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
-        
         guard let selectedPicture = info[UIImagePickerControllerEditedImage] as? UIImage else { return }
         let announcementPicture = selectedPicture.scale(newWidth: 375.0)
         announcementImageView.image = announcementPicture
@@ -67,6 +66,7 @@ extension CreateAnnouncementViewController: UIImagePickerControllerDelegate {
         imageToSaveToStorage = announcementPicture
         addImageButton.setTitle("", for: .normal)
         
+        // Jump on main thread to dismiss view
         DispatchQueue.main.async { [weak self] in
             self?.dismiss(animated: true, completion: nil)
         }

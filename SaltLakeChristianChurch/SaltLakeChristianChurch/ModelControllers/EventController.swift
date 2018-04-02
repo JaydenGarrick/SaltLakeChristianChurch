@@ -17,7 +17,6 @@ class EventController {
     var baseURL = URL(string: "https://www.googleapis.com/calendar/v3/calendars/jep04cit3p2odlnuh6462ppjig%40group.calendar.google.com")
     var events: [Event] = []
     
-    
     typealias eventByMonth = (String, [Event]) // Type Alias for Month header and array of events
     var eventsByMonth: [eventByMonth] {
         var january: eventByMonth = ("January", [])

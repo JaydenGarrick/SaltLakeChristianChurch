@@ -1,45 +1,45 @@
 PODS:
   - Ambience (0.1.1)
-  - Firebase/Auth (4.8.2):
+  - Firebase/Auth (4.11.0):
     - Firebase/Core
-    - FirebaseAuth (= 4.4.2)
-  - Firebase/Core (4.8.2):
-    - FirebaseAnalytics (= 4.0.9)
-    - FirebaseCore (= 4.0.14)
-  - Firebase/Database (4.8.2):
+    - FirebaseAuth (= 4.5.0)
+  - Firebase/Core (4.11.0):
+    - FirebaseAnalytics (= 4.1.0)
+    - FirebaseCore (= 4.0.18)
+  - Firebase/Database (4.11.0):
     - Firebase/Core
-    - FirebaseDatabase (= 4.1.4)
-  - Firebase/Messaging (4.8.2):
+    - FirebaseDatabase (= 4.1.5)
+  - Firebase/Messaging (4.11.0):
     - Firebase/Core
-    - FirebaseMessaging (= 2.0.8)
-  - Firebase/Storage (4.8.2):
+    - FirebaseMessaging (= 2.1.1)
+  - Firebase/Storage (4.11.0):
     - Firebase/Core
-    - FirebaseStorage (= 2.1.2)
-  - FirebaseAnalytics (4.0.9):
+    - FirebaseStorage (= 2.1.3)
+  - FirebaseAnalytics (4.1.0):
     - FirebaseCore (~> 4.0)
     - FirebaseInstanceID (~> 2.0)
     - GoogleToolboxForMac/NSData+zlib (~> 2.1)
     - nanopb (~> 0.3)
-  - FirebaseAuth (4.4.2):
-    - FirebaseAnalytics (~> 4.0)
+  - FirebaseAuth (4.5.0):
+    - FirebaseAnalytics (~> 4.1)
     - GoogleToolboxForMac/NSDictionary+URLArguments (~> 2.1)
     - GTMSessionFetcher/Core (~> 1.1)
-  - FirebaseCore (4.0.14):
+  - FirebaseCore (4.0.18):
     - GoogleToolboxForMac/NSData+zlib (~> 2.1)
-  - FirebaseDatabase (4.1.4):
-    - FirebaseAnalytics (~> 4.0)
+  - FirebaseDatabase (4.1.5):
+    - FirebaseAnalytics (~> 4.1)
     - FirebaseCore (~> 4.0)
     - leveldb-library (~> 1.18)
-  - FirebaseInstanceID (2.0.8):
+  - FirebaseInstanceID (2.0.10):
     - FirebaseCore (~> 4.0)
-  - FirebaseMessaging (2.0.8):
-    - FirebaseAnalytics (~> 4.0)
+  - FirebaseMessaging (2.1.1):
+    - FirebaseAnalytics (~> 4.1)
     - FirebaseCore (~> 4.0)
     - FirebaseInstanceID (~> 2.0)
     - GoogleToolboxForMac/Logger (~> 2.1)
-    - Protobuf (~> 3.1)
-  - FirebaseStorage (2.1.2):
-    - FirebaseAnalytics (~> 4.0)
+    - Protobuf (~> 3.5)
+  - FirebaseStorage (2.1.3):
+    - FirebaseAnalytics (~> 4.1)
     - FirebaseCore (~> 4.0)
     - GTMSessionFetcher/Core (~> 1.1)
   - GoogleToolboxForMac/DebugUtils (2.1.3):
@@ -54,8 +54,8 @@ PODS:
     - GoogleToolboxForMac/Defines (= 2.1.3)
     - GoogleToolboxForMac/NSString+URLArguments (= 2.1.3)
   - GoogleToolboxForMac/NSString+URLArguments (2.1.3)
-  - GTMSessionFetcher/Core (1.1.13)
-  - IQKeyboardManager (5.0.7)
+  - GTMSessionFetcher/Core (1.1.14)
+  - IQKeyboardManager (5.0.8)
   - leveldb-library (1.20)
   - nanopb (0.3.8):
     - nanopb/decode (= 0.3.8)
@@ -82,17 +82,17 @@ DEPENDENCIES:
 
 SPEC CHECKSUMS:
   Ambience: 7b65da120d270b6a2a2591a3e2ab08871363f43d
-  Firebase: 7d3b8cd837ad9fcd391657734c0d56dab8e9a5a3
-  FirebaseAnalytics: 388b630c15713f5dbf364071f5f3d6077fb52f4e
-  FirebaseAuth: bd2738c5c1e92b108ba5f7f7335908097a4e50bb
-  FirebaseCore: 2e0b98fb2d64ca8140136beff15772bdd14d2dd7
-  FirebaseDatabase: de4446507ccd3257fca37d16f40e1540324571fd
-  FirebaseInstanceID: 81df5805a08001e69138664bdd02c6719a9ac80f
-  FirebaseMessaging: dfdcd307c2382290a1e297a81d0f18370f5b1bcd
-  FirebaseStorage: 181bb543d39ee3c53e0558de7ba86b1286a0427f
+  Firebase: cc13dfab1038c8b45d7903e01fc690451d6d0b24
+  FirebaseAnalytics: 3dfae28d4a5e06f86c4fae830efc2ad3fadb19bc
+  FirebaseAuth: 147bf340a0706b44ca1753d6b41ebafd9687cfe6
+  FirebaseCore: b981f47e5254cbcfdeb483355300d743f6fcab2c
+  FirebaseDatabase: 5f0bc6134c5c237cf55f9e1249d406770a75eafd
+  FirebaseInstanceID: 8d20d890d65c917f9f7d9950b6e10a760ad34321
+  FirebaseMessaging: db0e01c52ef7e1f42846431273558107d084ede4
+  FirebaseStorage: 9a863a2bb96c406958eeff7c2f1dfa9f44c44a13
   GoogleToolboxForMac: 2501e2ad72a52eb3dfe7bd9aee7dad11b858bd20
-  GTMSessionFetcher: 5bb1eae636127de695590f50e7d248483eb891e6
-  IQKeyboardManager: 0bfa4607d39924116b5c0c8b55b5d789288b5cba
+  GTMSessionFetcher: 390ea358e5a0d0133153806f744662dad933d06b
+  IQKeyboardManager: 266cb7b1d11f94a3e71229d77f960f9a1b538e5b
   leveldb-library: 08cba283675b7ed2d99629a4bc5fd052cd2bb6a5
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
   PhoneNumberKit: 62003f40ff75315fd3738286558bc365365ac222

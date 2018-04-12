@@ -8,25 +8,30 @@
 
 import UIKit
 
-private let cellID = "cellID"
 
 class MoreCollectionViewController: UICollectionViewController {
 
     // MARK - Constants / Variables
     typealias moreDataSource = (image: UIImage, title: String)
-    let cellInformation: [moreDataSource] = [(image: #imageLiteral(resourceName: "Directory"), title: "Directory"), (image: #imageLiteral(resourceName: "ContactUs"), title: "Contact Us"), (image: #imageLiteral(resourceName: "ReadScripture"), title: "Read Scripture"), (image: #imageLiteral(resourceName: "AboutUs"), title: "About Us")]
+    private let cellInformation: [moreDataSource] = [(image: #imageLiteral(resourceName: "Directory"), title: "Directory"), (image: #imageLiteral(resourceName: "ContactUs"), title: "Contact Us"), (image: #imageLiteral(resourceName: "ReadScripture"), title: "Read Scripture"), (image: #imageLiteral(resourceName: "AboutUs"), title: "About Us")]
+    private let stretchyCollectionHeader = "StretchyCollectionHeader"
+    private let cellID = "cellID"
+    private let urlString = "https://itunes.apple.com/us/app/read-scripture/id1067865974?mt=8"
     
     // MARK: - View Lifecycle Functions
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView?.register(MoreCollectionViewCell.self, forCellWithReuseIdentifier: cellID)
+        collectionView?.scrollToItem(at: IndexPath(item: 0, section: 0), at: .bottom, animated: true)
         hideKeyboardWhenTappedAroundAndSetNavBar()
     }
+    
 }
-
 
 // MARK: - CollectionView DataSource + Delegate Methods
 extension MoreCollectionViewController: UICollectionViewDelegateFlowLayout {
+    
+    // Normal
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return cellInformation.count
     }
@@ -50,16 +55,23 @@ extension MoreCollectionViewController: UICollectionViewDelegateFlowLayout {
         } else if indexPath.row == 1 {
             performSegue(withIdentifier: "ToContactUs", sender: self)
         } else if indexPath.row == 2 {
-            print("ReadScripture")
+            guard let url = URL(string: urlString) else { return }
+            UIApplication.shared.isNetworkActivityIndicatorVisible = true
+            UIApplication.shared.open(url, options: [:]) { (success) in
+                if success {
+                    UIApplication.shared.isNetworkActivityIndicatorVisible = false
+                }
+            }
+
         } else if indexPath.row == 3 {
-            print("About Us")
+            performSegue(withIdentifier: "ToAboutUs", sender: self)
         }
     }
     
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let width = (view.frame.width - 3 * 16) / 2
-        return CGSize(width: width, height: width + 46)
+        return CGSize(width: width, height: width + 40)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
@@ -69,7 +81,17 @@ extension MoreCollectionViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 16
     }
-
+    
+    // Header
+    override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "headerID", for: indexPath)
+        return headerView
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+        return CGSize(width: view.frame.width, height: 300)
+    }
+    
 }
 
 // MARK: - Create alert for member

@@ -8,11 +8,12 @@
 
 import UIKit
 import Firebase
+import Ambience
 
 class SettingsTableViewController: UITableViewController {
 
-
     @IBOutlet weak var loginSignUpLabel: UILabel!
+    @IBOutlet weak var darkModeSwitch: UISwitch!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,11 +28,22 @@ class SettingsTableViewController: UITableViewController {
         if MemberController.shared.isLoggedIn == true {
             loginSignUpLabel.text = MemberController.shared.loggedInMember?.fullName
         }
+        darkModeSwitch.isOn = UserSettings.darkModeEnabled
     }
     
     // MARK: - IBActions
     @IBAction func cancelButtonTapped(_ sender: Any) {
         dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func darkModeSwitchToggled(_ sender: UISwitch) {
+        if sender.isOn {
+            UserSettings.darkModeEnabled = true
+            Ambience.forcedState = AmbienceState.invert
+        } else {
+            UserSettings.darkModeEnabled = false
+            Ambience.forcedState = AmbienceState.regular
+        }
     }
     
     // MARK: - TableView Delegate and DataSource

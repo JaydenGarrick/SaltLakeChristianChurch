@@ -10,7 +10,13 @@ import UIKit
 
 class MoreCollectionViewCell: UICollectionViewCell {
     var imageView = UIImageView(image: #imageLiteral(resourceName: "church"))
-    let nameLabel = UILabel()
+    var nameLabel = UILabel() {
+        didSet {
+            nameLabel.ambience = true
+            nameLabel.invertColor = .white
+            nameLabel.textColorInvert = .white
+        }
+    }
     let artistNameLabel = UILabel()
     
     override init(frame: CGRect) {

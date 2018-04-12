@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="sI8-ts-4bC">
-    <device id="retina4_7" orientation="portrait">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="sI8-ts-4bC">
+    <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -14,28 +14,57 @@
             <objects>
                 <viewController id="sI8-ts-4bC" customClass="LaunchScreenCopyViewController" customModule="SaltLakeChristianChurch" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="LLJ-Xf-KAc">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Sermon" translatesAutoresizingMaskIntoConstraints="NO" id="eUl-0j-R2l">
-                                <rect key="frame" x="67" y="279.5" width="240" height="128"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="ezu-II-f1j">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="ezu-II-f1j">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SLCCToTheRightLARGE" translatesAutoresizingMaskIntoConstraints="NO" id="uIh-Zr-6HA">
+                                <rect key="frame" x="59" y="79" width="296" height="598"/>
                             </imageView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="s5W-Sl-dIr">
+                                <rect key="frame" x="188.66666666666666" y="449.66666666666669" width="37" height="37"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="Huk-Zn-ewZ" firstAttribute="trailing" secondItem="eUl-0j-R2l" secondAttribute="trailing" constant="67.5" id="Kb3-aa-D2X"/>
-                            <constraint firstItem="eUl-0j-R2l" firstAttribute="leading" secondItem="Huk-Zn-ewZ" secondAttribute="leading" constant="67.5" id="RQi-md-vcX"/>
+                            <constraint firstItem="uIh-Zr-6HA" firstAttribute="top" secondItem="Huk-Zn-ewZ" secondAttribute="top" constant="259.5" id="2V2-Wl-LaO"/>
+                            <constraint firstItem="s5W-Sl-dIr" firstAttribute="centerX" secondItem="LLJ-Xf-KAc" secondAttribute="centerX" id="2qg-aV-ggF"/>
+                            <constraint firstItem="Huk-Zn-ewZ" firstAttribute="bottom" secondItem="uIh-Zr-6HA" secondAttribute="bottom" constant="259.5" id="6Yn-SX-kXK"/>
+                            <constraint firstItem="s5W-Sl-dIr" firstAttribute="centerY" secondItem="LLJ-Xf-KAc" secondAttribute="centerY" constant="100" id="CLd-hL-EMP"/>
+                            <constraint firstItem="Huk-Zn-ewZ" firstAttribute="trailing" secondItem="uIh-Zr-6HA" secondAttribute="trailing" constant="59" id="KcX-xb-BJ7"/>
+                            <constraint firstItem="uIh-Zr-6HA" firstAttribute="leading" secondItem="Huk-Zn-ewZ" secondAttribute="leading" constant="67.5" id="PKN-yP-uFI"/>
                             <constraint firstItem="ezu-II-f1j" firstAttribute="top" secondItem="LLJ-Xf-KAc" secondAttribute="top" id="S9H-yt-Fxj"/>
-                            <constraint firstItem="eUl-0j-R2l" firstAttribute="top" secondItem="Huk-Zn-ewZ" secondAttribute="top" constant="259.5" id="Yxo-Vc-lh4"/>
+                            <constraint firstItem="uIh-Zr-6HA" firstAttribute="leading" secondItem="Huk-Zn-ewZ" secondAttribute="leading" constant="59" id="bUe-rB-n7F"/>
+                            <constraint firstItem="Huk-Zn-ewZ" firstAttribute="trailing" secondItem="uIh-Zr-6HA" secondAttribute="trailing" constant="67.5" id="bUj-e7-iFz"/>
                             <constraint firstItem="ezu-II-f1j" firstAttribute="trailing" secondItem="Huk-Zn-ewZ" secondAttribute="trailing" id="l0x-Lv-Z9F"/>
-                            <constraint firstItem="Huk-Zn-ewZ" firstAttribute="bottom" secondItem="eUl-0j-R2l" secondAttribute="bottom" constant="259.5" id="uBe-aP-WDd"/>
                             <constraint firstItem="ezu-II-f1j" firstAttribute="leading" secondItem="Huk-Zn-ewZ" secondAttribute="leading" id="uyF-zV-ozU"/>
-                            <constraint firstItem="ezu-II-f1j" firstAttribute="bottom" secondItem="Huk-Zn-ewZ" secondAttribute="bottom" id="wM0-ua-Otj"/>
+                            <constraint firstItem="ezu-II-f1j" firstAttribute="bottom" secondItem="LLJ-Xf-KAc" secondAttribute="bottom" id="wM0-ua-Otj"/>
+                            <constraint firstItem="uIh-Zr-6HA" firstAttribute="top" secondItem="Huk-Zn-ewZ" secondAttribute="top" constant="59" id="xP9-kv-whI"/>
+                            <constraint firstItem="Huk-Zn-ewZ" firstAttribute="bottom" secondItem="uIh-Zr-6HA" secondAttribute="bottom" constant="59" id="xz7-qp-8gz"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Huk-Zn-ewZ"/>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="KcX-xb-BJ7"/>
+                                <exclude reference="xz7-qp-8gz"/>
+                                <exclude reference="bUe-rB-n7F"/>
+                                <exclude reference="xP9-kv-whI"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="constraints">
+                                <exclude reference="6Yn-SX-kXK"/>
+                                <include reference="KcX-xb-BJ7"/>
+                                <exclude reference="bUj-e7-iFz"/>
+                                <include reference="xz7-qp-8gz"/>
+                                <exclude reference="2V2-Wl-LaO"/>
+                                <exclude reference="PKN-yP-uFI"/>
+                                <include reference="bUe-rB-n7F"/>
+                                <include reference="xP9-kv-whI"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
                         <segue destination="AEH-IL-FE6" kind="presentation" identifier="LaunchSegue" id="xAV-yK-lhR"/>
@@ -55,7 +84,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Sermon" width="23" height="21"/>
-        <image name="background" width="621" height="1104"/>
+        <image name="SLCCToTheRightLARGE" width="1500" height="635"/>
+        <image name="background" width="414" height="736"/>
     </resources>
 </document>

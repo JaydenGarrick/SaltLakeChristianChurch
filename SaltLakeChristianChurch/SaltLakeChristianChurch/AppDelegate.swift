@@ -21,7 +21,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-    
+        UIApplication.shared.applicationIconBadgeNumber = 0
+
         // Notifications
         if #available(iOS 10.0, *) {
             // For iOS 10 display notification (sent via APNS)
@@ -45,8 +46,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         let cache = URLCache(memoryCapacity: 40000000, diskCapacity: 80000000, diskPath: directory.absoluteString)
         URLCache.shared = cache
         
-        // Configure pods
+        // Setup light / darkmode
         _ = Ambience.shared
+        if UserSettings.darkModeEnabled == true {
+            Ambience.forcedState = AmbienceState.invert
+        } else {
+            Ambience.forcedState = AmbienceState.regular
+        }
+        
+        // Configure pods
         FirebaseApp.configure()
         IQKeyboardManager.shared().isEnabled = true
         IQKeyboardManager.shared().isEnableAutoToolbar = true

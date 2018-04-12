@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -22,18 +21,18 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SLCCToTheRightLARGE" translatesAutoresizingMaskIntoConstraints="NO" id="Jad-5n-YDp">
-                                <rect key="frame" x="67" y="279.5" width="240" height="128"/>
+                                <rect key="frame" x="59" y="79" width="257" height="529"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="H7q-X9-k2B" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="0L5-5g-4BL"/>
-                            <constraint firstItem="Jad-5n-YDp" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="259.5" id="3yW-a1-XO8"/>
-                            <constraint firstItem="Jad-5n-YDp" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="67.5" id="BsS-mh-baE"/>
                             <constraint firstItem="H7q-X9-k2B" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="DJb-Fv-ktj"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Jad-5n-YDp" secondAttribute="trailing" constant="67.5" id="DWd-qa-Kml"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Jad-5n-YDp" secondAttribute="bottom" constant="59" id="Vce-Yd-BQI"/>
                             <constraint firstItem="H7q-X9-k2B" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="aI6-qw-wba"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Jad-5n-YDp" secondAttribute="bottom" constant="259.5" id="l26-no-sW7"/>
+                            <constraint firstItem="Jad-5n-YDp" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="59" id="ijJ-LF-adV"/>
+                            <constraint firstItem="Jad-5n-YDp" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="59" id="jVk-OW-WCC"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Jad-5n-YDp" secondAttribute="trailing" constant="59" id="nXS-dj-iYn"/>
                             <constraint firstItem="H7q-X9-k2B" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="ooJ-zy-Be7"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>

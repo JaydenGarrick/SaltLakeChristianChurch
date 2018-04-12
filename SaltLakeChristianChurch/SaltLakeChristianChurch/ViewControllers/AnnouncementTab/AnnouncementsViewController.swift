@@ -29,7 +29,7 @@ class AnnouncementsViewController: UIViewController, NSFetchedResultsControllerD
         
         // Delegate And Setup
         initialFetchForAnnouncements()
-        setupRefreshControler()
+        setupRefreshController()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -58,7 +58,7 @@ class AnnouncementsViewController: UIViewController, NSFetchedResultsControllerD
 
 // MARK: - Setup Functions
 extension AnnouncementsViewController {
-    fileprivate func setupRefreshControler() {
+    fileprivate func setupRefreshController() {
         // Set up Refresh Control for refresh on pulldown
         tableView.alwaysBounceVertical = true
         tableView.bounces = true

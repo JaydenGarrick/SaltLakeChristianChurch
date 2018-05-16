@@ -82,14 +82,21 @@ class MemberController {
                 print("❌Error uploading image to Firebase storage: \(error.localizedDescription)")
                 completion(false)
             }
-            guard let downloadedImageURL = metaData?.downloadURL()?.absoluteString else { completion(false) ; return }
-            loggedInMember.imageAsURL = downloadedImageURL
-            guard let memberUID = Auth.auth().currentUser?.uid else { completion(false) ; return }
-            let memberReference = Database.database().reference().child(Member.MemberKey.members).child(memberUID)
             
-            let values = [Member.MemberKey.address : address!, Member.MemberKey.email : email, Member.MemberKey.fullName : fullName, Member.MemberKey.imageAsURL : downloadedImageURL, Member.MemberKey.phoneNumber : phoneNumber] as [String : Any]
-            memberReference.updateChildValues(values)
-            completion(true)
+            metaData?.storageReference?.downloadURL(completion: { (downloadedImageURL, error) in
+                if let error = error {
+                    print("❌Error downloading reference when updating reference: \(error.localizedDescription)")
+                    completion(false)
+                    return
+                }
+                loggedInMember.imageAsURL = downloadedImageURL?.absoluteString
+                guard let memberUID = Auth.auth().currentUser?.uid else { completion(false) ; return }
+                let memberReference = Database.database().reference().child(Member.MemberKey.members).child(memberUID)
+                
+                let values = [Member.MemberKey.address : address!, Member.MemberKey.email : email, Member.MemberKey.fullName : fullName, Member.MemberKey.imageAsURL : downloadedImageURL!, Member.MemberKey.phoneNumber : phoneNumber] as [String : Any]
+                memberReference.updateChildValues(values)
+                completion(true)
+            })
         }
     }
     

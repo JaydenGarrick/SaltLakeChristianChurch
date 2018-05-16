@@ -32,18 +32,25 @@ class AnnouncementController {
                 completion(false)
                 return
             }
-            guard let downloadedImageURL = metaData?.downloadURL()?.absoluteString else { completion(false) ; return }
             
-            let announcementID = UUID().uuidString
-            let dateAsDouble = Date().timeIntervalSince1970 as Double
-            let values: [String : Any] = [Announcement.AnnouncementKey.announcementID : announcementID,
-                                          Announcement.AnnouncementKey.name : announcementName,
-                                          Announcement.AnnouncementKey.description : description,
-                                          Announcement.AnnouncementKey.imageAsStringURL : downloadedImageURL,
-                                          Announcement.AnnouncementKey.rsvpTotal : 0,
-                                          Announcement.AnnouncementKey.creationDate : dateAsDouble]
-            self?.announcementDatabase.child(announcementID).updateChildValues(values)
-            completion(true)
+            metaData?.storageReference?.downloadURL(completion: { (downloadImageURL, error) in
+                if let error = error {
+                    print("❌ Error downloading URL from storage while creating announcement: \(error.localizedDescription)")
+                    completion(false) ; return
+                }
+                guard let downloadImageURL = downloadImageURL else { return }
+                let announcementID = UUID().uuidString
+                let dateAsDouble = Date().timeIntervalSince1970 as Double
+                let values: [String : Any] = [Announcement.AnnouncementKey.announcementID : announcementID,
+                                              Announcement.AnnouncementKey.name : announcementName,
+                                              Announcement.AnnouncementKey.description : description,
+                                              Announcement.AnnouncementKey.imageAsStringURL : downloadImageURL,
+                                              Announcement.AnnouncementKey.rsvpTotal : 0,
+                                              Announcement.AnnouncementKey.creationDate : dateAsDouble]
+                self?.announcementDatabase.child(announcementID).updateChildValues(values)
+                completion(true)
+            })
+            
         }
     }
     

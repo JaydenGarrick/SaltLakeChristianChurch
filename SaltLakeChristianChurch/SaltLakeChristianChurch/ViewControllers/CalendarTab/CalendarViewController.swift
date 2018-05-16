@@ -61,6 +61,7 @@ extension CalendarViewController: UITableViewDataSource, UITableViewDelegate {
         let eventArray = EventController.shared.eventsByMonth[indexPath.section].1
         let event = eventArray[indexPath.row]
         var timeText = "All Day"
+        
         if let dateString = event.start?.dateTime {
             if let date = DateHelper.inputFormatter.date(from: dateString) {
                 let time = DateHelper.outputFormatter.string(from: date)

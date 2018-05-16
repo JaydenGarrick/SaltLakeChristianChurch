@@ -62,7 +62,6 @@ class LoginOrRegisterViewController: UIViewController {
         }
     }
     
-    
     @IBAction func loginButtonTapped(_ sender: Any) {
         UIApplication.shared.isNetworkActivityIndicatorVisible = true
         
@@ -294,16 +293,3 @@ extension LoginOrRegisterViewController {
         blurView.layoutIfNeeded()
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-

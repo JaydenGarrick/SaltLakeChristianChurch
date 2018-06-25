@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="M8Z-l0-BXw">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="M8Z-l0-BXw">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -81,9 +81,10 @@
                                     </constraints>
                                 </imageView>
                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="JustMountainLogoPNG" translatesAutoresizingMaskIntoConstraints="NO" id="WZ9-O6-Wuh">
-                                    <rect key="frame" x="143" y="58" width="128" height="128"/>
+                                    <rect key="frame" x="132" y="75" width="150" height="150"/>
                                     <constraints>
                                         <constraint firstAttribute="width" secondItem="WZ9-O6-Wuh" secondAttribute="height" multiplier="1:1" id="6Rb-f3-Fas"/>
+                                        <constraint firstAttribute="height" relation="lessThanOrEqual" constant="150" id="VAC-bh-9Gr"/>
                                     </constraints>
                                 </imageView>
                             </subviews>
@@ -91,10 +92,9 @@
                             <constraints>
                                 <constraint firstAttribute="trailing" secondItem="bmz-UJ-Ts8" secondAttribute="trailing" id="6ab-ya-CBY"/>
                                 <constraint firstItem="bmz-UJ-Ts8" firstAttribute="leading" secondItem="5NM-n6-v9J" secondAttribute="leading" id="6gy-cS-mEI"/>
-                                <constraint firstAttribute="trailingMargin" secondItem="WZ9-O6-Wuh" secondAttribute="trailing" constant="135" id="CMy-Sb-bsl"/>
-                                <constraint firstItem="WZ9-O6-Wuh" firstAttribute="leading" secondItem="5NM-n6-v9J" secondAttribute="leadingMargin" constant="135" id="Dyt-qa-AeV"/>
+                                <constraint firstItem="WZ9-O6-Wuh" firstAttribute="centerX" secondItem="bmz-UJ-Ts8" secondAttribute="centerX" id="9xK-TM-6wY"/>
+                                <constraint firstItem="WZ9-O6-Wuh" firstAttribute="centerY" secondItem="bmz-UJ-Ts8" secondAttribute="centerY" id="NaB-to-QE2"/>
                                 <constraint firstItem="bmz-UJ-Ts8" firstAttribute="top" secondItem="5NM-n6-v9J" secondAttribute="top" id="ji5-it-NTJ"/>
-                                <constraint firstItem="WZ9-O6-Wuh" firstAttribute="top" secondItem="5NM-n6-v9J" secondAttribute="topMargin" constant="50" id="mcL-MD-JBS"/>
                             </constraints>
                         </collectionReusableView>
                         <userDefinedRuntimeAttributes>
@@ -117,7 +117,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <segue destination="E4V-HK-WUo" kind="presentation" identifier="ToLogin" id="5Yx-xs-QMg"/>
+                        <segue destination="E4V-HK-WUo" kind="presentation" identifier="ToLogin" modalTransitionStyle="crossDissolve" id="5Yx-xs-QMg"/>
                         <segue destination="9EB-E6-8pH" kind="show" identifier="ToDirectory" id="4eT-oE-tjZ"/>
                         <segue destination="DXa-hq-dD5" kind="show" identifier="ToContactUs" id="KQP-VA-1BR"/>
                         <segue destination="Zv2-lq-ka5" kind="show" identifier="ToAboutUs" id="XmX-4J-dva"/>
@@ -131,14 +131,14 @@
         <scene sceneID="gFf-XC-q3K">
             <objects>
                 <tableViewController id="oQx-6M-qIr" customClass="SettingsTableViewController" customModule="SaltLakeChristianChurch" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="yfd-R8-wcS">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="singleLineEtched" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="yfd-R8-wcS">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <sections>
                             <tableViewSection headerTitle="Account settings" id="sg0-0E-faA">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" id="DOR-Zb-bjh">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" editingAccessoryType="disclosureIndicator" id="DOR-Zb-bjh">
                                         <rect key="frame" x="0.0" y="28" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="DOR-Zb-bjh" id="moe-OR-Jja">
@@ -332,7 +332,7 @@
                     <connections>
                         <outlet property="darkModeSwitch" destination="3kA-Fu-Nrr" id="uaq-gS-l5C"/>
                         <outlet property="loginSignUpLabel" destination="Jvm-7s-jpv" id="R8M-yV-AA6"/>
-                        <segue destination="E4V-HK-WUo" kind="presentation" identifier="ToLoginScreen" id="YXh-Mp-aNM"/>
+                        <segue destination="E4V-HK-WUo" kind="presentation" identifier="ToLoginScreen" modalTransitionStyle="crossDissolve" id="YXh-Mp-aNM"/>
                         <segue destination="TdM-bO-nq1" kind="presentation" identifier="ToEditAccount" id="Rhj-1o-jK8"/>
                     </connections>
                 </tableViewController>
@@ -947,7 +947,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="hOK-PJ-lO3">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                                <rect key="frame" x="-50" y="-50" width="514" height="836"/>
                             </imageView>
                             <view clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="BlurViewID3" translatesAutoresizingMaskIntoConstraints="NO" id="QNS-gw-k9F" customClass="UIViewX" customModule="SaltLakeChristianChurch" customModuleProvider="target">
                                 <rect key="frame" x="20" y="120" width="374" height="469"/>
@@ -1083,7 +1083,10 @@
                                                                     <rect key="frame" x="160" y="0.0" width="44" height="36"/>
                                                                     <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
                                                                     <color key="tintColor" name="Tint"/>
-                                                                    <state key="normal" title="Login"/>
+                                                                    <size key="titleShadowOffset" width="0.5" height="0.5"/>
+                                                                    <state key="normal" title="Login">
+                                                                        <color key="titleShadowColor" name="Tint"/>
+                                                                    </state>
                                                                     <connections>
                                                                         <action selector="loginButtonTapped:" destination="E4V-HK-WUo" eventType="touchUpInside" id="f3G-9O-MaY"/>
                                                                     </connections>
@@ -1092,7 +1095,10 @@
                                                                     <rect key="frame" x="109.66666666666666" y="36" width="145" height="24"/>
                                                                     <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
                                                                     <color key="tintColor" name="Tint"/>
-                                                                    <state key="normal" title="Continue As Guest"/>
+                                                                    <size key="titleShadowOffset" width="0.5" height="0.5"/>
+                                                                    <state key="normal" title="Continue As Guest">
+                                                                        <color key="titleShadowColor" name="Tint"/>
+                                                                    </state>
                                                                     <connections>
                                                                         <action selector="continueAsGuestButtonTapped:" destination="E4V-HK-WUo" eventType="touchUpInside" id="a6z-g3-qcE"/>
                                                                     </connections>
@@ -1157,22 +1163,23 @@
                             <constraint firstItem="JXg-Hq-NxU" firstAttribute="trailing" secondItem="QNS-gw-k9F" secondAttribute="trailing" constant="20" id="FsG-ub-9iu"/>
                             <constraint firstItem="QNS-gw-k9F" firstAttribute="leading" secondItem="JXg-Hq-NxU" secondAttribute="leading" constant="20" id="IBu-0M-DiM"/>
                             <constraint firstItem="QNS-gw-k9F" firstAttribute="top" relation="greaterThanOrEqual" secondItem="JXg-Hq-NxU" secondAttribute="top" constant="20" id="Pyz-Yp-rSk"/>
-                            <constraint firstItem="hOK-PJ-lO3" firstAttribute="bottom" secondItem="JXg-Hq-NxU" secondAttribute="bottom" id="RW8-U4-UD9"/>
+                            <constraint firstItem="hOK-PJ-lO3" firstAttribute="bottom" secondItem="lqp-kP-QE6" secondAttribute="bottom" constant="50" id="RW8-U4-UD9"/>
                             <constraint firstItem="QNS-gw-k9F" firstAttribute="top" secondItem="JXg-Hq-NxU" secondAttribute="top" priority="600" constant="100" id="cg6-BZ-d4E"/>
-                            <constraint firstItem="hOK-PJ-lO3" firstAttribute="trailing" secondItem="JXg-Hq-NxU" secondAttribute="trailing" id="eBL-gc-LfH"/>
-                            <constraint firstItem="hOK-PJ-lO3" firstAttribute="leading" secondItem="JXg-Hq-NxU" secondAttribute="leading" id="mIq-l9-0dT"/>
-                            <constraint firstItem="hOK-PJ-lO3" firstAttribute="top" secondItem="lqp-kP-QE6" secondAttribute="top" id="vEU-u8-6te"/>
+                            <constraint firstItem="hOK-PJ-lO3" firstAttribute="trailing" secondItem="JXg-Hq-NxU" secondAttribute="trailing" constant="50" id="eBL-gc-LfH"/>
+                            <constraint firstItem="hOK-PJ-lO3" firstAttribute="leading" secondItem="JXg-Hq-NxU" secondAttribute="leading" constant="-50" id="mIq-l9-0dT"/>
+                            <constraint firstItem="hOK-PJ-lO3" firstAttribute="top" secondItem="lqp-kP-QE6" secondAttribute="top" constant="-50" id="vEU-u8-6te"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="JXg-Hq-NxU"/>
                     </view>
                     <connections>
+                        <outlet property="backgroundImageView" destination="hOK-PJ-lO3" id="C3X-Pw-u0M"/>
                         <outlet property="blurView" destination="MFw-Cc-c8L" id="uaE-UJ-UDB"/>
                         <outlet property="churchCodeTextField" destination="s8A-vu-ewe" id="1pP-Ua-K0u"/>
                         <outlet property="confirmPasswordTextField" destination="3uZ-Aa-rBx" id="ahr-y3-Ahu"/>
                         <outlet property="emailTextField" destination="KHT-mY-1oT" id="RyS-0L-kBg"/>
                         <outlet property="fullnameTextField" destination="rE8-Kz-cYK" id="lj3-YJ-i5H"/>
                         <outlet property="loginButton" destination="f8f-p3-pPt" id="ph2-jJ-8lb"/>
-                        <outlet property="loginView" destination="QNS-gw-k9F" id="Ero-a7-8Wh"/>
+                        <outlet property="loginView" destination="QNS-gw-k9F" id="8MI-CP-y1d"/>
                         <outlet property="passwordTextField" destination="zaW-3G-2aH" id="ZQR-cl-C7T"/>
                         <outlet property="phoneNumberTextField" destination="RQX-uc-oNN" id="caT-Qo-zFw"/>
                     </connections>
@@ -1205,7 +1212,7 @@
         <image name="JustMountainLogoPNG" width="324" height="303"/>
         <image name="SaltLakeBackDrop" width="900" height="600"/>
         <image name="TempPP" width="512" height="512"/>
-        <image name="background" width="414" height="736"/>
+        <image name="background" width="203" height="334"/>
         <image name="church" width="128" height="128"/>
         <image name="email" width="128" height="128"/>
         <image name="more" width="25" height="25"/>
@@ -1215,6 +1222,9 @@
         <image name="username" width="128" height="128"/>
         <namedColor name="Primary">
             <color red="0.42699998620000001" green="0.43099999430000002" blue="0.44400000569999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Tint">
+            <color red="0.27799999713897705" green="0.77999997138977051" blue="0.92500001192092896" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="Tint">
             <color red="0.27799999713897705" green="0.77999997138977051" blue="0.92500001192092896" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

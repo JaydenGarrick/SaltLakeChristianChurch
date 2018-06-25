@@ -66,7 +66,7 @@
 		819F7FCA20310F430067FBDF /* CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819F7FC920310F430067FBDF /* CoreData.swift */; };
 		819F7FCC20310FC50067FBDF /* BlockedAnnouncement+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819F7FCB20310FC50067FBDF /* BlockedAnnouncement+Convenience.swift */; };
 		819F7FCE203111740067FBDF /* BlockedAnnouncementController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819F7FCD203111740067FBDF /* BlockedAnnouncementController.swift */; };
-		819F7FD02031385E0067FBDF /* BlockedMember.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819F7FCF2031385E0067FBDF /* BlockedMember.swift */; };
+		819F7FD02031385E0067FBDF /* BlockedMember+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819F7FCF2031385E0067FBDF /* BlockedMember+Convenience.swift */; };
 		819F7FD2203138F20067FBDF /* BlockedMemberController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819F7FD1203138F20067FBDF /* BlockedMemberController.swift */; };
 		81DAE48E2072DB0F00299CEC /* MoreCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81DAE48D2072DB0F00299CEC /* MoreCollectionViewCell.swift */; };
 		FBF458CABE07E4278BD949DB /* Pods_SaltLakeChristianChurch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83F1D8FC62F7E113BACAD970 /* Pods_SaltLakeChristianChurch.framework */; };
@@ -140,7 +140,7 @@
 		819F7FC920310F430067FBDF /* CoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreData.swift; sourceTree = "<group>"; };
 		819F7FCB20310FC50067FBDF /* BlockedAnnouncement+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BlockedAnnouncement+Convenience.swift"; sourceTree = "<group>"; };
 		819F7FCD203111740067FBDF /* BlockedAnnouncementController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockedAnnouncementController.swift; sourceTree = "<group>"; };
-		819F7FCF2031385E0067FBDF /* BlockedMember.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockedMember.swift; sourceTree = "<group>"; };
+		819F7FCF2031385E0067FBDF /* BlockedMember+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BlockedMember+Convenience.swift"; sourceTree = "<group>"; };
 		819F7FD1203138F20067FBDF /* BlockedMemberController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockedMemberController.swift; sourceTree = "<group>"; };
 		81DAE48D2072DB0F00299CEC /* MoreCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreCollectionViewCell.swift; sourceTree = "<group>"; };
 		83F1D8FC62F7E113BACAD970 /* Pods_SaltLakeChristianChurch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SaltLakeChristianChurch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -261,7 +261,7 @@
 				8102DB4F202A4BCE0043A604 /* Event.swift */,
 				817B4981202D127500A62211 /* Lesson.swift */,
 				819F7FCB20310FC50067FBDF /* BlockedAnnouncement+Convenience.swift */,
-				819F7FCF2031385E0067FBDF /* BlockedMember.swift */,
+				819F7FCF2031385E0067FBDF /* BlockedMember+Convenience.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -592,7 +592,7 @@
 				815E240A201FE8F800157B18 /* UIViewXRadialGradient.swift in Sources */,
 				817B495A202B80B100A62211 /* DateHelper.swift in Sources */,
 				8199A7FC202506CC00E02BC0 /* ContactUsViewController.swift in Sources */,
-				819F7FD02031385E0067FBDF /* BlockedMember.swift in Sources */,
+				819F7FD02031385E0067FBDF /* BlockedMember+Convenience.swift in Sources */,
 				8159F54B2080233700EF9706 /* CustomImageView.swift in Sources */,
 				8181E0992028C9460093CC04 /* CreateAnnouncementViewController.swift in Sources */,
 			);

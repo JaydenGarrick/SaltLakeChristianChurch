@@ -41,16 +41,17 @@ class AnnouncementController {
                 guard let downloadImageURL = downloadImageURL else { return }
                 let announcementID = UUID().uuidString
                 let dateAsDouble = Date().timeIntervalSince1970 as Double
-                let values: [String : Any] = [Announcement.AnnouncementKey.announcementID : announcementID,
-                                              Announcement.AnnouncementKey.name : announcementName,
-                                              Announcement.AnnouncementKey.description : description,
-                                              Announcement.AnnouncementKey.imageAsStringURL : downloadImageURL,
-                                              Announcement.AnnouncementKey.rsvpTotal : 0,
-                                              Announcement.AnnouncementKey.creationDate : dateAsDouble]
+                let values: [String : Any] = [
+                    Announcement.AnnouncementKey.announcementID : announcementID,
+                    Announcement.AnnouncementKey.name : announcementName,
+                    Announcement.AnnouncementKey.description : description,
+                    Announcement.AnnouncementKey.imageAsStringURL : downloadImageURL,
+                    Announcement.AnnouncementKey.rsvpTotal : 0,
+                    Announcement.AnnouncementKey.creationDate : dateAsDouble
+                ]
                 self?.announcementDatabase.child(announcementID).updateChildValues(values)
                 completion(true)
             })
-            
         }
     }
     
@@ -71,8 +72,8 @@ class AnnouncementController {
             // Filter for blocked announcements
             for announcement in fetchedAnnouncements {
                 for blockedAnnouncement in BlockedAnnouncementController.shared.blockedAnnouncements {
-                    guard let announcementID = blockedAnnouncement.announcementID else { continue }
-                    if announcementID == announcement.announcementID {
+                    guard let blockedAnnouncementID = blockedAnnouncement.announcementID else { continue }
+                    if blockedAnnouncementID == announcement.announcementID {
                         guard let index = fetchedAnnouncements.index(of: announcement) else { continue }
                         fetchedAnnouncements.remove(at: index)
                     }

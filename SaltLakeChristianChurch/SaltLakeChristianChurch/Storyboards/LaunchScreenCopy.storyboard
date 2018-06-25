@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="sI8-ts-4bC">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="sI8-ts-4bC">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -17,7 +17,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="ezu-II-f1j">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="ezu-II-f1j">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SLCCToTheRightLARGE" translatesAutoresizingMaskIntoConstraints="NO" id="uIh-Zr-6HA">
@@ -38,8 +38,8 @@
                             <constraint firstItem="ezu-II-f1j" firstAttribute="top" secondItem="LLJ-Xf-KAc" secondAttribute="top" id="S9H-yt-Fxj"/>
                             <constraint firstItem="uIh-Zr-6HA" firstAttribute="leading" secondItem="Huk-Zn-ewZ" secondAttribute="leading" constant="59" id="bUe-rB-n7F"/>
                             <constraint firstItem="Huk-Zn-ewZ" firstAttribute="trailing" secondItem="uIh-Zr-6HA" secondAttribute="trailing" constant="67.5" id="bUj-e7-iFz"/>
-                            <constraint firstItem="ezu-II-f1j" firstAttribute="trailing" secondItem="Huk-Zn-ewZ" secondAttribute="trailing" id="l0x-Lv-Z9F"/>
-                            <constraint firstItem="ezu-II-f1j" firstAttribute="leading" secondItem="Huk-Zn-ewZ" secondAttribute="leading" id="uyF-zV-ozU"/>
+                            <constraint firstItem="ezu-II-f1j" firstAttribute="trailing" secondItem="LLJ-Xf-KAc" secondAttribute="trailing" id="l0x-Lv-Z9F"/>
+                            <constraint firstItem="ezu-II-f1j" firstAttribute="leading" secondItem="LLJ-Xf-KAc" secondAttribute="leading" id="uyF-zV-ozU"/>
                             <constraint firstItem="ezu-II-f1j" firstAttribute="bottom" secondItem="LLJ-Xf-KAc" secondAttribute="bottom" id="wM0-ua-Otj"/>
                             <constraint firstItem="uIh-Zr-6HA" firstAttribute="top" secondItem="Huk-Zn-ewZ" secondAttribute="top" constant="59" id="xP9-kv-whI"/>
                             <constraint firstItem="Huk-Zn-ewZ" firstAttribute="bottom" secondItem="uIh-Zr-6HA" secondAttribute="bottom" constant="59" id="xz7-qp-8gz"/>
@@ -85,6 +85,6 @@
     </scenes>
     <resources>
         <image name="SLCCToTheRightLARGE" width="1500" height="635"/>
-        <image name="background" width="414" height="736"/>
+        <image name="background" width="203" height="334"/>
     </resources>
 </document>

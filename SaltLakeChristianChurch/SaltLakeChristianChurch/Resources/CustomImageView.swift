@@ -8,7 +8,7 @@
 
 import UIKit
 
-var imageCache = [String: UIImage]()
+var imageCache = NSCache<NSString, UIImage>()
 
 class CustomImageView: UIImageView {
     
@@ -16,7 +16,7 @@ class CustomImageView: UIImageView {
     func loadImage(urlString: String) {
         
         // Caching Image
-        if let cachedImage = imageCache[urlString] {
+        if let cachedImage = imageCache.object(forKey: NSString(string: urlString)) {
             self.image = cachedImage
             return
         }
@@ -37,7 +37,8 @@ class CustomImageView: UIImageView {
             guard let data = data else { return }
             guard let photoimage = UIImage(data: data) else { return }
             
-            imageCache[url.absoluteString] = photoimage
+            
+            imageCache.setObject(photoimage, forKey: NSString(string: urlString))
             
             DispatchQueue.main.async {
                 self.image = photoimage

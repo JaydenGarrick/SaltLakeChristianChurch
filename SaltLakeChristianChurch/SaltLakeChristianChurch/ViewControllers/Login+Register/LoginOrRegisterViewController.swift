@@ -22,6 +22,7 @@ class LoginOrRegisterViewController: UIViewController {
     @IBOutlet weak var loginView: UIViewX!
     @IBOutlet weak var blurView: UIView!
     @IBOutlet weak var loginButton: UIButton!
+    @IBOutlet weak var backgroundImageView: UIImageView!
     
     // Checks for which index the segmented controller is on
     var isLogin = true
@@ -37,13 +38,20 @@ class LoginOrRegisterViewController: UIViewController {
         super.viewDidLoad()
         
         // Initial Setup
+        backgroundImageView.applyMotionEffect(with: 30)
+        loginView.applyMotionEffect(with: -10)
         fetchMemberCode()
-        animateViewOnLoad()
         setDelegates()
         setUI()
         
         // Hide keyboard when tapped around
         self.hideKeyboardWhenTappedAroundAndSetNavBar()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        animateViewOnLoad()
+        
     }
     
     // MARK: - IBActions
@@ -159,10 +167,10 @@ extension LoginOrRegisterViewController {
     
     fileprivate func animateViewOnLoad() {
         // Animate view in
-        let transform = CATransform3DTranslate(CATransform3DIdentity, 0, 200, 0)
+        let transform = CATransform3DTranslate(CATransform3DIdentity, 0, 100, 0)
         loginView.layer.transform = transform
         loginView.alpha = 0
-        UIView.animate(withDuration: 0.6) { [weak self] in
+        UIView.animate(withDuration: 1) { [weak self] in
             self?.loginView.alpha = 1.0
             self?.loginView.layer.transform = CATransform3DIdentity
         }

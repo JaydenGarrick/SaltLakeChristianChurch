@@ -81,6 +81,7 @@ class LessonDetailView: UIView {
     // MARK: - Setup Functions
     override func awakeFromNib() {
         super.awakeFromNib()
+//        self.applyMotionEffect(with: 30)
         setupInterruptionObserver()
         setupRemoteControl()
         setupGestures()

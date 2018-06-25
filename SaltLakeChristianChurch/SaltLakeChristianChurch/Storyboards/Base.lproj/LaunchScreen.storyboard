@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -29,7 +29,7 @@
                             <constraint firstItem="H7q-X9-k2B" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="0L5-5g-4BL"/>
                             <constraint firstItem="H7q-X9-k2B" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="DJb-Fv-ktj"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Jad-5n-YDp" secondAttribute="bottom" constant="59" id="Vce-Yd-BQI"/>
-                            <constraint firstItem="H7q-X9-k2B" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="aI6-qw-wba"/>
+                            <constraint firstItem="H7q-X9-k2B" firstAttribute="bottom" secondItem="Ze5-6b-2t3" secondAttribute="bottom" id="aI6-qw-wba"/>
                             <constraint firstItem="Jad-5n-YDp" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="59" id="ijJ-LF-adV"/>
                             <constraint firstItem="Jad-5n-YDp" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="59" id="jVk-OW-WCC"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Jad-5n-YDp" secondAttribute="trailing" constant="59" id="nXS-dj-iYn"/>
@@ -45,6 +45,6 @@
     </scenes>
     <resources>
         <image name="SLCCToTheRightLARGE" width="1500" height="635"/>
-        <image name="background" width="621" height="1104"/>
+        <image name="background" width="305" height="501"/>
     </resources>
 </document>

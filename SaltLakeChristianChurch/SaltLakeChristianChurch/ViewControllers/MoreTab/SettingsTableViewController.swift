@@ -48,6 +48,7 @@ class SettingsTableViewController: UITableViewController {
     
     // MARK: - TableView Delegate and DataSource
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+     
         if indexPath.row == 0 { // Login / Logout Controller
             if MemberController.shared.isLoggedIn == false {
                 performSegue(withIdentifier: "ToLoginScreen", sender: self)

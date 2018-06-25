@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -105,9 +105,9 @@
                     <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                     <subviews>
                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="euy-eI-7eb">
-                            <rect key="frame" x="0.0" y="0.0" width="375" height="400"/>
+                            <rect key="frame" x="-50" y="0.0" width="475" height="400"/>
                             <constraints>
-                                <constraint firstAttribute="width" secondItem="euy-eI-7eb" secondAttribute="height" multiplier="125:104" constant="-105.76923076923077" id="am9-Yo-NQg"/>
+                                <constraint firstAttribute="width" secondItem="euy-eI-7eb" secondAttribute="height" multiplier="19:16" id="Tru-sd-B3S"/>
                             </constraints>
                         </imageView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(title)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z9v-nf-6dt">
@@ -187,7 +187,7 @@
                             <rect key="frame" x="0.0" y="0.0" width="375" height="63"/>
                             <subviews>
                                 <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i0y-e0-dr9" customClass="UIButtonX" customModule="SaltLakeChristianChurch" customModuleProvider="target">
-                                    <rect key="frame" x="309" y="22" width="54" height="27"/>
+                                    <rect key="frame" x="309" y="40" width="54" height="27"/>
                                     <color key="backgroundColor" red="0.50041355060000003" green="0.5061980318" blue="0.52355147550000003" alpha="0.37692916030000001" colorSpace="custom" customColorSpace="sRGB"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="27" id="FDy-J9-6HF"/>
@@ -216,7 +216,7 @@
                             <constraints>
                                 <constraint firstAttribute="width" secondItem="EHG-MI-6EC" secondAttribute="height" multiplier="125:21" id="IDr-fm-BKO"/>
                                 <constraint firstAttribute="trailing" secondItem="i0y-e0-dr9" secondAttribute="trailing" constant="12" id="adB-lc-Tcv"/>
-                                <constraint firstItem="i0y-e0-dr9" firstAttribute="top" secondItem="EHG-MI-6EC" secondAttribute="top" constant="22" id="p8V-no-hqf"/>
+                                <constraint firstItem="i0y-e0-dr9" firstAttribute="top" secondItem="EHG-MI-6EC" secondAttribute="top" constant="40" id="p8V-no-hqf"/>
                             </constraints>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lz1-Q4-AyX" userLabel="BottomView">
@@ -317,7 +317,7 @@
                         <constraint firstItem="axK-F0-Hd0" firstAttribute="trailing" secondItem="R4O-6l-gdM" secondAttribute="trailing" constant="6" id="CCF-0L-4m5"/>
                         <constraint firstItem="xuj-FZ-ojA" firstAttribute="leading" secondItem="axK-F0-Hd0" secondAttribute="leading" constant="6" id="CzR-dn-YqH"/>
                         <constraint firstItem="Lz1-Q4-AyX" firstAttribute="leading" secondItem="axK-F0-Hd0" secondAttribute="leading" id="Jwj-Pj-8em"/>
-                        <constraint firstItem="euy-eI-7eb" firstAttribute="trailing" secondItem="axK-F0-Hd0" secondAttribute="trailing" id="Mdf-bE-4Nf"/>
+                        <constraint firstItem="euy-eI-7eb" firstAttribute="trailing" secondItem="axK-F0-Hd0" secondAttribute="trailing" constant="50" id="Mdf-bE-4Nf"/>
                         <constraint firstItem="X3P-ff-1A4" firstAttribute="centerY" secondItem="axK-F0-Hd0" secondAttribute="centerY" id="T46-ig-rEa"/>
                         <constraint firstItem="Lz1-Q4-AyX" firstAttribute="top" secondItem="4IG-Rh-WQf" secondAttribute="bottom" constant="8" id="Ulo-h1-xc6"/>
                         <constraint firstItem="axK-F0-Hd0" firstAttribute="trailing" secondItem="Z9v-nf-6dt" secondAttribute="trailing" constant="6" id="Wuh-hu-tZy"/>
@@ -333,7 +333,7 @@
                         <constraint firstItem="4IG-Rh-WQf" firstAttribute="top" secondItem="xuj-FZ-ojA" secondAttribute="bottom" constant="1" id="hF5-hl-MtL"/>
                         <constraint firstItem="Lz1-Q4-AyX" firstAttribute="bottom" secondItem="eMg-WZ-qKK" secondAttribute="bottom" id="o1t-Ra-ZG7"/>
                         <constraint firstItem="axK-F0-Hd0" firstAttribute="trailing" secondItem="4IG-Rh-WQf" secondAttribute="trailing" constant="6" id="p8q-rS-BUe"/>
-                        <constraint firstItem="euy-eI-7eb" firstAttribute="leading" secondItem="axK-F0-Hd0" secondAttribute="leading" id="vpU-ao-CwC"/>
+                        <constraint firstItem="euy-eI-7eb" firstAttribute="leading" secondItem="axK-F0-Hd0" secondAttribute="leading" constant="-50" id="vpU-ao-CwC"/>
                         <constraint firstItem="EHG-MI-6EC" firstAttribute="trailing" secondItem="axK-F0-Hd0" secondAttribute="trailing" id="woI-lA-4Lx"/>
                         <constraint firstItem="R4O-6l-gdM" firstAttribute="leading" secondItem="axK-F0-Hd0" secondAttribute="leading" constant="6" id="yFO-Bv-hjr"/>
                     </constraints>

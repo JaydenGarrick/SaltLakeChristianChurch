@@ -22,6 +22,7 @@ class MoreCollectionViewCell: UICollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
+        nameLabel.textColorInvert = .white
         stylizeUI()
         setupViews()
     }

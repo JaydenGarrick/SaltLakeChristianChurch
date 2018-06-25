@@ -132,7 +132,7 @@ class LessonController: NSObject, XMLParserDelegate {
 extension LessonController {
     
     func downloadImageFrom(urlString: String, completion: @escaping ((UIImage?)->Void)) {
-        
+
         // url
         guard let url = URL(string: urlString) else { completion(nil) ; return }
         

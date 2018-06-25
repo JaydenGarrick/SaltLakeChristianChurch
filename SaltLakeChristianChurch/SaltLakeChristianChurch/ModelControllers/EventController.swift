@@ -77,6 +77,9 @@ class EventController {
         return monthArray.filter { $0.1.count > 0 }
     }
     
+    /// Function that will fetch the events from the Firebase Database
+    ///
+    /// - Parameter completion: A bool which indicates whether or not the fetch was successful.
     func fetchEvents(completion: @escaping ((Bool)->Void)) {
         
         // url
@@ -130,6 +133,14 @@ class EventController {
         dataTask.resume()
     }
     
+    /// Function that helps add events to to users calendar using EKEventStore()
+    ///
+    /// - Parameters:
+    ///   - title: Title of Event
+    ///   - description: Optional Description of Event
+    ///   - startDate: Start Date
+    ///   - endDate: End Date
+    ///   - completion: Completion handler that will give a bool (success) as a parameter, or an optional error
     func addEventToCalendar(title: String, description: String?, startDate: Date, endDate: Date, completion: ((_ success: Bool, _ error: NSError?) -> Void)? = nil) {
         let eventStore = EKEventStore()
         

@@ -170,7 +170,7 @@ extension LoginOrRegisterViewController {
         let transform = CATransform3DTranslate(CATransform3DIdentity, 0, 100, 0)
         loginView.layer.transform = transform
         loginView.alpha = 0
-        UIView.animate(withDuration: 1) { [weak self] in
+        UIView.animate(withDuration: 0.65   ) { [weak self] in
             self?.loginView.alpha = 1.0
             self?.loginView.layer.transform = CATransform3DIdentity
         }

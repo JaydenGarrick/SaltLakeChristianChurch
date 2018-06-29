@@ -5,9 +5,7 @@
 //  Created by Jayden Garrick on 4/2/18.
 //  Copyright © 2018 Jayden Garrick. All rights reserved.
 //
-
 import UIKit
-
 
 class MoreCollectionViewController: UICollectionViewController {
 

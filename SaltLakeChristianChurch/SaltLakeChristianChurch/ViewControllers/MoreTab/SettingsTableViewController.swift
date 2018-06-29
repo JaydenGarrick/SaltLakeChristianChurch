@@ -28,7 +28,10 @@ class SettingsTableViewController: UITableViewController {
         if MemberController.shared.isLoggedIn == true {
             loginSignUpLabel.text = MemberController.shared.loggedInMember?.fullName
         }
-        darkModeSwitch.isOn = UserSettings.darkModeEnabled
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        darkModeSwitch.isOn = UserSettings.darkModeEnabled        
     }
     
     // MARK: - IBActions

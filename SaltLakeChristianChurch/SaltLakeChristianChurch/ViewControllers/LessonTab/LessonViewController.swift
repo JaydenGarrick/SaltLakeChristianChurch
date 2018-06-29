@@ -57,10 +57,10 @@ extension LessonViewController: UICollectionViewDelegate, UICollectionViewDataSo
         cell.alpha = 0
         let transform = CATransform3DTranslate(CATransform3DIdentity, -10, 20, 0)
         cell.layer.transform = transform
-        UIView.animate(withDuration: 0.20) {
+        UIView.animate(withDuration: 0.20, delay: 0, options: .allowUserInteraction, animations: {
             cell.alpha = 1.0
             cell.layer.transform = CATransform3DIdentity
-        }
+        })
     }
     
     // Function that hides the navigation bar when scroll down.

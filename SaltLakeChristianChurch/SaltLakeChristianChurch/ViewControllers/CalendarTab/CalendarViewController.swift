@@ -25,7 +25,7 @@ class CalendarViewController: UIViewController {
         // Set Delegate / DataSource
         tableView.delegate = self
         tableView.dataSource = self
-        
+//        tableView.register(AudioLessonView, forCellReuseIdentifier: <#T##String#>)
         // HandleNavBar and Keyboard
         hideKeyboardWhenTappedAroundAndSetNavBar()
         UIApplication.shared.isNetworkActivityIndicatorVisible = true

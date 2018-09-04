@@ -10,7 +10,7 @@ import UIKit
 
 class MainTabBarController: UITabBarController {
     
-    let lessonDetailView = LessonDetailView.initFromNib()
+    let lessonDetailView = LessonDetailView.initFromNib() // XIB
     var maximizedTopAnchorConstraint: NSLayoutConstraint!
     var minimizedTopAnchorConstraint: NSLayoutConstraint!
     var bottomAnchorConstraint: NSLayoutConstraint!

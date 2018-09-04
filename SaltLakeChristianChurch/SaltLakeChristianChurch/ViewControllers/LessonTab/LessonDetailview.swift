@@ -46,9 +46,9 @@ class LessonDetailView: UIView {
         return avPlayer
     }()
     var panGesture: UIPanGestureRecognizer!
-
+    
     // MARK: - IBOutlets
-        //Mini View Controller
+    //Mini View Controller
     @IBOutlet weak var miniPlayerView: UIView!
     @IBOutlet weak var hiddenPlayPauseButton: UIButton!
     @IBOutlet weak var miniEpisodeImageView: UIImageView!
@@ -59,7 +59,7 @@ class LessonDetailView: UIView {
         }
     }
     
-        //Normal View Controller
+    //Normal View Controller
     @IBOutlet weak var normalPlayerView: UIView!
     @IBOutlet weak var episodeImageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel! {
@@ -81,7 +81,7 @@ class LessonDetailView: UIView {
     // MARK: - Setup Functions
     override func awakeFromNib() {
         super.awakeFromNib()
-//        self.applyMotionEffect(with: 30)
+        //        self.applyMotionEffect(with: 30)
         setupInterruptionObserver()
         setupRemoteControl()
         setupGestures()
@@ -152,7 +152,7 @@ extension LessonDetailView {
         let durationSeconds = CMTimeGetSeconds(duration)
         MPNowPlayingInfoCenter.default().nowPlayingInfo?[MPMediaItemPropertyPlaybackDuration] = durationSeconds
     }
-
+    
     fileprivate func setupRemoteControl() {
         UIApplication.shared.beginReceivingRemoteControlEvents()
         
@@ -196,7 +196,7 @@ extension LessonDetailView {
         MPNowPlayingInfoCenter.default().nowPlayingInfo?[MPNowPlayingInfoPropertyPlaybackRate] = playbackRate
         MPNowPlayingInfoCenter.default().nowPlayingInfo?[MPNowPlayingInfoPropertyElapsedPlaybackTime] = elapsedTime
     }
-
+    
 }
 
 // MARK: - AVPlayer Functions
@@ -260,7 +260,7 @@ extension LessonDetailView {
             self?.setupLockScreenDuration()
         }
     }
-
+    
 }
 
 

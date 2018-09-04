@@ -18,7 +18,11 @@ class LessonController: NSObject, XMLParserDelegate {
     var lessons:[Lesson] = []
     private var imageURLAsString = ""
     private var audioURLAsString = ""
-    private var currentElement = ""
+    private var currentElement = "" {
+        didSet {
+            print(currentElement)
+        }
+    }
 
     private var currentTitle = "" {
         didSet {

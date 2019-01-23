@@ -12,13 +12,14 @@ import AVKit
 
 // MARK: - UIViewController
 extension UIViewController {
+    
     func hideKeyboardWhenTappedAroundAndSetNavBar() {
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
         tap.cancelsTouchesInView = false
         view.addGestureRecognizer(tap)
         navigationController?.navigationBar.barTintColor = UIColor(named: "Primary")
-        navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white]
-        navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.font: UIFont(name: "Avenir Next", size: 20)!, NSAttributedStringKey.foregroundColor : UIColor.white]
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont(name: "Avenir Next", size: 20)!, NSAttributedString.Key.foregroundColor : UIColor.white]
     }
     
     @objc func dismissKeyboard() {

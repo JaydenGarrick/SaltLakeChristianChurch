@@ -106,7 +106,7 @@ class LessonDetailView: UIView {
     }
     
     func setupInterruptionObserver() {
-        NotificationCenter.default.addObserver(self, selector: #selector(handleInterruption), name: .AVAudioSessionInterruption, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(handleInterruption), name: AVAudioSession.interruptionNotification, object: nil)
     }
     
     // MARK: - IBActions
@@ -121,7 +121,7 @@ class LessonDetailView: UIView {
         guard let duration = player.currentItem?.duration else { return }
         let durationInSeconds = CMTimeGetSeconds(duration)
         let seekTimeInSeconds = Float64(percentage) * durationInSeconds
-        let seekTime = CMTimeMakeWithSeconds(seekTimeInSeconds, 1)
+        let seekTime = CMTimeMakeWithSeconds(seekTimeInSeconds, preferredTimescale: 1)
         MPNowPlayingInfoCenter.default().nowPlayingInfo?[MPNowPlayingInfoPropertyElapsedPlaybackTime] = seekTimeInSeconds
         player.seek(to: seekTime)
     }
@@ -134,12 +134,12 @@ extension LessonDetailView {
     @objc fileprivate func handleInterruption(notification: Notification) {
         guard let userInfo = notification.userInfo else  { return }
         guard let type = userInfo[AVAudioSessionInterruptionTypeKey] as? UInt else { return }
-        if type == AVAudioSessionInterruptionType.began.rawValue {
+        if type == AVAudioSession.InterruptionType.began.rawValue {
             playPauseButtonImageView.image = #imageLiteral(resourceName: "play-button")
             miniPlayPauseButton.setImage(#imageLiteral(resourceName: "play-button"), for: .normal)
         } else {
             guard let options = userInfo[AVAudioSessionInterruptionOptionKey] as? UInt else { return }
-            if options == AVAudioSessionInterruptionOptions.shouldResume.rawValue {
+            if options == AVAudioSession.InterruptionOptions.shouldResume.rawValue {
                 player.play()
                 playPauseButtonImageView.image = #imageLiteral(resourceName: "play-button")
                 miniPlayPauseButton.setImage(#imageLiteral(resourceName: "pause-button"), for: .normal)
@@ -204,7 +204,7 @@ extension LessonDetailView {
     
     func setupAudioSession() {
         do {
-            try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback)
+            try AVAudioSession.sharedInstance().setCategory(AVAudioSession.Category(rawValue: convertFromAVAudioSessionCategory(AVAudioSession.Category.playback)), mode: AVAudioSession.Mode.default)
             try AVAudioSession.sharedInstance().setActive(true)
         } catch {
             print("Error activating session: \(error.localizedDescription)")
@@ -233,7 +233,7 @@ extension LessonDetailView {
     }
     
     fileprivate func observePlayerCurrentTime() {
-        let interval = CMTimeMake(1, 2)
+        let interval = CMTimeMake(value: 1, timescale: 2)
         player.addPeriodicTimeObserver(forInterval: interval, queue: .main) { [weak self](time) in
             if self?.player.currentItem?.status == .readyToPlay {
                 self?.currentTimeLabel.text = time.toDisplayString()
@@ -246,13 +246,13 @@ extension LessonDetailView {
     
     fileprivate func updateCurrentTimeSlider() {
         let currentTimeSeconds = CMTimeGetSeconds(player.currentTime())
-        let durationSeconds = CMTimeGetSeconds(player.currentItem?.duration ?? CMTimeMake(1, 1))
+        let durationSeconds = CMTimeGetSeconds(player.currentItem?.duration ?? CMTimeMake(value: 1, timescale: 1))
         let percentage = currentTimeSeconds / durationSeconds
         currentTimeSlider.value = Float(percentage)
     }
     
     fileprivate func observeBoundaryTime() {
-        let time = CMTimeMake(1, 3)
+        let time = CMTimeMake(value: 1, timescale: 3)
         let times = [NSValue(time: time)]
         
         // player has a reference to self through closure
@@ -267,3 +267,8 @@ extension LessonDetailView {
 
 
 
+
+// Helper function inserted by Swift 4.2 migrator.
+fileprivate func convertFromAVAudioSessionCategory(_ input: AVAudioSession.Category) -> String {
+	return input.rawValue
+}

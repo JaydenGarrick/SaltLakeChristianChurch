@@ -278,7 +278,7 @@ open class PhoneNumberTextField: UITextField, UITextFieldDelegate {
     }
     
     func setLeftImage() {
-        leftViewMode = UITextFieldViewMode.always
+        leftViewMode = UITextField.ViewMode.always
         var view: UIView
         
         if let image = leftImage {
@@ -290,7 +290,7 @@ open class PhoneNumberTextField: UITextField, UITextFieldDelegate {
             
             var width = imageView.frame.width + leftPadding
             
-            if borderStyle == UITextBorderStyle.none || borderStyle == UITextBorderStyle.line {
+            if borderStyle == UITextField.BorderStyle.none || borderStyle == UITextField.BorderStyle.line {
                 width += 5
             }
             

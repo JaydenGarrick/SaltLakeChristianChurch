@@ -83,7 +83,7 @@ extension AnnouncementsViewController {
     fileprivate func tableViewSetup() {
         // Set estimated height for self sizing tableview
         tableView.estimatedRowHeight = 450.0
-        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.rowHeight = UITableView.automaticDimension
         tableView.delegate = self
         tableView.dataSource = self
         
@@ -143,7 +143,7 @@ extension AnnouncementsViewController: UITableViewDelegate, UITableViewDataSourc
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return UITableViewAutomaticDimension
+        return UITableView.automaticDimension
     }
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
@@ -158,7 +158,7 @@ extension AnnouncementsViewController: UITableViewDelegate, UITableViewDataSourc
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let activiityIndicatorView = UIActivityIndicatorView(activityIndicatorStyle: .whiteLarge)
+        let activiityIndicatorView = UIActivityIndicatorView(style: .whiteLarge)
         activiityIndicatorView.color = #colorLiteral(red: 0.2392156869, green: 0.6745098233, blue: 0.9686274529, alpha: 1)
         activiityIndicatorView.startAnimating()
         return activiityIndicatorView
@@ -172,12 +172,12 @@ extension AnnouncementsViewController: UITableViewDelegate, UITableViewDataSourc
     func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
         if velocity.y > 0 {
             //Code will work without the animation block.I am using animation block incase if you want to set any delay to it.
-            UIView.animate(withDuration: 0.25, delay: 0.25, options: UIViewAnimationOptions(), animations: { [weak self] in
+            UIView.animate(withDuration: 0.25, delay: 0.25, options: UIView.AnimationOptions(), animations: { [weak self] in
                 self?.navigationController?.setNavigationBarHidden(true, animated: true)
                 UIApplication.shared.isStatusBarHidden = true
             }, completion: nil)
         } else {
-            UIView.animate(withDuration: 0.25, delay: 0.25, options: UIViewAnimationOptions(), animations: { [weak self] in
+            UIView.animate(withDuration: 0.25, delay: 0.25, options: UIView.AnimationOptions(), animations: { [weak self] in
                 self?.navigationController?.setNavigationBarHidden(false, animated: true)
                 UIApplication.shared.isStatusBarHidden = false
                 UIApplication.shared.statusBarStyle = .lightContent

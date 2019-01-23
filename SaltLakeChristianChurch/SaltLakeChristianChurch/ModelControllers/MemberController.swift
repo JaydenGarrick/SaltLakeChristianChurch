@@ -11,7 +11,8 @@ import Firebase
 
 class MemberController {
     
-    // Singleton
+    // MARK: - Properties
+    // Singleton 
     static let shared = MemberController()
     
     // Constants
@@ -19,14 +20,19 @@ class MemberController {
     var isLoggedIn = false
     var loggedInMember: Member?
     
-    // MARK: - Firebase Database References
+    // Firebase Database References
     let baseReference = Database.database().reference()
     let memberDatabase = Database.database().reference().child("members")
     
-    // MARK: - Firebase Storage References
+    // Firebase Storage References
     let photoStorageReference = Storage.storage().reference().child("userProfile")
     
     // MARK: - Firebase Upload and Download Methods
+    /// Fetches members based on the members ID for the directory
+    ///
+    /// - Parameters:
+    ///   - memberID: The unique identifier tied to each user on the backend
+    ///   - completion: Bool indicating whether or not the network call was successful
     func fetchMembersForDirectory(memberID: String?, completion: @escaping((Bool)->Void)) {
         let memberQuery = memberDatabase.queryOrdered(byChild: "fullName")
         memberQuery.observeSingleEvent(of: .value) { (snapshot) in
@@ -55,8 +61,13 @@ class MemberController {
         }
     }
     
+    /// Fetches members based on the members ID for logging in
+    ///
+    /// - Parameters:
+    ///   - uuid: The unique identifier tied to each user on the backend
+    ///   - completion: Bool indicating whether or not the network call was successful
     func fetchUserWith(uuid: String, completion: @escaping ((Bool)->Void)) {
-        let reference = Database.database().reference().child("members").child(uuid)
+        let reference = memberDatabase.child(uuid)
         reference.observeSingleEvent(of: .value, with: { (snapshot) in
             guard let memberDictionary = snapshot.value as? [String : Any] else {
                 print("❌Error retrieving Snapshot")
@@ -70,9 +81,18 @@ class MemberController {
         })
     }
     
+    /// Updates a member with the given parameters
+    ///
+    /// - Parameters:
+    ///   - image: The new image of the member
+    ///   - address: The new address of the member
+    ///   - email: The new email of the member
+    ///   - fullName: The new fullName of the member
+    ///   - phoneNumber: The new phone number of the memeber
+    ///   - completion: A completion handler that gives the bool as a parameter indicating whether or not the network call was a success
     func updateMemberWith(image: UIImage, address: String?, email: String?, fullName: String?, phoneNumber: String?, completion: @escaping ((Bool)->Void)) {
         guard let loggedInMember = loggedInMember,
-        let imageData = UIImageJPEGRepresentation(image, 0.5) else { completion(false) ; return }
+        let imageData = image.jpegData(compressionQuality: 0.5) else { completion(false) ; return }
         let address = address ?? loggedInMember.address
         let email = email ?? loggedInMember.email
         let fullName = fullName ?? loggedInMember.fullName
@@ -100,6 +120,12 @@ class MemberController {
         }
     }
     
+    
+    /// Loads an image from a URL
+    ///
+    /// - Parameters:
+    ///   - imageURL: The url of the image
+    ///   - completion: A completion that when the network call is completed returns an optional image
     func loadImageFrom(imageURL: String, completion: @escaping ((UIImage?)->Void)) {
         let downloadedData = Storage.storage().reference(forURL: imageURL)
         downloadedData.getData(maxSize: 5 * 1024 * 1024) { (data, error) in
@@ -112,8 +138,5 @@ class MemberController {
             completion(image)
         }
     }
-    
-   
-    
     
 }

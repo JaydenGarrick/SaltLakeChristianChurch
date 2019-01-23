@@ -25,7 +25,6 @@ class CalendarViewController: UIViewController {
         // Set Delegate / DataSource
         tableView.delegate = self
         tableView.dataSource = self
-//        tableView.register(AudioLessonView, forCellReuseIdentifier: <#T##String#>)
         // HandleNavBar and Keyboard
         hideKeyboardWhenTappedAroundAndSetNavBar()
         UIApplication.shared.isNetworkActivityIndicatorVisible = true
@@ -36,7 +35,7 @@ class CalendarViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         tableView.estimatedRowHeight = 55
-        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.rowHeight = UITableView.automaticDimension
         UIApplication.shared.isStatusBarHidden = false
     }
     
@@ -75,7 +74,7 @@ extension CalendarViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return UITableViewAutomaticDimension
+        return UITableView.automaticDimension
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
@@ -90,7 +89,7 @@ extension CalendarViewController: UITableViewDataSource, UITableViewDelegate {
         let event = eventArray[indexPath.row]
         
         // Gives small vibration when user slides out event
-        let generator = UIImpactFeedbackGenerator(style: UIImpactFeedbackStyle.light)
+        let generator = UIImpactFeedbackGenerator(style: UIImpactFeedbackGenerator.FeedbackStyle.light)
         generator.impactOccurred()
 
         // Add Action
@@ -109,12 +108,12 @@ extension CalendarViewController: UITableViewDataSource, UITableViewDelegate {
     func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
         if velocity.y > 0 {
             //Code will work without the animation block.I am using animation block incase if you want to set any delay to it.
-            UIView.animate(withDuration: 2.5, delay: 0, options: UIViewAnimationOptions(), animations: { [weak self] in
+            UIView.animate(withDuration: 0.5, delay: 0, options: UIView.AnimationOptions(), animations: { [weak self] in
                 self?.navigationController?.setNavigationBarHidden(true, animated: true)
                 UIApplication.shared.statusBarStyle = .default
             }, completion: nil)
         } else {
-            UIView.animate(withDuration: 2.5, delay: 0, options: UIViewAnimationOptions(), animations: { [weak self] in
+            UIView.animate(withDuration: 0.5, delay: 0, options: UIView.AnimationOptions(), animations: { [weak self] in
                 self?.navigationController?.setNavigationBarHidden(false, animated: true)
                 UIApplication.shared.statusBarStyle = .lightContent
             }, completion: nil)
@@ -128,7 +127,7 @@ extension CalendarViewController: UITableViewDataSource, UITableViewDelegate {
             if success {
                 DispatchQueue.main.async {
                     self?.activityIndicator.isHidden = true
-                    self?.tableView.separatorStyle = UITableViewCellSeparatorStyle.singleLine
+                    self?.tableView.separatorStyle = UITableViewCell.SeparatorStyle.singleLine
                     self?.tableView.reloadData()
                     print("✅Successfully fetched Calendar events!")
                     UIApplication.shared.isNetworkActivityIndicatorVisible = false
@@ -174,4 +173,3 @@ extension CalendarViewController {
         present(alertController, animated: true)
     }
 }
-

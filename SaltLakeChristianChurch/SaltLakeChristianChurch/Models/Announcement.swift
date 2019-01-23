@@ -8,7 +8,7 @@
 
 import UIKit
 
-class Announcement: Equatable {
+final class Announcement: Equatable {
 
     // MARK: - Properties
     var announcementID: String
@@ -17,6 +17,17 @@ class Announcement: Equatable {
     var rsvpTotal: Int
     var description: String
     var creationDate: Date
+    
+    var dictionaryRepresentation: [String: Any] {
+        return [
+            AnnouncementKey.announcementID: announcementID,
+            AnnouncementKey.name: name,
+            AnnouncementKey.imageAsStringURL: imageAsStringURL,
+            AnnouncementKey.rsvpTotal: rsvpTotal,
+            AnnouncementKey.description: description,
+            AnnouncementKey.creationDate: creationDate
+        ]
+    }
     
     // MARK: - Firebase Keys
     enum AnnouncementKey {

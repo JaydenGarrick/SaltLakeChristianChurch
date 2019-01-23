@@ -9,7 +9,7 @@
 import UIKit
 import Firebase
 
-class AnnouncementTableViewCell: UITableViewCell {
+final class AnnouncementTableViewCell: UITableViewCell {
     
     // MARK: - IBOutlets / Constants and Variables
     @IBOutlet weak var announcementImageView: UIImageView!

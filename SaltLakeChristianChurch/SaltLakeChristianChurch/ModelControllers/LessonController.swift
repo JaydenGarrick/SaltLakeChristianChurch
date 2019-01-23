@@ -57,6 +57,13 @@ class LessonController: NSObject, XMLParserDelegate {
     }
     
     // MARK: - XML Formatter Delegate functions
+    
+    
+    /// Parses the itunes feed from Salt Lake Christian Church RSS feed
+    ///
+    /// - Parameters:
+    ///   - urlString: The url string of the RSS Feed
+    ///   - completionHandler: Gives an array of custom ```Lesson``` objects
     func parseFeedWith(urlString: String, completionHandler: (([Lesson])-> Void)?) -> Void {
 
         parserCompletionHandler = completionHandler

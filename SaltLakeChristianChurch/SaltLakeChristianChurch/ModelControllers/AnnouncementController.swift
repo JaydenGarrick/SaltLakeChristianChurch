@@ -12,20 +12,29 @@ import CoreData
 
 class AnnouncementController {
 
-    // MARK: - Variables and constants
+    // MARK: - Properties
     static let shared = AnnouncementController() ; private init(){} // Singleton
     var announcements: [Announcement] = [] // Datasource
     var alreadyGoing: Bool = false
     
-    // MARK: - Firebase Database References
+    // Firebase Database References
     let baseReference = Database.database().reference()
     let announcementDatabase = Database.database().reference().child(Announcement.AnnouncementKey.announcements)
     let photoStorageReference = Storage.storage().reference().child("announcementImage")
     
     
     // MARK: - Firebase Upload and Download Methods
+    
+    
+    /// Allows users that are admins to create an announcement to the firebase database
+    ///
+    /// - Parameters:
+    ///   - announcementImage: The Image tied to the announcement
+    ///   - announcementName: The name of the announcement being created
+    ///   - description: The description of the announcement - the main text of the announcement
+    ///   - completion: Completion that gives a bool as a parameter indicating whether or not the networking call was successful
     func createAnnouncement(announcementImage: UIImage, announcementName: String, description: String, completion: @escaping ((Bool)-> Void)) {
-        guard let imageData = UIImageJPEGRepresentation(announcementImage, 0.9) else { completion(false) ; return }
+        guard let imageData = announcementImage.jpegData(compressionQuality: 0.9) else { completion(false) ; return }
         photoStorageReference.child(announcementName).putData(imageData, metadata: nil) { [weak self](metaData, error) in
             if let error = error {
                 print("❌Error creating announcement - Can't store image: \(error.localizedDescription)")
@@ -55,6 +64,10 @@ class AnnouncementController {
         }
     }
     
+    
+    /// Fetches all the announcements in the database
+    ///
+    /// - Parameter completion: A completion giving a bool as a parameter indicating whether or not the network call was a success
     func fetchAnnouncements(completion: @escaping ((Bool)->Void)) {
         let annoucementQuery = announcementDatabase.queryOrdered(byChild: Announcement.AnnouncementKey.creationDate)
         annoucementQuery.observeSingleEvent(of: .value) { [weak self](snapshot) in
@@ -84,6 +97,12 @@ class AnnouncementController {
         }
     }
     
+    
+    /// Loads an image from a given URL
+    ///
+    /// - Parameters:
+    ///   - imageURL: The URL of the image that is being fetched
+    ///   - completion: A completion that returns an optional image when 
     func loadImageFrom(imageURL: String, completion: @escaping ((UIImage?)->Void)) {
         let downloadedData = Storage.storage().reference(forURL: imageURL)
         downloadedData.getData(maxSize: 5 * 1024 * 1024) { (data, error) in
@@ -97,6 +116,12 @@ class AnnouncementController {
         }
     }
     
+    
+    /// Function that gives the option to hide an announcement in order to comply with apple's policy on user generated content
+    ///
+    /// - Parameters:
+    ///   - announcement: The announcemnent that will need to be hidden
+    ///   - completion: A completion giving a bool indicating whether or not the network call was a success
     func hide(announcement: Announcement, completion: @escaping ((Bool)->Void)) {
         guard let indexPath = announcements.index(of: announcement) else {  return }
         announcements.remove(at: indexPath)

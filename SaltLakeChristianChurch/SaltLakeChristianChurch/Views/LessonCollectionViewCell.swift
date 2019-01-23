@@ -29,7 +29,7 @@ class LessonCollectionViewCell: UICollectionViewCell {
     let activityIndicatorView: UIActivityIndicatorView = {
        let activityIndicator = UIActivityIndicatorView()
         activityIndicator.startAnimating()
-        activityIndicator.activityIndicatorViewStyle = .whiteLarge
+        activityIndicator.style = .whiteLarge
         activityIndicator.color = UIColor(named: "Tint")
         return activityIndicator
     }()

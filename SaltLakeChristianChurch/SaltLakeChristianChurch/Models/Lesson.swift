@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Lesson {
+final class Lesson {
     // MARK: - Properties
     var title: String
     var summary: String

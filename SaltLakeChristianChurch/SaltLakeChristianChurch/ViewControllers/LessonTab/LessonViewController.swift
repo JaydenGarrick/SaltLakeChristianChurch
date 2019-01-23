@@ -67,12 +67,12 @@ extension LessonViewController: UICollectionViewDelegate, UICollectionViewDataSo
     func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
         if velocity.y > 0 {
             //Code will work without the animation block.I am using animation block incase if you want to set any delay to it.
-            UIView.animate(withDuration: 0.25, delay: 0, options: UIViewAnimationOptions(), animations: { [weak self] in
+            UIView.animate(withDuration: 0.25, delay: 0, options: UIView.AnimationOptions(), animations: { [weak self] in
                 self?.navigationController?.setNavigationBarHidden(true, animated: true)
                 UIApplication.shared.isStatusBarHidden = true
             }, completion: nil)
         } else {
-            UIView.animate(withDuration: 0.25, delay: 0, options: UIViewAnimationOptions(), animations:  { [weak self] in
+            UIView.animate(withDuration: 0.25, delay: 0, options: UIView.AnimationOptions(), animations:  { [weak self] in
                 self?.navigationController?.setNavigationBarHidden(false, animated: true)
                 UIApplication.shared.isStatusBarHidden = false
                 UIApplication.shared.statusBarStyle = .lightContent

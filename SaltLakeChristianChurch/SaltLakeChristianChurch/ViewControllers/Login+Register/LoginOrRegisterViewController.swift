@@ -122,7 +122,7 @@ extension LoginOrRegisterViewController: UITextFieldDelegate {
         return true
     }
     
-    func textFieldDidEndEditing(_ textField: UITextField, reason: UITextFieldDidEndEditingReason) {
+    func textFieldDidEndEditing(_ textField: UITextField, reason: UITextField.DidEndEditingReason) {
         guard let password = passwordTextField.text, let confirmedPassword = confirmPasswordTextField.text else { return }
         if textField == confirmPasswordTextField {
             if password != confirmedPassword {
@@ -196,8 +196,10 @@ extension LoginOrRegisterViewController {
                     UIApplication.shared.isNetworkActivityIndicatorVisible = false
                     return
                 }
+                
+                
                 guard let user = user else { UIApplication.shared.isNetworkActivityIndicatorVisible = false ; return }
-                let uuid = user.uid
+                let uuid = user.user.uid
                 let memberID = UUID().uuidString
                 let memberRef = Database.database().reference().child("members").child(uuid)
                 let values = ["email" : email,

@@ -1,0 +1,338 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="b38e68bd-f2a3-4a6a-ad4e-a5e0c19026f9" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/Podfile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Podfile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Firebase/Core/Sources/Firebase.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Firebase/Core/Sources/module.modulemap" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Firebase/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/Pods/Firebase/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/FirebaseAnalytics/Frameworks/FirebaseAnalytics.framework/FirebaseAnalytics" beforeDir="false" afterPath="$PROJECT_DIR$/Pods/FirebaseAnalytics/Frameworks/FirebaseAnalytics.framework/FirebaseAnalytics" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/FirebaseAnalytics/Frameworks/FirebaseAnalytics.framework/Headers/FIRAnalyticsConfiguration.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/FirebaseAnalytics/Frameworks/FirebaseAnalytics.framework/Headers/FIRAnalyticsSwiftNameSupport.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/FirebaseAnalytics/Frameworks/FirebaseAnalytics.framework/Headers/FIRApp.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/FirebaseAnalytics/Frameworks/FirebaseAnalytics.framework/Headers/FIRConfiguration.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/FirebaseAnalytics/Frameworks/FirebaseAnalytics.framework/Headers/FIROptions.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/FirebaseAnalytics/Frameworks/FirebaseAnalytics.framework/Headers/FirebaseAnalytics.h" beforeDir="false" afterPath="$PROJECT_DIR$/Pods/FirebaseAnalytics/Frameworks/FirebaseAnalytics.framework/Headers/FirebaseAnalytics.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/FirebaseAnalytics/Frameworks/FirebaseCoreDiagnostics.framework/FirebaseCoreDiagnostics" beforeDir="false" afterPath="$PROJECT_DIR$/Pods/FirebaseAnalytics/Frameworks/FirebaseCoreDiagnostics.framework/FirebaseCoreDiagnostics" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/FirebaseAnalytics/Frameworks/FirebaseNanoPB.framework/FirebaseNanoPB" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/FirebaseAuth/CHANGELOG.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/FirebaseAuth/Frameworks/FirebaseAuth.framework/FirebaseAuth" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/FirebaseAuth/Frameworks/FirebaseAuth.framework/Headers/FIRActionCodeSettings.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/FirebaseAuth/Frameworks/FirebaseAuth.framework/Headers/FIRAdditionalUserInfo.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/FirebaseAuth/Frameworks/FirebaseAuth.framework/Headers/FIRAuth.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/FirebaseAuth/Frameworks/FirebaseAuth.framework/Headers/FIRAuthAPNSTokenType.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/FirebaseAuth/Frameworks/FirebaseAuth.framework/Headers/FIRAuthCredential.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/FirebaseAuth/Frameworks/FirebaseAuth.framework/Headers/FIRAuthDataResult.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/FirebaseAuth/Frameworks/FirebaseAuth.framework/Headers/FIRAuthErrors.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/FirebaseAuth/Frameworks/FirebaseAuth.framework/Headers/FIRAuthUIDelegate.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/FirebaseAuth/Frameworks/FirebaseAuth.framework/Headers/FIREmailAuthProvider.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/FirebaseAuth/Frameworks/FirebaseAuth.framework/Headers/FIRFacebookAuthProvider.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/FirebaseAuth/Frameworks/FirebaseAuth.framework/Headers/FIRGitHubAuthProvider.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/FirebaseAuth/Frameworks/FirebaseAuth.framework/Headers/FIRGoogleAuthProvider.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/FirebaseAuth/Frameworks/FirebaseAuth.framework/Headers/FIROAuthProvider.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/FirebaseAuth/Frameworks/FirebaseAuth.framework/Headers/FIRPhoneAuthCredential.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/FirebaseAuth/Frameworks/FirebaseAuth.framework/Headers/FIRPhoneAuthProvider.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/FirebaseAuth/Frameworks/FirebaseAuth.framework/Headers/FIRTwitterAuthProvider.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/FirebaseAuth/Frameworks/FirebaseAuth.framework/Headers/FIRUser.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/FirebaseAuth/Frameworks/FirebaseAuth.framework/Headers/FIRUserInfo.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/FirebaseAuth/Frameworks/FirebaseAuth.framework/Headers/FIRUserMetadata.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/FirebaseAuth/Frameworks/FirebaseAuth.framework/Headers/FirebaseAuth.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/FirebaseAuth/Frameworks/FirebaseAuth.framework/Headers/FirebaseAuthVersion.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/FirebaseAuth/Frameworks/FirebaseAuth.framework/Modules/module.modulemap" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/FirebaseAuth/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/Pods/FirebaseAuth/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/FirebaseCore/Frameworks/FirebaseCore.framework/FirebaseCore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/FirebaseCore/Frameworks/FirebaseCore.framework/Headers/FIRAnalyticsConfiguration.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/FirebaseCore/Frameworks/FirebaseCore.framework/Headers/FIRApp.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/FirebaseCore/Frameworks/FirebaseCore.framework/Headers/FIRConfiguration.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/FirebaseCore/Frameworks/FirebaseCore.framework/Headers/FIRLoggerLevel.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/FirebaseCore/Frameworks/FirebaseCore.framework/Headers/FIROptions.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/FirebaseCore/Frameworks/FirebaseCore.framework/Headers/FirebaseCore.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/FirebaseCore/Frameworks/FirebaseCore.framework/Modules/module.modulemap" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/FirebaseDatabase/Frameworks/FirebaseDatabase.framework/FirebaseDatabase" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/FirebaseDatabase/Frameworks/FirebaseDatabase.framework/Headers/FIRDataEventType.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/FirebaseDatabase/Frameworks/FirebaseDatabase.framework/Headers/FIRDataSnapshot.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/FirebaseDatabase/Frameworks/FirebaseDatabase.framework/Headers/FIRDatabase.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/FirebaseDatabase/Frameworks/FirebaseDatabase.framework/Headers/FIRDatabaseQuery.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/FirebaseDatabase/Frameworks/FirebaseDatabase.framework/Headers/FIRDatabaseReference.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/FirebaseDatabase/Frameworks/FirebaseDatabase.framework/Headers/FIRMutableData.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/FirebaseDatabase/Frameworks/FirebaseDatabase.framework/Headers/FIRServerValue.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/FirebaseDatabase/Frameworks/FirebaseDatabase.framework/Headers/FIRTransactionResult.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/FirebaseDatabase/Frameworks/FirebaseDatabase.framework/Headers/FirebaseDatabase.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/FirebaseDatabase/Frameworks/FirebaseDatabase.framework/Modules/module.modulemap" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/FirebaseInstanceID/CHANGELOG.md" beforeDir="false" afterPath="$PROJECT_DIR$/Pods/FirebaseInstanceID/CHANGELOG.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/FirebaseInstanceID/Frameworks/FirebaseInstanceID.framework/FirebaseInstanceID" beforeDir="false" afterPath="$PROJECT_DIR$/Pods/FirebaseInstanceID/Frameworks/FirebaseInstanceID.framework/FirebaseInstanceID" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/FirebaseInstanceID/Frameworks/FirebaseInstanceID.framework/Headers/FIRInstanceID.h" beforeDir="false" afterPath="$PROJECT_DIR$/Pods/FirebaseInstanceID/Frameworks/FirebaseInstanceID.framework/Headers/FIRInstanceID.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/FirebaseInstanceID/Frameworks/FirebaseInstanceID.framework/Modules/module.modulemap" beforeDir="false" afterPath="$PROJECT_DIR$/Pods/FirebaseInstanceID/Frameworks/FirebaseInstanceID.framework/Modules/module.modulemap" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/FirebaseMessaging/Frameworks/FirebaseMessaging.framework/FirebaseMessaging" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/FirebaseMessaging/Frameworks/FirebaseMessaging.framework/Headers/FIRMessaging.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/FirebaseMessaging/Frameworks/FirebaseMessaging.framework/Headers/FirebaseMessaging.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/FirebaseMessaging/Frameworks/FirebaseMessaging.framework/Modules/module.modulemap" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/FirebaseStorage/Frameworks/FirebaseStorage.framework/FirebaseStorage" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/FirebaseStorage/Frameworks/FirebaseStorage.framework/Headers/FIRStorage.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/FirebaseStorage/Frameworks/FirebaseStorage.framework/Headers/FIRStorageConstants.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/FirebaseStorage/Frameworks/FirebaseStorage.framework/Headers/FIRStorageDownloadTask.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/FirebaseStorage/Frameworks/FirebaseStorage.framework/Headers/FIRStorageMetadata.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/FirebaseStorage/Frameworks/FirebaseStorage.framework/Headers/FIRStorageObservableTask.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/FirebaseStorage/Frameworks/FirebaseStorage.framework/Headers/FIRStorageReference.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/FirebaseStorage/Frameworks/FirebaseStorage.framework/Headers/FIRStorageTask.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/FirebaseStorage/Frameworks/FirebaseStorage.framework/Headers/FIRStorageTaskSnapshot.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/FirebaseStorage/Frameworks/FirebaseStorage.framework/Headers/FIRStorageUploadTask.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/FirebaseStorage/Frameworks/FirebaseStorage.framework/Headers/FirebaseStorage.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/FirebaseStorage/Frameworks/FirebaseStorage.framework/Modules/module.modulemap" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/GTMSessionFetcher/Source/GTMSessionFetcher.h" beforeDir="false" afterPath="$PROJECT_DIR$/Pods/GTMSessionFetcher/Source/GTMSessionFetcher.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/GTMSessionFetcher/Source/GTMSessionFetcher.m" beforeDir="false" afterPath="$PROJECT_DIR$/Pods/GTMSessionFetcher/Source/GTMSessionFetcher.m" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/GTMSessionFetcher/Source/GTMSessionFetcherLogging.h" beforeDir="false" afterPath="$PROJECT_DIR$/Pods/GTMSessionFetcher/Source/GTMSessionFetcherLogging.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/GTMSessionFetcher/Source/GTMSessionFetcherLogging.m" beforeDir="false" afterPath="$PROJECT_DIR$/Pods/GTMSessionFetcher/Source/GTMSessionFetcherLogging.m" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/GTMSessionFetcher/Source/GTMSessionUploadFetcher.h" beforeDir="false" afterPath="$PROJECT_DIR$/Pods/GTMSessionFetcher/Source/GTMSessionUploadFetcher.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/GTMSessionFetcher/Source/GTMSessionUploadFetcher.m" beforeDir="false" afterPath="$PROJECT_DIR$/Pods/GTMSessionFetcher/Source/GTMSessionUploadFetcher.m" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/GoogleToolboxForMac/DebugUtils/GTMDebugSelectorValidation.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/GoogleToolboxForMac/DebugUtils/GTMDebugThreadValidation.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/GoogleToolboxForMac/DebugUtils/GTMMethodCheck.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/GoogleToolboxForMac/Foundation/GTMLogger.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/GoogleToolboxForMac/Foundation/GTMLogger.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/GoogleToolboxForMac/Foundation/GTMNSData+zlib.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/GoogleToolboxForMac/Foundation/GTMNSData+zlib.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/GoogleToolboxForMac/Foundation/GTMNSDictionary+URLArguments.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/GoogleToolboxForMac/Foundation/GTMNSDictionary+URLArguments.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/GoogleToolboxForMac/Foundation/GTMNSString+URLArguments.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/GoogleToolboxForMac/Foundation/GTMNSString+URLArguments.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/GoogleToolboxForMac/GTMDefines.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/GoogleToolboxForMac/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/GoogleToolboxForMac/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Headers/Private/Firebase/Firebase.h" beforeDir="false" afterPath="$PROJECT_DIR$/Pods/Headers/Private/Firebase/Firebase.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Headers/Public/Firebase/Firebase.h" beforeDir="false" afterPath="$PROJECT_DIR$/Pods/Headers/Public/Firebase/Firebase.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/IQKeyboardManager/IQKeyboardManager/Categories/IQNSArray+Sort.h" beforeDir="false" afterPath="$PROJECT_DIR$/Pods/IQKeyboardManager/IQKeyboardManager/Categories/IQNSArray+Sort.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/IQKeyboardManager/IQKeyboardManager/Categories/IQNSArray+Sort.m" beforeDir="false" afterPath="$PROJECT_DIR$/Pods/IQKeyboardManager/IQKeyboardManager/Categories/IQNSArray+Sort.m" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/IQKeyboardManager/IQKeyboardManager/Categories/IQUIView+Hierarchy.h" beforeDir="false" afterPath="$PROJECT_DIR$/Pods/IQKeyboardManager/IQKeyboardManager/Categories/IQUIView+Hierarchy.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/IQKeyboardManager/IQKeyboardManager/Categories/IQUIView+Hierarchy.m" beforeDir="false" afterPath="$PROJECT_DIR$/Pods/IQKeyboardManager/IQKeyboardManager/Categories/IQUIView+Hierarchy.m" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/IQKeyboardManager/IQKeyboardManager/IQKeyboardManager.h" beforeDir="false" afterPath="$PROJECT_DIR$/Pods/IQKeyboardManager/IQKeyboardManager/IQKeyboardManager.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/IQKeyboardManager/IQKeyboardManager/IQKeyboardManager.m" beforeDir="false" afterPath="$PROJECT_DIR$/Pods/IQKeyboardManager/IQKeyboardManager/IQKeyboardManager.m" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/IQKeyboardManager/IQKeyboardManager/IQKeyboardReturnKeyHandler.m" beforeDir="false" afterPath="$PROJECT_DIR$/Pods/IQKeyboardManager/IQKeyboardManager/IQKeyboardReturnKeyHandler.m" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/IQKeyboardManager/IQKeyboardManager/IQTextView/IQTextView.m" beforeDir="false" afterPath="$PROJECT_DIR$/Pods/IQKeyboardManager/IQKeyboardManager/IQTextView/IQTextView.m" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/IQKeyboardManager/IQKeyboardManager/IQToolbar/IQToolbar.m" beforeDir="false" afterPath="$PROJECT_DIR$/Pods/IQKeyboardManager/IQKeyboardManager/IQToolbar/IQToolbar.m" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/IQKeyboardManager/IQKeyboardManager/IQToolbar/IQUIView+IQKeyboardToolbar.h" beforeDir="false" afterPath="$PROJECT_DIR$/Pods/IQKeyboardManager/IQKeyboardManager/IQToolbar/IQUIView+IQKeyboardToolbar.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/IQKeyboardManager/IQKeyboardManager/IQToolbar/IQUIView+IQKeyboardToolbar.m" beforeDir="false" afterPath="$PROJECT_DIR$/Pods/IQKeyboardManager/IQKeyboardManager/IQToolbar/IQUIView+IQKeyboardToolbar.m" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/IQKeyboardManager/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/Pods/IQKeyboardManager/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Manifest.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Pods/Manifest.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/PhoneNumberKit/PhoneNumberKit/UI/TextField.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Pods/PhoneNumberKit/PhoneNumberKit/UI/TextField.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Pods.xcodeproj/project.pbxproj" beforeDir="false" afterPath="$PROJECT_DIR$/Pods/Pods.xcodeproj/project.pbxproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Protobuf/LICENSE" beforeDir="false" afterPath="$PROJECT_DIR$/Pods/Protobuf/LICENSE" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Protobuf/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/Pods/Protobuf/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Protobuf/objectivec/GPBArray.m" beforeDir="false" afterPath="$PROJECT_DIR$/Pods/Protobuf/objectivec/GPBArray.m" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Protobuf/objectivec/GPBCodedInputStream.m" beforeDir="false" afterPath="$PROJECT_DIR$/Pods/Protobuf/objectivec/GPBCodedInputStream.m" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Protobuf/objectivec/GPBCodedInputStream_PackagePrivate.h" beforeDir="false" afterPath="$PROJECT_DIR$/Pods/Protobuf/objectivec/GPBCodedInputStream_PackagePrivate.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Protobuf/objectivec/GPBCodedOutputStream.m" beforeDir="false" afterPath="$PROJECT_DIR$/Pods/Protobuf/objectivec/GPBCodedOutputStream.m" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Protobuf/objectivec/GPBDescriptor.m" beforeDir="false" afterPath="$PROJECT_DIR$/Pods/Protobuf/objectivec/GPBDescriptor.m" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Protobuf/objectivec/GPBDictionary.h" beforeDir="false" afterPath="$PROJECT_DIR$/Pods/Protobuf/objectivec/GPBDictionary.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Protobuf/objectivec/GPBDictionary.m" beforeDir="false" afterPath="$PROJECT_DIR$/Pods/Protobuf/objectivec/GPBDictionary.m" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Protobuf/objectivec/GPBMessage.m" beforeDir="false" afterPath="$PROJECT_DIR$/Pods/Protobuf/objectivec/GPBMessage.m" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Protobuf/objectivec/GPBMessage_PackagePrivate.h" beforeDir="false" afterPath="$PROJECT_DIR$/Pods/Protobuf/objectivec/GPBMessage_PackagePrivate.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Protobuf/objectivec/GPBProtocolBuffers_RuntimeSupport.h" beforeDir="false" afterPath="$PROJECT_DIR$/Pods/Protobuf/objectivec/GPBProtocolBuffers_RuntimeSupport.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Protobuf/objectivec/GPBRootObject.m" beforeDir="false" afterPath="$PROJECT_DIR$/Pods/Protobuf/objectivec/GPBRootObject.m" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Protobuf/objectivec/GPBUtilities.m" beforeDir="false" afterPath="$PROJECT_DIR$/Pods/Protobuf/objectivec/GPBUtilities.m" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Protobuf/objectivec/GPBUtilities_PackagePrivate.h" beforeDir="false" afterPath="$PROJECT_DIR$/Pods/Protobuf/objectivec/GPBUtilities_PackagePrivate.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Protobuf/objectivec/google/protobuf/Any.pbobjc.h" beforeDir="false" afterPath="$PROJECT_DIR$/Pods/Protobuf/objectivec/google/protobuf/Any.pbobjc.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Protobuf/objectivec/google/protobuf/Api.pbobjc.h" beforeDir="false" afterPath="$PROJECT_DIR$/Pods/Protobuf/objectivec/google/protobuf/Api.pbobjc.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Protobuf/objectivec/google/protobuf/Duration.pbobjc.h" beforeDir="false" afterPath="$PROJECT_DIR$/Pods/Protobuf/objectivec/google/protobuf/Duration.pbobjc.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Protobuf/objectivec/google/protobuf/Empty.pbobjc.h" beforeDir="false" afterPath="$PROJECT_DIR$/Pods/Protobuf/objectivec/google/protobuf/Empty.pbobjc.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Protobuf/objectivec/google/protobuf/FieldMask.pbobjc.h" beforeDir="false" afterPath="$PROJECT_DIR$/Pods/Protobuf/objectivec/google/protobuf/FieldMask.pbobjc.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Protobuf/objectivec/google/protobuf/SourceContext.pbobjc.h" beforeDir="false" afterPath="$PROJECT_DIR$/Pods/Protobuf/objectivec/google/protobuf/SourceContext.pbobjc.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Protobuf/objectivec/google/protobuf/Struct.pbobjc.h" beforeDir="false" afterPath="$PROJECT_DIR$/Pods/Protobuf/objectivec/google/protobuf/Struct.pbobjc.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Protobuf/objectivec/google/protobuf/Struct.pbobjc.m" beforeDir="false" afterPath="$PROJECT_DIR$/Pods/Protobuf/objectivec/google/protobuf/Struct.pbobjc.m" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Protobuf/objectivec/google/protobuf/Timestamp.pbobjc.h" beforeDir="false" afterPath="$PROJECT_DIR$/Pods/Protobuf/objectivec/google/protobuf/Timestamp.pbobjc.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Protobuf/objectivec/google/protobuf/Type.pbobjc.h" beforeDir="false" afterPath="$PROJECT_DIR$/Pods/Protobuf/objectivec/google/protobuf/Type.pbobjc.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Protobuf/objectivec/google/protobuf/Type.pbobjc.m" beforeDir="false" afterPath="$PROJECT_DIR$/Pods/Protobuf/objectivec/google/protobuf/Type.pbobjc.m" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Protobuf/objectivec/google/protobuf/Wrappers.pbobjc.h" beforeDir="false" afterPath="$PROJECT_DIR$/Pods/Protobuf/objectivec/google/protobuf/Wrappers.pbobjc.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Target Support Files/GTMSessionFetcher/GTMSessionFetcher.xcconfig" beforeDir="false" afterPath="$PROJECT_DIR$/Pods/Target Support Files/GTMSessionFetcher/GTMSessionFetcher.xcconfig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Target Support Files/GTMSessionFetcher/Info.plist" beforeDir="false" afterPath="$PROJECT_DIR$/Pods/Target Support Files/GTMSessionFetcher/Info.plist" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Target Support Files/IQKeyboardManager/IQKeyboardManager.xcconfig" beforeDir="false" afterPath="$PROJECT_DIR$/Pods/Target Support Files/IQKeyboardManager/IQKeyboardManager.xcconfig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Target Support Files/IQKeyboardManager/Info.plist" beforeDir="false" afterPath="$PROJECT_DIR$/Pods/Target Support Files/IQKeyboardManager/Info.plist" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Target Support Files/PhoneNumberKit/PhoneNumberKit.xcconfig" beforeDir="false" afterPath="$PROJECT_DIR$/Pods/Target Support Files/PhoneNumberKit/PhoneNumberKit.xcconfig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Target Support Files/Pods-SaltLakeChristianChurch/Pods-SaltLakeChristianChurch-acknowledgements.markdown" beforeDir="false" afterPath="$PROJECT_DIR$/Pods/Target Support Files/Pods-SaltLakeChristianChurch/Pods-SaltLakeChristianChurch-acknowledgements.markdown" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Target Support Files/Pods-SaltLakeChristianChurch/Pods-SaltLakeChristianChurch-acknowledgements.plist" beforeDir="false" afterPath="$PROJECT_DIR$/Pods/Target Support Files/Pods-SaltLakeChristianChurch/Pods-SaltLakeChristianChurch-acknowledgements.plist" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Target Support Files/Pods-SaltLakeChristianChurch/Pods-SaltLakeChristianChurch-frameworks.sh" beforeDir="false" afterPath="$PROJECT_DIR$/Pods/Target Support Files/Pods-SaltLakeChristianChurch/Pods-SaltLakeChristianChurch-frameworks.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Target Support Files/Pods-SaltLakeChristianChurch/Pods-SaltLakeChristianChurch.debug.xcconfig" beforeDir="false" afterPath="$PROJECT_DIR$/Pods/Target Support Files/Pods-SaltLakeChristianChurch/Pods-SaltLakeChristianChurch.debug.xcconfig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Target Support Files/Pods-SaltLakeChristianChurch/Pods-SaltLakeChristianChurch.release.xcconfig" beforeDir="false" afterPath="$PROJECT_DIR$/Pods/Target Support Files/Pods-SaltLakeChristianChurch/Pods-SaltLakeChristianChurch.release.xcconfig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Target Support Files/Protobuf/Info.plist" beforeDir="false" afterPath="$PROJECT_DIR$/Pods/Target Support Files/Protobuf/Info.plist" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Target Support Files/Protobuf/Protobuf.xcconfig" beforeDir="false" afterPath="$PROJECT_DIR$/Pods/Target Support Files/Protobuf/Protobuf.xcconfig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Target Support Files/leveldb-library/leveldb-library.xcconfig" beforeDir="false" afterPath="$PROJECT_DIR$/Pods/Target Support Files/leveldb-library/leveldb-library.xcconfig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Target Support Files/nanopb/nanopb.xcconfig" beforeDir="false" afterPath="$PROJECT_DIR$/Pods/Target Support Files/nanopb/nanopb.xcconfig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SaltLakeChristianChurch.xcodeproj/project.pbxproj" beforeDir="false" afterPath="$PROJECT_DIR$/SaltLakeChristianChurch.xcodeproj/project.pbxproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SaltLakeChristianChurch/AppDelegate.swift" beforeDir="false" afterPath="$PROJECT_DIR$/SaltLakeChristianChurch/AppDelegate.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SaltLakeChristianChurch/ModelControllers/AnnouncementController.swift" beforeDir="false" afterPath="$PROJECT_DIR$/SaltLakeChristianChurch/ModelControllers/AnnouncementController.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SaltLakeChristianChurch/ModelControllers/BlockedAnnouncementController.swift" beforeDir="false" afterPath="$PROJECT_DIR$/SaltLakeChristianChurch/ModelControllers/BlockedAnnouncementController.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SaltLakeChristianChurch/ModelControllers/BlockedMemberController.swift" beforeDir="false" afterPath="$PROJECT_DIR$/SaltLakeChristianChurch/ModelControllers/BlockedMemberController.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SaltLakeChristianChurch/ModelControllers/LessonController.swift" beforeDir="false" afterPath="$PROJECT_DIR$/SaltLakeChristianChurch/ModelControllers/LessonController.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SaltLakeChristianChurch/ModelControllers/MemberController.swift" beforeDir="false" afterPath="$PROJECT_DIR$/SaltLakeChristianChurch/ModelControllers/MemberController.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SaltLakeChristianChurch/Models/Announcement.swift" beforeDir="false" afterPath="$PROJECT_DIR$/SaltLakeChristianChurch/Models/Announcement.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SaltLakeChristianChurch/Models/BlockedAnnouncement+Convenience.swift" beforeDir="false" afterPath="$PROJECT_DIR$/SaltLakeChristianChurch/Models/CoreData/BlockedAnnouncement+Convenience.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SaltLakeChristianChurch/Models/BlockedMember+Convenience.swift" beforeDir="false" afterPath="$PROJECT_DIR$/SaltLakeChristianChurch/Models/CoreData/BlockedMember+Convenience.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SaltLakeChristianChurch/Models/Lesson.swift" beforeDir="false" afterPath="$PROJECT_DIR$/SaltLakeChristianChurch/Models/Lesson.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SaltLakeChristianChurch/Models/Member.swift" beforeDir="false" afterPath="$PROJECT_DIR$/SaltLakeChristianChurch/Models/Member.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SaltLakeChristianChurch/Resources/IBDesignables/UIButtonX.swift" beforeDir="false" afterPath="$PROJECT_DIR$/SaltLakeChristianChurch/Resources/IBDesignables/UIButtonX.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SaltLakeChristianChurch/Resources/IBDesignables/UITextFieldX.swift" beforeDir="false" afterPath="$PROJECT_DIR$/SaltLakeChristianChurch/Resources/IBDesignables/UITextFieldX.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SaltLakeChristianChurch/Resources/extensions.swift" beforeDir="false" afterPath="$PROJECT_DIR$/SaltLakeChristianChurch/Resources/extensions.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SaltLakeChristianChurch/ViewControllers/AnnouncementTab/AnnouncementsViewController.swift" beforeDir="false" afterPath="$PROJECT_DIR$/SaltLakeChristianChurch/ViewControllers/AnnouncementTab/AnnouncementsViewController.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SaltLakeChristianChurch/ViewControllers/AnnouncementTab/CreateAnnouncementViewController.swift" beforeDir="false" afterPath="$PROJECT_DIR$/SaltLakeChristianChurch/ViewControllers/AnnouncementTab/CreateAnnouncementViewController.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SaltLakeChristianChurch/ViewControllers/CalendarTab/CalendarViewController.swift" beforeDir="false" afterPath="$PROJECT_DIR$/SaltLakeChristianChurch/ViewControllers/CalendarTab/CalendarViewController.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SaltLakeChristianChurch/ViewControllers/LessonTab/LessonDetailview.swift" beforeDir="false" afterPath="$PROJECT_DIR$/SaltLakeChristianChurch/ViewControllers/LessonTab/LessonDetailview.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SaltLakeChristianChurch/ViewControllers/LessonTab/LessonViewController.swift" beforeDir="false" afterPath="$PROJECT_DIR$/SaltLakeChristianChurch/ViewControllers/LessonTab/LessonViewController.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SaltLakeChristianChurch/ViewControllers/Login+Register/LoginOrRegisterViewController.swift" beforeDir="false" afterPath="$PROJECT_DIR$/SaltLakeChristianChurch/ViewControllers/Login+Register/LoginOrRegisterViewController.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SaltLakeChristianChurch/ViewControllers/MoreTab/DirectoryTableViewController.swift" beforeDir="false" afterPath="$PROJECT_DIR$/SaltLakeChristianChurch/ViewControllers/MoreTab/DirectoryTableViewController.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SaltLakeChristianChurch/ViewControllers/MoreTab/EditProfileViewController.swift" beforeDir="false" afterPath="$PROJECT_DIR$/SaltLakeChristianChurch/ViewControllers/MoreTab/EditProfileViewController.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SaltLakeChristianChurch/Views/AnnouncementTableViewCell.swift" beforeDir="false" afterPath="$PROJECT_DIR$/SaltLakeChristianChurch/Views/AnnouncementTableViewCell.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SaltLakeChristianChurch/Views/LessonCollectionViewCell.swift" beforeDir="false" afterPath="$PROJECT_DIR$/SaltLakeChristianChurch/Views/LessonCollectionViewCell.swift" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FUSProjectUsageTrigger">
+    <session id="175868864">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="1" />
+          <entry key="project.open.time.2" value="1" />
+          <entry key="project.opened" value="1" />
+        </counts>
+      </usages-collector>
+    </session>
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Podfile">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-1519" />
+    <option name="y" value="23" />
+    <option name="width" value="1400" />
+    <option name="height" value="837" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="Cidr.FilesView" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="" type="efc3779f:XcodeRootNode" />
+              <item name="Pods" type="1d218c8b:XcodeProjectNode" />
+            </path>
+            <path>
+              <item name="" type="efc3779f:XcodeRootNode" />
+              <item name="Pods" type="1d218c8b:XcodeProjectNode" />
+              <item name="Frameworks" type="fcab9f18:XcodeViewNode" />
+            </path>
+            <path>
+              <item name="" type="efc3779f:XcodeRootNode" />
+              <item name="Pods" type="1d218c8b:XcodeProjectNode" />
+              <item name="Pods" type="fcab9f18:XcodeViewNode" />
+            </path>
+            <path>
+              <item name="" type="efc3779f:XcodeRootNode" />
+              <item name="Pods" type="1d218c8b:XcodeProjectNode" />
+              <item name="Products" type="fcab9f18:XcodeViewNode" />
+            </path>
+            <path>
+              <item name="" type="efc3779f:XcodeRootNode" />
+              <item name="Pods" type="1d218c8b:XcodeProjectNode" />
+              <item name="Targets Support Files" type="fcab9f18:XcodeViewNode" />
+            </path>
+            <path>
+              <item name="" type="efc3779f:XcodeRootNode" />
+              <item name="SaltLakeChristianChurch" type="1d218c8b:XcodeProjectNode" />
+            </path>
+            <path>
+              <item name="" type="efc3779f:XcodeRootNode" />
+              <item name="SaltLakeChristianChurch" type="1d218c8b:XcodeProjectNode" />
+              <item name="Products" type="fcab9f18:XcodeViewNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="b38e68bd-f2a3-4a6a-ad4e-a5e0c19026f9" name="Default Changelist" comment="" />
+      <created>1540836502983</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1540836502983</updated>
+      <workItem from="1540836506059" duration="24000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="24000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-1920" y="23" width="1920" height="1057" extended-state="6" />
+    <layout>
+      <window_info id="Designer" />
+      <window_info id="Favorites" side_tool="true" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18051118" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Database Changes" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Terminal" />
+      <window_info anchor="bottom" id="Event Log" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="right" id="Palette&#9;" />
+      <window_info anchor="right" id="Database" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+    </layout>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/Podfile">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+  </component>
+</project>

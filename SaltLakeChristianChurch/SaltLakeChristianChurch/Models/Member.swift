@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Member: Equatable {
+final class Member: Equatable {
 
     // MARK: - Properties
     var memberID: String
